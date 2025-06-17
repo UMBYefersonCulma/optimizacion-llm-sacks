@@ -24,4 +24,4 @@ Estructura del Repositorio
 
 Colaboradores
 	•	Yeferson Culma
-	•	Juan Walteros
+	•	Juan Gualteros
