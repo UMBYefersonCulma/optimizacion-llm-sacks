@@ -1,0 +1,45 @@
+<h2>1. Procesar frases con <strong>IA</strong></h2>
+<form id="formIA">
+  <label for="archivo">Archivo CSV con columnas “Edad”, “Sexo”, “Frase”:</label><br>
+  <input type="file" name="archivo" id="archivo" required><br><br>
+  <input type="submit" value="Procesar con IA">
+</form>
+
+<div id="loadingIA" style="display:none;text-align:center;margin-top:20px;">
+  <div class="spinner"></div><br>
+  Procesando con IA, por favor espera…
+</div>
+
+<div id="resultadoIA"></div>
+
+<script>
+  document.getElementById("formIA").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const archivo = document.getElementById("archivo").files[0];
+    if (!archivo) return;
+
+    const formData = new FormData();
+    formData.append("archivo", archivo);
+    document.getElementById("formIA").style.display = "none";
+    document.getElementById("loadingIA").style.display = "block";
+
+    const res = await fetch("/api/procesar_csv_async", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+    if (data.resultados) {
+      let html = "<table border='1'><tr><th>Edad</th><th>Sexo</th><th>Frase</th><th>Categoría</th><th>Razón</th></tr>";
+      data.resultados.forEach(r => {
+        html += `<tr><td>${r.Edad}</td><td>${r.Sexo}</td><td>${r.Frase}</td><td>${r.Categoria}</td><td>${r.Razon}</td></tr>`;
+      });
+      html += "</table>";
+      document.getElementById("resultadoIA").innerHTML = html;
+    } else {
+      document.getElementById("resultadoIA").innerHTML = "<p>Error procesando archivo</p>";
+    }
+
+    document.getElementById("loadingIA").style.display = "none";
+  });
+</script>

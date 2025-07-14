@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proyecto Sacks IA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/procesar_csv">Procesar CSV con IA</a></li>
+    <li><a href="/comparar_resultados">Comparar IA vs Humano</a></li>
+  </ul>
+</nav>
+
+   <form method="POST" action="/clasificar_individual">
+  <h2>Clasificación individual</h2>
+
+  <div class="form-group">
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" name="edad" required>
+  </div>
+
+  <div class="form-group">
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo">
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="frase">Frase:</label>
+    <textarea id="frase" name="frase" placeholder="Escribe aquí la frase..." required></textarea>
+  </div>
+
+  <input type="submit" value="Clasificar">
+</form>
+
+</body>
+</html>

@@ -1,10 +1,24 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template, redirect, url_for
 import pandas as pd
 import subprocess, os
 from datetime import datetime
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import io, base64
+from clasificacion_individual import register_routes
 
-# ----- función para limpiar la salida del modelo -----
-def extraer_respuesta(salida):
+
+app = Flask(__name__)
+register_routes(app)
+PROCESSED_FOLDER = "processed"
+os.makedirs(PROCESSED_FOLDER, exist_ok=True)
+
+resultados_comparacion_html = ""
+archivo_comparacion = ""
+
+# ─── FUNCIÓN PARA EXTRAER RESPUESTA DE OLLAMA ─── #
+def extraer_respuesta(salida: str) -> dict:
     res = {"categoria": "", "razon": ""}
     for line in salida.strip().splitlines():
         if line.startswith("Clasificación emocional:"):
@@ -13,143 +27,97 @@ def extraer_respuesta(salida):
             res["razon"] = line.replace("Razón:", "").strip()
     return res
 
-# ----- prompt en memoria -----
-PROMPT_TEMPLATE = """Eres DeepSeek-R1, un experto en análisis psicológico y lingüístico en idioma español. Todas las frases que analizarás están escritas en español coloquial dentro del contexto del Test de Frases Incompletas de Sacks.
-
-Tu tarea es clasificar cada frase según su carga emocional en una de estas categorías exclusivas:
-- POSITIVA  : emociones constructivas, afecto, esperanza, satisfacción.
-- NEGATIVA  : conflicto, frustración, miedo, tristeza, enojo, rechazo.
-- AMBIGUA   : contradicción, sarcasmo, ironía o vaguedad que impide determinar valencia.
-- NEUTRA    : descripción informativa sin emoción clara.
-
-Pautas clave  
-1. Evalúa la frase completa; conectores como «pero», «aunque», «sin embargo» suelen introducir conflicto y pueden volverla NEGATIVA.  
-2. No interpretes clínicamente ni modifiques la frase.  
-3. Responde **exclusivamente** en español, sin bloques <think> ni explicaciones adicionales.  
-4. Usa el formato exacto indicado más abajo.
-
-Ejemplos (guía):
-
-Frase: "Trata mal"  
-Clasificación emocional: NEGATIVA  
-Razón: Expresa maltrato y hostilidad.
-
-Frase: "Me ayudó"  
-Clasificación emocional: POSITIVA  
-Razón: Denota apoyo desinteresado.
-
-Frase: "No me escucha"  
-Clasificación emocional: NEGATIVA  
-Razón: Refleja frustración por falta de atención.
-
-Frase: "Le gusta cocinar"  
-Clasificación emocional: NEUTRA  
-Razón: Solo describe un gusto, sin emoción.
-
-Frase: "Me alegra estudiar, pero a veces dudo de lograrlo"  
-Clasificación emocional: AMBIGUA  
-Razón: Combina alegría inicial con duda que crea ambivalencia.
-
-Frase: "Mi padre confía plenamente en mí"  
-Clasificación emocional: POSITIVA  
-Razón: Expresa aceptación y respaldo paterno.
-
-Frase: "Odio fracasar"  
-Clasificación emocional: NEGATIVA  
-Razón: Manifiesta aversión y temor al fracaso.
-
-Frase: "Me da igual lo que piensen"  
-Clasificación emocional: NEUTRA  
-Razón: Indiferencia sin carga positiva ni negativa.
-
-Frase: "Disfruto ayudar a los demás"  
-Clasificación emocional: POSITIVA  
-Razón: Muestra satisfacción y altruismo.
-
-Frase: "Me siento incomprendido"  
-Clasificación emocional: NEGATIVA  
-Razón: Revela sentimiento de aislamiento emocional.
-
-Frase: "Tal vez funcione, tal vez no"  
-Clasificación emocional: AMBIGUA  
-Razón: Incertidumbre sin valencia clara.
-
-Formato de respuesta (obligatorio):
-
-Frase: <FRASE>  
-Clasificación emocional: <POSITIVA / NEGATIVA / AMBIGUA / NEUTRA>  
-Razón: <breve explicación: 1–2 líneas>
-
-Responde SOLO con el formato solicitado.  
-No incluyas bloques <think> ni explicaciones internas.  
-
-Ahora analiza la siguiente frase:
-Frase: "{frase}"
-"""
-
-app = Flask(__name__)
-PROCESSED_FOLDER = "processed"
-os.makedirs(PROCESSED_FOLDER, exist_ok=True)
+# ─── FUNCIÓN PARA NORMALIZAR LA CATEGORIAS ─── #
+def normalizar_categoria(valor):
+    valor = str(valor).strip().lower()
+    if valor in ["positivo", "positiva"]:
+        return "positivo"
+    elif valor in ["negativo", "negativa"]:
+        return "negativo"
+    elif valor in ["ambiguo", "ambigua"]:
+        return "ambiguo"
+    else:
+        return valor
+# ─── RUTA PRINCIPAL ─── #
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 @app.route("/procesar_csv", methods=["GET", "POST"])
 def procesar_csv():
-    if request.method == "POST":
-        file = request.files["archivo"]
-        if file and file.filename.endswith(".csv"):
-            df = pd.read_csv(file)
-            resultados = []
+    if request.method == "GET":
+        return render_template("procesar_csv.html")
 
-            for _, row in df.iterrows():
-                frase = row["Frase"]
-                sexo  = row["Sexo"]
-                edad  = row["Edad"]
+    archivo = request.files["archivo"]
+    df = pd.read_csv(archivo)
+    resultados = []
 
-                prompt = PROMPT_TEMPLATE.format(frase=frase)
-                r = subprocess.run(
-                    ["ollama", "run", "deepseek-r1:7b", prompt],
-                    stdout=subprocess.PIPE, text=True
-                )
-                parsed = extraer_respuesta(r.stdout)
-                resultados.append({
-                    "Edad"     : edad,
-                    "Sexo"     : sexo,
-                    "Frase"    : frase,
-                    "Categoria": parsed["categoria"],
-                    "Razón"    : parsed["razon"]
-                })
+    for _, row in df.iterrows():
+        frase = row["Frase"]
+        edad = row["Edad"]
+        sexo = row["Sexo"]
 
-            df_out = pd.DataFrame(resultados)
-            out_path = os.path.join(
-                PROCESSED_FOLDER, f"resultado_{datetime.now():%Y%m%d_%H%M%S}.csv"
-            )
-            df_out.to_csv(out_path, index=False)
+        r = subprocess.run(["ollama", "run", "deepseek-r1-sacks", frase], stdout=subprocess.PIPE, text=True)
+        parsed = extraer_respuesta(r.stdout)
 
-            return (
-                f"<h2>Resultados</h2>{df_out.to_html(index=False)}"
-                f'<br><a href="/procesar_csv">Subir otro</a>'
-                f'<br><a href="/descargar?file={os.path.basename(out_path)}">Descargar CSV</a>'
-            )
+        resultados.append({
+            "Edad": edad,
+            "Sexo": sexo,
+            "Frase": frase,
+            "Categoria": parsed["categoria"],
+            "Razon": parsed["razon"]
+        })
 
-    # formulario
-    return """
-    <html><head><link rel='stylesheet' href='/static/style.css'></head><body>
-    <div class='container'>
-      <h2>Sube un CSV con columnas “Edad”, “Sexo”, “Frase”</h2>
-      <form method='post' enctype='multipart/form-data' onsubmit='return wait()'>
-        <input type='file' name='archivo' required><input type='submit' value='Procesar'>
-      </form>
-      <div id='wait' style='display:none;text-align:center;'>
-        <img src='https://i.gifer.com/ZZ5H.gif' width='60'><br>Procesando…
-      </div>
-      <script>function wait(){document.querySelector('form').style.display='none';
-      document.getElementById('wait').style.display='block';return true;}</script>
-    </div></body></html>
-    """
+    resultado_df = pd.DataFrame(resultados)
+    out_name = f"resultado_{datetime.now():%Y%m%d_%H%M%S}.csv"
+    resultado_df.to_csv(os.path.join(PROCESSED_FOLDER, out_name), index=False, encoding="utf-8-sig")
 
+    return render_template("resultados.html", tabla=resultado_df.to_html(index=False), archivo_nombre=out_name)
+
+# ─── RUTA PARA COMPARAR CSVs ─── #
+@app.route("/comparar_resultados", methods=["GET", "POST"])
+def comparar_resultados():
+    global resultados_comparacion_html, archivo_comparacion
+
+    if request.method == "GET":
+        return render_template("comparar_resultados.html")
+
+    humano = pd.read_csv(request.files["archivo_humano"])
+    ia = pd.read_csv(request.files["archivo_ia"])
+
+    humano.columns = [col.lower() for col in humano.columns]
+    ia.columns = [col.lower() for col in ia.columns]
+
+    ia.rename(columns={"categoria": "Categoria_IA"}, inplace=True)
+
+    if "categoria" in humano.columns:
+        humano["categoria"] = humano["categoria"].apply(normalizar_categoria)
+    else:
+        return "El archivo humano no contiene una columna válida de categorías.", 400
+
+    comparado = humano.copy()
+    comparado["Categoria_IA"] = ia["Categoria_IA"]
+    comparado["Coincide"] = comparado.apply(
+        lambda row: normalizar_categoria(row["Categoria_IA"]) == row["categoria"],
+        axis=1
+    )
+
+    archivo_comparacion = os.path.join(PROCESSED_FOLDER, f"comparacion_{datetime.now():%Y%m%d_%H%M%S}.csv")
+    comparado.to_csv(archivo_comparacion, index=False, encoding="utf-8-sig")
+    resultados_comparacion_html = comparado.to_html(classes="styled-table", index=False)
+    return redirect(url_for("ver_resultados_comparacion"))
+
+# ─── RUTA PARA MOSTRAR RESULTADOS DE LA COMPARACIÓN ─── #
+@app.route("/ver_resultados_comparacion")
+def ver_resultados_comparacion():
+    return render_template("resultados.html", tabla=resultados_comparacion_html, archivo_nombre=os.path.basename(archivo_comparacion))
+
+# ─── RUTA PARA DESCARGAR ARCHIVOS ─── #
 @app.route("/descargar")
 def descargar():
     fname = request.args.get("file")
     return send_file(os.path.join(PROCESSED_FOLDER, fname), as_attachment=True)
 
+# ─── MAIN ─── #
 if __name__ == "__main__":
     app.run(debug=True)

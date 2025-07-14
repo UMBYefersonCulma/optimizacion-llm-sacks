@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparar resultados</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/procesar_csv">Procesar CSV con IA</a></li>
+    <li><a href="/comparar_resultados">Comparar IA vs Humano</a></li>
+  </ul>
+</nav>
+
+  <form action="/comparar_resultados" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <h2>Comparar resultados IA vs Humano</h2>
+      <label>Archivo Generado Por Humano</label>
+      <input type="file" name="archivo_humano" required>
+    </div>
+
+    <div class="form-group">
+      <label>Archivo Generado Por IA</label>
+      <input type="file" name="archivo_ia" required>
+    </div>
+
+    <input type="submit" value="Comparar">
+  </form>
+
+  {% if tabla %}
+    <h3 class="result-header">Resultado de la comparación:</h3>
+    <div class="table-container">
+      <table class="styled-table">
+        {{ tabla|safe }}
+      </table>
+    </div>
+  {% endif %}
+</body>
+</html>

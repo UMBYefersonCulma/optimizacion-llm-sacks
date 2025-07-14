@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resultados de Comparación</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h2>Resultados de Comparación</h2>
+  <p><strong>{{ resumen }}</strong></p>
+
+  <!-- Gráfica -->
+  {% if grafico %}
+    <img src="data:image/png;base64,{{ grafico }}" alt="Gráfica de coincidencia">
+  {% endif %}
+
+  <!-- Tabla -->
+  {{ tabla|safe }}
+
+  <p><a href="/">Volver al inicio</a></p>
+  <p><a href="/descargar?file={{ archivo }}">Descargar comparación</a></p>
+</body>
+</html>

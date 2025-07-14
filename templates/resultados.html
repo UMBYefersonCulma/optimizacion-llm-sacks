@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados del procesamiento</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3eee6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .result-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #694F3F;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .download-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #1a0dab;
+            text-decoration: none;
+        }
+
+        .download-link:hover {
+            color: #0d0dad;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Resultados del procesamiento</h2>
+        {{ tabla|safe }}
+        <a href="{{ url_for('descargar', file=archivo_nombre) }}" class="download-link">Descargar archivo con resultados</a>
+    </div>
+</body>
+</html>
