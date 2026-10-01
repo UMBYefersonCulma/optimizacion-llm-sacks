@@ -1,41 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Comparar resultados</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-<nav>
-  <ul>
-    <li><a href="/">Inicio</a></li>
-    <li><a href="/procesar_csv">Procesar CSV con IA</a></li>
-    <li><a href="/comparar_resultados">Comparar IA vs Humano</a></li>
-  </ul>
-</nav>
+{% extends "base.html" %}
+{% block titulo %}Comparar IA vs Humano{% endblock %}
+{% block contenido %}
+<section class="hero">
+  <h1>Comparar la IA con la evaluación humana</h1>
+  <p>Sube el archivo con las categorías asignadas por el psicólogo y el archivo generado por la IA.
+     El sistema empareja las respuestas por número de enunciado (o por frase), calcula el porcentaje de
+     concordancia y muestra en qué categorías difieren.</p>
+</section>
 
-  <form action="/comparar_resultados" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <h2>Comparar resultados IA vs Humano</h2>
-      <label>Archivo Generado Por Humano</label>
-      <input type="file" name="archivo_humano" required>
-    </div>
+<form method="POST" action="{{ url_for('comparar_resultados') }}" enctype="multipart/form-data" class="tarjeta"
+      data-cargando="Comparando archivos…" data-cargando-sub="">
+  <h2>Archivos a comparar</h2>
 
-    <div class="form-group">
-      <label>Archivo Generado Por IA</label>
-      <input type="file" name="archivo_ia" required>
-    </div>
+  <div class="form-group">
+    <label for="archivo_humano">Evaluación humana</label>
+    <input type="file" id="archivo_humano" name="archivo_humano" accept=".csv,text/csv" required>
+    <p class="ayuda">Columnas: <code>Numero</code> y <code>Respuesta</code> (o <code>Frase</code>) más <code>Categoria</code>
+       (o <code>Categoria_Humano</code>). Edad y Genero son opcionales.</p>
+  </div>
 
-    <input type="submit" value="Comparar">
-  </form>
+  <div class="form-group">
+    <label for="archivo_ia">Resultado generado por la IA</label>
+    {% if ia_servidor %}
+      <div class="alerta verde">Se usará el archivo recién generado: <strong>{{ ia_servidor }}</strong>.
+        Si prefieres otro, selecciónalo abajo.</div>
+      <input type="hidden" name="archivo_ia_servidor" value="{{ ia_servidor }}">
+      <input type="file" id="archivo_ia" name="archivo_ia" accept=".csv,text/csv">
+    {% else %}
+      <input type="file" id="archivo_ia" name="archivo_ia" accept=".csv,text/csv" required>
+    {% endif %}
+    <p class="ayuda">Es el CSV descargado desde «Aplicar el test» o «Procesar CSV» (incluye <code>Numero</code>, <code>Frase</code>, <code>Categoria</code> y <code>Razon</code>).</p>
+  </div>
 
-  {% if tabla %}
-    <h3 class="result-header">Resultado de la comparación:</h3>
-    <div class="table-container">
-      <table class="styled-table">
-        {{ tabla|safe }}
-      </table>
-    </div>
-  {% endif %}
-</body>
-</html>
+  <input type="submit" value="Comparar">
+</form>
+
+<section class="tarjeta suave">
+  <h3>Para la demostración</h3>
+  <p>En «Procesar CSV» sube <a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a>; al terminar, presiona
+     «Comparar con evaluación humana →» y sube <a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a> como archivo del psicólogo.</p>
+</section>
+{% endblock %}

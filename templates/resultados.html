@@ -1,74 +1,96 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Resultados del procesamiento</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f3eee6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .result-box {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            margin: 40px auto;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: #694F3F;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .download-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #1a0dab;
-            text-decoration: none;
-        }
-
-        .download-link:hover {
-            color: #0d0dad;
-        }
-    </style>
-</head>
-<body>
-    <div class="result-box">
-        <h2>Resultados del procesamiento</h2>
-        {{ tabla|safe }}
-        <a href="{{ url_for('descargar', file=archivo_nombre) }}" class="download-link">Descargar archivo con resultados</a>
+{% extends "base.html" %}
+{% from "_macros.html" import badge, barras, pasos, icono_area %}
+{% block titulo %}Resultados{% endblock %}
+{% block contenido %}
+<section class="tarjeta">
+  {% if job.tipo == 'test' %}{{ pasos(3) }}{% endif %}
+  <div class="encabezado-resultado">
+    <div>
+      <h2>{% if job.tipo == 'test' %}Resultados del Test de Sacks{% else %}Resultados de «{{ job.nombre_entrada }}»{% endif %}</h2>
+      <p class="meta">
+        {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
+        {% if job.tipo == 'test' %}Modo {{ MODOS[job.modo].nombre }} · {% endif %}
+        {{ job.hechas }} frases analizadas · {{ tiempo_modelo }} s de análisis del modelo ({{ promedio }} s por frase)
+        {% if job.errores %}· <span class="texto-rojo">{{ job.errores }} con error</span>{% endif %}
+        · {{ MODELO }}
+      </p>
     </div>
-</body>
-</html>
+    <div class="acciones">
+      <a class="boton secundario" href="{{ url_for('index') if job.tipo == 'test' else url_for('procesar_csv') }}">← {{ 'Nuevo test' if job.tipo == 'test' else 'Otro archivo' }}</a>
+      <a class="boton secundario" href="{{ url_for('descargar', file=job.archivo) }}">Descargar CSV</a>
+      <a class="boton" href="{{ url_for('comparar_resultados', ia=job.archivo) }}">Comparar con evaluación humana →</a>
+    </div>
+  </div>
+
+  <div class="alerta amarillo" role="note">
+    <strong>Gracias por responder.</strong> Lo que ves aquí es un apoyo para la lectura que hará el psicólogo o la psicóloga; <strong>no es un diagnóstico</strong>.
+    Cada frase se marca como <span class="badge badge-positiva">POSITIVA</span> (expresa bienestar o una actitud favorable),
+    <span class="badge badge-negativa">NEGATIVA</span> (expresa malestar, conflicto o rechazo) o
+    <span class="badge badge-ambigua">AMBIGUA</span> (no se puede decidir con la frase sola).
+  </div>
+
+  <h3>Distribución emocional general <button type="button" class="chip btn-escuchar" id="btn-escuchar-resumen" aria-label="Escuchar el resumen en voz alta">🔊 Escuchar resumen</button></h3>
+  {{ barras(dist) }}
+
+  <div class="banda-foto" role="presentation"></div>
+  <h3>Detalle por frase</h3>
+  <div class="tabla-scroll">
+    <table class="tabla">
+      <thead><tr><th>#</th><th>Frase completada</th><th>Área</th><th>Categoría</th><th>Razón</th><th>Tiempo</th></tr></thead>
+      <tbody>
+        {% for f in filas %}
+        <tr>
+          <td>{{ f.Numero if f.Numero != '' else loop.index }}</td>
+          <td class="celda-frase">{% if f.Enunciado %}<span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}{% else %}{{ f.Frase }}{% endif %}</td>
+          <td class="celda-area">{{ f.Area }}</td>
+          <td>{{ badge(f.Categoria) }}</td>
+          <td class="celda-razon">{{ f.Razon }}{% if f.Fuente == 'casos' %} <span class="fuente" title="Respuesta ya clasificada por los psicólogos del proyecto">psicólogos</span>{% endif %}</td>
+          <td>{% if f.Fuente == 'casos' %}—{% elif f.Duracion_s is not none %}{{ f.Duracion_s }} s{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if areas %}
+  <h3>Resultados por área del test <small class="meta">(15 áreas de la hoja de corrección SSCT, 4 enunciados cada una)</small></h3>
+  <div class="areas">
+    {% for a in areas if a.n %}
+    <div class="area" data-area="{{ a.romano }}">
+      <div class="area-cabecera">
+        {{ icono_area(a.romano) }}
+        <span class="area-romano">{{ a.romano }}</span>
+        <span class="area-nombre">{{ a.nombre }}</span>
+        <span class="area-resumen">
+          {% for d in a.dist if d.n %}<span class="badge badge-{{ d.categoria|lower }}">{{ d.n }}</span>{% endfor %}
+        </span>
+      </div>
+      <ul class="area-items">
+        {% for f in a.respuestas %}
+        <li><span class="item-num">{{ f.Numero }}.</span>
+            <span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}
+            {{ badge(f.Categoria) }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  {% set vacias = areas|rejectattr('n')|list %}
+  {% if vacias %}
+  <p class="meta areas-vacias">Sin respuestas en este modo:
+    {% for a in vacias %}{{ a.romano }} {{ a.nombre }}{{ ' · ' if not loop.last }}{% endfor %}.</p>
+  {% endif %}
+  {% endif %}
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  (function () {
+    var partes = [{% for d in dist %}{% if d.n %}'{{ d.n }} {{ 'positiva' if d.categoria == 'POSITIVA' else 'negativa' if d.categoria == 'NEGATIVA' else 'ambigua' }}{{ 's' if d.n != 1 }}'{{ ',' if not loop.last }}{% endif %}{% endfor %}];
+    var resumen = 'Resultados: {{ job.hechas }} frases analizadas. ' + partes.join(', ') + '.';
+    var b = document.getElementById('btn-escuchar-resumen');
+    if (b) b.addEventListener('click', function () { if (window.sacksHablar) window.sacksHablar(resumen, true); });
+    if (window.sacksVozActiva && window.sacksVozActiva()) setTimeout(function () { window.sacksHablar(resumen); }, 600);
+  })();
+</script>
+{% endblock %}

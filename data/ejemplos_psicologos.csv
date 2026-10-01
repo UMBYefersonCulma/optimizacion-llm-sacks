@@ -1,0 +1,3062 @@
+persona,Edad,Genero,Numero,Respuesta,Categoria
+1,21,Masculino,1,Juzga,POSITIVA
+1,21,Masculino,2,Nada sale bien,AMBIGUA
+1,21,Masculino,3,Tener un hermano,NEGATIVA
+1,21,Masculino,4,Ayudaría a los demás,POSITIVA
+1,21,Masculino,5,Prometedor,POSITIVA
+1,21,Masculino,6,Me generan angustia,NEGATIVA
+1,21,Masculino,7,No ser suficiente para mis seres queridos,NEGATIVA
+1,21,Masculino,9,Tenía menos responsabilidades,POSITIVA
+1,21,Masculino,10,"Es aquella que es sincera, fiel e incondicional",POSITIVA
+1,21,Masculino,11,Analizo su relación,AMBIGUA
+1,21,Masculino,12,Es unida,POSITIVA
+1,21,Masculino,13,Mis amigos,POSITIVA
+1,21,Masculino,14,Es única,POSITIVA
+1,21,Masculino,15,Me engañaron,NEGATIVA
+1,21,Masculino,16,Hubiera estado más presente,NEGATIVA
+1,21,Masculino,17,Ayudar a los demás,POSITIVA
+1,21,Masculino,18,Cumpliera mis sueños,POSITIVA
+1,21,Masculino,19,Estaría tranquila,POSITIVA
+1,21,Masculino,20,Ayudar a mis seres queridos,POSITIVA
+1,21,Masculino,21,Pensaban que era buen estudiante,POSITIVA
+1,21,Masculino,22,Fracasar,POSITIVA
+1,21,Masculino,23,El pescado,NEUTRA
+1,21,Masculino,24,Era más inmaduro,POSITIVA
+1,21,Masculino,25,Son despreocupados,AMBIGUA
+1,21,Masculino,26,Es cultural,POSITIVA
+1,21,Masculino,27,Una persona especial,POSITIVA
+1,21,Masculino,28,Me consideran un apoyo,POSITIVA
+1,21,Masculino,29,Nos llevamos bien,POSITIVA
+1,21,Masculino,30,Confiar en aquella persona,NEGATIVA
+1,21,Masculino,31,Estuviera más tranquilo,POSITIVA
+1,21,Masculino,32,Es mi apariencia física,NEGATIVA
+1,21,Masculino,33,Es ser millonario,POSITIVA
+1,21,Masculino,34,Se siente bien,POSITIVA
+1,21,Masculino,35,Tendré lo que he anhelado,POSITIVA
+1,21,Masculino,36,Lo saludo,POSITIVA
+1,21,Masculino,37,Fracasar,POSITIVA
+1,21,Masculino,38,Tiene mi apoyo,POSITIVA
+1,21,Masculino,39,Pensaría más antes de actuar,POSITIVA
+1,21,Masculino,40,Tienen prejuicios,NEGATIVA
+1,21,Masculino,41,Me protegería,POSITIVA
+1,21,Masculino,42,Se aman y apoyan,POSITIVA
+1,21,Masculino,43,Es cooperativa y responsable,POSITIVA
+1,21,Masculino,44,Darían todo por sus hijos,POSITIVA
+1,21,Masculino,45,No ayudar a mis padres,POSITIVA
+1,21,Masculino,46,Trabajador y responsable,POSITIVA
+1,21,Masculino,47,Intento volverla a mi favor,POSITIVA
+1,21,Masculino,48,Procuro que sean lo mejor posible,POSITIVA
+1,21,Masculino,49,Hacer felices a los que me rodean,POSITIVA
+1,21,Masculino,50,Me graduaré,POSITIVA
+1,21,Masculino,51,Son personas admirables,POSITIVA
+1,21,Masculino,52,Retroceder,NEGATIVA
+1,21,Masculino,53,Viven,AMBIGUA
+1,21,Masculino,54,Es un hotel en girardot,NEUTRA
+1,21,Masculino,55,Es su mentalidad,AMBIGUA
+1,21,Masculino,56,Es reservada y exclusiva,POSITIVA
+1,21,Masculino,57,Me enfermaba mucho,NEGATIVA
+1,21,Masculino,58,Obtiene buenos resultados,POSITIVA
+1,21,Masculino,59,A veces es muy rigida con su pensamiento,NEGATIVA
+1,21,Masculino,60,Es haberme sentido menos por ser yo,POSITIVA
+2,44,Masculino,1,mira,NEGATIVA
+2,44,Masculino,2,es solo un día,POSITIVA
+2,44,Masculino,3,camaro 69,POSITIVA
+2,44,Masculino,4,un automovil,NEUTRA
+2,44,Masculino,5,prometedor,POSITIVA
+2,44,Masculino,6,Director,NEUTRA
+2,44,Masculino,7,de que mi hijo se quede solo,NEGATIVA
+2,44,Masculino,9,jugaba,POSITIVA
+2,44,Masculino,10,Es crespa y sonriente,POSITIVA
+2,44,Masculino,11,tienen un relación,AMBIGUA
+2,44,Masculino,12,"es una familia normal, alegre",POSITIVA
+2,44,Masculino,13,las personas mas cercanas,POSITIVA
+2,44,Masculino,14,es espectacular,POSITIVA
+2,44,Masculino,15,que no pasé mi tesis,NEGATIVA
+2,44,Masculino,16,fuera mas alto,NEUTRA
+2,44,Masculino,17,la creatividad,POSITIVA
+2,44,Masculino,18,supera lo que me pasa en las relaciones,POSITIVA
+2,44,Masculino,19,pobrecitos,NEGATIVA
+2,44,Masculino,20,lo inesperado,AMBIGUA
+2,44,Masculino,21,eran horríbles,NEGATIVA
+2,44,Masculino,22,perder a mi familia,POSITIVA
+2,44,Masculino,23,ahuyama,NEUTRA
+2,44,Masculino,24,era joven,NEUTRA
+2,44,Masculino,25,son felices,POSITIVA
+2,44,Masculino,26,es un farsa,NEGATIVA
+2,44,Masculino,27,debería tratarme,AMBIGUA
+2,44,Masculino,28,son muy profesionales,POSITIVA
+2,44,Masculino,29,tenemos un relacion superficial,NEGATIVA
+2,44,Masculino,30,la primera carrera y no aprender a leer,AMBIGUA
+2,44,Masculino,31,no envejeciera,AMBIGUA
+2,44,Masculino,32,memoria,NEUTRA
+2,44,Masculino,33,es un camaro 69 acompañadao de varios carros,POSITIVA
+2,44,Masculino,34,estaria en dificultades,NEGATIVA
+2,44,Masculino,35,estare en la playa sonriendo,POSITIVA
+2,44,Masculino,36,lo saludo?,NEUTRA
+2,44,Masculino,37,a decir lo que pienso,POSITIVA
+2,44,Masculino,38,es la que sonrie y es sinsera,POSITIVA
+2,44,Masculino,39,practicaria un deporte,POSITIVA
+2,44,Masculino,40,somos diversos e interesantes,POSITIVA
+2,44,Masculino,41,espectacular,AMBIGUA
+2,44,Masculino,42,"son diversas, felices y tristes",POSITIVA
+2,44,Masculino,43,es apasionada,POSITIVA
+2,44,Masculino,44,"son lo mejor del mundo,",POSITIVA
+2,44,Masculino,45,no tener un propósito u horizonte,NEGATIVA
+2,44,Masculino,46,es muy buena persona,POSITIVA
+2,44,Masculino,47,me levantaré,POSITIVA
+2,44,Masculino,48,soy muy débil,NEGATIVA
+2,44,Masculino,49,que mi hijo y mi esposa sean felices,POSITIVA
+2,44,Masculino,50,tendre 50,NEUTRA
+2,44,Masculino,51,son sabias y apasionadas,POSITIVA
+2,44,Masculino,52,callar,NEGATIVA
+2,44,Masculino,53,viven sus vidas,AMBIGUA
+2,44,Masculino,54,es mi hermana,POSITIVA
+2,44,Masculino,55,la hipocresía y la mentira,NEUTRA
+2,44,Masculino,56,esta bien por un lado,AMBIGUA
+2,44,Masculino,57,era intenso y callado,NEGATIVA
+2,44,Masculino,58,"esta bien, creo",POSITIVA
+2,44,Masculino,59,es muy complicada,NEGATIVA
+2,44,Masculino,60,mentir a los que quiero,NEGATIVA
+3,20,Femenino,1,Comprende,NEGATIVA
+3,20,Femenino,2,Lloro y río,AMBIGUA
+3,20,Femenino,3,Felicidad y tranquilidad,NEGATIVA
+3,20,Femenino,4,De mi hermano sería muy feliz,NEGATIVA
+3,20,Femenino,5,Intrigante y tenebroso,NEGATIVA
+3,20,Femenino,6,Son increíbles,POSITIVA
+3,20,Femenino,7,Que me convierta en alguien sin un motivo,NEGATIVA
+3,20,Femenino,9,Me daba miedo la oscuridad,NEGATIVA
+3,20,Femenino,10,Es alguien que te hace sentir feliz y tranquilo,POSITIVA
+3,20,Femenino,11,Me hace sentir feliz,POSITIVA
+3,20,Femenino,12,Es increíble,POSITIVA
+3,20,Femenino,13,Mis amigos,POSITIVA
+3,20,Femenino,14,Es una mujer que no puedo definir,AMBIGUA
+3,20,Femenino,15,Vi a mi papá borracho,NEGATIVA
+3,20,Femenino,16,Me quisiera conocer más,NEGATIVA
+3,20,Femenino,17,Imaginar cosas extraordinarias,POSITIVA
+3,20,Femenino,18,Tuviera el control de todas las cosas en mi vida,NEGATIVA
+3,20,Femenino,19,Lo disfrutaría mucho,NEGATIVA
+3,20,Femenino,20,Dejar una huella en la vida de al menos una persona,POSITIVA
+3,20,Femenino,21,Eran increíbles,POSITIVA
+3,20,Femenino,22,Mi papá,NEGATIVA
+3,20,Femenino,23,No tener paz,POSITIVA
+3,20,Femenino,24,Era más extrovertida,NEGATIVA
+3,20,Femenino,25,Son un poco apresurados por la vida,POSITIVA
+3,20,Femenino,26,Es una decisión complicada,POSITIVA
+3,20,Femenino,27,Una chica miedosa,NEGATIVA
+3,20,Femenino,28,Les gusta como lo hago,POSITIVA
+3,20,Femenino,29,Somos muy unidas,POSITIVA
+3,20,Femenino,30,No arriesgarme,AMBIGUA
+3,20,Femenino,31,Me conociera más,NEGATIVA
+3,20,Femenino,32,Mi corazón,POSITIVA
+3,20,Femenino,33,Si lo digo no sería secreto,AMBIGUA
+3,20,Femenino,34,Dicen que soy una buena persona,POSITIVA
+3,20,Femenino,35,Reiré mucho más que hoy,AMBIGUA
+3,20,Femenino,36,Me da un poco de risa,AMBIGUA
+3,20,Femenino,37,Ser yo,POSITIVA
+3,20,Femenino,38,Es mi familia,POSITIVA
+3,20,Femenino,39,Me arriesgaría más,POSITIVA
+3,20,Femenino,40,Son intrigantes,AMBIGUA
+3,20,Femenino,41,Me daría un poco de vergüenza,NEGATIVA
+3,20,Femenino,42,Son diferentes a la mía,AMBIGUA
+3,20,Femenino,43,Le gusta hacer muchas preguntas,POSITIVA
+3,20,Femenino,44,Son seres llenos de amor,POSITIVA
+3,20,Femenino,45,No ser como los demás,NEGATIVA
+3,20,Femenino,46,Un poco distante,AMBIGUA
+3,20,Femenino,47,Me siento genial,NEGATIVA
+3,20,Femenino,48,Me siento raro,NEGATIVA
+3,20,Femenino,49,Ser feliz,AMBIGUA
+3,20,Femenino,50,Espero ser alguien admirable,POSITIVA
+3,20,Femenino,51,Me enseña bastante,POSITIVA
+3,20,Femenino,52,Quedarme quieta,NEGATIVA
+3,20,Femenino,53,Se preocupan por mi,POSITIVA
+3,20,Femenino,54,Es corriendo por la calle jugando,POSITIVA
+3,20,Femenino,55,Es que son apresurados,NEGATIVA
+3,20,Femenino,56,Inactiva,NEGATIVA
+3,20,Femenino,57,Era muy risueña,POSITIVA
+3,20,Femenino,58,Le gusta,POSITIVA
+3,20,Femenino,59,Es un poco mandona,AMBIGUA
+3,20,Femenino,60,Es no intentarlo,NEGATIVA
+4,20,Femenino,1,Regaña,AMBIGUA
+4,20,Femenino,2,Hablo con mi mamá,POSITIVA
+4,20,Femenino,3,Viajar,POSITIVA
+4,20,Femenino,4,Recompensaría a mis compañeros,POSITIVA
+4,20,Femenino,5,Intrigante,POSITIVA
+4,20,Femenino,6,Tienen poder,POSITIVA
+4,20,Femenino,7,Estar sola,NEGATIVA
+4,20,Femenino,9,Quería ser artista,POSITIVA
+4,20,Femenino,10,Es una mujer con aspiraciones,POSITIVA
+4,20,Femenino,11,Visualizo un equipo,POSITIVA
+4,20,Femenino,12,Me apoya mucho,POSITIVA
+4,20,Femenino,13,Los hombres,AMBIGUA
+4,20,Femenino,14,Es comprensiva,POSITIVA
+4,20,Femenino,15,Le dije algo hiriente a un amigo,NEGATIVA
+4,20,Femenino,16,"Descansara más, estaría mejor de salud",POSITIVA
+4,20,Femenino,17,Socializar,POSITIVA
+4,20,Femenino,18,Mis padres trabajaran menos,NEGATIVA
+4,20,Femenino,19,Valoraría su opinión,POSITIVA
+4,20,Femenino,20,Ser exitosa y feliz,POSITIVA
+4,20,Femenino,21,Reconocían mi esfuerzo,POSITIVA
+4,20,Femenino,22,Estar sola,POSITIVA
+4,20,Femenino,23,Que las personas mientan,NEGATIVA
+4,20,Femenino,24,Era más activa,NEGATIVA
+4,20,Femenino,25,Son reservados,POSITIVA
+4,20,Femenino,26,Debe ser,NEUTRA
+4,20,Femenino,27,Una persona mayor,NEGATIVA
+4,20,Femenino,28,Les gusta como lideró,POSITIVA
+4,20,Femenino,29,Somos amigas,POSITIVA
+4,20,Femenino,30,No haber,NEUTRA
+4,20,Femenino,31,Confiara más en el,POSITIVA
+4,20,Femenino,32,Es mi familia,POSITIVA
+4,20,Femenino,33,Es ser reconocida,POSITIVA
+4,20,Femenino,34,Les gusta trabajar conmigo,POSITIVA
+4,20,Femenino,35,Retribuiré todo el esfuerzo a mis padres,POSITIVA
+4,20,Femenino,36,Intento entablar una charla,POSITIVA
+4,20,Femenino,37,Estar sola,POSITIVA
+4,20,Femenino,38,Es sincera,POSITIVA
+4,20,Femenino,39,Aprovecharía más mis actividades extra curriculares,POSITIVA
+4,20,Femenino,40,Son envidiosas,NEGATIVA
+4,20,Femenino,41,Sería con protección y consentimiento,POSITIVA
+4,20,Femenino,42,Son disfuncionales,NEGATIVA
+4,20,Femenino,43,Propone ideas nuevas,POSITIVA
+4,20,Femenino,44,Son amorosas,POSITIVA
+4,20,Femenino,45,No estar entre las mejores calificaciones,NEGATIVA
+4,20,Femenino,46,Resiliente,POSITIVA
+4,20,Femenino,47,Hablo con mi familia,POSITIVA
+4,20,Femenino,48,Soy asertiva,POSITIVA
+4,20,Femenino,49,Hacer lo que me gusta,POSITIVA
+4,20,Femenino,50,Espero viajar con mi familia,NEUTRA
+4,20,Femenino,51,Los respeto,POSITIVA
+4,20,Femenino,52,Alejarme,NEGATIVA
+4,20,Femenino,53,Preguntan por mi,POSITIVA
+4,20,Femenino,54,"Es estar en el pueblo con mi familia compartiendo una buena cena, intercambiando regalos en un ambiente muy acogedor y agradable",POSITIVA
+4,20,Femenino,55,Es su pensamiento lógico,AMBIGUA
+4,20,Femenino,56,Es responsable,POSITIVA
+4,20,Femenino,57,Jugaba a ser actriz o presentadora,POSITIVA
+4,20,Femenino,58,Queda contenta con los resultados,POSITIVA
+4,20,Femenino,59,Ella no reconoce la excelente persona que es,POSITIVA
+4,20,Femenino,60,Es hacer a alguien a un lado,NEGATIVA
+5,23,Femenino,1,Presta atención,NEGATIVA
+5,23,Femenino,2,me enojo,NEGATIVA
+5,23,Femenino,3,una casa propia,POSITIVA
+5,23,Femenino,4,"un capital grande, trabajaría para multiplicarlo.",POSITIVA
+5,23,Femenino,5,prometedor,POSITIVA
+5,23,Femenino,6,me quieren,POSITIVA
+5,23,Femenino,7,ser mamá,AMBIGUA
+5,23,Femenino,9,se burlaban de mis labios,NEGATIVA
+5,23,Femenino,10,"Trabajador, paciente, amoroso, consentidor, respetuoso, responsable",POSITIVA
+5,23,Femenino,11,depende del contexto me parecen tiernos,POSITIVA
+5,23,Femenino,12,es egoista,NEGATIVA
+5,23,Femenino,13,mis superiores,POSITIVA
+5,23,Femenino,14,es responsable,POSITIVA
+5,23,Femenino,15,mi papá le pegaba a mi mamá,NEGATIVA
+5,23,Femenino,16,"no hubiese muerto, le daría una lección.",NEGATIVA
+5,23,Femenino,17,estudiar,POSITIVA
+5,23,Femenino,18,tuviese un poco más de dinero.,POSITIVA
+5,23,Femenino,19,sería bastante estricta.,NEGATIVA
+5,23,Femenino,20,ser una excelente profesional,POSITIVA
+5,23,Femenino,21,me querían.,POSITIVA
+5,23,Femenino,22,envejecer.,POSITIVA
+5,23,Femenino,23,consumir bebidas alcohólicas.,POSITIVA
+5,23,Femenino,24,era muy explosiva.,POSITIVA
+5,23,Femenino,25,no saben administrar el tiempo.,NEGATIVA
+5,23,Femenino,26,es para mi.,POSITIVA
+5,23,Femenino,27,la lider.,AMBIGUA
+5,23,Femenino,28,me respetan.,POSITIVA
+5,23,Femenino,29,hablamos.,POSITIVA
+5,23,Femenino,30,No haber administrado bien mis recursos una vez inicié a trabajar.,POSITIVA
+5,23,Femenino,31,no hubiese muerto,AMBIGUA
+5,23,Femenino,32,los hombres,AMBIGUA
+5,23,Femenino,33,ser psiquiatra y la dueña de un centro de psiquiatría,POSITIVA
+5,23,Femenino,34,aun nadie trabaja para mi.,NEUTRA
+5,23,Femenino,35,seré psiquiatra.,POSITIVA
+5,23,Femenino,36,sigo haciendo mi trabajo,POSITIVA
+5,23,Femenino,37,envejecer,AMBIGUA
+5,23,Femenino,38,son los organizados.,POSITIVA
+5,23,Femenino,39,aun soy joven.,NEUTRA
+5,23,Femenino,40,somos muy risueñas,POSITIVA
+5,23,Femenino,41,me protegería.,POSITIVA
+5,23,Femenino,42,son disfuncionales,NEGATIVA
+5,23,Femenino,43,es organizada.,POSITIVA
+5,23,Femenino,44,son amorosas,POSITIVA
+5,23,Femenino,45,nada.,NEUTRA
+5,23,Femenino,46,un desconsiderado.,NEGATIVA
+5,23,Femenino,47,me enojo,AMBIGUA
+5,23,Femenino,48,pido el favor.,POSITIVA
+5,23,Femenino,49,ser una excelente profesional,POSITIVA
+5,23,Femenino,50,espero tener mi propio negocio,POSITIVA
+5,23,Femenino,51,me respetan.,POSITIVA
+5,23,Femenino,52,huir.,NEGATIVA
+5,23,Femenino,53,la verdad no me interesa.,NEGATIVA
+5,23,Femenino,54,es cuando ganaba los primeros puestos en mi colegio.,POSITIVA
+5,23,Femenino,55,que somos muy emocionales.,NEGATIVA
+5,23,Femenino,56,No es muy activa,AMBIGUA
+5,23,Femenino,57,quería tener una buena casa,NEGATIVA
+5,23,Femenino,58,me cuenta sus asuntos.,POSITIVA
+5,23,Femenino,59,es un poco criticona.,NEGATIVA
+5,23,Femenino,60,haberme fijado en un vividor.,NEGATIVA
+6,39,Femenino,1,Me ayudó,NEGATIVA
+6,39,Femenino,2,Me acuerdo que es mi culpa,NEGATIVA
+6,39,Femenino,3,Tener un establo,POSITIVA
+6,39,Femenino,4,Sería todo diferente,NEUTRA
+6,39,Femenino,5,Me preocupa demasiado,NEGATIVA
+6,39,Femenino,6,Son responsables,POSITIVA
+6,39,Femenino,7,Está soledad que tengo,NEGATIVA
+6,39,Femenino,9,Sufrí mucho,NEGATIVA
+6,39,Femenino,10,Tener estabilidad económica,POSITIVA
+6,39,Femenino,11,Me da envidia,NEGATIVA
+6,39,Femenino,12,Es un desastre,NEGATIVA
+6,39,Femenino,13,Algunos compañeros,POSITIVA
+6,39,Femenino,14,En cierto momento sentí q no era de su agrado,NEGATIVA
+6,39,Femenino,15,Abusaron de mi,NEGATIVA
+6,39,Femenino,16,Fuera más paciente,NEGATIVA
+6,39,Femenino,17,Las artesanías,POSITIVA
+6,39,Femenino,18,Unas de mis hijas no me odiara tanto,NEGATIVA
+6,39,Femenino,19,Sería agradable,POSITIVA
+6,39,Femenino,20,Estar bien  física y emocionalmente,POSITIVA
+6,39,Femenino,21,Fueron recuerdos agradables,POSITIVA
+6,39,Femenino,22,Las agujas,NEGATIVA
+6,39,Femenino,23,Que opinen sobre mi vida o la crianza de mis hijos,POSITIVA
+6,39,Femenino,24,Era feliz tenía estabilidad económica,NEGATIVA
+6,39,Femenino,25,No piensan para actuar,NEGATIVA
+6,39,Femenino,26,Es bonita,POSITIVA
+6,39,Femenino,27,Normal,NEUTRA
+6,39,Femenino,28,Con los que trabajé fueron agradables conmigo,POSITIVA
+6,39,Femenino,29,Estamos en buenos términos,POSITIVA
+6,39,Femenino,30,Dejar a mi hija en cuidado de alguien mas,NEGATIVA
+6,39,Femenino,31,No fuera tan malgeniado,NEGATIVA
+6,39,Femenino,32,Mis hijos,POSITIVA
+6,39,Femenino,33,No tengo ambición secreta,NEUTRA
+6,39,Femenino,34,Nadie trabaja para mi,NEUTRA
+6,39,Femenino,35,Estaré bien,AMBIGUA
+6,39,Femenino,36,Cuando veía a mi ex jefe en ocasiones me daba nervios,NEGATIVA
+6,39,Femenino,37,Mi soledad,POSITIVA
+6,39,Femenino,38,Es la q no se mete y no opina de mi vida,AMBIGUA
+6,39,Femenino,39,No cometería tantos errores que cometí,AMBIGUA
+6,39,Femenino,40,Somos posesivas,NEGATIVA
+6,39,Femenino,41,Lo disfrutaría como si fuera la última vez,AMBIGUA
+6,39,Femenino,42,Son estables,POSITIVA
+6,39,Femenino,43,No hay que mandarlas,AMBIGUA
+6,39,Femenino,44,Somos sobreprotectoras,NEGATIVA
+6,39,Femenino,45,Que mis padres me mandarán lejos,AMBIGUA
+6,39,Femenino,46,Ermitaño,NEUTRA
+6,39,Femenino,47,Siento q nunca tengo suerte,AMBIGUA
+6,39,Femenino,48,Deseo que hagan todo de inmediato,AMBIGUA
+6,39,Femenino,49,Volver a tener un hogar,AMBIGUA
+6,39,Femenino,50,Tendré casa propia,POSITIVA
+6,39,Femenino,51,Merecen respeto,POSITIVA
+6,39,Femenino,52,No hablar con nadie,NEGATIVA
+6,39,Femenino,53,Los pocos amigos que tengo se preocupan por mi,POSITIVA
+6,39,Femenino,54,Cuando un profesor me jalaba las orejas,AMBIGUA
+6,39,Femenino,55,Que traten a las mujeres de locas cuando ellos la embarran,NEGATIVA
+6,39,Femenino,56,Es inestable,NEGATIVA
+6,39,Femenino,57,Viví momentos muy desagradables,NEGATIVA
+6,39,Femenino,58,Es chismosa,NEGATIVA
+6,39,Femenino,59,Siento que a veces no encajamos,NEGATIVA
+6,39,Femenino,60,Tomar decisiones precipitadas,NEGATIVA
+7,24,Femenino,1,Trata mal,POSITIVA
+7,24,Femenino,2,Trato de tener calma,POSITIVA
+7,24,Femenino,3,Tener un buen amor,NEGATIVA
+7,24,Femenino,4,Estaria bien,AMBIGUA
+7,24,Femenino,5,Incierto,AMBIGUA
+7,24,Femenino,6,Las admiro,POSITIVA
+7,24,Femenino,7,La vida,NEGATIVA
+7,24,Femenino,9,Me encantaba jugar,POSITIVA
+7,24,Femenino,10,"Que sea detallista, monogamico, que haga ejercicio",POSITIVA
+7,24,Femenino,11,Que bien,POSITIVA
+7,24,Femenino,12,Es muy linda,POSITIVA
+7,24,Femenino,13,No se,NEUTRA
+7,24,Femenino,14,Es muy buena con migo,POSITIVA
+7,24,Femenino,15,Conoci a mi ex,NEGATIVA
+7,24,Femenino,16,No fuera alcohólico,NEGATIVA
+7,24,Femenino,17,Todo,AMBIGUA
+7,24,Femenino,18,Tuviera dinero,POSITIVA
+7,24,Femenino,19,Las trataria bien,POSITIVA
+7,24,Femenino,20,Tener paz y plata,POSITIVA
+7,24,Femenino,21,Fueron buenos,POSITIVA
+7,24,Femenino,22,Fracasar,POSITIVA
+7,24,Femenino,23,La gente,NEGATIVA
+7,24,Femenino,24,Solia ser un persona muy curiosa,AMBIGUA
+7,24,Femenino,25,Estan terribles,NEGATIVA
+7,24,Femenino,26,Si creo,NEUTRA
+7,24,Femenino,27,Una buena niña,AMBIGUA
+7,24,Femenino,28,Bien,NEUTRA
+7,24,Femenino,29,Somos muy cercanas,POSITIVA
+7,24,Femenino,30,Haberme enmorado por segunda vez,NEGATIVA
+7,24,Femenino,31,Estubiera mejor económicamente,POSITIVA
+7,24,Femenino,32,El temor,POSITIVA
+7,24,Femenino,33,Ser rica,POSITIVA
+7,24,Femenino,34,No tengo,NEUTRA
+7,24,Femenino,35,Sere la mejor version de mi,POSITIVA
+7,24,Femenino,36,Nada,NEUTRA
+7,24,Femenino,37,Enfrentar los miedos,POSITIVA
+7,24,Femenino,38,Es la que es autentica,POSITIVA
+7,24,Femenino,39,Estudiaria mas,POSITIVA
+7,24,Femenino,40,Son unas duras,POSITIVA
+7,24,Femenino,41,Me siento incomoda,NEGATIVA
+7,24,Femenino,42,Son unidas,POSITIVA
+7,24,Femenino,43,Hace bien su trabajo,POSITIVA
+7,24,Femenino,44,Les toca duro,NEUTRA
+7,24,Femenino,45,Ser mujer,NEGATIVA
+7,24,Femenino,46,Bueno,POSITIVA
+7,24,Femenino,47,Me pongo a llorar,AMBIGUA
+7,24,Femenino,48,Soy buena,POSITIVA
+7,24,Femenino,49,Tener plata para ayudar a mi familia,POSITIVA
+7,24,Femenino,50,Tendre lo que simpre eh soñado,AMBIGUA
+7,24,Femenino,51,Bien,AMBIGUA
+7,24,Femenino,52,Estropear cuando me esta saliendo las cosas bien,NEGATIVA
+7,24,Femenino,53,Nada,NEUTRA
+7,24,Femenino,54,Jugar en la casa de mi abuela,POSITIVA
+7,24,Femenino,55,Que no se bañen,NEGATIVA
+7,24,Femenino,56,Es terrible,NEGATIVA
+7,24,Femenino,57,Era feliz,POSITIVA
+7,24,Femenino,58,Es bien,POSITIVA
+7,24,Femenino,59,Se enoja conmigo con facilidad,NEGATIVA
+7,24,Femenino,60,Es sabotear las cosas cuándo me estan saliendo bien,NEGATIVA
+8,18,Femenino,1,Habla de forma altanera,POSITIVA
+8,18,Femenino,2,Siento frustración y estrés,NEGATIVA
+8,18,Femenino,3,Ser alguien destacada por sus habilidades,NEGATIVA
+8,18,Femenino,4,No sería tan agobiante,NEGATIVA
+8,18,Femenino,5,Incierto,AMBIGUA
+8,18,Femenino,6,Me generan inquietud,NEGATIVA
+8,18,Femenino,7,No sentirme amada,NEGATIVA
+8,18,Femenino,9,Quería ser una mujer influyente,POSITIVA
+8,18,Femenino,10,Responsable afectivamente y respetuoso,POSITIVA
+8,18,Femenino,11,Me recuerda a mi pareja,NEGATIVA
+8,18,Femenino,12,Es un poco estresante,AMBIGUA
+8,18,Femenino,13,Alguien que sepa escuchar y entender,POSITIVA
+8,18,Femenino,14,Se deja llevar por lo que dicen sus hermanas,NEGATIVA
+8,18,Femenino,15,Familiares se aprovecharon de mi inocencia y niñez,NEGATIVA
+8,18,Femenino,16,Trabajara menos y se cuidara más,POSITIVA
+8,18,Femenino,17,Designar actividades en un grupo,POSITIVA
+8,18,Femenino,18,Controlara mis emociones,POSITIVA
+8,18,Femenino,19,Exigiría pero tendría en cuenta sus solicitudes,POSITIVA
+8,18,Femenino,20,Ser alguien relevante para mí y mis papás,POSITIVA
+8,18,Femenino,21,Solían llevarse bien conmigo,POSITIVA
+8,18,Femenino,22,Ser rechazada,POSITIVA
+8,18,Femenino,23,Repetir algo que he mencionado previamente y me genera dolor,NEGATIVA
+8,18,Femenino,24,Lloraba menos,NEGATIVA
+8,18,Femenino,25,"Están cayendo en ruinas mentales, solo piensan en modas impuestas y no valoran las relaciones interpersonales",POSITIVA
+8,18,Femenino,26,"Requiere mucho compromiso, responsabilidad y creatividad",POSITIVA
+8,18,Femenino,27,Alguien que no puede valer por sí sola,NEGATIVA
+8,18,Femenino,28,Me estresan,NEGATIVA
+8,18,Femenino,29,Somos parecidas,POSITIVA
+8,18,Femenino,30,Permitir que mis emociones salieran con tanta libertad,NEGATIVA
+8,18,Femenino,31,Cuidara su salud y trabajara menos,POSITIVA
+8,18,Femenino,32,Mis seres queridos,POSITIVA
+8,18,Femenino,33,Ser alguien con muchos conocimientos y reducir considerablemente mi nivel de ignorancia,POSITIVA
+8,18,Femenino,34,Suele sentir que soy exigente,NEGATIVA
+8,18,Femenino,35,Podré depender de mí,POSITIVA
+8,18,Femenino,36,Sobre pienso,NEGATIVA
+8,18,Femenino,37,Experimentar cosas nuevas,POSITIVA
+8,18,Femenino,38,Me habla con transparencia y no se creen superiores,POSITIVA
+8,18,Femenino,39,Cuidaría mi cuerpo y mente,POSITIVA
+8,18,Femenino,40,Se sienten incomprendidas,POSITIVA
+8,18,Femenino,41,No permitiría acciones bruscas o que no me agraden,POSITIVA
+8,18,Femenino,42,Tienen problemas por dinero,NEUTRA
+8,18,Femenino,43,Se esfuerza y exige en sus actividades,POSITIVA
+8,18,Femenino,44,No sé informan sobre cómo tratar correctamente a sus hijos según la edad,NEGATIVA
+8,18,Femenino,45,Ser un gasto considerable para mis papás,NEGATIVA
+8,18,Femenino,46,Trabajador,POSITIVA
+8,18,Femenino,47,Trato de mantenerme positiva,POSITIVA
+8,18,Femenino,48,Creo que estoy diciendo lo correcto,POSITIVA
+8,18,Femenino,49,Estabilidad emocional,AMBIGUA
+8,18,Femenino,50,Voy a ser independiente y crecer personalmente,POSITIVA
+8,18,Femenino,51,Tienen habilidades y características que me sirven de aprendizaje,POSITIVA
+8,18,Femenino,52,Esconderme,NEGATIVA
+8,18,Femenino,53,Se sienten relajados,NEGATIVA
+8,18,Femenino,54,Es cuando tenía tres años y fuimos a San Andrés con mis papás,POSITIVA
+8,18,Femenino,55,Su falta de análisis y comprensión respecto a los sentimientos de una mujer y la cantidad de situaciones que pueden presentarse por una decisión,NEGATIVA
+8,18,Femenino,56,Es inestable,NEGATIVA
+8,18,Femenino,57,La vida era más tranquila,POSITIVA
+8,18,Femenino,58,Se siente exigida,AMBIGUA
+8,18,Femenino,59,Debe trabajar su confianza en mi,NEGATIVA
+8,18,Femenino,60,Hacerle bullying a una niña por su físico,NEGATIVA
+9,24,Masculino,1,ve jugar el deporte que amo.,NEGATIVA
+9,24,Masculino,2,Oro,POSITIVA
+9,24,Masculino,3,que fueran a verme jugar.,NEGATIVA
+9,24,Masculino,4,Haría lo que esté a mi alcance.,POSITIVA
+9,24,Masculino,5,un presente vívido.,AMBIGUA
+9,24,Masculino,6,me enseñan todos los días.,POSITIVA
+9,24,Masculino,7,las arañas y perder a la persona que amo.,NEGATIVA
+9,24,Masculino,9,soñaba con ser jugador de baloncesto profesional.,POSITIVA
+9,24,Masculino,10,Es que sea adventista del séptimo día y me ame.,POSITIVA
+9,24,Masculino,11,me da alegria que aún se conserve la naturalidad.,NEGATIVA
+9,24,Masculino,12,es maravillosa.,POSITIVA
+9,24,Masculino,13,"quien no sepa nada, pero esté dispuesta a aprender.",NEGATIVA
+9,24,Masculino,14,es única en seis cientos billones.,POSITIVA
+9,24,Masculino,15,me frustré en un partido.,NEGATIVA
+9,24,Masculino,16,me viera como lo intento.,NEGATIVA
+9,24,Masculino,17,Liderar.,POSITIVA
+9,24,Masculino,18,viviera sin miedo.,NEGATIVA
+9,24,Masculino,19,Haría lo que fuera por explotar su potencial.,POSITIVA
+9,24,Masculino,20,Ser mejor.,POSITIVA
+9,24,Masculino,21,Sacaban lo mejor de mi.,POSITIVA
+9,24,Masculino,22,No formar una familia.,POSITIVA
+9,24,Masculino,23,Tener miedo.,POSITIVA
+9,24,Masculino,24,Me arriesgaría más.,NEGATIVA
+9,24,Masculino,25,Deberían vivir actuando aún con miedo.,NEGATIVA
+9,24,Masculino,26,Es un reto maravilloso.,POSITIVA
+9,24,Masculino,27,Debe.,AMBIGUA
+9,24,Masculino,28,Son agradables.,POSITIVA
+9,24,Masculino,29,Aprendemos el uno del otro.,POSITIVA
+9,24,Masculino,30,No actuar por miedo.,NEGATIVA
+9,24,Masculino,31,Fuera a mis partidos de pequeño.,NEGATIVA
+9,24,Masculino,32,Tener miedo.,POSITIVA
+9,24,Masculino,33,Amar sin más,NEUTRA
+9,24,Masculino,34,Es mejor cada día.,POSITIVA
+9,24,Masculino,35,Seré mejor.,POSITIVA
+9,24,Masculino,36,Me da tranquilidad.,POSITIVA
+9,24,Masculino,37,Atreverme.,POSITIVA
+9,24,Masculino,38,Me hace ver mis errores.,POSITIVA
+9,24,Masculino,39,Haría lo mismo.,AMBIGUA
+9,24,Masculino,40,Son personas queriendo superarse.,POSITIVA
+9,24,Masculino,41,Las disfrutaría como si fueran la última o quizás la primera.,AMBIGUA
+9,24,Masculino,42,Son agradables.,POSITIVA
+9,24,Masculino,43,Se esfuerza por mejorar.,POSITIVA
+9,24,Masculino,44,Deberían aprender a confiar en Dios.,NEGATIVA
+9,24,Masculino,45,Lo que no puedo controlar.,AMBIGUA
+9,24,Masculino,46,Una gran persona.,POSITIVA
+9,24,Masculino,47,Oro para que no dependa de ella sino de Dios.,POSITIVA
+9,24,Masculino,48,Soy amable.,POSITIVA
+9,24,Masculino,49,Ser feliz y predicar el evangelio.,POSITIVA
+9,24,Masculino,50,Seré exitoso con la mujer que amo.,POSITIVA
+9,24,Masculino,51,Solo son personas que fueron primiparos igual que yo.,AMBIGUA
+9,24,Masculino,52,Desistir a continuar.,NEGATIVA
+9,24,Masculino,53,Me ayudan a estar mejor.,POSITIVA
+9,24,Masculino,54,Cuando me caí de una mesa.,NEUTRA
+9,24,Masculino,55,Que se menosprecien.,NEGATIVA
+9,24,Masculino,56,Es perfecta.,NEGATIVA
+9,24,Masculino,57,Me encantaba salir a jugar.,POSITIVA
+9,24,Masculino,58,Es muy paciente.,AMBIGUA
+9,24,Masculino,59,A veces habla muy fuerte.,AMBIGUA
+9,24,Masculino,60,Es creer que nadie me ve.,AMBIGUA
+10,25,Femenino,1,Me falla,POSITIVA
+10,25,Femenino,2,Trato de buscar la raíz del problema,POSITIVA
+10,25,Femenino,3,Ser feliz,NEGATIVA
+10,25,Femenino,4,Trataría a todos con respeto,POSITIVA
+10,25,Femenino,5,Angustiante,NEGATIVA
+10,25,Femenino,6,Pocas veces son empáticas,NEGATIVA
+10,25,Femenino,7,El futuro y no cumplir todas mis metas,NEGATIVA
+10,25,Femenino,9,Me divertía,POSITIVA
+10,25,Femenino,10,Alguien que me apoye y que si me estoy equivocando me corrija desde el amor,POSITIVA
+10,25,Femenino,11,Siento extraño,NEGATIVA
+10,25,Femenino,12,Es lo mejor que me ha pasado,POSITIVA
+10,25,Femenino,13,Con mis compañeras,POSITIVA
+10,25,Femenino,14,Es amorosa,POSITIVA
+10,25,Femenino,15,Me hicieron sentir menos,NEGATIVA
+10,25,Femenino,16,Se hubiera esforzado un poco más,NEGATIVA
+10,25,Femenino,17,"La organización, la creatividad",POSITIVA
+10,25,Femenino,18,Pudiera ser 100% independiente,NEGATIVA
+10,25,Femenino,19,Nunca los haría sentir menos,POSITIVA
+10,25,Femenino,20,Ser muy feliz,POSITIVA
+10,25,Femenino,21,Me subestimaban,NEGATIVA
+10,25,Femenino,22,El futuro,POSITIVA
+10,25,Femenino,23,Las injusticias,POSITIVA
+10,25,Femenino,24,Era insegura,POSITIVA
+10,25,Femenino,25,Son poco luchadores,AMBIGUA
+10,25,Femenino,26,Es complicada,AMBIGUA
+10,25,Femenino,27,Un ser único,POSITIVA
+10,25,Femenino,28,Son fortalezas,POSITIVA
+10,25,Femenino,29,Somos muy Unidas,POSITIVA
+10,25,Femenino,30,Confiar en los demás,NEGATIVA
+10,25,Femenino,31,Siempre estuviera conmigo,AMBIGUA
+10,25,Femenino,32,Mi gran empatía,POSITIVA
+10,25,Femenino,33,Tener mucho dinero,POSITIVA
+10,25,Femenino,34,Es amable,POSITIVA
+10,25,Femenino,35,Seré muy feliz,AMBIGUA
+10,25,Femenino,36,Siento confianza,POSITIVA
+10,25,Femenino,37,Que las cosas salgan mal,POSITIVA
+10,25,Femenino,38,Es la sincera,POSITIVA
+10,25,Femenino,39,Disfrutaría más,POSITIVA
+10,25,Femenino,40,No cumplen su rol,NEGATIVA
+10,25,Femenino,41,Siempre me cuidaría,POSITIVA
+10,25,Femenino,42,Son unidas,POSITIVA
+10,25,Femenino,43,Nunca se tiende,NEUTRA
+10,25,Femenino,44,Son amorosas,POSITIVA
+10,25,Femenino,45,No encajar,NEGATIVA
+10,25,Femenino,46,Amoroso,POSITIVA
+10,25,Femenino,47,Me alegro,NEGATIVA
+10,25,Femenino,48,Me siento mal,NEGATIVA
+10,25,Femenino,49,Ser feliz,AMBIGUA
+10,25,Femenino,50,Quiero cumplir mis objetivos y ser muy feliz,POSITIVA
+10,25,Femenino,51,Es narcisista,NEGATIVA
+10,25,Femenino,52,Huir de lugares,NEGATIVA
+10,25,Femenino,53,Siempre hablan cosas buenas de mi,POSITIVA
+10,25,Femenino,54,Jugar con mis amigos,POSITIVA
+10,25,Femenino,55,Su poca capacidad de resiliencia,NEGATIVA
+10,25,Femenino,56,Es sagrada,POSITIVA
+10,25,Femenino,57,Era muy feliz,POSITIVA
+10,25,Femenino,58,Es autoritaria,NEGATIVA
+10,25,Femenino,59,Quisiera que pensara más en ella,POSITIVA
+10,25,Femenino,60,Dejar que me repitan muchas veces que ahí no es mi lugar,POSITIVA
+11,39,Femenino,1,Consiente,NEGATIVA
+11,39,Femenino,2,No creo en mala suerte,NEUTRA
+11,39,Femenino,3,Casarme,NEGATIVA
+11,39,Femenino,4,De una empresa,NEUTRA
+11,39,Femenino,5,Incierto,AMBIGUA
+11,39,Femenino,6,"Las veo igual a mí, no tengo prejuicios",POSITIVA
+11,39,Femenino,7,Quedarme solterona,NEGATIVA
+11,39,Femenino,9,Me gustaba bailar,POSITIVA
+11,39,Femenino,10,Cristo Jesús,NEUTRA
+11,39,Femenino,11,Me recuerda la creación perfecta,AMBIGUA
+11,39,Femenino,12,Es perfecta,NEGATIVA
+11,39,Femenino,13,Todos,POSITIVA
+11,39,Femenino,14,Es mi amor,POSITIVA
+11,39,Femenino,15,Fui ultrajada,NEGATIVA
+11,39,Femenino,16,Viviera,NEGATIVA
+11,39,Femenino,17,Seguir creciendo en espíritu y conocimiento,POSITIVA
+11,39,Femenino,18,Cristo volviera,NEGATIVA
+11,39,Femenino,19,Serían bien instruidos,POSITIVA
+11,39,Femenino,20,Ir al cielo,POSITIVA
+11,39,Femenino,21,Eran muy buenos instructores,POSITIVA
+11,39,Femenino,22,La oscuridad,POSITIVA
+11,39,Femenino,23,Que me juzguen sin conocerme,POSITIVA
+11,39,Femenino,24,Lloraba mucho,POSITIVA
+11,39,Femenino,25,Deben conocer de Cristo,AMBIGUA
+11,39,Femenino,26,Es la vida que creo Dios para nosotros,AMBIGUA
+11,39,Femenino,27,Una reina,POSITIVA
+11,39,Femenino,28,Son excelentes personas,POSITIVA
+11,39,Femenino,29,Éramos las mejores amigas,POSITIVA
+11,39,Femenino,30,Idealizar a una persona,NEGATIVA
+11,39,Femenino,31,Estuviera vivo,AMBIGUA
+11,39,Femenino,32,La comida casera,POSITIVA
+11,39,Femenino,33,Viajar por el mundo,POSITIVA
+11,39,Femenino,34,Es feliz,POSITIVA
+11,39,Femenino,35,Seré Gerente,POSITIVA
+11,39,Femenino,36,me alegro,POSITIVA
+11,39,Femenino,37,Ser obesa,POSITIVA
+11,39,Femenino,38,La gente que sonrie,POSITIVA
+11,39,Femenino,39,No idealizaria,POSITIVA
+11,39,Femenino,40,Se necesitan,POSITIVA
+11,39,Femenino,41,Con mi esposo,AMBIGUA
+11,39,Femenino,42,Son originales,POSITIVA
+11,39,Femenino,43,Sonrie,POSITIVA
+11,39,Femenino,44,Son luchadoras,POSITIVA
+11,39,Femenino,45,De ser bajita,NEGATIVA
+11,39,Femenino,46,Mi ayudador,POSITIVA
+11,39,Femenino,47,No creo en la suerte,NEUTRA
+11,39,Femenino,48,Soy escuchada,POSITIVA
+11,39,Femenino,49,Mi felicidad y la de mi familia,POSITIVA
+11,39,Femenino,50,Volveré a mí casa,AMBIGUA
+11,39,Femenino,51,Son los adultos mayores,AMBIGUA
+11,39,Femenino,52,Esforzarme más,POSITIVA
+11,39,Femenino,53,Me buscan,POSITIVA
+11,39,Femenino,54,Salir de viaje con mi mamá,POSITIVA
+11,39,Femenino,55,La falta de palabra,NEGATIVA
+11,39,Femenino,56,Tranquila y feliz,POSITIVA
+11,39,Femenino,57,Me gustaba bailar,POSITIVA
+11,39,Femenino,58,Sonrie y es Feliz,POSITIVA
+11,39,Femenino,59,No hay peros la amo...,POSITIVA
+11,39,Femenino,60,Pecar contra DIOS.,NEGATIVA
+12,26,Masculino,1,ignora,POSITIVA
+12,26,Masculino,2,suelo estresarme,NEGATIVA
+12,26,Masculino,3,aprovechar mas el tiempo,NEGATIVA
+12,26,Masculino,4,haría siempre lo mejor,POSITIVA
+12,26,Masculino,5,determinante en base a las decisiones del presente,AMBIGUA
+12,26,Masculino,6,son mis maestros,POSITIVA
+12,26,Masculino,7,no ser profesional,NEGATIVA
+12,26,Masculino,9,"era muy independiente, y envidiaba todo",NEGATIVA
+12,26,Masculino,10,"Es alguien que desee progresar, iniciativa, determinacion que comprenda el valor de tiempo.",POSITIVA
+12,26,Masculino,11,pienso en todo el proceso de adaptacion personal y cambios interno para beneficio de ambos,POSITIVA
+12,26,Masculino,12,"es invidualista, pero tambien son un gran apoyo en ciertos momentos",POSITIVA
+12,26,Masculino,13,el tipo que sea administrativo y requiere mas análisis,NEUTRA
+12,26,Masculino,14,es alguien sumamente fuerte e independiente emocionalmente,POSITIVA
+12,26,Masculino,15,agredí brutalmente a mi primo,NEGATIVA
+12,26,Masculino,16,"tuviese trabajo, estuviese mas tranquilo",POSITIVA
+12,26,Masculino,17,"liderar, administrar, organizar, asistir.",POSITIVA
+12,26,Masculino,18,viviera en un pueblo y tuviese un finca.,POSITIVA
+12,26,Masculino,19,crecerían en todas las áreas necesarias para avanzar,POSITIVA
+12,26,Masculino,20,ser un profesional.,POSITIVA
+12,26,Masculino,21,"eran increibles, tenia fidelidad con todos.",POSITIVA
+12,26,Masculino,22,que me traicionen,AMBIGUA
+12,26,Masculino,23,"el engaño, o alguien que hable demasiado de manera mediocre",NEGATIVA
+12,26,Masculino,24,me tomaba todo personal,POSITIVA
+12,26,Masculino,25,pueden ser mejores personas,POSITIVA
+12,26,Masculino,26,se puede complementar perfectamente si se trabaja en equipo.,POSITIVA
+12,26,Masculino,27,alguien que no tiene sentimientos.,NEGATIVA
+12,26,Masculino,28,son leales a mi amistad y se preocupan por mi,POSITIVA
+12,26,Masculino,29,tenemos poca comunicacion,NEGATIVA
+12,26,Masculino,30,no aprovechar una oportunidad universitaria,NEGATIVA
+12,26,Masculino,31,tuviese mejor salud y un trabajo,POSITIVA
+12,26,Masculino,32,es la gente que amo,POSITIVA
+12,26,Masculino,33,es ser millonario.,POSITIVA
+12,26,Masculino,34,deben ser leales,AMBIGUA
+12,26,Masculino,35,seré un gran profesional,POSITIVA
+12,26,Masculino,36,demuestro mas seguridad y no me dejo intimidar,POSITIVA
+12,26,Masculino,37,el futuro,AMBIGUA
+12,26,Masculino,38,es la ambiciosa e inteligente,POSITIVA
+12,26,Masculino,39,estudiaría mas cursos,POSITIVA
+12,26,Masculino,40,complementan la sociedad. bien o mal influyen en algo en mi vida.,POSITIVA
+12,26,Masculino,41,seria muy ingenioso,AMBIGUA
+12,26,Masculino,42,"son adineradas, y profesionales",NEUTRA
+12,26,Masculino,43,"es ambiciosa, comprometida  y fiel",POSITIVA
+12,26,Masculino,44,son personas para respetar y agradecer.,POSITIVA
+12,26,Masculino,45,no ser mas disciplinado,NEGATIVA
+12,26,Masculino,46,un personaje de apoyo.,POSITIVA
+12,26,Masculino,47,persisto en cambiar para mejores resultados,POSITIVA
+12,26,Masculino,48,empatizo con cada personalidad,POSITIVA
+12,26,Masculino,49,ser profesional,POSITIVA
+12,26,Masculino,50,tendre un negocio inmobiliario,POSITIVA
+12,26,Masculino,51,los veo con respeto,POSITIVA
+12,26,Masculino,52,tomar decisiones por impulso,NEGATIVA
+12,26,Masculino,53,se preocupan por mi,POSITIVA
+12,26,Masculino,54,era cuando veia a mi padre,AMBIGUA
+12,26,Masculino,55,es la arrogancia,NEGATIVA
+12,26,Masculino,56,"es delicada, y selectiva, super reservada",POSITIVA
+12,26,Masculino,57,inventaba muchas cosas,AMBIGUA
+12,26,Masculino,58,aprende y copia mi personalidad,AMBIGUA
+12,26,Masculino,59,es imprudente con sus comentarios,NEGATIVA
+12,26,Masculino,60,fue cuando robe del diezmo de una iglesia,NEGATIVA
+13,51,Femenino,1,No me quiere,NEGATIVA
+13,51,Femenino,2,Es triste,NEGATIVA
+13,51,Femenino,3,Estudiar,NEGATIVA
+13,51,Femenino,4,Mis nietos,NEUTRA
+13,51,Femenino,5,Incierto,AMBIGUA
+13,51,Femenino,6,Me tratan bien,POSITIVA
+13,51,Femenino,7,Perder un hijo o a mi madre,NEGATIVA
+13,51,Femenino,9,Fui maltratada,NEGATIVA
+13,51,Femenino,10,Ser buena madre,POSITIVA
+13,51,Femenino,11,Felicidad,POSITIVA
+13,51,Femenino,12,Es unida,POSITIVA
+13,51,Femenino,13,Con todos,POSITIVA
+13,51,Femenino,14,Es un tesoro,POSITIVA
+13,51,Femenino,15,El abuso que sufrí en mi niñez,NEGATIVA
+13,51,Femenino,16,Hubiera estado,NEGATIVA
+13,51,Femenino,17,La cocina,POSITIVA
+13,51,Femenino,18,Si estuviera mi esposo,NEGATIVA
+13,51,Femenino,19,Estarían bien,POSITIVA
+13,51,Femenino,20,Que todos los días fueran felices,NEGATIVA
+13,51,Femenino,21,Fueron exigentes,AMBIGUA
+13,51,Femenino,22,De perder a mi madre,NEGATIVA
+13,51,Femenino,23,La injusticia,POSITIVA
+13,51,Femenino,24,De estar mis hijos,NEUTRA
+13,51,Femenino,25,Lo quieren todo facil,NEGATIVA
+13,51,Femenino,26,Es desechable,NEGATIVA
+13,51,Femenino,27,Me lo merezco,AMBIGUA
+13,51,Femenino,28,Son eficientes,POSITIVA
+13,51,Femenino,29,No hubo una relación,NEGATIVA
+13,51,Femenino,30,No valorar mi juventud,NEGATIVA
+13,51,Femenino,31,Estuviera,AMBIGUA
+13,51,Femenino,32,Mi miedo,POSITIVA
+13,51,Femenino,33,Tener dinero,POSITIVA
+13,51,Femenino,34,Son felices,POSITIVA
+13,51,Femenino,35,Morire,AMBIGUA
+13,51,Femenino,36,No pasa nada,NEUTRA
+13,51,Femenino,37,De perder vel miedo,POSITIVA
+13,51,Femenino,38,Cuando están unidas,NEUTRA
+13,51,Femenino,39,Aprovecharía el tiempo,POSITIVA
+13,51,Femenino,40,Son infelices,NEGATIVA
+13,51,Femenino,41,No pasa nada,NEUTRA
+13,51,Femenino,42,Tiene problemas,AMBIGUA
+13,51,Femenino,43,Que es activa,POSITIVA
+13,51,Femenino,44,Aman a sus hijos,POSITIVA
+13,51,Femenino,45,Mi situación,AMBIGUA
+13,51,Femenino,46,Irresponsable,NEGATIVA
+13,51,Femenino,47,Hay tristeza,AMBIGUA
+13,51,Femenino,48,No me siento bien,NEGATIVA
+13,51,Femenino,49,Ser feliz,AMBIGUA
+13,51,Femenino,50,Cumpliré mis metas,POSITIVA
+13,51,Femenino,51,Me gustaría que fueran más humildes,AMBIGUA
+13,51,Femenino,52,Llorar,NEGATIVA
+13,51,Femenino,53,Me llaman,POSITIVA
+13,51,Femenino,54,Cuando jugaba con mis amigos,POSITIVA
+13,51,Femenino,55,El machismo,NEGATIVA
+13,51,Femenino,56,No hay vida sexual,NEGATIVA
+13,51,Femenino,57,Hubieron tiempos tristes,NEGATIVA
+13,51,Femenino,58,Conmigo está bien,POSITIVA
+13,51,Femenino,59,Tiene mal temperamento,NEGATIVA
+13,51,Femenino,60,No valorarme,NEGATIVA
+14,23,Masculino,1,Me nada,NEUTRA
+14,23,Masculino,2,Depende,NEUTRA
+14,23,Masculino,3,Siempre hay que tener esfuerzo para anhelar,NEUTRA
+14,23,Masculino,4,Probablemente nada aun,NEUTRA
+14,23,Masculino,5,Hay que esperar que llegue,AMBIGUA
+14,23,Masculino,6,Todo por igual,POSITIVA
+14,23,Masculino,7,A Jehová,AMBIGUA
+14,23,Masculino,9,Estaba bien,POSITIVA
+14,23,Masculino,10,No,NEUTRA
+14,23,Masculino,11,No pasa nada,NEUTRA
+14,23,Masculino,12,Bien,NEUTRA
+14,23,Masculino,13,Conmigo mismo,NEGATIVA
+14,23,Masculino,14,Es mi vida,POSITIVA
+14,23,Masculino,15,Que nada,NEUTRA
+14,23,Masculino,16,No esta,NEUTRA
+14,23,Masculino,17,Depende,NEUTRA
+14,23,Masculino,18,Si hay vida siempre hay que estar feliz,NEGATIVA
+14,23,Masculino,19,No la hay,NEUTRA
+14,23,Masculino,20,Nada,NEGATIVA
+14,23,Masculino,21,Fueron bien,POSITIVA
+14,23,Masculino,22,Nada,POSITIVA
+14,23,Masculino,23,Depende de mis gustos,NEUTRA
+14,23,Masculino,24,Nada,NEUTRA
+14,23,Masculino,25,No se no la pienso,NEUTRA
+14,23,Masculino,26,Es sagrado,POSITIVA
+14,23,Masculino,27,Bien,POSITIVA
+14,23,Masculino,28,Super bien,NEUTRA
+14,23,Masculino,29,Excelente bien,POSITIVA
+14,23,Masculino,30,No hay error,NEGATIVA
+14,23,Masculino,31,Esta bien asi,NEUTRA
+14,23,Masculino,32,Es secreto,NEUTRA
+14,23,Masculino,33,No hay,NEUTRA
+14,23,Masculino,34,Otra vez,NEUTRA
+14,23,Masculino,35,Algun dia no hay que vivir el momento,AMBIGUA
+14,23,Masculino,36,Normal,NEUTRA
+14,23,Masculino,37,Nada,NEUTRA
+14,23,Masculino,38,Depende,NEUTRA
+14,23,Masculino,39,Siempre estoy,NEUTRA
+14,23,Masculino,40,Bien,NEUTRA
+14,23,Masculino,41,Secreto,AMBIGUA
+14,23,Masculino,42,Bien,NEUTRA
+14,23,Masculino,43,Que ayude,POSITIVA
+14,23,Masculino,44,Son madres y ya,NEUTRA
+14,23,Masculino,45,De nada,NEUTRA
+14,23,Masculino,46,Es bien,POSITIVA
+14,23,Masculino,47,No hay suerte,NEUTRA
+14,23,Masculino,48,No doy ordenes,NEUTRA
+14,23,Masculino,49,Es nada,NEUTRA
+14,23,Masculino,50,Momento,NEUTRA
+14,23,Masculino,51,Normal,NEUTRA
+14,23,Masculino,52,A nada,NEUTRA
+14,23,Masculino,53,No hay amigos,NEGATIVA
+14,23,Masculino,54,Colegio,NEUTRA
+14,23,Masculino,55,Todo bien,NEUTRA
+14,23,Masculino,56,Secreta,AMBIGUA
+14,23,Masculino,57,Estaba bien como ahora,POSITIVA
+14,23,Masculino,58,Esta bien,POSITIVA
+14,23,Masculino,59,Siempre agrada,POSITIVA
+14,23,Masculino,60,Nada,NEUTRA
+15,22,Masculino,1,Entiende,NEGATIVA
+15,22,Masculino,2,Me rio,AMBIGUA
+15,22,Masculino,3,Una moto,POSITIVA
+15,22,Masculino,4,Todo sería distinto,NEUTRA
+15,22,Masculino,5,Peligroso,NEGATIVA
+15,22,Masculino,6,Espero hagan las cosas bien,POSITIVA
+15,22,Masculino,7,Ponerme más viejo,NEGATIVA
+15,22,Masculino,9,Todo fue muy fácil,POSITIVA
+15,22,Masculino,10,No existe,NEGATIVA
+15,22,Masculino,11,Suelo pensar en como debe ser su relación en realidad,AMBIGUA
+15,22,Masculino,12,Es más pacífica,POSITIVA
+15,22,Masculino,13,Mujeres,AMBIGUA
+15,22,Masculino,14,Es mi ejemplo a seguir,POSITIVA
+15,22,Masculino,15,Envié ese mensaje,NEGATIVA
+15,22,Masculino,16,Se atreviera a hacer las cosas diferentes,AMBIGUA
+15,22,Masculino,17,Hacer cualquier cosa que se me pida,NEGATIVA
+15,22,Masculino,18,Tuviera libertad económica,POSITIVA
+15,22,Masculino,19,Sería el mejor jefe,AMBIGUA
+15,22,Masculino,20,Que todo salga bien,NEGATIVA
+15,22,Masculino,21,Solían llamarme por mi apellido,NEGATIVA
+15,22,Masculino,22,Fracasar,POSITIVA
+15,22,Masculino,23,La sandía,NEUTRA
+15,22,Masculino,24,Todo era más simple,AMBIGUA
+15,22,Masculino,25,Tienen falta de carácter,NEGATIVA
+15,22,Masculino,26,Es un gran paso,POSITIVA
+15,22,Masculino,27,Alguien muy importante,POSITIVA
+15,22,Masculino,28,Suelen ser muy distraídos,NEGATIVA
+15,22,Masculino,29,Tenemos muchas cosas en común,POSITIVA
+15,22,Masculino,30,Aceptar eso,AMBIGUA
+15,22,Masculino,31,Viva un poco mas,POSITIVA
+15,22,Masculino,32,Son los helados,NEUTRA
+15,22,Masculino,33,Es ser piloto y baterista,POSITIVA
+15,22,Masculino,34,Es muy obediente,AMBIGUA
+15,22,Masculino,35,Tendré mi propia empresa,POSITIVA
+15,22,Masculino,36,Lo miro fijamente,NEUTRA
+15,22,Masculino,37,Decir todo lo que pienso,POSITIVA
+15,22,Masculino,38,Siempre está muy lejos,NEGATIVA
+15,22,Masculino,39,Habría hecho muchas más cosas,POSITIVA
+15,22,Masculino,40,Mienten,NEGATIVA
+15,22,Masculino,41,Las disfrutaría,POSITIVA
+15,22,Masculino,42,Son disfuncionales,NEGATIVA
+15,22,Masculino,43,Sabe lo que tiene que hacer,AMBIGUA
+15,22,Masculino,44,Les duele ver crecer a sus hijos,POSITIVA
+15,22,Masculino,45,Que mi padre se hubiera ido,NEGATIVA
+15,22,Masculino,46,Mentiroso,NEGATIVA
+15,22,Masculino,47,Suelo reírme,POSITIVA
+15,22,Masculino,48,Se obedece,NEUTRA
+15,22,Masculino,49,Ser profesional,POSITIVA
+15,22,Masculino,50,Tendré mi esposa,AMBIGUA
+15,22,Masculino,51,Son personas excepcionales,POSITIVA
+15,22,Masculino,52,Hacer silencio,NEGATIVA
+15,22,Masculino,53,Tampoco están,NEGATIVA
+15,22,Masculino,54,Es aprender a manejar bicicleta,POSITIVA
+15,22,Masculino,55,La feminidad,NEGATIVA
+15,22,Masculino,56,Es buena,POSITIVA
+15,22,Masculino,57,Era más gordito,AMBIGUA
+15,22,Masculino,58,Están satisfechos,POSITIVA
+15,22,Masculino,59,Es muy exagerada,NEGATIVA
+15,22,Masculino,60,Un par de mentiras que no debí decir,NEGATIVA
+16,25,Femenino,1,Habla de cosas de su vida,NEGATIVA
+16,25,Femenino,2,Me pongo triste,NEGATIVA
+16,25,Femenino,3,Encontrar un objetivo de vida,NEGATIVA
+16,25,Femenino,4,Analizaría mas,POSITIVA
+16,25,Femenino,5,Ansioso,NEGATIVA
+16,25,Femenino,6,Me intimidan,NEGATIVA
+16,25,Femenino,7,No encontrar un objetivo,NEGATIVA
+16,25,Femenino,9,Era muy feliz,POSITIVA
+16,25,Femenino,10,Alguien que impulsa y acompaña,POSITIVA
+16,25,Femenino,11,Pienso en que ojalá se lleven muy bien independientemente de que sean pareja o no,POSITIVA
+16,25,Femenino,12,Es bastante funcional,POSITIVA
+16,25,Femenino,13,Cosas administrativas,NEUTRA
+16,25,Femenino,14,La amo,POSITIVA
+16,25,Femenino,15,Me rompieron el corazón,NEGATIVA
+16,25,Femenino,16,Fuera más racional,NEGATIVA
+16,25,Femenino,17,Artes mixtas,POSITIVA
+16,25,Femenino,18,Pudiera dedicarme a algo que de verdad me guste y de un propósito,NEGATIVA
+16,25,Femenino,19,...,NEUTRA
+16,25,Femenino,20,Salir adelante y autosuperarme,POSITIVA
+16,25,Femenino,21,Eran super,POSITIVA
+16,25,Femenino,22,La soledad,POSITIVA
+16,25,Femenino,23,La soledad,NEGATIVA
+16,25,Femenino,24,...,NEUTRA
+16,25,Femenino,25,Son muy superficiales,NEGATIVA
+16,25,Femenino,26,Es complicada,NEGATIVA
+16,25,Femenino,27,La mejor,POSITIVA
+16,25,Femenino,28,Tienen sus propios problemas,NEGATIVA
+16,25,Femenino,29,Nos amamos,POSITIVA
+16,25,Femenino,30,No seguir mi presentimiento,AMBIGUA
+16,25,Femenino,31,Se mejore,POSITIVA
+16,25,Femenino,32,Sobrepensar,NEGATIVA
+16,25,Femenino,33,Viajar y cambiar de país,POSITIVA
+16,25,Femenino,34,....,NEUTRA
+16,25,Femenino,35,Seré feliz,AMBIGUA
+16,25,Femenino,36,Me pongo alerta,NEGATIVA
+16,25,Femenino,37,Fracasar y volver a intentar,POSITIVA
+16,25,Femenino,38,Es la tranquila y animada,POSITIVA
+16,25,Femenino,39,...,NEUTRA
+16,25,Femenino,40,Son superficiales,NEGATIVA
+16,25,Femenino,41,Me protegería,POSITIVA
+16,25,Femenino,42,Son disfuncionales,NEGATIVA
+16,25,Femenino,43,Ayuda y no es problemática,AMBIGUA
+16,25,Femenino,44,No escuchan,NEGATIVA
+16,25,Femenino,45,Nada,NEUTRA
+16,25,Femenino,46,El mejor que pudo ser,POSITIVA
+16,25,Femenino,47,Me da ansiedad,AMBIGUA
+16,25,Femenino,48,Trato de ser amable,POSITIVA
+16,25,Femenino,49,Autosuperarme,POSITIVA
+16,25,Femenino,50,Iré mejorando,POSITIVA
+16,25,Femenino,51,Me inspiran,POSITIVA
+16,25,Femenino,52,Estancarme,NEGATIVA
+16,25,Femenino,53,Hablan mal de mi,NEGATIVA
+16,25,Femenino,54,Mi familia junta y con salud,POSITIVA
+16,25,Femenino,55,....,NEUTRA
+16,25,Femenino,56,Es regular,AMBIGUA
+16,25,Femenino,57,...,NEUTRA
+16,25,Femenino,58,...,NEUTRA
+16,25,Femenino,59,A veces no se deja hablar,NEGATIVA
+16,25,Femenino,60,Es no poner límites,NEGATIVA
+17,24,Femenino,1,Habla,NEGATIVA
+17,24,Femenino,2,Lloro,AMBIGUA
+17,24,Femenino,3,Tener una familia unida,NEGATIVA
+17,24,Femenino,4,Todo estaria a tiempo,POSITIVA
+17,24,Femenino,5,Incierto,AMBIGUA
+17,24,Femenino,6,Me son ejemplo,POSITIVA
+17,24,Femenino,7,Los abrazos,NEGATIVA
+17,24,Femenino,9,Debi ser feliz,NEGATIVA
+17,24,Femenino,10,En su vida este Dios,POSITIVA
+17,24,Femenino,11,Me da orgullo,AMBIGUA
+17,24,Femenino,12,Es una porqueria,NEGATIVA
+17,24,Femenino,13,El orden,AMBIGUA
+17,24,Femenino,14,Es una berraca.,POSITIVA
+17,24,Femenino,15,Abusaron de mi,NEGATIVA
+17,24,Femenino,16,Me diera atención,NEGATIVA
+17,24,Femenino,17,Cuidar el cutis,POSITIVA
+17,24,Femenino,18,Mi mente eliminara recuerdos,NEGATIVA
+17,24,Femenino,19,Sería una jefa feliz,POSITIVA
+17,24,Femenino,20,Obtener lo que he querido,AMBIGUA
+17,24,Femenino,21,Eran buenos,POSITIVA
+17,24,Femenino,22,Las culebras,NEGATIVA
+17,24,Femenino,23,Cuando hay mucha bulla,AMBIGUA
+17,24,Femenino,24,Debi comprender muchas cosas,POSITIVA
+17,24,Femenino,25,Deben soltar sus celulares y leér libros fisicos.,AMBIGUA
+17,24,Femenino,26,Es un privilegio,POSITIVA
+17,24,Femenino,27,Nace de sus corazónes,AMBIGUA
+17,24,Femenino,28,Son buenas personas,POSITIVA
+17,24,Femenino,29,Tenemos buena relación,POSITIVA
+17,24,Femenino,30,No comprender lo que sucedia,AMBIGUA
+17,24,Femenino,31,Cumpliera su rol,NEGATIVA
+17,24,Femenino,32,Mis hermanos,POSITIVA
+17,24,Femenino,33,Tener animales y una finca,POSITIVA
+17,24,Femenino,34,No existe,NEUTRA
+17,24,Femenino,35,Sere la viejita de las matas,AMBIGUA
+17,24,Femenino,36,Que llegue,NEGATIVA
+17,24,Femenino,37,Socializar,POSITIVA
+17,24,Femenino,38,Es la que toma iniciativa de conversa,POSITIVA
+17,24,Femenino,39,Hablaria todo lo que me paso,POSITIVA
+17,24,Femenino,40,No son conformes,NEGATIVA
+17,24,Femenino,41,Que rico,POSITIVA
+17,24,Femenino,42,No son unidas,NEGATIVA
+17,24,Femenino,43,Es puntual y empática,POSITIVA
+17,24,Femenino,44,Sufren,POSITIVA
+17,24,Femenino,45,Callar la violencia,NEGATIVA
+17,24,Femenino,46,Sin palabras,NEUTRA
+17,24,Femenino,47,"Doy gracias a Dios, mejores cosas han de venir",POSITIVA
+17,24,Femenino,48,Tengo miedo,NEGATIVA
+17,24,Femenino,49,Olvidar cosas,NEGATIVA
+17,24,Femenino,50,Estare mejor,POSITIVA
+17,24,Femenino,51,Los respeto,POSITIVA
+17,24,Femenino,52,Llorar y ser más callada,NEGATIVA
+17,24,Femenino,53,Ni me pelan,NEGATIVA
+17,24,Femenino,54,Mi mamá sufriendo,NEGATIVA
+17,24,Femenino,55,Su forma de pensar hoy en dia,AMBIGUA
+17,24,Femenino,56,Tranquila,POSITIVA
+17,24,Femenino,57,Sin palabras,NEUTRA
+17,24,Femenino,58,Ta bien,POSITIVA
+17,24,Femenino,59,Hay cosas que mejorar,AMBIGUA
+17,24,Femenino,60,Intentar desvivirme,NEGATIVA
+18,41,Masculino,1,Propuso jugar,NEGATIVA
+18,41,Masculino,2,Es porque Dios no lo puse en primer lugar,NEGATIVA
+18,41,Masculino,3,Ser el mejor,NEGATIVA
+18,41,Masculino,4,Daría lo mejor de mi,POSITIVA
+18,41,Masculino,5,Incierto,AMBIGUA
+18,41,Masculino,6,Me observan,NEGATIVA
+18,41,Masculino,7,Morir,POSITIVA
+18,41,Masculino,9,Jugaba,POSITIVA
+18,41,Masculino,10,Ser como soy,NEGATIVA
+18,41,Masculino,11,No los envidio,POSITIVA
+18,41,Masculino,12,Igual,NEUTRA
+18,41,Masculino,13,Mi esfuerzo,NEGATIVA
+18,41,Masculino,14,Lo mejor,POSITIVA
+18,41,Masculino,15,No me arriesgué,AMBIGUA
+18,41,Masculino,16,Me hubiese llamado,NEGATIVA
+18,41,Masculino,17,Todo,NEGATIVA
+18,41,Masculino,18,Pudiera darle mejor vida a mi familia,POSITIVA
+18,41,Masculino,19,Yo daría ejemplo,POSITIVA
+18,41,Masculino,20,Recibir lo que doy,POSITIVA
+18,41,Masculino,21,Me admiraban,POSITIVA
+18,41,Masculino,22,Perder Ami madre,POSITIVA
+18,41,Masculino,23,Las mentiras,NEUTRA
+18,41,Masculino,24,Pasado,NEUTRA
+18,41,Masculino,25,No quieren ser alguien en la vida,NEGATIVA
+18,41,Masculino,26,Es un compromiso para toda la vida,POSITIVA
+18,41,Masculino,27,Todo un caballero,POSITIVA
+18,41,Masculino,28,Me apoyan,POSITIVA
+18,41,Masculino,29,Somos uno,AMBIGUA
+18,41,Masculino,30,No aprovechar oportunidades,NEGATIVA
+18,41,Masculino,31,Estuviera vivo,AMBIGUA
+18,41,Masculino,32,Mi hija,POSITIVA
+18,41,Masculino,33,Tener mucho dinero,POSITIVA
+18,41,Masculino,34,Un ejemplo,NEUTRA
+18,41,Masculino,35,Sere lo mejor de mi,POSITIVA
+18,41,Masculino,36,Lo saludo,POSITIVA
+18,41,Masculino,37,Morir,AMBIGUA
+18,41,Masculino,38,Están a mi lado,POSITIVA
+18,41,Masculino,39,Aprovecharía el tiempo,POSITIVA
+18,41,Masculino,40,Luchan por un ideal,POSITIVA
+18,41,Masculino,41,Con prevención,POSITIVA
+18,41,Masculino,42,Son felices,POSITIVA
+18,41,Masculino,43,Me apoya,POSITIVA
+18,41,Masculino,44,Dan lo mejor de ellas,POSITIVA
+18,41,Masculino,45,No aprovechar el tiempo,POSITIVA
+18,41,Masculino,46,Fue irresponsable,NEGATIVA
+18,41,Masculino,47,Le pidió a Dios,AMBIGUA
+18,41,Masculino,48,Lo digo con autoridad,POSITIVA
+18,41,Masculino,49,Tener tiempo para la familia,POSITIVA
+18,41,Masculino,50,Me pensiono,POSITIVA
+18,41,Masculino,51,Los respeto,POSITIVA
+18,41,Masculino,52,Esforzarme,POSITIVA
+18,41,Masculino,53,Me llaman,POSITIVA
+18,41,Masculino,54,Nadar,NEUTRA
+18,41,Masculino,55,Viven por vivir,AMBIGUA
+18,41,Masculino,56,Con suavena,AMBIGUA
+18,41,Masculino,57,quería ser grande,AMBIGUA
+18,41,Masculino,58,Obedecen,NEGATIVA
+18,41,Masculino,59,Se fue,NEGATIVA
+18,41,Masculino,60,Estar de relax,AMBIGUA
+19,24,Masculino,1,Motiva a hacer cosas innovadoras que me puedan beneficiar a futuro,NEGATIVA
+19,24,Masculino,2,Suelo estar deprimido,NEGATIVA
+19,24,Masculino,3,"Estudiar una carrera profesional, siento que la vida es un poco injusta",NEGATIVA
+19,24,Masculino,4,Creo que me costaría estar en ese papel,NEGATIVA
+19,24,Masculino,5,Incierto,AMBIGUA
+19,24,Masculino,6,Los admiro y me dan consejos,POSITIVA
+19,24,Masculino,7,Ser un fracasado,NEGATIVA
+19,24,Masculino,9,Sentía que las cosas de la vida eran tan fácil de obtener,POSITIVA
+19,24,Masculino,10,Los valores de cada persona sea mujer o sea hombre,POSITIVA
+19,24,Masculino,11,No me causa impresión,NEUTRA
+19,24,Masculino,12,Tenemos mucha empatía,POSITIVA
+19,24,Masculino,13,Saray prioló castro,POSITIVA
+19,24,Masculino,14,Es una Reina,POSITIVA
+19,24,Masculino,15,Se accidentó mi novia.,NEGATIVA
+19,24,Masculino,16,Fuera un poco más cariñoso conmigo,NEGATIVA
+19,24,Masculino,17,Manejo de herramientas ofimáticas,POSITIVA
+19,24,Masculino,18,Tuviera un trabajo fijo y fuera un poquito más independiente,POSITIVA
+19,24,Masculino,19,No me veo como un jefe,AMBIGUA
+19,24,Masculino,20,Que la vida algún día se dé cuenta de que he sufrido y he pasado por tantas cosas que ya merezco algo mejor,NEGATIVA
+19,24,Masculino,21,Todos eran muy buenos docentes,POSITIVA
+19,24,Masculino,22,Ser independiente,POSITIVA
+19,24,Masculino,23,"Salir a fiestas, tomar alcohol y el desorden",AMBIGUA
+19,24,Masculino,24,De un accidente que tuve pienso que pude tener oportunidades de conseguir trabajo y ya llevara tiempo trabajando en aquello que estuve a punto de hacer,NEGATIVA
+19,24,Masculino,25,No les gusta estudiar,NEGATIVA
+19,24,Masculino,26,Puede ser un poco difícil por lo que ya tienes más responsabilidades,POSITIVA
+19,24,Masculino,27,"A veces siento que me regañan por todo, a veces me tratan bien y así",NEGATIVA
+19,24,Masculino,28,Suelen ser muy divertidos,POSITIVA
+19,24,Masculino,29,Hemos pasado por tantas cosas juntos,AMBIGUA
+19,24,Masculino,30,"Pensar que estudiar no era bueno y todo lo contrario, tarde comprendí que es lo mejor que uno como ser humano puede y debe hacer",NEGATIVA
+19,24,Masculino,31,Cambiará la forma de tratarme o de decirme las cosas,NEGATIVA
+19,24,Masculino,32,"Mi cerebro, pienso muchas tonterías y quiero Cambiar mucho en esa parte",NEGATIVA
+19,24,Masculino,33,"Antes no tenía ese pensamiento de ambición, pero ahora que ya soy adulto me gustaría tener varias cabezas de ganado o una casa propia",POSITIVA
+19,24,Masculino,34,No tengo trabajadores,NEUTRA
+19,24,Masculino,35,"Quisiera que ya la vida de la vuelta y cambiar muchas cosas en mí, la forma de ver la vida.",NEGATIVA
+19,24,Masculino,36,Me da un poco de nervios,NEGATIVA
+19,24,Masculino,37,Hablar en público,POSITIVA
+19,24,Masculino,38,"Personas cencillas, humildes y tratables",POSITIVA
+19,24,Masculino,39,Me gustaría cambiar la forma de pensar,AMBIGUA
+19,24,Masculino,40,Tienen un autoestima muy grande,POSITIVA
+19,24,Masculino,41,El tener relaciones sexuales me tiene el cerebro enfermo.,NEGATIVA
+19,24,Masculino,42,La mayoría son muy amables,POSITIVA
+19,24,Masculino,43,Me ayude a crecer a nivel personal y laboral,POSITIVA
+19,24,Masculino,44,No le ponen mayor cuidado a los hijos,NEGATIVA
+19,24,Masculino,45,No querer estudiar,NEGATIVA
+19,24,Masculino,46,A veces es un poco grosero cuando yo solamente le pregunto algo,NEGATIVA
+19,24,Masculino,47,Me va mal en todo lo que quiero hacer,NEGATIVA
+19,24,Masculino,48,No soy jefe,NEUTRA
+19,24,Masculino,49,"Poder ser independiente, tener un hogar, una familia etc",POSITIVA
+19,24,Masculino,50,Espero que ya las cosas sean diferentes,AMBIGUA
+19,24,Masculino,51,"Mi jefe, mi mamá,.mi papá, mi hermana mayor y cualquier persona que me hable con respeto o sea mayor que mi persona",POSITIVA
+19,24,Masculino,52,Tener mayor confianza en mi mismo,POSITIVA
+19,24,Masculino,53,Salen a disfrutar siempre,NEGATIVA
+19,24,Masculino,54,"Recuerdo que solía montar caballo con mi papá todos los días, aunquee regañaba siempre",AMBIGUA
+19,24,Masculino,55,La forma de tratar a las demás,AMBIGUA
+19,24,Masculino,56,"Se ha convertido en un caos total, siento que mi cerebro está un poco afectado por esa parte",NEGATIVA
+19,24,Masculino,57,No me gustaba la escuela,NEGATIVA
+19,24,Masculino,58,No soy empleador,NEUTRA
+19,24,Masculino,59,A veces me molestan sus actitudes,NEGATIVA
+19,24,Masculino,60,Querer engañar a mi novia y ahora sé que esa niña ha sido tan linda conmigo,NEGATIVA
+20,19,Femenino,1,Llaman por teléfono,NEGATIVA
+20,19,Femenino,2,Dios está conmigo,POSITIVA
+20,19,Femenino,3,Ser militar,NEGATIVA
+20,19,Femenino,4,Trataria de hacerlo mejor,POSITIVA
+20,19,Femenino,5,Algo misterioso,AMBIGUA
+20,19,Femenino,6,Se esforzaron por estar ahí,POSITIVA
+20,19,Femenino,7,Un accidente,POSITIVA
+20,19,Femenino,9,Me daba miedo la oscuridad,NEGATIVA
+20,19,Femenino,10,Es que sea religiosa,POSITIVA
+20,19,Femenino,11,Me alegro por ellos,POSITIVA
+20,19,Femenino,12,Es unica y especial,POSITIVA
+20,19,Femenino,13,Mi esposo,POSITIVA
+20,19,Femenino,14,Es la mejor de todas,POSITIVA
+20,19,Femenino,15,Que me caí  de un árbol,NEGATIVA
+20,19,Femenino,16,"Estuviera cerca de mi, lo aprovecharia al maximo",POSITIVA
+20,19,Femenino,17,Enseñar a los niños y adultos,POSITIVA
+20,19,Femenino,18,Si llevo una vida espiritual sana,POSITIVA
+20,19,Femenino,19,Trataria de darles el mejor trato como personas,POSITIVA
+20,19,Femenino,20,Lograr ser profesional,POSITIVA
+20,19,Femenino,21,Fueron muy ejemplares,POSITIVA
+20,19,Femenino,22,Tener un accidente,NEGATIVA
+20,19,Femenino,23,Que maltraten a las personas ya sea verbal o fisicamente,POSITIVA
+20,19,Femenino,24,Era muy tímida,POSITIVA
+20,19,Femenino,25,Se dejan llevar por muchas cosas que no contribuyen a su futuro,NEGATIVA
+20,19,Femenino,26,Es muy bonita si sabemos el verdadero sentido del matrimonio,POSITIVA
+20,19,Femenino,27,Princesa,POSITIVA
+20,19,Femenino,28,No trabajo,NEUTRA
+20,19,Femenino,29,Somos super amigas,POSITIVA
+20,19,Femenino,30,Decirle un día a mi mamá que no la quería,NEGATIVA
+20,19,Femenino,31,Estuviera cerca de mi,NEGATIVA
+20,19,Femenino,32,Es la inseguridad,NEGATIVA
+20,19,Femenino,33,Darle una casa a mi mamá,POSITIVA
+20,19,Femenino,34,No tengo trabajadores,NEUTRA
+20,19,Femenino,35,Seré mejor que hoy,POSITIVA
+20,19,Femenino,36,Me daban nervios,NEGATIVA
+20,19,Femenino,37,Expresar mis sentimientos cuando estoy triste,POSITIVA
+20,19,Femenino,38,Es la que es chevere sin tratar de ofender ni opacar a los demas,POSITIVA
+20,19,Femenino,39,Pensaria mejor para tomar una decision,POSITIVA
+20,19,Femenino,40,Tenemos un secreto que nadie sabe,AMBIGUA
+20,19,Femenino,41,Me cuidaria con planificacion para no tener un embarazo no deseado,POSITIVA
+20,19,Femenino,42,Tienen problemas,AMBIGUA
+20,19,Femenino,43,Le gusta trabajar sin problemas,AMBIGUA
+20,19,Femenino,44,Han pasado una etapa difícil que las hizo fuertes,POSITIVA
+20,19,Femenino,45,Que le pegaran a mi hermana,NEGATIVA
+20,19,Femenino,46,Distante,NEGATIVA
+20,19,Femenino,47,No creo en la suerte,NEUTRA
+20,19,Femenino,48,Trato de dar ejemplo,POSITIVA
+20,19,Femenino,49,Llevar una verdadera vida cristiana,POSITIVA
+20,19,Femenino,50,Deseo tener mi propia casa,POSITIVA
+20,19,Femenino,51,Los respeto,POSITIVA
+20,19,Femenino,52,Quedarme callada,NEGATIVA
+20,19,Femenino,53,Se preocupan,POSITIVA
+20,19,Femenino,54,Cuando jugaba al carrito con mis hermanos,POSITIVA
+20,19,Femenino,55,Es que hablen mal de una mujer,NEGATIVA
+20,19,Femenino,56,Es activa pero llevo conmigo el hecho de ser responsable con mis actos,POSITIVA
+20,19,Femenino,57,Le tenía miedo a la oscuridad,NEGATIVA
+20,19,Femenino,58,No trabajo actualmente,NEUTRA
+20,19,Femenino,59,No hay mada mejor que escucharla,POSITIVA
+20,19,Femenino,60,Fue pegarle a mi hermano mayor,POSITIVA
+21,25,Masculino,1,Llama,NEGATIVA
+21,25,Masculino,2,No creo en la suerte,NEUTRA
+21,25,Masculino,3,Ser cristiano,NEGATIVA
+21,25,Masculino,4,Los trataria con respeto,POSITIVA
+21,25,Masculino,5,Incierto,AMBIGUA
+21,25,Masculino,6,Las respeto,POSITIVA
+21,25,Masculino,7,A perder la vida eterna,NEGATIVA
+21,25,Masculino,9,Deseaba ser adulto,AMBIGUA
+21,25,Masculino,10,Es ser como Cristo,POSITIVA
+21,25,Masculino,11,Solo los miro y ya,POSITIVA
+21,25,Masculino,12,Es la mejor,POSITIVA
+21,25,Masculino,13,Con mi esposa,POSITIVA
+21,25,Masculino,14,Es la mejor,POSITIVA
+21,25,Masculino,15,Dejé a mi novia,AMBIGUA
+21,25,Masculino,16,Fuera mas atento,NEGATIVA
+21,25,Masculino,17,Casi todo,NEGATIVA
+21,25,Masculino,18,No le fallara a Dios,NEGATIVA
+21,25,Masculino,19,Les pagaría lo justo y con propina,POSITIVA
+21,25,Masculino,20,Ser mejor persona con la ayuda de Dios,POSITIVA
+21,25,Masculino,21,Me enseñaron muy bien,POSITIVA
+21,25,Masculino,22,Fallarles,POSITIVA
+21,25,Masculino,23,Faltar al respeto a alguien,POSITIVA
+21,25,Masculino,24,Pensaba q todo seria facil,NEGATIVA
+21,25,Masculino,25,Le dan mal uso a la tecnología,NEGATIVA
+21,25,Masculino,26,Es bonita cuando Cristo ocupa el primer lugar,POSITIVA
+21,25,Masculino,27,El loco,NEGATIVA
+21,25,Masculino,28,No estoy trabajando,NEUTRA
+21,25,Masculino,29,Nos llevamos muy bien,POSITIVA
+21,25,Masculino,30,Apartarme un tiempo de Dios,NEGATIVA
+21,25,Masculino,31,Fuera mas atento con sus hijos,NEGATIVA
+21,25,Masculino,32,No orar,AMBIGUA
+21,25,Masculino,33,Darle una casa grande a mi madre,POSITIVA
+21,25,Masculino,34,No tengo empresa,NEUTRA
+21,25,Masculino,35,Seré esa persona q Dios quiere q sea,AMBIGUA
+21,25,Masculino,36,No estoy trabajando,NEUTRA
+21,25,Masculino,37,Estar solo,POSITIVA
+21,25,Masculino,38,No quisiera que se fuera,NEGATIVA
+21,25,Masculino,39,Tomaría mejores decisiones,POSITIVA
+21,25,Masculino,40,Necesitan acercarse mas a Dios,AMBIGUA
+21,25,Masculino,41,Lo hago con responsabilidad,POSITIVA
+21,25,Masculino,42,Pasa casi lo mismo q en la mia,NEUTRA
+21,25,Masculino,43,Quiere trabajar,POSITIVA
+21,25,Masculino,44,Queren lo mejor para sus hijos,POSITIVA
+21,25,Masculino,45,De q le pegaran a mi hermano,NEGATIVA
+21,25,Masculino,46,Muy distante,NEGATIVA
+21,25,Masculino,47,No creo en la suerte,NEUTRA
+21,25,Masculino,48,Trato de hacer lo de la mejor manera,POSITIVA
+21,25,Masculino,49,Agradar a Dios,POSITIVA
+21,25,Masculino,50,Tendre con la ayuda de Dios mi propio negocio,POSITIVA
+21,25,Masculino,51,Las respeto mucho,POSITIVA
+21,25,Masculino,52,Sentirme incapaz,NEGATIVA
+21,25,Masculino,53,Me extrañan,POSITIVA
+21,25,Masculino,54,Es jugar futbol con mis primos,POSITIVA
+21,25,Masculino,55,Es que digan que no necesitan al hombre,NEGATIVA
+21,25,Masculino,56,Totalmente activa,POSITIVA
+21,25,Masculino,57,Deseaba ser adulto,AMBIGUA
+21,25,Masculino,58,Me pregunta de donde soy,NEUTRA
+21,25,Masculino,59,A veces la hago enojar,AMBIGUA
+21,25,Masculino,60,Es fallarle a Dios,NEGATIVA
+22,25,Femenino,1,Quiere,NEGATIVA
+22,25,Femenino,2,No creo en la suerte,NEUTRA
+22,25,Femenino,3,Tener muchos hijos,NEGATIVA
+22,25,Femenino,5,Incierto,AMBIGUA
+22,25,Femenino,6,Me dan miedo,NEGATIVA
+22,25,Femenino,7,El futuro,AMBIGUA
+22,25,Femenino,9,Me gustaba mucho ir a piscina con la familia,POSITIVA
+22,25,Femenino,10,Que ame a Dios por sobre todas las cosas,AMBIGUA
+22,25,Femenino,11,No pienso nada,NEUTRA
+22,25,Femenino,12,Si,NEUTRA
+22,25,Femenino,13,Mujeres,AMBIGUA
+22,25,Femenino,14,Me ama,POSITIVA
+22,25,Femenino,15,Todas las veces que pase vergüenza,NEGATIVA
+22,25,Femenino,16,No me hubiera abandonado,NEGATIVA
+22,25,Femenino,17,Muchas cosas,AMBIGUA
+22,25,Femenino,18,Mi relación con Dios fuera mas cercana,POSITIVA
+22,25,Femenino,19,Sería empática,POSITIVA
+22,25,Femenino,20,Ser salva,POSITIVA
+22,25,Femenino,21,Me agradaban mucho,POSITIVA
+22,25,Femenino,22,Perder a mi familia,POSITIVA
+22,25,Femenino,23,La gente que se burla de los demás,POSITIVA
+22,25,Femenino,24,Estaba más sola,POSITIVA
+22,25,Femenino,25,"Sin muy vanidosos, y materialistas",NEGATIVA
+22,25,Femenino,26,Es difícil pero también es lo más hermoso que un ser humano puede vivir,POSITIVA
+22,25,Femenino,27,Una reina,POSITIVA
+22,25,Femenino,28,No trabajo,NEUTRA
+22,25,Femenino,29,Somos mejores amigas,POSITIVA
+22,25,Femenino,30,Perder tiempo con gente que se aprovechaba de mi,NEGATIVA
+22,25,Femenino,31,Y yo tuviéramos una relación más cercana,NEGATIVA
+22,25,Femenino,32,"Mi esposo, mi hija",POSITIVA
+22,25,Femenino,33,Tener plata,POSITIVA
+22,25,Femenino,34,Nadie trabaja para mí,NEUTRA
+22,25,Femenino,35,Tendré lo que soñé,POSITIVA
+22,25,Femenino,36,"No tengo, pero si tuviera sentiría miedo",NEGATIVA
+22,25,Femenino,37,Morir,AMBIGUA
+22,25,Femenino,38,Es la que más me demuestra que le importo,POSITIVA
+22,25,Femenino,39,Disfrutaría más a mis abuelitos,POSITIVA
+22,25,Femenino,40,En esta época son inmaduros,NEGATIVA
+22,25,Femenino,41,Solo con mi esposo,POSITIVA
+22,25,Femenino,42,Se aman mucho,POSITIVA
+22,25,Femenino,43,Me enseña sin necesidad de hacerme sentir menos,POSITIVA
+22,25,Femenino,44,Son una bendición de Dios,POSITIVA
+22,25,Femenino,45,No tener buenas relaciones con amigos,NEGATIVA
+22,25,Femenino,46,Una persona que perdió mucho tiempo,NEGATIVA
+22,25,Femenino,47,No creo en la suerte,NEUTRA
+22,25,Femenino,48,Espero tener el límite claro sin ser arrogante,POSITIVA
+22,25,Femenino,49,"Poder darle una buena vida a mi hija en todos los ámbitos, más en el espiritual",POSITIVA
+22,25,Femenino,50,Espero que Dios me bendiga con cada propia,POSITIVA
+22,25,Femenino,51,Pienso que es gente muy inteligente,POSITIVA
+22,25,Femenino,52,No tomar buenas decisiones,NEGATIVA
+22,25,Femenino,53,Me extrañan,POSITIVA
+22,25,Femenino,54,Mis 15 años,AMBIGUA
+22,25,Femenino,55,La infidelidad,NEGATIVA
+22,25,Femenino,56,Es muy bonita,POSITIVA
+22,25,Femenino,57,Me gustaba salir a jugar,POSITIVA
+22,25,Femenino,59,Me hubiera gustado no perder tanto tiempo en peleas,POSITIVA
+22,25,Femenino,60,Mentir,NEGATIVA
+23,32,Masculino,1,Lastima,POSITIVA
+23,32,Masculino,2,No creo en la suerte,NEUTRA
+23,32,Masculino,3,Ser futbolista profesional,NEGATIVA
+23,32,Masculino,4,Haría lo mejor posible,POSITIVA
+23,32,Masculino,5,Retador,POSITIVA
+23,32,Masculino,6,Las admiro,POSITIVA
+23,32,Masculino,7,No Hacerlo,NEUTRA
+23,32,Masculino,9,Jugaba mucho,POSITIVA
+23,32,Masculino,10,Ama Dios por encima de todo,AMBIGUA
+23,32,Masculino,11,Me parece excelente,POSITIVA
+23,32,Masculino,12,Hace la diferencia,POSITIVA
+23,32,Masculino,13,Todos,POSITIVA
+23,32,Masculino,14,Lo mejor que me regaló Dios,POSITIVA
+23,32,Masculino,15,Perdí,NEGATIVA
+23,32,Masculino,16,Continuará su estudio,POSITIVA
+23,32,Masculino,17,Mi trabajo,POSITIVA
+23,32,Masculino,18,No existiera el mal,NEGATIVA
+23,32,Masculino,19,Sería más solidario,POSITIVA
+23,32,Masculino,20,Ser mejor cada día,POSITIVA
+23,32,Masculino,21,Me querian,POSITIVA
+23,32,Masculino,22,Fracazar,POSITIVA
+23,32,Masculino,23,El desorden,AMBIGUA
+23,32,Masculino,24,Fue,NEUTRA
+23,32,Masculino,25,Son de frágiles mentales,NEGATIVA
+23,32,Masculino,26,Es la mejor parte de la vida,NEGATIVA
+23,32,Masculino,27,El mejor padre,POSITIVA
+23,32,Masculino,28,Piensan bien de mi,POSITIVA
+23,32,Masculino,29,Nos ayudamos,POSITIVA
+23,32,Masculino,30,Alejarme de Dios,NEGATIVA
+23,32,Masculino,31,cumpliera sus sueños,POSITIVA
+23,32,Masculino,32,Timidez,NEGATIVA
+23,32,Masculino,33,Negocio rentable,POSITIVA
+23,32,Masculino,34,Bien remunerada,POSITIVA
+23,32,Masculino,35,Tendré mi casita,POSITIVA
+23,32,Masculino,36,Lo saludo,POSITIVA
+23,32,Masculino,37,Las alturas,POSITIVA
+23,32,Masculino,38,Tiene ideas en comun,POSITIVA
+23,32,Masculino,39,Iría por mi sueño de niño,POSITIVA
+23,32,Masculino,40,Son hermosas,POSITIVA
+23,32,Masculino,41,Con mi esposa,POSITIVA
+23,32,Masculino,42,Son unidas,POSITIVA
+23,32,Masculino,43,Le gusta esforzarse a si no sepa del tema,POSITIVA
+23,32,Masculino,44,Hacen lo mejor por su familia,POSITIVA
+23,32,Masculino,45,Nada,NEUTRA
+23,32,Masculino,46,El mejor que me puedo tocar,POSITIVA
+23,32,Masculino,47,No creo en la suerte,NEUTRA
+23,32,Masculino,48,Espero que se haga lo mejor posible,POSITIVA
+23,32,Masculino,49,Ser dalvo,NEUTRA
+23,32,Masculino,50,Tendré mi casa,POSITIVA
+23,32,Masculino,51,Personas con experiencia,POSITIVA
+23,32,Masculino,52,No actuar,NEGATIVA
+23,32,Masculino,53,Me llaman,POSITIVA
+23,32,Masculino,54,Jugar fútbol,POSITIVA
+23,32,Masculino,55,Se creen superiores,NEGATIVA
+23,32,Masculino,56,Excelente,POSITIVA
+23,32,Masculino,57,Feliz,POSITIVA
+23,32,Masculino,58,Está bien,POSITIVA
+23,32,Masculino,59,Le hace falta dejar el rencor,NEGATIVA
+23,32,Masculino,60,Mentiras,NEUTRA
+24,28,Masculino,1,Escucha,NEGATIVA
+24,28,Masculino,2,Me da rabia,NEGATIVA
+24,28,Masculino,3,3 mujeres,NEGATIVA
+24,28,Masculino,4,De una empresa,NEUTRA
+24,28,Masculino,5,Incierto,AMBIGUA
+24,28,Masculino,6,No me importan,NEGATIVA
+24,28,Masculino,7,Morir ahogado,POSITIVA
+24,28,Masculino,9,Me gustaba jugar al futbol,POSITIVA
+24,28,Masculino,10,No existe,NEGATIVA
+24,28,Masculino,11,Me da risa,NEGATIVA
+24,28,Masculino,12,Es perfecta,NEGATIVA
+24,28,Masculino,13,Ninguno,NEGATIVA
+24,28,Masculino,14,No estuvo junto a mi,NEGATIVA
+24,28,Masculino,15,Lloré toda una noche,NEGATIVA
+24,28,Masculino,16,Se escuchará más,POSITIVA
+24,28,Masculino,17,El debate,POSITIVA
+24,28,Masculino,18,No tuviera ansiedad,POSITIVA
+24,28,Masculino,19,Seríamos grandes,POSITIVA
+24,28,Masculino,20,Nada,NEGATIVA
+24,28,Masculino,21,Eran decorosos,POSITIVA
+24,28,Masculino,22,Que la depresión me mate,NEGATIVA
+24,28,Masculino,23,Convivir con mucha gente,AMBIGUA
+24,28,Masculino,24,Creería que sería futbolista,NEGATIVA
+24,28,Masculino,25,No saben nada de la sociedad,NEGATIVA
+24,28,Masculino,26,Es un contrato,NEGATIVA
+24,28,Masculino,27,Si no importara,NEGATIVA
+24,28,Masculino,28,No trabajo,NEUTRA
+24,28,Masculino,29,No estamos juntos,AMBIGUA
+24,28,Masculino,30,Enamorarme,NEGATIVA
+24,28,Masculino,31,Hubiese sido diferente en mi infancia,NEGATIVA
+24,28,Masculino,32,El amor,POSITIVA
+24,28,Masculino,33,El dinero,POSITIVA
+24,28,Masculino,34,….,NEUTRA
+24,28,Masculino,35,Seré reconocido,POSITIVA
+24,28,Masculino,36,No tengo jefe,NEUTRA
+24,28,Masculino,37,Hablar,POSITIVA
+24,28,Masculino,38,Nadie,NEGATIVA
+24,28,Masculino,39,Cometería menos errores,POSITIVA
+24,28,Masculino,40,Conocen un verdadero hombre,AMBIGUA
+24,28,Masculino,41,Poco tengo,AMBIGUA
+24,28,Masculino,42,No conozco,NEUTRA
+24,28,Masculino,43,No,NEUTRA
+24,28,Masculino,44,No se,NEUTRA
+24,28,Masculino,45,Robar a mi padre,POSITIVA
+24,28,Masculino,46,El mejor papá del mundo,POSITIVA
+24,28,Masculino,47,No se,NEUTRA
+24,28,Masculino,48,No se,NEUTRA
+24,28,Masculino,49,Ser generoso,POSITIVA
+24,28,Masculino,50,Tendré poder,AMBIGUA
+24,28,Masculino,51,No se,NEUTRA
+24,28,Masculino,52,Cometer errores,NEGATIVA
+24,28,Masculino,53,No se,NEUTRA
+24,28,Masculino,54,Un pollito,POSITIVA
+24,28,Masculino,55,No se,NEUTRA
+24,28,Masculino,56,Poco,AMBIGUA
+24,28,Masculino,57,Jugaba mucho,POSITIVA
+24,28,Masculino,58,…,NEUTRA
+24,28,Masculino,59,No estuvo conmigo,NEGATIVA
+24,28,Masculino,60,Robarle a Dios,NEUTRA
+25,33,Femenino,1,Ignora,POSITIVA
+25,33,Femenino,2,Me rio,AMBIGUA
+25,33,Femenino,3,Estudiar medicina,NEGATIVA
+25,33,Femenino,4,Sería una gran lider,POSITIVA
+25,33,Femenino,5,Me asusta,NEGATIVA
+25,33,Femenino,6,Las respeto,POSITIVA
+25,33,Femenino,7,Equivocarme,NEGATIVA
+25,33,Femenino,9,Jugaba mucho,POSITIVA
+25,33,Femenino,10,Puede ser,NEUTRA
+25,33,Femenino,11,Que bonitos,POSITIVA
+25,33,Femenino,12,Es lo mejor,POSITIVA
+25,33,Femenino,13,Ayuda,AMBIGUA
+25,33,Femenino,14,Es muy valiosa para mi,POSITIVA
+25,33,Femenino,15,Mi hijo tuvo un accidente,NEGATIVA
+25,33,Femenino,16,Estuviera vivo,NEGATIVA
+25,33,Femenino,17,Aprender,POSITIVA
+25,33,Femenino,18,Mi vida espiritual fuera la mejor,NEGATIVA
+25,33,Femenino,19,Seriamos un equipo de trabajo,POSITIVA
+25,33,Femenino,20,En Dios,POSITIVA
+25,33,Femenino,21,Son lo mejor,POSITIVA
+25,33,Femenino,22,La oscuridad,POSITIVA
+25,33,Femenino,23,Gritar,POSITIVA
+25,33,Femenino,24,Las cosas eran mejores,NEGATIVA
+25,33,Femenino,25,Estan preocupados,NEUTRA
+25,33,Femenino,26,Es bonita,POSITIVA
+25,33,Femenino,27,Una princesa,POSITIVA
+25,33,Femenino,28,Son increíbles,POSITIVA
+25,33,Femenino,29,Somos buenas amigas,POSITIVA
+25,33,Femenino,30,No estudiar,NEGATIVA
+25,33,Femenino,31,Estuviera vivo,AMBIGUA
+25,33,Femenino,32,Las chocolatinas,NEUTRA
+25,33,Femenino,33,Un carro,POSITIVA
+25,33,Femenino,34,Seria agradecida,POSITIVA
+25,33,Femenino,35,Quisiera tener mi casa,POSITIVA
+25,33,Femenino,36,Me asusto q no me vea en mi area,NEGATIVA
+25,33,Femenino,37,Preocuparme,AMBIGUA
+25,33,Femenino,38,Me anima,POSITIVA
+25,33,Femenino,39,No me hubiera casado todavía,AMBIGUA
+25,33,Femenino,40,Son inteligentes,POSITIVA
+25,33,Femenino,41,Es algo bonito pero que sea con respeto,POSITIVA
+25,33,Femenino,42,Tienen dificultades,AMBIGUA
+25,33,Femenino,43,Es competitiva,POSITIVA
+25,33,Femenino,44,Aman sin esperar nada a cambio,POSITIVA
+25,33,Femenino,45,Haber dejado de estudiar,NEGATIVA
+25,33,Femenino,46,Lo mejor,POSITIVA
+25,33,Femenino,47,Me rio,POSITIVA
+25,33,Femenino,48,Siento q me falta caracter,NEGATIVA
+25,33,Femenino,49,Esperar al señor con mis hijos y mi familia,POSITIVA
+25,33,Femenino,50,Mi hijo sera un hombre,AMBIGUA
+25,33,Femenino,51,Son respetables,POSITIVA
+25,33,Femenino,52,Desanimarme,NEGATIVA
+25,33,Femenino,53,Me llaman,POSITIVA
+25,33,Femenino,54,Es mis amistades jugando,POSITIVA
+25,33,Femenino,55,Q son mentirosos,NEGATIVA
+25,33,Femenino,56,Es respetable,POSITIVA
+25,33,Femenino,57,Fue muy lindo,POSITIVA
+25,33,Femenino,58,Le agrada,POSITIVA
+25,33,Femenino,59,Ya a su edad se vuelve terca,AMBIGUA
+25,33,Femenino,60,Es decir una mentira,NEGATIVA
+26,35,Masculino,1,Regaña,AMBIGUA
+26,35,Masculino,2,Me deprimo,NEGATIVA
+26,35,Masculino,3,Tener un carro,POSITIVA
+26,35,Masculino,4,Lo aria mejor,POSITIVA
+26,35,Masculino,5,Excelente,POSITIVA
+26,35,Masculino,6,Los tomo como ejemplo,POSITIVA
+26,35,Masculino,7,Enfermar y llegar a viejo,NEGATIVA
+26,35,Masculino,9,Lloraba,NEGATIVA
+26,35,Masculino,10,Es que sea como yo,NEGATIVA
+26,35,Masculino,11,Pienso en que serán felices,POSITIVA
+26,35,Masculino,12,No son tan diferentes,AMBIGUA
+26,35,Masculino,13,Mis jefes y compañeros,POSITIVA
+26,35,Masculino,14,Me ama,POSITIVA
+26,35,Masculino,15,Me enamoré,NEGATIVA
+26,35,Masculino,16,No muriera,NEGATIVA
+26,35,Masculino,17,Hacer cualquier cosa,NEGATIVA
+26,35,Masculino,18,Supiera que viviría para siempre,NEGATIVA
+26,35,Masculino,19,Los trataría excelente,POSITIVA
+26,35,Masculino,20,Que me vaya muy bien en mi vida,POSITIVA
+26,35,Masculino,21,Me quieren,POSITIVA
+26,35,Masculino,22,Enfermar,NEGATIVA
+26,35,Masculino,23,La gente arrogante,POSITIVA
+26,35,Masculino,24,De morir pedir perdón y encomendarme  a Dios,NEUTRA
+26,35,Masculino,25,Son repelentes,NEGATIVA
+26,35,Masculino,26,Es dura,NEGATIVA
+26,35,Masculino,27,Quieren,POSITIVA
+26,35,Masculino,28,Me la llevo bien,POSITIVA
+26,35,Masculino,29,Nos amamos,POSITIVA
+26,35,Masculino,30,Meterme en deudas,NEGATIVA
+26,35,Masculino,31,Estuviera conmigo,NEGATIVA
+26,35,Masculino,32,Mirar mujeres,AMBIGUA
+26,35,Masculino,33,Sería servir a otros,POSITIVA
+26,35,Masculino,34,Son lo primero,AMBIGUA
+26,35,Masculino,35,Morire,AMBIGUA
+26,35,Masculino,36,Me preparo para saludar,POSITIVA
+26,35,Masculino,37,Morir,AMBIGUA
+26,35,Masculino,38,Los llevo en mi corazón,POSITIVA
+26,35,Masculino,39,Haría cosas que no hice,AMBIGUA
+26,35,Masculino,40,Son mentirosas,NEGATIVA
+26,35,Masculino,41,Lo disfrutaría mucho,POSITIVA
+26,35,Masculino,42,Pelean mucho,NEGATIVA
+26,35,Masculino,43,Es juiciosa,POSITIVA
+26,35,Masculino,44,Son lindas,POSITIVA
+26,35,Masculino,45,De las enfermedades de mis padres,NEGATIVA
+26,35,Masculino,46,Genial,POSITIVA
+26,35,Masculino,47,Me deprimo,NEGATIVA
+26,35,Masculino,48,Me siento mal,NEGATIVA
+26,35,Masculino,49,Vivir para siempre,AMBIGUA
+26,35,Masculino,50,Yo lograré estabilidad,POSITIVA
+26,35,Masculino,51,Son calidad,POSITIVA
+26,35,Masculino,52,Cambiar de pensamiento,POSITIVA
+26,35,Masculino,53,Hablan de mi,NEGATIVA
+26,35,Masculino,54,Era soñar con una mujer todas las noches,AMBIGUA
+26,35,Masculino,55,Su infidelidad,NEGATIVA
+26,35,Masculino,56,Es activa,POSITIVA
+26,35,Masculino,57,Me asustaban los truenos,NEGATIVA
+26,35,Masculino,58,Viven bien,POSITIVA
+26,35,Masculino,59,Mi padre también,POSITIVA
+26,35,Masculino,60,Meterme en deudas,NEGATIVA
+27,24,Femenino,1,Entiende,NEGATIVA
+27,24,Femenino,2,me frustro,NEGATIVA
+27,24,Femenino,3,Ser la mejor en lo que me dediqué,POSITIVA
+27,24,Femenino,4,daria lo mejor de mi,POSITIVA
+27,24,Femenino,5,incierto,AMBIGUA
+27,24,Femenino,6,me aconsejan,POSITIVA
+27,24,Femenino,7,No cumplir mis metas,NEGATIVA
+27,24,Femenino,9,anhelaba crecer,AMBIGUA
+27,24,Femenino,10,Que me impulse a ser mejor,POSITIVA
+27,24,Femenino,11,Me alegro,POSITIVA
+27,24,Femenino,12,Es la mejor que pude tener,POSITIVA
+27,24,Femenino,13,Lo práctico,POSITIVA
+27,24,Femenino,14,Es una guerrera,POSITIVA
+27,24,Femenino,15,Decepcioné a mi mamá,NEGATIVA
+27,24,Femenino,16,Disfrutara mas de la vida,POSITIVA
+27,24,Femenino,17,Las manualidades,POSITIVA
+27,24,Femenino,18,No sobrepensara,POSITIVA
+27,24,Femenino,19,Seria amable,POSITIVA
+27,24,Femenino,20,Cumplir todos mis propositos,NEGATIVA
+27,24,Femenino,21,Eran geniales,POSITIVA
+27,24,Femenino,22,la soledad,POSITIVA
+27,24,Femenino,23,herir a los demas,POSITIVA
+27,24,Femenino,24,no era razonable,POSITIVA
+27,24,Femenino,25,no piensan en un futuro,NEGATIVA
+27,24,Femenino,26,es un reto grande,AMBIGUA
+27,24,Femenino,27,la reina de la casa,POSITIVA
+27,24,Femenino,28,son empaticos,POSITIVA
+27,24,Femenino,29,somos como amigas,POSITIVA
+27,24,Femenino,30,No expresar mis sentimientos,NEGATIVA
+27,24,Femenino,31,cambie de mentalidad,AMBIGUA
+27,24,Femenino,32,Es la comprension,AMBIGUA
+27,24,Femenino,33,Formar un hogar,POSITIVA
+27,24,Femenino,34,es agradable,POSITIVA
+27,24,Femenino,35,sere la mejor psicologa,POSITIVA
+27,24,Femenino,36,No interfiere en mis actividades,POSITIVA
+27,24,Femenino,37,Estar sola,POSITIVA
+27,24,Femenino,38,Es porque me apoya,POSITIVA
+27,24,Femenino,39,Cambiaria muchas cosas,AMBIGUA
+27,24,Femenino,40,deben trabajar en su armonia,NEGATIVA
+27,24,Femenino,41,Me cuido,POSITIVA
+27,24,Femenino,42,tienen su propia ecensia,NEUTRA
+27,24,Femenino,43,no le gusta sobresalir,AMBIGUA
+27,24,Femenino,44,son maravillosas,POSITIVA
+27,24,Femenino,45,todo lo malo que sucedia,AMBIGUA
+27,24,Femenino,46,un gran hombre,POSITIVA
+27,24,Femenino,47,respiro y busco otra salida,POSITIVA
+27,24,Femenino,48,suelo ser amable,POSITIVA
+27,24,Femenino,49,ayudar a muchas personas,POSITIVA
+27,24,Femenino,50,habre cumplido todas mis metas,POSITIVA
+27,24,Femenino,51,las respeto,POSITIVA
+27,24,Femenino,52,sobrepensar,NEGATIVA
+27,24,Femenino,53,Me cuentan despues lo sucedido,POSITIVA
+27,24,Femenino,54,un accidente en la moto,NEGATIVA
+27,24,Femenino,55,que sean tan complicados,AMBIGUA
+27,24,Femenino,56,es un privilegio,POSITIVA
+27,24,Femenino,57,me gustaba mucho la bachata,POSITIVA
+27,24,Femenino,58,es chistosa,POSITIVA
+27,24,Femenino,59,chocamos aveces,AMBIGUA
+27,24,Femenino,60,no expresar todo lo que pienso,NEGATIVA
+28,46,Femenino,1,Regaña,AMBIGUA
+28,46,Femenino,2,Lloro,AMBIGUA
+28,46,Femenino,3,Conocer lugares,POSITIVA
+28,46,Femenino,4,Sería la mejor,POSITIVA
+28,46,Femenino,5,Incierto,AMBIGUA
+28,46,Femenino,6,Las admiro,POSITIVA
+28,46,Femenino,7,Que me vean llorar,NEGATIVA
+28,46,Femenino,9,No tuve muñecas,AMBIGUA
+28,46,Femenino,10,Lo es todo,NEUTRA
+28,46,Femenino,11,Creo en el amor,POSITIVA
+28,46,Femenino,12,Es casi perfecta,AMBIGUA
+28,46,Femenino,13,Mi paciencia,NEGATIVA
+28,46,Femenino,14,Única,POSITIVA
+28,46,Femenino,15,Mi hermana murió en mis brazos,NEGATIVA
+28,46,Femenino,16,Llorara,NEGATIVA
+28,46,Femenino,17,Hablar,POSITIVA
+28,46,Femenino,18,Mis hijos son felices,NEGATIVA
+28,46,Femenino,19,Los valoraria,POSITIVA
+28,46,Femenino,20,Ser mejor mamá,POSITIVA
+28,46,Femenino,21,Los mejores,POSITIVA
+28,46,Femenino,22,Las serpientes,NEGATIVA
+28,46,Femenino,23,El melon,NEUTRA
+28,46,Femenino,24,No tenía nada,POSITIVA
+28,46,Femenino,25,Normalizan todo,NEGATIVA
+28,46,Femenino,26,Debe ser para toda la vida,AMBIGUA
+28,46,Femenino,27,Una mamá cariñosa,POSITIVA
+28,46,Femenino,28,Me las llevo bien,POSITIVA
+28,46,Femenino,29,Hablamos todos los dias,POSITIVA
+28,46,Femenino,30,"Dejar de ser yo, por convertirme en una mamá al 100%",NEGATIVA
+28,46,Femenino,31,Viniera a visitarme,POSITIVA
+28,46,Femenino,32,Ver llorar a mis hijos,POSITIVA
+28,46,Femenino,33,Tener una finca grande,POSITIVA
+28,46,Femenino,34,Es muy leal,POSITIVA
+28,46,Femenino,35,Conoceré Santorine,POSITIVA
+28,46,Femenino,36,Me pongo seria,NEGATIVA
+28,46,Femenino,37,Las alturas,POSITIVA
+28,46,Femenino,38,Mi familia,POSITIVA
+28,46,Femenino,39,Estudiaria,POSITIVA
+28,46,Femenino,40,Quieren ser madres,POSITIVA
+28,46,Femenino,41,Me cuidaría para no tener más hijos,POSITIVA
+28,46,Femenino,42,Son disfuncionales,NEGATIVA
+28,46,Femenino,43,Son responsables,POSITIVA
+28,46,Femenino,44,Lloramos por nuestros hijos,POSITIVA
+28,46,Femenino,45,No haber estudiado,NEGATIVA
+28,46,Femenino,46,El mejor de todos,POSITIVA
+28,46,Femenino,47,Me da tristeza,AMBIGUA
+28,46,Femenino,48,Espero las cumplan,AMBIGUA
+28,46,Femenino,49,Ver a mis hijos felices,POSITIVA
+28,46,Femenino,50,Viajaremos a Europa,NEUTRA
+28,46,Femenino,51,Los respeto,POSITIVA
+28,46,Femenino,52,Alejarme,NEGATIVA
+28,46,Femenino,53,Hablan de todos,NEGATIVA
+28,46,Femenino,54,Que vivi con mi abuela,AMBIGUA
+28,46,Femenino,55,Su egocentrismo,NEGATIVA
+28,46,Femenino,56,Es buena,POSITIVA
+28,46,Femenino,57,Aprendí a cocinar,POSITIVA
+28,46,Femenino,58,Me respeta,AMBIGUA
+28,46,Femenino,59,No le gusta que fume,POSITIVA
+28,46,Femenino,60,Negarme cosas a mi misma,NEGATIVA
+29,21,Masculino,1,Abraza,NEGATIVA
+29,21,Masculino,2,Lloro,AMBIGUA
+29,21,Masculino,3,Viajar,POSITIVA
+29,21,Masculino,4,Sería el mejor,POSITIVA
+29,21,Masculino,5,Tenebroso,NEGATIVA
+29,21,Masculino,6,Me dan igual,NEUTRA
+29,21,Masculino,7,Morir,POSITIVA
+29,21,Masculino,9,Quería todo,AMBIGUA
+29,21,Masculino,10,Amoroso,POSITIVA
+29,21,Masculino,11,Me da ternura,POSITIVA
+29,21,Masculino,12,Es la mejor,POSITIVA
+29,21,Masculino,13,Nadie,NEGATIVA
+29,21,Masculino,14,Es cansona,NEGATIVA
+29,21,Masculino,15,Estuve solo,NEGATIVA
+29,21,Masculino,16,Demostrará más su afecto,NEGATIVA
+29,21,Masculino,17,El diseño,POSITIVA
+29,21,Masculino,18,Me mantuviera viajando,POSITIVA
+29,21,Masculino,19,Viviría viajando,AMBIGUA
+29,21,Masculino,20,Viajar mucho,POSITIVA
+29,21,Masculino,21,Eran un fastidio,NEGATIVA
+29,21,Masculino,22,Perderme en el metro,NEGATIVA
+29,21,Masculino,23,Las mentiras,NEUTRA
+29,21,Masculino,24,Después,NEUTRA
+29,21,Masculino,25,Están muy equivocados,NEGATIVA
+29,21,Masculino,26,Es buena mientras las dos partes la quieran,AMBIGUA
+29,21,Masculino,27,Cualquier otra persona,NEGATIVA
+29,21,Masculino,28,A veces me caen mal,NEGATIVA
+29,21,Masculino,29,Tenemos el mismo genio,AMBIGUA
+29,21,Masculino,30,Creer,AMBIGUA
+29,21,Masculino,31,Me regalará viajes,POSITIVA
+29,21,Masculino,32,Un viaje,POSITIVA
+29,21,Masculino,33,Ser millonario,POSITIVA
+29,21,Masculino,34,Me haría la vida más fácil,NEUTRA
+29,21,Masculino,35,Me mantendré viajando,POSITIVA
+29,21,Masculino,36,Me pongo a trabajar,POSITIVA
+29,21,Masculino,37,Que no me funcionen mis planes,AMBIGUA
+29,21,Masculino,38,Es la más loca,AMBIGUA
+29,21,Masculino,39,Viajaría más,POSITIVA
+29,21,Masculino,40,Deben de aprender de lealtad,NEGATIVA
+29,21,Masculino,41,Sería lo mejor,AMBIGUA
+29,21,Masculino,42,Son normales,POSITIVA
+29,21,Masculino,43,No me molesta,AMBIGUA
+29,21,Masculino,44,Son muy sensibles,AMBIGUA
+29,21,Masculino,45,Comer tanto,NEGATIVA
+29,21,Masculino,46,Trabajador,POSITIVA
+29,21,Masculino,47,Lloro,AMBIGUA
+29,21,Masculino,48,Me siento feliz,POSITIVA
+29,21,Masculino,49,Viajar,POSITIVA
+29,21,Masculino,50,Me iré a viajar,NEUTRA
+29,21,Masculino,51,Son normales,NEUTRA
+29,21,Masculino,52,Auto sabotearme,NEGATIVA
+29,21,Masculino,53,No están conmigo,NEGATIVA
+29,21,Masculino,54,No recuerdo,NEUTRA
+29,21,Masculino,55,Lo mentirosos,NEGATIVA
+29,21,Masculino,56,Es buena,POSITIVA
+29,21,Masculino,57,Lo tenía todo,POSITIVA
+29,21,Masculino,58,Se ríe mucho,POSITIVA
+29,21,Masculino,59,Es muy cansona,NEGATIVA
+29,21,Masculino,60,Es escaparme,NEGATIVA
+30,19,Femenino,1,Abraza,NEGATIVA
+30,19,Femenino,2,Rio,AMBIGUA
+30,19,Femenino,3,Felicidad,NEGATIVA
+30,19,Femenino,4,Estrés,NEGATIVA
+30,19,Femenino,5,Tedioso,NEGATIVA
+30,19,Femenino,6,Respetable,POSITIVA
+30,19,Femenino,7,No ser feliz,NEGATIVA
+30,19,Femenino,9,Borroso,NEUTRA
+30,19,Femenino,10,Incondicional,POSITIVA
+30,19,Femenino,11,Tranquilidad,POSITIVA
+30,19,Femenino,12,Rota,NEGATIVA
+30,19,Femenino,13,Todos,POSITIVA
+30,19,Femenino,14,Incomprensible,NEGATIVA
+30,19,Femenino,15,Me quise ir,AMBIGUA
+30,19,Femenino,16,Escuchará,NEGATIVA
+30,19,Femenino,17,Arte,POSITIVA
+30,19,Femenino,18,Fuera diferente,POSITIVA
+30,19,Femenino,19,Tendría amabilidad,POSITIVA
+30,19,Femenino,20,Paz,POSITIVA
+30,19,Femenino,21,Increíbles,POSITIVA
+30,19,Femenino,22,Rendirme,AMBIGUA
+30,19,Femenino,23,Ser infeliz,POSITIVA
+30,19,Femenino,24,Incertidumbre,NEUTRA
+30,19,Femenino,25,Son únicos,POSITIVA
+30,19,Femenino,26,Fuerte,NEUTRA
+30,19,Femenino,27,Nada,NEUTRA
+30,19,Femenino,28,Inteligentes,POSITIVA
+30,19,Femenino,29,Confuso,NEUTRA
+30,19,Femenino,30,Permitir,AMBIGUA
+30,19,Femenino,31,Fuera honesto,NEGATIVA
+30,19,Femenino,32,Mi corazón,POSITIVA
+30,19,Femenino,33,Ser feliz,POSITIVA
+30,19,Femenino,34,Agradecida,POSITIVA
+30,19,Femenino,35,Tendré paz,AMBIGUA
+30,19,Femenino,36,Respeto,AMBIGUA
+30,19,Femenino,37,Ser libre,NEGATIVA
+30,19,Femenino,38,Mis amigos,POSITIVA
+30,19,Femenino,39,Sería más comprensible,POSITIVA
+30,19,Femenino,40,Son únicos,POSITIVA
+30,19,Femenino,41,Me relajaría,POSITIVA
+30,19,Femenino,42,Armonia,NEUTRA
+30,19,Femenino,43,Me hace reír,POSITIVA
+30,19,Femenino,44,Son bonitas,POSITIVA
+30,19,Femenino,45,No ser perfecta,NEGATIVA
+30,19,Femenino,46,Confuso,AMBIGUA
+30,19,Femenino,47,Me frustro,NEGATIVA
+30,19,Femenino,48,Soy amable,POSITIVA
+30,19,Femenino,49,Mi paz,AMBIGUA
+30,19,Femenino,50,Expresión,NEUTRA
+30,19,Femenino,51,Temor,NEGATIVA
+30,19,Femenino,52,Ser infeliz,NEGATIVA
+30,19,Femenino,53,Me recuerdan,POSITIVA
+30,19,Femenino,54,Borroso,NEUTRA
+30,19,Femenino,55,Incomprensiblea,AMBIGUA
+30,19,Femenino,56,Activa,POSITIVA
+30,19,Femenino,57,Me divertía,POSITIVA
+30,19,Femenino,58,Les agrado,POSITIVA
+30,19,Femenino,59,No la comprendo,NEGATIVA
+30,19,Femenino,60,Herir,NEGATIVA
+31,51,Masculino,1,Habla,NEGATIVA
+31,51,Masculino,2,Me enojo,NEGATIVA
+31,51,Masculino,3,Poder viajar,POSITIVA
+31,51,Masculino,4,De la empresa,NEUTRA
+31,51,Masculino,5,Incierto por qué nunca sabemos que nos espera,AMBIGUA
+31,51,Masculino,6,Son crecidas,NEGATIVA
+31,51,Masculino,7,Enfermarme,POSITIVA
+31,51,Masculino,9,Me gustaba jugar,POSITIVA
+31,51,Masculino,10,Humilde,POSITIVA
+31,51,Masculino,11,Ideal,NEUTRA
+31,51,Masculino,12,Es mejor la mía,POSITIVA
+31,51,Masculino,13,Conmigo mismo,NEGATIVA
+31,51,Masculino,14,Mi ángel,POSITIVA
+31,51,Masculino,15,Dejé ir una oportunidad,AMBIGUA
+31,51,Masculino,16,Estuviera,NEGATIVA
+31,51,Masculino,17,Crear empresa,POSITIVA
+31,51,Masculino,18,Si tuviera un buen sueldo,POSITIVA
+31,51,Masculino,19,Buenos honorarios,POSITIVA
+31,51,Masculino,20,Que mis hijos cumplan sus metas,POSITIVA
+31,51,Masculino,21,Estrictos,AMBIGUA
+31,51,Masculino,22,Conducir autos,NEGATIVA
+31,51,Masculino,23,La gente bolatosa,AMBIGUA
+31,51,Masculino,24,Era mejor que hoy,NEGATIVA
+31,51,Masculino,25,Hoy no les gusta trabajar,NEGATIVA
+31,51,Masculino,26,Es monótona,NEGATIVA
+31,51,Masculino,27,Un rey,POSITIVA
+31,51,Masculino,28,Son hipócritas,NEGATIVA
+31,51,Masculino,29,Dialogabamos,POSITIVA
+31,51,Masculino,30,No estudiar,NEGATIVA
+31,51,Masculino,31,Viviera,AMBIGUA
+31,51,Masculino,32,Mi caracter,POSITIVA
+31,51,Masculino,33,Viajar,POSITIVA
+31,51,Masculino,34,Es remunerada,POSITIVA
+31,51,Masculino,35,Estaré relajado sin pensar en tanto trabajo,POSITIVA
+31,51,Masculino,36,Me levanto a trabajar,POSITIVA
+31,51,Masculino,37,Arriesgarme a invertir,AMBIGUA
+31,51,Masculino,38,Es la gente humilde,POSITIVA
+31,51,Masculino,39,Me arriesgaría más,POSITIVA
+31,51,Masculino,40,Son vanidosas,NEGATIVA
+31,51,Masculino,41,Más seguido,AMBIGUA
+31,51,Masculino,42,Son catolicas,NEUTRA
+31,51,Masculino,43,Se le ven las ganas de salir adelante,POSITIVA
+31,51,Masculino,44,Son sobreprotectoras,NEGATIVA
+31,51,Masculino,45,De no trabajar,AMBIGUA
+31,51,Masculino,46,Un ángel,POSITIVA
+31,51,Masculino,47,Me da ira,AMBIGUA
+31,51,Masculino,48,Es porque tengo razon,POSITIVA
+31,51,Masculino,49,Mis hijos triunfen,POSITIVA
+31,51,Masculino,50,Podré viajar,NEUTRA
+31,51,Masculino,51,Grandes en sus esfuerzos,POSITIVA
+31,51,Masculino,52,Trabajar más duro,POSITIVA
+31,51,Masculino,53,Extrañan,POSITIVA
+31,51,Masculino,54,Las fiestas,POSITIVA
+31,51,Masculino,55,Que sean vulgares,NEGATIVA
+31,51,Masculino,56,Es buena,POSITIVA
+31,51,Masculino,57,Me gustaba jugar fútbol,POSITIVA
+31,51,Masculino,58,Es gritona,NEGATIVA
+31,51,Masculino,59,No está,NEGATIVA
+31,51,Masculino,60,No tener mi propio negocio,NEGATIVA
+32,53,Femenino,1,Me regañó,AMBIGUA
+32,53,Femenino,2,me molesto,NEGATIVA
+32,53,Femenino,3,ser mamá,NEGATIVA
+32,53,Femenino,4,quisiera que fueran más sinceros,NEGATIVA
+32,53,Femenino,5,incierto,AMBIGUA
+32,53,Femenino,6,no siempre son por ser mejores que yo,NEGATIVA
+32,53,Femenino,7,entrar al mar,POSITIVA
+32,53,Femenino,9,me consintieron mucho,POSITIVA
+32,53,Femenino,10,temer y amar a Dios,POSITIVA
+32,53,Femenino,11,espero se valoren y respeten,POSITIVA
+32,53,Femenino,12,es mi red de apoyo,POSITIVA
+32,53,Femenino,13,personas ágiles,POSITIVA
+32,53,Femenino,14,una guerrera,POSITIVA
+32,53,Femenino,15,no tuve control de una situación,NEGATIVA
+32,53,Femenino,16,viviera,NEGATIVA
+32,53,Femenino,17,socializar y liderar,POSITIVA
+32,53,Femenino,18,Las personas fueran más fieles,NEGATIVA
+32,53,Femenino,19,tendría empatia,POSITIVA
+32,53,Femenino,20,ser recordada para bien,POSITIVA
+32,53,Femenino,21,grandes maestros en mi vida,POSITIVA
+32,53,Femenino,22,el mar,NEGATIVA
+32,53,Femenino,23,que me mientan,NEGATIVA
+32,53,Femenino,24,quería tener el control,POSITIVA
+32,53,Femenino,25,son muy inteligentes,POSITIVA
+32,53,Femenino,26,es maravillosa,POSITIVA
+32,53,Femenino,27,una líder a seguir,POSITIVA
+32,53,Femenino,28,les agrada mi compañia,POSITIVA
+32,53,Femenino,29,hablamos de todo,POSITIVA
+32,53,Femenino,30,confiar en idolatrar,NEUTRA
+32,53,Femenino,31,Hubiera estado más años conmigo,NEGATIVA
+32,53,Femenino,32,mi hijo,POSITIVA
+32,53,Femenino,33,Perfeccionarme en el plano espiritual,POSITIVA
+32,53,Femenino,34,desearía que fueran feliz,POSITIVA
+32,53,Femenino,35,disfrutaré de vivir en Ibagué,POSITIVA
+32,53,Femenino,36,le doy una sonrisa,POSITIVA
+32,53,Femenino,37,confiar,POSITIVA
+32,53,Femenino,38,"los realistas, sinceros y Positivos",POSITIVA
+32,53,Femenino,39,Viajaría y conocería más lugares,POSITIVA
+32,53,Femenino,40,se amargan sin necesidad,NEGATIVA
+32,53,Femenino,41,con quién amo,AMBIGUA
+32,53,Femenino,42,no se conocen ni dialogan,AMBIGUA
+32,53,Femenino,43,Quiere progresar,POSITIVA
+32,53,Femenino,44,Aman más a sus hijos q a ellas mismas,AMBIGUA
+32,53,Femenino,45,No estudiar,NEGATIVA
+32,53,Femenino,46,Un hombre único,POSITIVA
+32,53,Femenino,47,Me molesto,AMBIGUA
+32,53,Femenino,48,Deseo me obedezcan,POSITIVA
+32,53,Femenino,49,Una vejez con calidad de vida,POSITIVA
+32,53,Femenino,50,Vivir en Ibagué,POSITIVA
+32,53,Femenino,51,Los admiro por su amor y labor a Dios,POSITIVA
+32,53,Femenino,52,Angustiarme,NEGATIVA
+32,53,Femenino,53,Espero me extrañen,POSITIVA
+32,53,Femenino,54,El amor de mi padre,POSITIVA
+32,53,Femenino,55,La infidelidad,NEGATIVA
+32,53,Femenino,56,Con el hombre que amo,POSITIVA
+32,53,Femenino,57,Disfrutar de la compañía de mi papá,POSITIVA
+32,53,Femenino,58,me hace sentir bien,POSITIVA
+32,53,Femenino,59,no es empática,NEGATIVA
+32,53,Femenino,60,no valorarme mas,NEGATIVA
+33,19,Femenino,1,Deja sola,POSITIVA
+33,19,Femenino,2,Me estreso rápido,NEGATIVA
+33,19,Femenino,3,Poder volar,NEUTRA
+33,19,Femenino,4,Trataría de dirigir en base al respeto y la autoridad,POSITIVA
+33,19,Femenino,5,Incierto,AMBIGUA
+33,19,Femenino,6,Las trato con respeto,POSITIVA
+33,19,Femenino,7,La oscuridad,AMBIGUA
+33,19,Femenino,9,Quería ser veterinaria,POSITIVA
+33,19,Femenino,10,"Alguien leal, respetuoso, detallista y atento",POSITIVA
+33,19,Femenino,11,Me alegro por ellos,POSITIVA
+33,19,Femenino,12,Es muy estable y amorosa,POSITIVA
+33,19,Femenino,13,Mis amigos,POSITIVA
+33,19,Femenino,14,Es la mujer más trabajadora y líder qué existe,POSITIVA
+33,19,Femenino,15,Falleció mi abuelito,NEGATIVA
+33,19,Femenino,16,No se estresara tanto,POSITIVA
+33,19,Femenino,17,"El arte, el diseño y el baile",POSITIVA
+33,19,Femenino,18,No tuviera que madrugar,POSITIVA
+33,19,Femenino,19,Sería un equipo muy bueno y eficaz,POSITIVA
+33,19,Femenino,20,Tener mi propia empresa,POSITIVA
+33,19,Femenino,21,Tenían un muy buen concepto de mi,POSITIVA
+33,19,Femenino,22,Morir,NEGATIVA
+33,19,Femenino,23,Que me mientan,NEGATIVA
+33,19,Femenino,24,Me enojaba muy rápido y tenía poca paciencia,POSITIVA
+33,19,Femenino,25,No saben tener algo estable,AMBIGUA
+33,19,Femenino,26,Es aburrida,NEGATIVA
+33,19,Femenino,27,Una niña grande,NEGATIVA
+33,19,Femenino,28,Son responsables,POSITIVA
+33,19,Femenino,29,Tenemos una muy buena relación,POSITIVA
+33,19,Femenino,30,Confiar demasiado,NEGATIVA
+33,19,Femenino,31,Fuese inmortal,POSITIVA
+33,19,Femenino,32,Mi sensibilidad,POSITIVA
+33,19,Femenino,33,Conocer todo el mundo,POSITIVA
+33,19,Femenino,34,Los que trabajan conmigo se sienten seguros,POSITIVA
+33,19,Femenino,35,Conoceré japón,POSITIVA
+33,19,Femenino,36,Me dan nervios,NEGATIVA
+33,19,Femenino,37,Hablar en público,POSITIVA
+33,19,Femenino,38,Es sincera y leal,POSITIVA
+33,19,Femenino,39,Soy joven aún,NEUTRA
+33,19,Femenino,40,Tienen muchos inseguridades,NEGATIVA
+33,19,Femenino,41,Sería muy responsable y me protegería,POSITIVA
+33,19,Femenino,42,Tienen problemas afectivos,AMBIGUA
+33,19,Femenino,43,Sabe lo que hace,POSITIVA
+33,19,Femenino,44,Son muy cariñosas,POSITIVA
+33,19,Femenino,45,Desperdiciar la comida,POSITIVA
+33,19,Femenino,46,El Mejor de todos,POSITIVA
+33,19,Femenino,47,Me desánimo bastante,NEGATIVA
+33,19,Femenino,48,Habló con tranquilidad pero firme,POSITIVA
+33,19,Femenino,49,Ser alguien importante,AMBIGUA
+33,19,Femenino,50,Tendré mi título profesional,POSITIVA
+33,19,Femenino,51,Quien tenga mayor conocimiento,POSITIVA
+33,19,Femenino,52,No hacer las cosas,NEGATIVA
+33,19,Femenino,53,Tratan de saber de mi,POSITIVA
+33,19,Femenino,54,Ir a divercity con mis amigos,POSITIVA
+33,19,Femenino,55,Que no sepan querer bien,AMBIGUA
+33,19,Femenino,56,No es activa,NEGATIVA
+33,19,Femenino,57,Era más sociable,POSITIVA
+33,19,Femenino,58,Ya lo respondí,NEUTRA
+33,19,Femenino,59,A veces se enoja por todo,AMBIGUA
+33,19,Femenino,60,Mentirle a mis padres,NEGATIVA
+34,19,Femenino,1,Abraza,NEGATIVA
+34,19,Femenino,2,Me tomo un descanso,POSITIVA
+34,19,Femenino,3,Viajar,POSITIVA
+34,19,Femenino,4,Nose,NEUTRA
+34,19,Femenino,5,Misterioso,AMBIGUA
+34,19,Femenino,6,Tienen experiencia,POSITIVA
+34,19,Femenino,7,Fallar,NEGATIVA
+34,19,Femenino,9,Me. Gustaba correr,POSITIVA
+34,19,Femenino,10,Es mi novio,POSITIVA
+34,19,Femenino,11,Nada,NEUTRA
+34,19,Femenino,12,Es maravillosa,POSITIVA
+34,19,Femenino,13,Personas cercanas,POSITIVA
+34,19,Femenino,14,Es fuerte,POSITIVA
+34,19,Femenino,15,Me caí,AMBIGUA
+34,19,Femenino,16,Corriera,NEGATIVA
+34,19,Femenino,17,El arte,POSITIVA
+34,19,Femenino,18,Viajará,POSITIVA
+34,19,Femenino,19,Sería un trabajo en equipo,POSITIVA
+34,19,Femenino,20,Comer,POSITIVA
+34,19,Femenino,21,Eran muy buenos,POSITIVA
+34,19,Femenino,22,Fallar,POSITIVA
+34,19,Femenino,23,La guanabana,NEUTRA
+34,19,Femenino,24,Después,NEUTRA
+34,19,Femenino,25,Existen,NEUTRA
+34,19,Femenino,26,Es dura,NEGATIVA
+34,19,Femenino,27,No se,NEUTRA
+34,19,Femenino,28,Son buenos,POSITIVA
+34,19,Femenino,29,Nos llevamos bien,POSITIVA
+34,19,Femenino,30,Dudar,NEGATIVA
+34,19,Femenino,31,Llegara,NEGATIVA
+34,19,Femenino,32,Mi familia,POSITIVA
+34,19,Femenino,33,Triunfar,POSITIVA
+34,19,Femenino,34,Buena,NEUTRA
+34,19,Femenino,35,Viajaré,POSITIVA
+34,19,Femenino,36,Saludo,POSITIVA
+34,19,Femenino,37,Las agujas,POSITIVA
+34,19,Femenino,38,Mis amigos,POSITIVA
+34,19,Femenino,39,Soy joven,NEUTRA
+34,19,Femenino,40,Son poderosas,POSITIVA
+34,19,Femenino,41,No respondo,NEUTRA
+34,19,Femenino,42,Son,NEUTRA
+34,19,Femenino,43,Es extrovertida,POSITIVA
+34,19,Femenino,44,Son fuertes,POSITIVA
+34,19,Femenino,45,Nada,NEUTRA
+34,19,Femenino,46,Protector,AMBIGUA
+34,19,Femenino,47,Pues nada,NEUTRA
+34,19,Femenino,48,Soy amable,POSITIVA
+34,19,Femenino,49,Apoyar a mi familia,POSITIVA
+34,19,Femenino,50,Tendré un gran trabajo,POSITIVA
+34,19,Femenino,51,Es buena,POSITIVA
+34,19,Femenino,52,Esconderme,NEGATIVA
+34,19,Femenino,53,No se,NEUTRA
+34,19,Femenino,54,Fue comer las galletas rojas que me daba mi abuelo,POSITIVA
+34,19,Femenino,55,El irrespeto,NEGATIVA
+34,19,Femenino,56,No respondo,NEGATIVA
+34,19,Femenino,57,Jugaba mucho,POSITIVA
+34,19,Femenino,58,Es alegre,POSITIVA
+34,19,Femenino,59,Es volátil,NEGATIVA
+34,19,Femenino,60,Dudar,NEGATIVA
+35,55,Masculino,1,Consiente y escucha,NEGATIVA
+35,55,Masculino,2,Todo sale mal.,NEGATIVA
+35,55,Masculino,3,Ser profesional,NEGATIVA
+35,55,Masculino,4,Trataria de ser mejor ser humano,POSITIVA
+35,55,Masculino,5,Incierto,AMBIGUA
+35,55,Masculino,6,No son amables,NEGATIVA
+35,55,Masculino,7,Dar mis puntos de vista,NEGATIVA
+35,55,Masculino,9,Fui feliz,POSITIVA
+35,55,Masculino,10,"Es ser servicial, amigo, sincero y incondicional",POSITIVA
+35,55,Masculino,11,Me da alegría,POSITIVA
+35,55,Masculino,12,Es mejor es muchos aspectos,POSITIVA
+35,55,Masculino,13,Hombres,AMBIGUA
+35,55,Masculino,14,"Es muy dura, insensible y poco amorosa",NEGATIVA
+35,55,Masculino,15,Fui infiel,NEGATIVA
+35,55,Masculino,16,Hubiera sido mas comprensivo y amoroso,NEGATIVA
+35,55,Masculino,17,Trabajo manual,POSITIVA
+35,55,Masculino,18,Tuviera una mejor estabilidad económica y emocional,POSITIVA
+35,55,Masculino,19,Seria muy amable y compresivo,POSITIVA
+35,55,Masculino,20,Siempre dar lo mejor de mi,NEGATIVA
+35,55,Masculino,21,Eran muy amables y profesionales,POSITIVA
+35,55,Masculino,22,El fracaso,POSITIVA
+35,55,Masculino,23,El maltrato físico y emocional,POSITIVA
+35,55,Masculino,24,Era mas sociable,NEGATIVA
+35,55,Masculino,25,Son muy desagradecidos,NEGATIVA
+35,55,Masculino,26,Es dura pero gratificante al final,POSITIVA
+35,55,Masculino,27,Un ser insensible y poco amigable,NEGATIVA
+35,55,Masculino,28,Me respetan,POSITIVA
+35,55,Masculino,29,No tenemos buena relación,NEGATIVA
+35,55,Masculino,30,No haber terminado mis estudios,NEGATIVA
+35,55,Masculino,31,Hubiera sido mas edificable y amoroso,NEGATIVA
+35,55,Masculino,32,La mentira,NEGATIVA
+35,55,Masculino,33,Es tener dinero y poder tener y hacer todo lo que sueño,POSITIVA
+35,55,Masculino,34,Los trato con respeto,POSITIVA
+35,55,Masculino,35,Quiero que me recuerden como una buena persona,POSITIVA
+35,55,Masculino,36,Me alegra poder saludarlo y compartir,POSITIVA
+35,55,Masculino,37,Poder decir lo que quiero y pienso en realidad,POSITIVA
+35,55,Masculino,38,Mi Esposa e Hijo,POSITIVA
+35,55,Masculino,39,Compartiría más con mis hermanos y aprovechar mejor el tiempo y las oportunidades,POSITIVA
+35,55,Masculino,40,Son agradables,POSITIVA
+35,55,Masculino,41,Las disfrutaria,POSITIVA
+35,55,Masculino,42,Aparentan ser felices y unidas,NEGATIVA
+35,55,Masculino,43,Trabajan en equipo y aportan para el crecimiento general,POSITIVA
+35,55,Masculino,44,"Son cariñosas, orientan y escuchan",POSITIVA
+35,55,Masculino,45,La escases de mi hogar,NEGATIVA
+35,55,Masculino,46,Incoherente a lo que queria enseñarnos,AMBIGUA
+35,55,Masculino,47,Es por mis malas decisiones,AMBIGUA
+35,55,Masculino,48,Trato de ser objetivo y coherente a lo pedido,POSITIVA
+35,55,Masculino,49,Ver mi hogar feliz y mi hijo profesional y uma bella familia,POSITIVA
+35,55,Masculino,50,Quiero tener los recursos para poder compartir y disfrutar con mi familia,POSITIVA
+35,55,Masculino,51,Los respeto y admiro,POSITIVA
+35,55,Masculino,52,No hacer lo que pienso y siento,NEGATIVA
+35,55,Masculino,53,Se divierten sin mi compañía,NEGATIVA
+35,55,Masculino,54,El amor de mis abuelos y estar con toda la familia,POSITIVA
+35,55,Masculino,55,Que no son logicos e incoherentes a sus acciones,NEGATIVA
+35,55,Masculino,56,Es activa y placentera,POSITIVA
+35,55,Masculino,57,Era muy feliz y no me preocupaba el futuro,POSITIVA
+35,55,Masculino,58,Es amable y solidaria,POSITIVA
+35,55,Masculino,59,Sus rencores y odios me entristecen,NEGATIVA
+35,55,Masculino,60,Es hacerle daño a mi Esposa e Hijo,NEGATIVA
+36,55,Femenino,1,Recuerda,NEGATIVA
+36,55,Femenino,2,Sufro,NEGATIVA
+36,55,Femenino,3,Viajar por el mundo,POSITIVA
+36,55,Femenino,4,La presidencia,NEUTRA
+36,55,Femenino,5,Incierto,AMBIGUA
+36,55,Femenino,6,A veces son injustas,NEGATIVA
+36,55,Femenino,7,No cumplir mis anhelos,NEGATIVA
+36,55,Femenino,9,Hacía pasteles de tierra,POSITIVA
+36,55,Femenino,10,Íntegra en todo el sentido de la palabra,POSITIVA
+36,55,Femenino,11,Me gusta que se respeten,POSITIVA
+36,55,Femenino,12,Es bonita,POSITIVA
+36,55,Femenino,13,Las personas honestas y responsables,POSITIVA
+36,55,Femenino,14,Es una mujer muy fuerte,POSITIVA
+36,55,Femenino,15,que supe que mi papá se había enfermado se gravedad,NEGATIVA
+36,55,Femenino,16,No hubiera enfermado tan joven,NEGATIVA
+36,55,Femenino,17,Cocinar y hacer postres,POSITIVA
+36,55,Femenino,18,Pudiera cumplir todos los anhelos de mi corazón,POSITIVA
+36,55,Femenino,19,Sería muy buena jefe,AMBIGUA
+36,55,Femenino,20,Vivir siempre en paz y sirviendo a Dios,POSITIVA
+36,55,Femenino,21,Nunca me trataron de forma especial,NEGATIVA
+36,55,Femenino,22,No poder ver realizados a mis hijos,POSITIVA
+36,55,Femenino,23,Las personas que no respetan a los demás,POSITIVA
+36,55,Femenino,24,Era muy incauta,POSITIVA
+36,55,Femenino,25,"Viven vidas muy vacías, sin objetivos claros",NEGATIVA
+36,55,Femenino,26,"Es para vivirla en paz, respeto, amor y compañerismo",POSITIVA
+36,55,Femenino,27,Una mujer con un gran corazón y muy emotiva,POSITIVA
+36,55,Femenino,28,No siempre me repetan,NEGATIVA
+36,55,Femenino,29,Nos hemos apoyado mutuamente,POSITIVA
+36,55,Femenino,30,Creer en que me querían y me respetaban,NEGATIVA
+36,55,Femenino,31,No hubiera enfermado y fallecido tan joven,POSITIVA
+36,55,Femenino,32,El ser tan emotiva,POSITIVA
+36,55,Femenino,33,Es servirle a Dios,POSITIVA
+36,55,Femenino,34,Saben que cuentan conmigo,POSITIVA
+36,55,Femenino,35,Viajaré por muchas partes del mundo y le serviré a Dios,POSITIVA
+36,55,Femenino,36,Me da jartera,NEGATIVA
+36,55,Femenino,37,Emprender,POSITIVA
+36,55,Femenino,38,Es gente honesta y de buen corazón,POSITIVA
+36,55,Femenino,39,No hubiera tenido hijos tan joven,AMBIGUA
+36,55,Femenino,40,"Son deshonestos, hipócritas y sin valores",NEGATIVA
+36,55,Femenino,41,Solamente con mi pareja,POSITIVA
+36,55,Femenino,42,Tienen problemas entre ellos,AMBIGUA
+36,55,Femenino,43,"Es honesta, responsable, y valoren su trabajo",POSITIVA
+36,55,Femenino,44,Son muy buenas con sus hijos,POSITIVA
+36,55,Femenino,45,Haber tenido un hijo tan joven y no haber terminado mis estudios,NEGATIVA
+36,55,Femenino,46,Un gran padre y un gran ser humano,POSITIVA
+36,55,Femenino,47,No puedo pensar con claridad,NEGATIVA
+36,55,Femenino,48,Soy seria,POSITIVA
+36,55,Femenino,49,"Servirle a Dios, ver a mis hijos realizados, tener una vida prospera con muy buena salud y vivir en paz con toda mi familia",POSITIVA
+36,55,Femenino,50,Quiero servirle a Dios y poder viajar y conocer muchos países,POSITIVA
+36,55,Femenino,51,Los respeto,POSITIVA
+36,55,Femenino,52,No realizar nuevos proyectos,NEGATIVA
+36,55,Femenino,53,Siguen normal,AMBIGUA
+36,55,Femenino,54,Los Diciembres compartiendo en famila y abriendo muchos regalos,POSITIVA
+36,55,Femenino,55,Es la hipocresía,NEUTRA
+36,55,Femenino,56,Es satisfactoria,POSITIVA
+36,55,Femenino,57,Me gustaba mucho atender las visitas y pasear en familia,POSITIVA
+36,55,Femenino,58,Se siente bien conmigo,POSITIVA
+36,55,Femenino,59,Me gustaría que buscara más de Dios,POSITIVA
+36,55,Femenino,60,"Creer en personas que no me valoraron, no me quisieron y me traicionaron",POSITIVA
+37,49,Masculino,1,Habla,NEGATIVA
+37,49,Masculino,2,Me pongo triste,NEGATIVA
+37,49,Masculino,3,Ser profesional,NEGATIVA
+37,49,Masculino,4,Las cosas saldrían bien,POSITIVA
+37,49,Masculino,5,Prometedor,POSITIVA
+37,49,Masculino,6,Tienen mi respeto,POSITIVA
+37,49,Masculino,7,Preguntar,NEGATIVA
+37,49,Masculino,9,Soñaba mucho,POSITIVA
+37,49,Masculino,10,Que Ame a Dios primero,POSITIVA
+37,49,Masculino,11,Es lo normal,AMBIGUA
+37,49,Masculino,12,Es una bendición,POSITIVA
+37,49,Masculino,13,Los compañeros,POSITIVA
+37,49,Masculino,14,Me ama,POSITIVA
+37,49,Masculino,15,Me desilusionaron,NEGATIVA
+37,49,Masculino,16,Estuviera vivo,NEGATIVA
+37,49,Masculino,17,Ser servicial,POSITIVA
+37,49,Masculino,18,Tuviera más dinero,POSITIVA
+37,49,Masculino,19,Los respetaría,POSITIVA
+37,49,Masculino,20,Ser mejor para Dios,NEGATIVA
+37,49,Masculino,21,Me enseñaron,POSITIVA
+37,49,Masculino,22,La burla,NEGATIVA
+37,49,Masculino,23,La hipocresía,NEUTRA
+37,49,Masculino,24,Era ambicioso,POSITIVA
+37,49,Masculino,25,Son Buenas personas,POSITIVA
+37,49,Masculino,26,Es un regalo de Dios,POSITIVA
+37,49,Masculino,27,Lo mejor,POSITIVA
+37,49,Masculino,28,Son vulnerables,NEGATIVA
+37,49,Masculino,29,Nos amamos,POSITIVA
+37,49,Masculino,30,Callarme las cosas,NEGATIVA
+37,49,Masculino,31,Estuviera vivo,AMBIGUA
+37,49,Masculino,32,La comida,NEUTRA
+37,49,Masculino,33,Ser multimillonario,POSITIVA
+37,49,Masculino,34,No soy,NEUTRA
+37,49,Masculino,35,Viajaré a otro pais,POSITIVA
+37,49,Masculino,36,Me estreso,NEGATIVA
+37,49,Masculino,37,Decir las cosas,POSITIVA
+37,49,Masculino,38,Son los de sincero corazón,POSITIVA
+37,49,Masculino,39,No cometería tantos errores,POSITIVA
+37,49,Masculino,40,Son hermosas,POSITIVA
+37,49,Masculino,41,Es por qué estoy casado,AMBIGUA
+37,49,Masculino,42,No se aman,NEGATIVA
+37,49,Masculino,43,Es sincera,POSITIVA
+37,49,Masculino,44,Aman a sus hijos,POSITIVA
+37,49,Masculino,45,Nada,NEUTRA
+37,49,Masculino,46,Un buen hombre,POSITIVA
+37,49,Masculino,47,Lucho más,POSITIVA
+37,49,Masculino,48,No me obedecen,NEGATIVA
+37,49,Masculino,49,Agradar a Dios,POSITIVA
+37,49,Masculino,50,Viajaré,NEUTRA
+37,49,Masculino,51,Tienen mi respeto,POSITIVA
+37,49,Masculino,52,Callar,NEGATIVA
+37,49,Masculino,53,Soy feliz,NEUTRA
+37,49,Masculino,54,Los juegos,POSITIVA
+37,49,Masculino,55,La mentira,NEUTRA
+37,49,Masculino,56,Es maravillosa,POSITIVA
+37,49,Masculino,57,Era muy feliz,POSITIVA
+37,49,Masculino,58,Es necia,NEGATIVA
+37,49,Masculino,59,Está lejos,AMBIGUA
+37,49,Masculino,60,Callar,NEGATIVA
+38,63,Masculino,1,Escucha,NEGATIVA
+38,63,Masculino,2,Me da tristeza,NEGATIVA
+38,63,Masculino,3,Ser rico,NEGATIVA
+38,63,Masculino,4,Lo haria,POSITIVA
+38,63,Masculino,5,Incierto,AMBIGUA
+38,63,Masculino,6,Les va bien,POSITIVA
+38,63,Masculino,7,Intentarlo,NEGATIVA
+38,63,Masculino,9,Jugaba,POSITIVA
+38,63,Masculino,10,Amable,POSITIVA
+38,63,Masculino,11,Me dan celos,NEGATIVA
+38,63,Masculino,12,Espectacular,POSITIVA
+38,63,Masculino,13,Los hombres,AMBIGUA
+38,63,Masculino,14,Todo,NEUTRA
+38,63,Masculino,15,Fui pelión,POSITIVA
+38,63,Masculino,16,Hubiera estado,NEGATIVA
+38,63,Masculino,17,Hablar,POSITIVA
+38,63,Masculino,18,Tuviera amigos,POSITIVA
+38,63,Masculino,19,Tendríamos comunicación,POSITIVA
+38,63,Masculino,20,Seguir siendo feliz,POSITIVA
+38,63,Masculino,21,Me cuidaban,POSITIVA
+38,63,Masculino,22,Las ratas,POSITIVA
+38,63,Masculino,23,La gente envidiosa,POSITIVA
+38,63,Masculino,24,Tengo vida,NEUTRA
+38,63,Masculino,25,Son independientes,POSITIVA
+38,63,Masculino,26,Es bonita,POSITIVA
+38,63,Masculino,27,Un rey,POSITIVA
+38,63,Masculino,28,Son vulgares,NEGATIVA
+38,63,Masculino,29,Hermanos locos,NEUTRA
+38,63,Masculino,30,Ser nervioso,AMBIGUA
+38,63,Masculino,31,Fuera estudioso,AMBIGUA
+38,63,Masculino,32,El teatro,POSITIVA
+38,63,Masculino,33,Tener más amigos,POSITIVA
+38,63,Masculino,34,Grocera,NEGATIVA
+38,63,Masculino,35,Tendré plata,POSITIVA
+38,63,Masculino,36,Me aburre,NEGATIVA
+38,63,Masculino,37,Las ratas,POSITIVA
+38,63,Masculino,38,Es la gente directa,AMBIGUA
+38,63,Masculino,39,Sería más loco,NEGATIVA
+38,63,Masculino,40,Son amables,POSITIVA
+38,63,Masculino,41,Sería más divertido,AMBIGUA
+38,63,Masculino,42,Son numerosas,NEUTRA
+38,63,Masculino,43,Es feliz,POSITIVA
+38,63,Masculino,44,Son protectoras,POSITIVA
+38,63,Masculino,45,Ser miedoso,AMBIGUA
+38,63,Masculino,46,Respetuosa,POSITIVA
+38,63,Masculino,47,Es terrible,AMBIGUA
+38,63,Masculino,48,Soy imprudente,NEGATIVA
+38,63,Masculino,49,Tener más vida,AMBIGUA
+38,63,Masculino,50,Me voy a descansar,AMBIGUA
+38,63,Masculino,51,Son abusivos,NEGATIVA
+38,63,Masculino,52,Seguir luchando,POSITIVA
+38,63,Masculino,53,Me buscan,POSITIVA
+38,63,Masculino,54,Estar con mi madre,POSITIVA
+38,63,Masculino,55,Es ser imprudentes,NEGATIVA
+38,63,Masculino,56,Es buena,POSITIVA
+38,63,Masculino,57,Jugaba futbol,POSITIVA
+38,63,Masculino,58,Son grosera,NEGATIVA
+38,63,Masculino,59,Me reprendía mucho,NEGATIVA
+38,63,Masculino,60,Es ser conteston,NEGATIVA
+39,48,Femenino,1,Entiende,NEGATIVA
+39,48,Femenino,2,Me siento triste,NEGATIVA
+39,48,Femenino,3,Viajar,POSITIVA
+39,48,Femenino,4,Organizaría,POSITIVA
+39,48,Femenino,5,Positivo,POSITIVA
+39,48,Femenino,6,Las respeto,POSITIVA
+39,48,Femenino,7,Enfermedad,POSITIVA
+39,48,Femenino,9,Era feliz,POSITIVA
+39,48,Femenino,10,Mi esposo,POSITIVA
+39,48,Femenino,11,Siento ternura,POSITIVA
+39,48,Femenino,12,Es perfecta,NEGATIVA
+39,48,Femenino,13,Todos,POSITIVA
+39,48,Femenino,14,Mi ejemplo,POSITIVA
+39,48,Femenino,15,Mamá falleció,NEGATIVA
+39,48,Femenino,16,Hubiera sido fiel,NEGATIVA
+39,48,Femenino,17,Enseñar,POSITIVA
+39,48,Femenino,18,Los soy,POSITIVA
+39,48,Femenino,19,Sería justa,POSITIVA
+39,48,Femenino,20,Servir a Dios,POSITIVA
+39,48,Femenino,21,Eran buenos,POSITIVA
+39,48,Femenino,22,No ser entendida,POSITIVA
+39,48,Femenino,23,El pescado,NEUTRA
+39,48,Femenino,24,Era malgeniada,POSITIVA
+39,48,Femenino,25,Son despreocupados,AMBIGUA
+39,48,Femenino,26,Debe ser de acuerdos,POSITIVA
+39,48,Femenino,27,Su guía,AMBIGUA
+39,48,Femenino,28,Me respetan,POSITIVA
+39,48,Femenino,29,Nos amábamos mucho,POSITIVA
+39,48,Femenino,30,Terminar con mi esposo,AMBIGUA
+39,48,Femenino,31,Me amara,NEGATIVA
+39,48,Femenino,32,La comida,NEUTRA
+39,48,Femenino,33,Bajar de peso,POSITIVA
+39,48,Femenino,34,Sería feliz,POSITIVA
+39,48,Femenino,35,Seré abuela,POSITIVA
+39,48,Femenino,36,Me alegro,POSITIVA
+39,48,Femenino,37,Nadar,POSITIVA
+39,48,Femenino,38,Esta cerca,POSITIVA
+39,48,Femenino,39,Cuidaría mi salud,POSITIVA
+39,48,Femenino,40,Son infieles,NEGATIVA
+39,48,Femenino,41,Sería con mi esposo,POSITIVA
+39,48,Femenino,42,Son unidas,POSITIVA
+39,48,Femenino,43,Es seria,POSITIVA
+39,48,Femenino,44,Son amorosas,POSITIVA
+39,48,Femenino,45,Perder tiempo,AMBIGUA
+39,48,Femenino,46,Trabajador,POSITIVA
+39,48,Femenino,47,Oro a Dios,AMBIGUA
+39,48,Femenino,48,Explico,POSITIVA
+39,48,Femenino,49,Seguir a Dios,POSITIVA
+39,48,Femenino,50,Viajaré,NEUTRA
+39,48,Femenino,51,Merece mi respeto,POSITIVA
+39,48,Femenino,52,Ser optimista,POSITIVA
+39,48,Femenino,53,Estoy con mi esposo,NEUTRA
+39,48,Femenino,54,Los deportes,NEUTRA
+39,48,Femenino,55,Sean groseros,NEGATIVA
+39,48,Femenino,56,Es perfecta,POSITIVA
+39,48,Femenino,57,Jugaba mucho,POSITIVA
+39,48,Femenino,58,Me valora,POSITIVA
+39,48,Femenino,59,Ya murió,NEUTRA
+39,48,Femenino,60,Me lo reservo,NEUTRA
+40,55,Femenino,1,Regaña,AMBIGUA
+40,55,Femenino,2,Me pongo triste,NEGATIVA
+40,55,Femenino,3,Ser azafata escucho,NEGATIVA
+40,55,Femenino,4,Escucho a los demás,POSITIVA
+40,55,Femenino,5,Incierto,AMBIGUA
+40,55,Femenino,6,No me afectan,POSITIVA
+40,55,Femenino,7,Hacerme un implante dental,POSITIVA
+40,55,Femenino,9,Me maltrataron física y emocionalmente,NEGATIVA
+40,55,Femenino,10,Es un proceso que se va construyendo,NEUTRA
+40,55,Femenino,11,Me parece normal,AMBIGUA
+40,55,Femenino,12,Me siento muy feliz con la familia que Dios me ha bendecido,POSITIVA
+40,55,Femenino,13,Trato de llevarme bien con todos,POSITIVA
+40,55,Femenino,14,Es un ser maravilloso,POSITIVA
+40,55,Femenino,15,Me dieron escopolamina,NEGATIVA
+40,55,Femenino,16,Hubiera vivido unos años más,NEGATIVA
+40,55,Femenino,17,Poder ayudar a las personas,POSITIVA
+40,55,Femenino,18,Pudiera  alcanzar  mis sueños,POSITIVA
+40,55,Femenino,19,Sería humilde y sencilla,POSITIVA
+40,55,Femenino,20,Hacer las cosas bien,POSITIVA
+40,55,Femenino,21,Fueron especiales,POSITIVA
+40,55,Femenino,22,Estar sola,POSITIVA
+40,55,Femenino,23,La hipocresía,NEUTRA
+40,55,Femenino,24,Vivía muy triste,POSITIVA
+40,55,Femenino,25,Son muy inmaduras,NEGATIVA
+40,55,Femenino,26,Es un trabajo en equipo que se construye día a día,POSITIVA
+40,55,Femenino,27,Lo que soy,AMBIGUA
+40,55,Femenino,28,Son buena gente,POSITIVA
+40,55,Femenino,29,Llevamos una relación  bonita,POSITIVA
+40,55,Femenino,30,Confiar en las personas,NEGATIVA
+40,55,Femenino,31,Estuviera vivo,AMBIGUA
+40,55,Femenino,32,Mi timidez,AMBIGUA
+40,55,Femenino,33,No equivocarme en lo que me propongo hacer,POSITIVA
+40,55,Femenino,34,Es común y corriente,AMBIGUA
+40,55,Femenino,35,Me gustaría llegar hacer profesional,POSITIVA
+40,55,Femenino,36,Siento curiosidad  de cómo está de ánimo hoy,POSITIVA
+40,55,Femenino,37,Dormir sola,NEGATIVA
+40,55,Femenino,38,La que es sincera,POSITIVA
+40,55,Femenino,39,No quisiera vivir lo que me pasó en mi niñez,NEGATIVA
+40,55,Femenino,40,Son autónomas e independientes,POSITIVA
+40,55,Femenino,41,Sería con mi esposo,POSITIVA
+40,55,Femenino,42,Son personas mormales,NEUTRA
+40,55,Femenino,43,Es humilde y sencilla,POSITIVA
+40,55,Femenino,44,Son sobreprotectoras,NEGATIVA
+40,55,Femenino,45,No poder hacer las cosas por mi misma,NEGATIVA
+40,55,Femenino,46,Unico,POSITIVA
+40,55,Femenino,47,Pienso que estoy haciendo mal,NEGATIVA
+40,55,Femenino,48,Lo hago  con cautela y sin ofender a los demás,POSITIVA
+40,55,Femenino,49,Hacer lo bueno,POSITIVA
+40,55,Femenino,50,Estaré estudiando,POSITIVA
+40,55,Femenino,51,Son personas agradables,POSITIVA
+40,55,Femenino,52,Dudar de mis capacidades,NEGATIVA
+40,55,Femenino,53,Hacen sus cosas normalmente,AMBIGUA
+40,55,Femenino,54,Jugando con mis primas,POSITIVA
+40,55,Femenino,55,La falta de sinceridad,NEGATIVA
+40,55,Femenino,56,Es maravillosa,POSITIVA
+40,55,Femenino,57,Pase necesidades,NEGATIVA
+40,55,Femenino,58,Hacen las cosas bien,POSITIVA
+40,55,Femenino,59,Es un poco malgeniada,AMBIGUA
+40,55,Femenino,60,Llorar,NEGATIVA
+41,18,Femenino,1,Regaña.,AMBIGUA
+41,18,Femenino,2,Me río de mi misma.,AMBIGUA
+41,18,Femenino,3,Una heladería kreisel supra.,POSITIVA
+41,18,Femenino,4,El mundo sería mejor.,POSITIVA
+41,18,Femenino,5,Lejano.,NEUTRA
+41,18,Femenino,6,Me encantan.,POSITIVA
+41,18,Femenino,7,No ser suficiente.,NEGATIVA
+41,18,Femenino,9,Era feliz.,POSITIVA
+41,18,Femenino,10,Es aquel que corresponda mis sentimientos.,AMBIGUA
+41,18,Femenino,11,Me da envidia.,NEGATIVA
+41,18,Femenino,12,Está bien.,POSITIVA
+41,18,Femenino,13,Mis amigos.,POSITIVA
+41,18,Femenino,14,Es la mejor.,POSITIVA
+41,18,Femenino,15,Me caí frente a todos.,NEGATIVA
+41,18,Femenino,16,Me recogiera más veces en carro.,NEGATIVA
+41,18,Femenino,17,Controlar a los demás.,NEGATIVA
+41,18,Femenino,18,Si fuera más inteligente.,POSITIVA
+41,18,Femenino,19,Probablemente sean felices.,POSITIVA
+41,18,Femenino,20,Adquirir más conocimientos.,POSITIVA
+41,18,Femenino,21,Pensaban que era la estudiante ideal.,AMBIGUA
+41,18,Femenino,22,Que me dejen de lado.,POSITIVA
+41,18,Femenino,23,Los animales.,AMBIGUA
+41,18,Femenino,24,No tenía autoestima.,POSITIVA
+41,18,Femenino,25,Están perdiendo el camino.,AMBIGUA
+41,18,Femenino,26,Es un reto.,AMBIGUA
+41,18,Femenino,27,Una consentida.,AMBIGUA
+41,18,Femenino,28,No son los mejores.,NEGATIVA
+41,18,Femenino,29,Somos como mejores amigas.,POSITIVA
+41,18,Femenino,30,Confiar en personas que consideraba como mis amigos.,NEGATIVA
+41,18,Femenino,31,Hablara más conmigo.,NEGATIVA
+41,18,Femenino,32,La rinitis.,NEGATIVA
+41,18,Femenino,33,Es ser millonaria.,POSITIVA
+41,18,Femenino,34,Coopera.,POSITIVA
+41,18,Femenino,35,Seré reconocida.,POSITIVA
+41,18,Femenino,36,Sigo haciendo mi trabajo.,POSITIVA
+41,18,Femenino,37,Arriesgarme.,POSITIVA
+41,18,Femenino,38,Son igual de raros a mí.,AMBIGUA
+41,18,Femenino,39,Trabajaría más en mi cuerpo.,POSITIVA
+41,18,Femenino,40,Son mentirosos.,NEGATIVA
+41,18,Femenino,41,Utilizaría los métodos anticonceptivos.,POSITIVA
+41,18,Femenino,42,Son raras.,NEUTRA
+41,18,Femenino,43,Trabaja.,POSITIVA
+41,18,Femenino,44,No son de mi agrado.,NEGATIVA
+41,18,Femenino,45,Ser yo misma.,NEGATIVA
+41,18,Femenino,46,El mejor.,POSITIVA
+41,18,Femenino,47,Es todos los días.,NEGATIVA
+41,18,Femenino,48,Verifico que se ejecuten.,POSITIVA
+41,18,Femenino,49,Dinero.,POSITIVA
+41,18,Femenino,50,Voy a obtener mi título.,POSITIVA
+41,18,Femenino,51,Me agradan.,POSITIVA
+41,18,Femenino,52,Perder oportunidades.,NEGATIVA
+41,18,Femenino,53,Me extrañan.,POSITIVA
+41,18,Femenino,54,Es ir a comer lasaña con mi familia.,POSITIVA
+41,18,Femenino,55,Es su indecisión.,NEGATIVA
+41,18,Femenino,56,No ha empezado.,NEGATIVA
+42,52,Masculino,1,Abraza,NEGATIVA
+42,52,Masculino,2,Maldigo mi suerte,NEGATIVA
+42,52,Masculino,3,Hablar un idioma diferente al español,POSITIVA
+42,52,Masculino,4,Las cosas serian diferentes,AMBIGUA
+42,52,Masculino,5,Complicado,NEGATIVA
+42,52,Masculino,6,Se han preparado para estar ahi,POSITIVA
+42,52,Masculino,7,La vejez,NEGATIVA
+42,52,Masculino,9,Nunca pense en el lugar que ocupo hoy,AMBIGUA
+42,52,Masculino,10,Fiel,POSITIVA
+42,52,Masculino,11,Se respetan,POSITIVA
+42,52,Masculino,12,Es perfecta,NEGATIVA
+42,52,Masculino,13,Hombres,AMBIGUA
+42,52,Masculino,14,Fue especial,AMBIGUA
+42,52,Masculino,15,Compré mi primer carro,AMBIGUA
+42,52,Masculino,16,Me hubiese apoyado,NEGATIVA
+42,52,Masculino,17,Enseñar,POSITIVA
+42,52,Masculino,18,No tuviese una enfermedad cronica,NEGATIVA
+42,52,Masculino,19,Tendrian todo mi apoyo,POSITIVA
+42,52,Masculino,20,Tener una buena vejez,POSITIVA
+42,52,Masculino,21,Fueron tolerantes,POSITIVA
+42,52,Masculino,22,Las alturas,NEGATIVA
+42,52,Masculino,23,La mentira,NEUTRA
+42,52,Masculino,24,Pienso en lo que voy a hacer,POSITIVA
+42,52,Masculino,25,Son desatentos,NEGATIVA
+42,52,Masculino,26,Es de respeto,POSITIVA
+42,52,Masculino,27,Un rey,POSITIVA
+42,52,Masculino,28,Creen en mis habilidades,POSITIVA
+42,52,Masculino,29,Tuvimos poca comunicación,NEGATIVA
+42,52,Masculino,31,Hubiese sido diferente en mi infancia,NEGATIVA
+42,52,Masculino,32,El trago,NEGATIVA
+42,52,Masculino,33,Hablar un idioma diferente al español,POSITIVA
+42,52,Masculino,34,Es responsable,POSITIVA
+42,52,Masculino,35,Sere pensionado,AMBIGUA
+42,52,Masculino,36,Lo saludo,POSITIVA
+42,52,Masculino,37,Hablar en público,POSITIVA
+42,52,Masculino,38,Es la trabajadora y responsable,POSITIVA
+42,52,Masculino,39,No cambiaria lo que hice hasta hoy,AMBIGUA
+42,52,Masculino,40,Se han superado,POSITIVA
+42,52,Masculino,41,"Seria con mi unica pareja, mi esposa",POSITIVA
+42,52,Masculino,42,Tienen muchos problemas de comunicación,NEGATIVA
+42,52,Masculino,43,Comparten mis metas,POSITIVA
+42,52,Masculino,44,Son responsables,POSITIVA
+42,52,Masculino,45,Tener la familia en la que nací,NEGATIVA
+42,52,Masculino,46,Una persona que paso por mi vida sin darme apoyo,NEGATIVA
+42,52,Masculino,47,La asumire con responsabilidad,POSITIVA
+42,52,Masculino,48,Espero no repetir,NEGATIVA
+42,52,Masculino,49,Llegar a viejo,POSITIVA
+42,52,Masculino,50,Estare pensionado,POSITIVA
+42,52,Masculino,51,Merecen mi respecto y gratitud,POSITIVA
+42,52,Masculino,52,Estudiar mas y mas,AMBIGUA
+42,52,Masculino,53,Estarán haciendo su día a día,AMBIGUA
+42,52,Masculino,54,Poder hablar ya que tuve problemas de lenguaje,POSITIVA
+42,52,Masculino,55,Que sean buena vida sin responsabilidad,NEGATIVA
+42,52,Masculino,56,Es perfecta,POSITIVA
+42,52,Masculino,57,Jugaba todos los dias,POSITIVA
+42,52,Masculino,58,Me dicen mentiras,NEGATIVA
+42,52,Masculino,59,Ya no esta conmigo,AMBIGUA
+42,52,Masculino,60,No aprender otro idioma,NEGATIVA
+43,35,Masculino,1,Me ignoran,POSITIVA
+43,35,Masculino,2,No pasa nada,NEUTRA
+43,35,Masculino,3,Tener dinero,NEGATIVA
+43,35,Masculino,4,Sería amable,POSITIVA
+43,35,Masculino,5,Incierto,AMBIGUA
+43,35,Masculino,6,Me respetan,POSITIVA
+43,35,Masculino,7,A la agujas,POSITIVA
+43,35,Masculino,9,Era lindo,POSITIVA
+43,35,Masculino,10,Es ojos azul,POSITIVA
+43,35,Masculino,11,Son novios,POSITIVA
+43,35,Masculino,12,La mejor,NEUTRA
+43,35,Masculino,13,Desarrollándolas,NEGATIVA
+43,35,Masculino,14,Es la mejor,POSITIVA
+43,35,Masculino,15,Me caí de una moto,NEGATIVA
+43,35,Masculino,16,Fuera más juicioso,NEGATIVA
+43,35,Masculino,17,Liderar,POSITIVA
+43,35,Masculino,18,Viviera en un pueblo,POSITIVA
+43,35,Masculino,19,La respeto,POSITIVA
+43,35,Masculino,20,Lo mejor,AMBIGUA
+43,35,Masculino,21,Me apreciaban,POSITIVA
+43,35,Masculino,22,A las agujas,NEGATIVA
+43,35,Masculino,23,La papaya,NEUTRA
+43,35,Masculino,24,Después,NEUTRA
+43,35,Masculino,25,Son tontos,NEGATIVA
+43,35,Masculino,26,Es innecesaria,NEGATIVA
+43,35,Masculino,27,Lo mejor,POSITIVA
+43,35,Masculino,28,Son los mejores,POSITIVA
+43,35,Masculino,29,Nos amamos,POSITIVA
+43,35,Masculino,30,Dejarme llevar por mis emociones,NEGATIVA
+43,35,Masculino,31,No trabajara,POSITIVA
+43,35,Masculino,32,Mal pensado,NEGATIVA
+43,35,Masculino,33,El dinero,POSITIVA
+43,35,Masculino,34,La respeto,POSITIVA
+43,35,Masculino,35,Seré el mejor,POSITIVA
+43,35,Masculino,36,No pasa nada,POSITIVA
+43,35,Masculino,37,A las alturas,POSITIVA
+43,35,Masculino,38,Es la alegre,POSITIVA
+43,35,Masculino,39,No desperdiciaría el tiempo,POSITIVA
+43,35,Masculino,40,Son consentidas,POSITIVA
+43,35,Masculino,41,Me cuido,POSITIVA
+43,35,Masculino,42,Son dobles,NEGATIVA
+43,35,Masculino,43,Es inteligente,POSITIVA
+43,35,Masculino,44,Son amorosas,POSITIVA
+43,35,Masculino,45,Ser grosero,POSITIVA
+43,35,Masculino,46,El mejor,POSITIVA
+43,35,Masculino,47,No pasa nada,NEUTRA
+43,35,Masculino,48,Soy tranquilo,POSITIVA
+43,35,Masculino,49,Ser independiente,POSITIVA
+43,35,Masculino,50,Seres prospero,POSITIVA
+43,35,Masculino,51,Los respeto,POSITIVA
+43,35,Masculino,52,A nada,NEUTRA
+43,35,Masculino,53,No pasa nada,NEUTRA
+43,35,Masculino,54,Cuando jugaba en la calle,POSITIVA
+43,35,Masculino,55,—-,NEUTRA
+43,35,Masculino,56,Satisfactoria,POSITIVA
+43,35,Masculino,57,Me consentían,POSITIVA
+43,35,Masculino,58,Me respeta,AMBIGUA
+43,35,Masculino,59,Tiene malos comentarios,NEGATIVA
+43,35,Masculino,60,Nada,NEUTRA
+44,57,Femenino,1,Entendió,NEGATIVA
+44,57,Femenino,2,De malas,NEUTRA
+44,57,Femenino,3,Estudiar más,NEGATIVA
+44,57,Femenino,4,Personas,NEUTRA
+44,57,Femenino,5,Incierto,AMBIGUA
+44,57,Femenino,6,Son imponentes,NEGATIVA
+44,57,Femenino,7,La soledad,NEGATIVA
+44,57,Femenino,9,Disfruté de mi infancia,POSITIVA
+44,57,Femenino,10,Era normal,POSITIVA
+44,57,Femenino,11,Pareja,POSITIVA
+44,57,Femenino,12,Es perfecta,NEGATIVA
+44,57,Femenino,13,Los hombres,AMBIGUA
+44,57,Femenino,14,Lo más importante en mi vida,NEGATIVA
+44,57,Femenino,15,Difícil,NEUTRA
+44,57,Femenino,16,Hubiera vivido más tiempo,NEGATIVA
+44,57,Femenino,17,Trabajar en equipo,POSITIVA
+44,57,Femenino,18,Tuviera más recursos económicos,POSITIVA
+44,57,Femenino,19,Respesto,POSITIVA
+44,57,Femenino,20,Tranquilidad,POSITIVA
+44,57,Femenino,21,Muy buenos,POSITIVA
+44,57,Femenino,22,La soledad,POSITIVA
+44,57,Femenino,23,La injusticia,POSITIVA
+44,57,Femenino,24,La juventud,NEUTRA
+44,57,Femenino,25,Son perezosos,NEGATIVA
+44,57,Femenino,26,Es responsabilidad,POSITIVA
+44,57,Femenino,27,Una persona importante,POSITIVA
+44,57,Femenino,28,Con respeto,POSITIVA
+44,57,Femenino,29,Muy unidas,POSITIVA
+44,57,Femenino,30,No estudiar,NEGATIVA
+44,57,Femenino,31,Hubiera vivido más,POSITIVA
+44,57,Femenino,32,El amor,POSITIVA
+44,57,Femenino,33,Ser correcta,POSITIVA
+44,57,Femenino,34,Respeto,NEUTRA
+44,57,Femenino,35,Quisiera viajar,POSITIVA
+44,57,Femenino,36,Respeto,AMBIGUA
+44,57,Femenino,37,Ser más arriesgada,POSITIVA
+44,57,Femenino,38,La honesta,POSITIVA
+44,57,Femenino,39,Disfrutar más,POSITIVA
+44,57,Femenino,40,Son más liberadas,POSITIVA
+44,57,Femenino,41,Con mucho amor,POSITIVA
+44,57,Femenino,42,Son felices,POSITIVA
+44,57,Femenino,43,Justa y responsable,POSITIVA
+44,57,Femenino,44,Son imponentes,NEGATIVA
+44,57,Femenino,45,Ser perezosa,POSITIVA
+44,57,Femenino,46,Maravilloso,POSITIVA
+44,57,Femenino,47,Mal genio,AMBIGUA
+44,57,Femenino,48,Soy justa,POSITIVA
+44,57,Femenino,49,Viajar,POSITIVA
+44,57,Femenino,50,Tranquilidad,NEUTRA
+44,57,Femenino,51,Dios,AMBIGUA
+44,57,Femenino,52,No actuar,NEGATIVA
+44,57,Femenino,53,No hay lio,NEUTRA
+44,57,Femenino,54,Jugar con mi papá,POSITIVA
+44,57,Femenino,55,La mentira,NEUTRA
+44,57,Femenino,56,Normal,NEUTRA
+44,57,Femenino,57,Disfruté la infancia,POSITIVA
+44,57,Femenino,58,Muy agradable,POSITIVA
+44,57,Femenino,59,La amo,POSITIVA
+44,57,Femenino,60,Resentida,NEUTRA
+45,61,Masculino,1,Abrazaba,NEGATIVA
+45,61,Masculino,2,Cuanto no duermo bien,NEUTRA
+45,61,Masculino,3,Una camioneta vieja,POSITIVA
+45,61,Masculino,4,Le daria la oportunidad a mucha gente,POSITIVA
+45,61,Masculino,5,Maravilloso,POSITIVA
+45,61,Masculino,6,Se lo merecen,POSITIVA
+45,61,Masculino,7,Una enfermedad letal,POSITIVA
+45,61,Masculino,9,Fui muy feliz,POSITIVA
+45,61,Masculino,10,"Una persona sencilla, humilde",POSITIVA
+45,61,Masculino,11,Normal,NEUTRA
+45,61,Masculino,12,Es muy unida,POSITIVA
+45,61,Masculino,13,Los mas pilos,POSITIVA
+45,61,Masculino,14,"La admiro, quiero y respeto",POSITIVA
+45,61,Masculino,15,Salimos de la finca,NEGATIVA
+45,61,Masculino,16,Hubiera escuchado a mi madre,NEGATIVA
+45,61,Masculino,17,Hacer amigos,POSITIVA
+45,61,Masculino,18,Tengo la familia comoleta y salud,NEUTRA
+45,61,Masculino,19,Seria un jefe justo,POSITIVA
+45,61,Masculino,20,Ser feliz el resto de vida,NEGATIVA
+45,61,Masculino,21,Fueron geniales,POSITIVA
+45,61,Masculino,22,Perder el empleo,POSITIVA
+45,61,Masculino,23,Las mentiras,NEUTRA
+45,61,Masculino,24,La verdad,NEUTRA
+45,61,Masculino,25,Estan deshubicados,NEGATIVA
+45,61,Masculino,26,Es bonita,POSITIVA
+45,61,Masculino,27,Un principe,POSITIVA
+45,61,Masculino,28,Son los mejores,POSITIVA
+45,61,Masculino,29,Nos amamos,POSITIVA
+45,61,Masculino,30,No terminar una carrera profesional,NEGATIVA
+45,61,Masculino,31,Estuviera vivo,AMBIGUA
+45,61,Masculino,32,Los sistemas,NEUTRA
+45,61,Masculino,33,Tener muchas ganas de vivir  feliz,POSITIVA
+45,61,Masculino,34,Es honesta,POSITIVA
+45,61,Masculino,35,Podre viajar al viejo continente,POSITIVA
+45,61,Masculino,36,Me da alegria,POSITIVA
+45,61,Masculino,37,Enfermarme grave,AMBIGUA
+45,61,Masculino,38,Mi familia,POSITIVA
+45,61,Masculino,39,Estudiaria,POSITIVA
+45,61,Masculino,40,Son buena gente,POSITIVA
+45,61,Masculino,41,Seria solo con mi esposa,POSITIVA
+45,61,Masculino,42,Son trabajadoras,POSITIVA
+45,61,Masculino,43,Tiene buena actitud,POSITIVA
+45,61,Masculino,44,Son trabajadoras y honestas,POSITIVA
+45,61,Masculino,45,Nada,NEUTRA
+45,61,Masculino,46,Vivio muy poco tiempo,AMBIGUA
+45,61,Masculino,47,Siempre ha estado de mi lado,POSITIVA
+45,61,Masculino,48,Son muy objetivo,POSITIVA
+45,61,Masculino,49,Ser feliz,AMBIGUA
+45,61,Masculino,50,Sere un pensionado,POSITIVA
+45,61,Masculino,51,Son un ejemplo,POSITIVA
+45,61,Masculino,52,Recalcular,AMBIGUA
+45,61,Masculino,53,Son tranquilos,AMBIGUA
+45,61,Masculino,54,La finca donde me crie,POSITIVA
+45,61,Masculino,55,La mentira,NEUTRA
+45,61,Masculino,56,Es tranquila,POSITIVA
+45,61,Masculino,57,Fui muy feliz,POSITIVA
+45,61,Masculino,58,Es muy entusiasta,POSITIVA
+45,61,Masculino,59,Es de mal genio,NEGATIVA
+45,61,Masculino,60,No estudiar una carrera profesional,NEGATIVA
+46,19,Masculino,1,Abraza,NEGATIVA
+46,19,Masculino,2,Me frustró,AMBIGUA
+46,19,Masculino,3,Viajar mucho,POSITIVA
+46,19,Masculino,4,Sería rígido,NEGATIVA
+46,19,Masculino,5,Incierto,AMBIGUA
+46,19,Masculino,6,Los respeto,POSITIVA
+46,19,Masculino,7,Estancarme,NEGATIVA
+46,19,Masculino,9,Era muy llorón,NEGATIVA
+46,19,Masculino,10,Inteligente y chistosa,POSITIVA
+46,19,Masculino,11,Neutralidad,NEUTRA
+46,19,Masculino,12,Siento que es perfecta,NEGATIVA
+46,19,Masculino,13,Gente tranquila,POSITIVA
+46,19,Masculino,14,Es la mejor,POSITIVA
+46,19,Masculino,15,Me robaron,NEGATIVA
+46,19,Masculino,16,Fuera más cariñoso,NEGATIVA
+46,19,Masculino,17,Hacer reír,POSITIVA
+46,19,Masculino,18,Viajará mucho,POSITIVA
+46,19,Masculino,19,Sería muy razonable,POSITIVA
+46,19,Masculino,20,Tener un buen trabajo,POSITIVA
+46,19,Masculino,21,Eran inteligentes,POSITIVA
+46,19,Masculino,22,Fracasar,POSITIVA
+46,19,Masculino,23,La gente arrogante,POSITIVA
+46,19,Masculino,24,Era más juicioso,NEGATIVA
+46,19,Masculino,25,Son chistosos,POSITIVA
+46,19,Masculino,26,Es bonita,POSITIVA
+46,19,Masculino,27,Una persona inteligente,POSITIVA
+46,19,Masculino,28,Son graciosos,POSITIVA
+46,19,Masculino,29,Somos muy cercanos,POSITIVA
+46,19,Masculino,30,Guardarme las cosas,NEGATIVA
+46,19,Masculino,31,Fuera un poco más cariñoso,NEGATIVA
+46,19,Masculino,32,La puntualidad,NEGATIVA
+46,19,Masculino,33,Ganar un torneo,POSITIVA
+46,19,Masculino,34,Son honestas,POSITIVA
+46,19,Masculino,35,Haré una fundación para animales,POSITIVA
+46,19,Masculino,36,Me asusto,NEGATIVA
+46,19,Masculino,37,El fracaso,POSITIVA
+46,19,Masculino,38,Son los relajados,POSITIVA
+46,19,Masculino,39,Aprovecharía más mi tiempo,POSITIVA
+46,19,Masculino,40,Mienten,NEGATIVA
+46,19,Masculino,41,Me relajaría,POSITIVA
+46,19,Masculino,42,Son difíciles,AMBIGUA
+46,19,Masculino,43,No se estresa rápido,POSITIVA
+46,19,Masculino,44,Son muy comprensibles,POSITIVA
+46,19,Masculino,45,Perder mi tiempo,AMBIGUA
+46,19,Masculino,46,Muy trabajador y buena persona,POSITIVA
+46,19,Masculino,47,Me frustro,NEGATIVA
+46,19,Masculino,48,yo creo que es un placer,POSITIVA
+46,19,Masculino,49,Que mis papás tengan la mejor vida,POSITIVA
+46,19,Masculino,50,Seré psicologo,POSITIVA
+46,19,Masculino,51,Son buena gente,POSITIVA
+46,19,Masculino,52,Estresarme,NEGATIVA
+46,19,Masculino,53,Se aburren,POSITIVA
+46,19,Masculino,54,Cuando pintaba en el jardín,POSITIVA
+46,19,Masculino,55,Mentirosas,NEGATIVA
+46,19,Masculino,56,Activa,POSITIVA
+46,19,Masculino,57,Yo era muy consentido,POSITIVA
+46,19,Masculino,58,Son relajadas,AMBIGUA
+46,19,Masculino,59,A veces es muy sobreprotectora,NEGATIVA
+46,19,Masculino,60,Dañar lo sentimientos de una persona,NEGATIVA
+47,36,Masculino,1,Valora,NEGATIVA
+47,36,Masculino,2,Doy gracias,POSITIVA
+47,36,Masculino,3,Ser feliz,NEGATIVA
+47,36,Masculino,4,Organizaria,NEUTRA
+47,36,Masculino,5,Incierto,AMBIGUA
+47,36,Masculino,6,Ejemplo,NEUTRA
+47,36,Masculino,7,Arriesgarme,AMBIGUA
+47,36,Masculino,9,Tenía miedo,NEGATIVA
+47,36,Masculino,10,Apoyo,POSITIVA
+47,36,Masculino,11,Compresión,POSITIVA
+47,36,Masculino,12,Unida,POSITIVA
+47,36,Masculino,13,Todos,POSITIVA
+47,36,Masculino,14,Valiente,POSITIVA
+47,36,Masculino,15,Me equivoqué,NEGATIVA
+47,36,Masculino,16,Fuera cariñoso,NEGATIVA
+47,36,Masculino,17,Liderar,POSITIVA
+47,36,Masculino,18,No tuviera miedo,NEGATIVA
+47,36,Masculino,19,Las apreciaría,POSITIVA
+47,36,Masculino,20,Superarme,POSITIVA
+47,36,Masculino,21,Eran ejemplo,POSITIVA
+47,36,Masculino,22,Arriesgarme,POSITIVA
+47,36,Masculino,23,Sentir miedo,POSITIVA
+47,36,Masculino,24,Era mal geniado,POSITIVA
+47,36,Masculino,25,Son maleducados,NEGATIVA
+47,36,Masculino,26,Es complicada,NEGATIVA
+47,36,Masculino,27,Único,POSITIVA
+47,36,Masculino,28,Equipo,NEUTRA
+47,36,Masculino,29,Unidos,POSITIVA
+47,36,Masculino,30,Dejar mis sueños,NEGATIVA
+47,36,Masculino,31,Fuera más cercano,NEGATIVA
+47,36,Masculino,32,Mi hijo,POSITIVA
+47,36,Masculino,33,Ser estable económicamente,POSITIVA
+47,36,Masculino,34,Equipo,POSITIVA
+47,36,Masculino,35,Seré completamente feliz,AMBIGUA
+47,36,Masculino,36,Fastidio,NEGATIVA
+47,36,Masculino,37,Arriesgarme,POSITIVA
+47,36,Masculino,38,Sincera,POSITIVA
+47,36,Masculino,39,Seguiría mis sueños,POSITIVA
+47,36,Masculino,40,No valoran nada,NEGATIVA
+47,36,Masculino,41,Con amor,POSITIVA
+47,36,Masculino,42,Separadas,NEGATIVA
+47,36,Masculino,43,Es sincera,POSITIVA
+47,36,Masculino,44,Son de admirar,POSITIVA
+47,36,Masculino,45,No ser lo suficientemente bueno,NEGATIVA
+47,36,Masculino,46,Alejado,NEGATIVA
+47,36,Masculino,47,Agradezco,AMBIGUA
+47,36,Masculino,48,Explicó,POSITIVA
+47,36,Masculino,49,No tener miedo y ser completamente feliz,POSITIVA
+47,36,Masculino,50,Seré completamente feliz,POSITIVA
+47,36,Masculino,51,Son ejemplo,POSITIVA
+47,36,Masculino,52,Sentirme inferior,NEGATIVA
+47,36,Masculino,53,Me apoyan,POSITIVA
+47,36,Masculino,54,Compartir con mis abuelos,POSITIVA
+47,36,Masculino,55,Sean hipócritas,NEGATIVA
+47,36,Masculino,56,Cariñosa,POSITIVA
+47,36,Masculino,57,Quería ser rico,AMBIGUA
+47,36,Masculino,58,Me respetan,AMBIGUA
+47,36,Masculino,59,Tengo miedo a perderla,POSITIVA
+47,36,Masculino,60,Ser borracho,NEGATIVA
+48,48,Femenino,1,Sentir sola el siempre ha estado presente,POSITIVA
+48,48,Femenino,2,No creo que se trate de suerte solo son buenas o malas desiciones,NEUTRA
+48,48,Femenino,3,Tener tres hijos,NEGATIVA
+48,48,Femenino,4,Implementará muchas acciones de mejora en tecnología en la empresa,POSITIVA
+48,48,Femenino,5,Incierto por qué nunca sabemos que nos espera,AMBIGUA
+48,48,Femenino,6,Algunas son muy sabias y buenas personas otras no tanto,AMBIGUA
+48,48,Femenino,7,Las cucarachas,POSITIVA
+48,48,Femenino,9,Me gustaba jugar a la casita,POSITIVA
+48,48,Femenino,10,Es un hombre sincero tierno respetuoso amable y que me amen,POSITIVA
+48,48,Femenino,11,A veces pienso hacen una bonita pareja otras simplemente digo no parecen enamorados,AMBIGUA
+48,48,Femenino,12,Creo que la mía es muy hermosa y que Dios ha bendecido,POSITIVA
+48,48,Femenino,13,Los hombres son personas descomplicadas,AMBIGUA
+48,48,Femenino,14,La admiro por todo lo que ha vivido,POSITIVA
+48,48,Femenino,15,Me enteré que había muerto una persona muy especial para mi,NEGATIVA
+48,48,Femenino,16,Estuviera vivo me daría muchos concejos,POSITIVA
+48,48,Femenino,17,Administración y dirigir. Creo que soy ágil.en las cosas del hogar,POSITIVA
+48,48,Femenino,18,La felicidad depende de cada uno no se trata de que te hace feliz sino dónde estas feliz,NEUTRA
+48,48,Femenino,19,Soy agradecida y justa me gusta trabajar en equipo,POSITIVA
+48,48,Femenino,20,Poder ayudar a mi hijo a formarse y verlo crecer en todos los aspectos,POSITIVA
+48,48,Femenino,21,Eran súper chéveres fue una época muy bonita,POSITIVA
+48,48,Femenino,22,Las cucarachas,POSITIVA
+48,48,Femenino,23,La mentira ni la injusticia,POSITIVA
+48,48,Femenino,24,Era más malgeniada y sería,POSITIVA
+48,48,Femenino,25,La juventud de hoy no ha tenido la oportunidad de vivir las cosas simples y agradables de la juventud,AMBIGUA
+48,48,Femenino,26,Es complicada y hay que tener amor y tolerancia,POSITIVA
+48,48,Femenino,27,Una mujer luchadora,POSITIVA
+48,48,Femenino,28,Son muy buenos profesionales pero algunas personas no son tan sinceras,NEGATIVA
+48,48,Femenino,29,Tenemos una relación muy cercana la amo,POSITIVA
+48,48,Femenino,30,Tomar desiciones apresuradas,NEGATIVA
+48,48,Femenino,31,Estuviera vivo,AMBIGUA
+48,48,Femenino,32,Mi hijo,POSITIVA
+48,48,Femenino,33,Llegar a alcanzar una estatus espiritual,POSITIVA
+48,48,Femenino,34,Es responsable,POSITIVA
+48,48,Femenino,35,Seré Gerente,POSITIVA
+48,48,Femenino,36,Me da alegría lo quiero mucho,POSITIVA
+48,48,Femenino,37,Lo desconocido,AMBIGUA
+48,48,Femenino,38,Es aquella que es sincera auténticos,POSITIVA
+48,48,Femenino,39,No cometería los mismo errores y disfrutaría al máximo todo,POSITIVA
+48,48,Femenino,40,Creen que ser felices es con un pareja y no es asi,NEGATIVA
+48,48,Femenino,41,Soy responsable con mi vida sexual,POSITIVA
+48,48,Femenino,42,Son familias bonitas,POSITIVA
+48,48,Femenino,43,Trabaja en equipo y por un objetivo,POSITIVA
+48,48,Femenino,44,Dan todo por sus hijos,POSITIVA
+48,48,Femenino,45,Defraudar a mis padres,NEGATIVA
+48,48,Femenino,46,Un gran hombre muy sbaio,POSITIVA
+48,48,Femenino,47,Siempre aprendo de lo malo y lo bueno,POSITIVA
+48,48,Femenino,48,Trato de que sea una instrucción clara y de la mejor manera,POSITIVA
+48,48,Femenino,49,Terminar mi vejez tranquila y en compañía de esposo que no dependa de ningún ser humano y me.valga por si misma,POSITIVA
+48,48,Femenino,50,Espero poder llevar a cabo mis proyectos,POSITIVA
+48,48,Femenino,51,Los respecto y admiro,POSITIVA
+48,48,Femenino,52,La incertidumbre,NEUTRA
+48,48,Femenino,53,Tengo pocos amigos pero muy sinceros y leales,POSITIVA
+48,48,Femenino,54,Las muñecas que me compraba mi mamá,POSITIVA
+48,48,Femenino,55,Que son muy frescos no son detallistas,AMBIGUA
+48,48,Femenino,56,Es tranquila agradable,POSITIVA
+48,48,Femenino,57,Anhelaba una muñeca Barbie,AMBIGUA
+48,48,Femenino,58,Me respeta y me aprecia,POSITIVA
+48,48,Femenino,59,Es muy materialista e impaciente,NEGATIVA
+48,48,Femenino,60,Engañar a un novio,NEGATIVA
+49,21,Masculino,1,Tiene desconfianza,POSITIVA
+49,21,Masculino,2,Levanto cabeza e intento de nuevo,POSITIVA
+49,21,Masculino,3,Ser piloto de carreras,NEGATIVA
+49,21,Masculino,4,"Daria lo mejor de mi , para que todos den lo mejor de ellos",POSITIVA
+49,21,Masculino,5,La evolucion de tu mentalidad,AMBIGUA
+49,21,Masculino,6,Me ven con buena proyección al futuro,POSITIVA
+49,21,Masculino,7,La muerte,POSITIVA
+49,21,Masculino,9,Adoraba viajar con mi papá,POSITIVA
+49,21,Masculino,10,Es alguien que me complemente,POSITIVA
+49,21,Masculino,11,Pienso en lo bueno que seria tener una pareja,POSITIVA
+49,21,Masculino,12,Valora mucho el tiempo juntos,POSITIVA
+49,21,Masculino,13,Personas con mentalidad similar,POSITIVA
+49,21,Masculino,14,Es una guerrera,POSITIVA
+49,21,Masculino,15,Mentí respecto a algunas situaciones familiares,NEGATIVA
+49,21,Masculino,16,Viera el verdadero valor de su familia,NEGATIVA
+49,21,Masculino,17,Muchos campos,AMBIGUA
+49,21,Masculino,18,Pudiera retribuir todo el esfuerzo de mis papás,POSITIVA
+49,21,Masculino,19,Seria un buen lider para poder guiarlos,POSITIVA
+49,21,Masculino,20,Poder visitar el mundo,POSITIVA
+49,21,Masculino,21,Me molestaban por mi comportamiento,NEGATIVA
+49,21,Masculino,22,La muerte,NEGATIVA
+49,21,Masculino,23,Las personas deshonestas e impuntuales,POSITIVA
+49,21,Masculino,24,No solia importarme los sentimientos de los demás,POSITIVA
+49,21,Masculino,25,No ve el verdadero significado de los valores,NEGATIVA
+49,21,Masculino,26,Esta perdiendo credibilidad en la sociedad actual,AMBIGUA
+49,21,Masculino,27,El profesional que quieran que sea,POSITIVA
+49,21,Masculino,28,Nos complementamos como equipo,POSITIVA
+49,21,Masculino,29,Tenemos una relacion muy cercana,POSITIVA
+49,21,Masculino,30,Mentiras,NEUTRA
+49,21,Masculino,31,Fuera mas cariñoso,NEGATIVA
+49,21,Masculino,32,Agujas,NEUTRA
+49,21,Masculino,33,El dinero,POSITIVA
+49,21,Masculino,34,Tendra un buen lider,POSITIVA
+49,21,Masculino,35,Veré todo lo que algun día soñé,POSITIVA
+49,21,Masculino,36,No hay de que preocuparse,POSITIVA
+49,21,Masculino,37,Morir,AMBIGUA
+49,21,Masculino,38,Me ayudan a construirme como persona,POSITIVA
+49,21,Masculino,39,Aprenderia a valorar la vida de los demás,POSITIVA
+49,21,Masculino,40,Se preocupan mas por verse bien que por enriquecer su conocimiento,NEGATIVA
+49,21,Masculino,41,Diarias,AMBIGUA
+49,21,Masculino,42,Tienen mas fallos de los que veo en la mia,AMBIGUA
+49,21,Masculino,43,Piensa en ser mejor cada dia,POSITIVA
+49,21,Masculino,44,Hace un trabajo perfecto,POSITIVA
+49,21,Masculino,45,De hacer sentir mal a los demás,POSITIVA
+49,21,Masculino,46,Muy duro con el mismo,AMBIGUA
+49,21,Masculino,47,Hay que ir en contra de la suerte,POSITIVA
+49,21,Masculino,48,"No hay que dar ordenes , hay que guiar",POSITIVA
+49,21,Masculino,49,Tranquilidad,POSITIVA
+49,21,Masculino,50,Tendre pareja,AMBIGUA
+49,21,Masculino,51,"Son mi competencia , debo ser mejor que ellos sin despreciar su ayuda",POSITIVA
+49,21,Masculino,52,Sobrepensar,NEGATIVA
+49,21,Masculino,53,No se animan a salir de la misma forma que conmigo presente,POSITIVA
+49,21,Masculino,54,Son los viajes con mi papá,POSITIVA
+49,21,Masculino,55,Es el pensamiento mediocre que tienen,NEGATIVA
+49,21,Masculino,56,Activa 24/7,NEGATIVA
+49,21,Masculino,57,No valoraba muchas cosas,AMBIGUA
+49,21,Masculino,58,Me felicita por el buen trabajo,POSITIVA
+49,21,Masculino,59,Vive de hechos del pasado,NEGATIVA
+49,21,Masculino,60,Casi romper la relacion con mi madre,NEGATIVA
+50,49,Femenino,1,Castigo,AMBIGUA
+50,49,Femenino,2,Me siento triste,AMBIGUA
+50,49,Femenino,3,Viajar,POSITIVA
+50,49,Femenino,4,Lo haría más fácil,POSITIVA
+50,49,Femenino,5,Incierto,AMBIGUA
+50,49,Femenino,6,Son arrogantes,NEGATIVA
+50,49,Femenino,7,La oscuridad,POSITIVA
+50,49,Femenino,9,Era tranquila,POSITIVA
+50,49,Femenino,10,Es sisncero,POSITIVA
+50,49,Femenino,11,Pienso en una familia feliz,POSITIVA
+50,49,Femenino,12,Es hermosa,POSITIVA
+50,49,Femenino,13,Mi esposo,POSITIVA
+50,49,Femenino,14,Es la mejor mujer del mundo,POSITIVA
+50,49,Femenino,15,Mis seres queridos han partido,NEGATIVA
+50,49,Femenino,16,Hubiese sido responsable,NEGATIVA
+50,49,Femenino,17,Entablar conversaciones,POSITIVA
+50,49,Femenino,18,Todo el mundo sintiera empatía por el otro,NEGATIVA
+50,49,Femenino,19,Sería justa,POSITIVA
+50,49,Femenino,20,Estar tranquila,POSITIVA
+50,49,Femenino,21,Fueron amables y respetuosos,POSITIVA
+50,49,Femenino,22,Estar sola,POSITIVA
+50,49,Femenino,23,Las mentiras,NEUTRA
+50,49,Femenino,24,Era todo más sencillo,NEGATIVA
+50,49,Femenino,25,Son irresponsables,NEGATIVA
+50,49,Femenino,26,Es de confianza,POSITIVA
+50,49,Femenino,27,A una persona muyyy especial,POSITIVA
+50,49,Femenino,28,Son egoístas,NEGATIVA
+50,49,Femenino,29,Fuimos muy buenas amigas,POSITIVA
+50,49,Femenino,30,Confiar,NEGATIVA
+50,49,Femenino,31,Hubiese valorado a mi mamá,NEGATIVA
+50,49,Femenino,32,Confiar,NEGATIVA
+50,49,Femenino,33,La comodidad,POSITIVA
+50,49,Femenino,34,Es respetada,POSITIVA
+50,49,Femenino,35,Viajaré,POSITIVA
+50,49,Femenino,36,Me estreso,NEGATIVA
+50,49,Femenino,37,Morir,AMBIGUA
+50,49,Femenino,38,Es la que es sincera y tranquila,POSITIVA
+50,49,Femenino,39,Cambiaría ciertos modos de vivir,AMBIGUA
+50,49,Femenino,40,Son charlatanes,NEGATIVA
+50,49,Femenino,41,Sería con la persona que tengo un  vínculo de amor,POSITIVA
+50,49,Femenino,42,Tiene diferentes dificultades,AMBIGUA
+50,49,Femenino,43,Es comprometida y responsable,POSITIVA
+50,49,Femenino,44,Son entregadas a sus hijos,POSITIVA
+50,49,Femenino,45,No poder colaborar a todas las personas,POSITIVA
+50,49,Femenino,46,Irresponsable,NEGATIVA
+50,49,Femenino,47,Pienso que fallé en algo,NEGATIVA
+50,49,Femenino,48,Soy muy estricta,NEGATIVA
+50,49,Femenino,49,Vivir tranquila,POSITIVA
+50,49,Femenino,50,Seré más sabía en mis decisiones,POSITIVA
+50,49,Femenino,51,Algunos son arrogantes,AMBIGUA
+50,49,Femenino,52,Ser pesimista,NEGATIVA
+50,49,Femenino,53,Me extrañan,POSITIVA
+50,49,Femenino,54,Es estar con mi abuela y mamá,POSITIVA
+50,49,Femenino,55,La mentira,NEUTRA
+50,49,Femenino,56,Ha sido responsable,POSITIVA
+50,49,Femenino,57,Lloraba por todo,NEGATIVA
+50,49,Femenino,58,La va bien conmigo,POSITIVA
+50,49,Femenino,59,Hoy no está conmigo,AMBIGUA
+50,49,Femenino,60,Gritar a otra persona,NEGATIVA
+51,37,Masculino,1,entienden,NEGATIVA
+51,37,Masculino,2,cosas mejores vienen,POSITIVA
+51,37,Masculino,3,ser piloto,NEGATIVA
+51,37,Masculino,4,mis gatos sería mas organizado,POSITIVA
+51,37,Masculino,5,brillante,POSITIVA
+51,37,Masculino,6,se lo han ganado o le han ayudado,AMBIGUA
+51,37,Masculino,7,a las alturas,POSITIVA
+51,37,Masculino,9,era único,POSITIVA
+51,37,Masculino,10,no existe,NEGATIVA
+51,37,Masculino,11,tienen un propósito en común,POSITIVA
+51,37,Masculino,12,es única y la mejor para mí,POSITIVA
+51,37,Masculino,13,la tecnología,AMBIGUA
+51,37,Masculino,14,"única, la mejor y mas cariñosa",POSITIVA
+51,37,Masculino,15,me accidenté en ambos pies y diagnosticaron a mi hijo con un ACV,NEGATIVA
+51,37,Masculino,16,fuera mas juicioso sería un hombre ejemplar,NEGATIVA
+51,37,Masculino,17,"liderazgo, toma de daciones bajo presión y empatía",POSITIVA
+51,37,Masculino,18,no tuviera deudas,POSITIVA
+51,37,Masculino,19,"les enseñaría el valor de auto superarse, la fe en Dios y apoyo en sus proyectos de vida",POSITIVA
+51,37,Masculino,20,la voluntad de Dios todos los días,NEGATIVA
+51,37,Masculino,21,eran flojos,NEGATIVA
+51,37,Masculino,22,las alturas y socializar,AMBIGUA
+51,37,Masculino,23,"las mentiras, la hipocresía, el orgullo la prepotencia, la falta de humildad y empatía",POSITIVA
+51,37,Masculino,24,las cosas no eran tan apresuradas y complejas como ahora,NEGATIVA
+51,37,Masculino,25,viven su época y tienen poca sensibilidad a los mayorees,NEGATIVA
+51,37,Masculino,26,es un reto día a día de construcción constante. Es de valientes,POSITIVA
+51,37,Masculino,27,lo mejor,POSITIVA
+51,37,Masculino,28,son muy competentes,POSITIVA
+51,37,Masculino,29,Somo amigos y concejeros,POSITIVA
+51,37,Masculino,30,endeudarme en mi matrimonio,AMBIGUA
+51,37,Masculino,31,fuera mas juiciosos y no fumara más,NEGATIVA
+51,37,Masculino,32,expresar mis emociones,NEGATIVA
+51,37,Masculino,33,Viajar con mi familia,POSITIVA
+51,37,Masculino,34,no me ha pasado pero son competentes,NEUTRA
+51,37,Masculino,35,viajaré con mi familia a conocer nuestros lugares favoritos,POSITIVA
+51,37,Masculino,36,normal,NEUTRA
+51,37,Masculino,37,las alturas,POSITIVA
+51,37,Masculino,38,son mas sencillos,POSITIVA
+51,37,Masculino,39,aprovecharía mas el tiempo con mis padres y menos con mis cosas,POSITIVA
+51,37,Masculino,40,estan cansadas de ver al hombre débil y sin seguridad,NEGATIVA
+51,37,Masculino,41,con mi esposa,POSITIVA
+51,37,Masculino,42,"son un mundo, una isla",NEUTRA
+51,37,Masculino,43,"es inteligente, empatica sencilla y que no le cuenta compartir conocimiento",POSITIVA
+51,37,Masculino,44,les toca muy pesado y viven aburridas por no tener ayuda idónea u oportunidades,AMBIGUA
+51,37,Masculino,45,no ser responsable con las cosas de la casa,POSITIVA
+51,37,Masculino,46,una persona solitaria y ajeno al entorno familiar,NEGATIVA
+51,37,Masculino,47,aprender levantarse y seguir,POSITIVA
+51,37,Masculino,48,no insisto para no complicarme,NEGATIVA
+51,37,Masculino,49,ser feliz con mi familia y disfrutar el tiempo con mis hijos,POSITIVA
+51,37,Masculino,50,"tendré un mejor trabajo, saldré de deudas y viajaré",POSITIVA
+51,37,Masculino,51,son personas que le enseñan cosas indirectamente por su experiencia,POSITIVA
+51,37,Masculino,52,quedarme callado y guardarme las cosas no hablar,NEGATIVA
+51,37,Masculino,53,siguen su vida,AMBIGUA
+51,37,Masculino,54,hacer mandado con mi abuela,POSITIVA
+51,37,Masculino,55,de hombres lo poco desconsiderados y falta de iniciativa y seguridad. Las mujeres dejarse influir por el mundo fácil,NEGATIVA
+51,37,Masculino,56,normal con mi esposa,POSITIVA
+51,37,Masculino,57,era inquieto,AMBIGUA
+51,37,Masculino,58,es muy competente,POSITIVA
+51,37,Masculino,59,a veces exagera las cosas que pasan su alrededor,NEGATIVA
+51,37,Masculino,60,aplazar un buen tiempo la universidad por no terminar la tesis dejando oportunidades profesionales y perdiendo tiempo. Endeudarme sin conocer las consecuencias a largo plazo.,NEGATIVA
+52,29,Masculino,1,Escucha,NEGATIVA
+52,29,Masculino,2,Corro,POSITIVA
+52,29,Masculino,3,Ser campeón,NEGATIVA
+52,29,Masculino,4,Lo haría mucho mejor,NEGATIVA
+52,29,Masculino,5,Desolador,NEGATIVA
+52,29,Masculino,6,Son afortunadas,AMBIGUA
+52,29,Masculino,7,No lograrlo,NEGATIVA
+52,29,Masculino,9,Era muy feliz,POSITIVA
+52,29,Masculino,10,Es alguien como yo,NEGATIVA
+52,29,Masculino,11,No pienso nada,NEUTRA
+52,29,Masculino,12,Es amorosa,POSITIVA
+52,29,Masculino,13,Un amigo comprometido,POSITIVA
+52,29,Masculino,14,Es una mujer increíble,POSITIVA
+52,29,Masculino,15,Me traicionaron,NEGATIVA
+52,29,Masculino,16,Hubiese sido más valiente,NEGATIVA
+52,29,Masculino,17,Ser increíble en cualquier cosa,NEGATIVA
+52,29,Masculino,18,No hiciera falta el dinero,POSITIVA
+52,29,Masculino,19,Tendría un equipo increíble,POSITIVA
+52,29,Masculino,20,Ser muy bueno,AMBIGUA
+52,29,Masculino,21,Elogiaban mi capacidad,POSITIVA
+52,29,Masculino,22,No triunfar,POSITIVA
+52,29,Masculino,23,La época en la que vivimos,NEGATIVA
+52,29,Masculino,24,Era débil,POSITIVA
+52,29,Masculino,25,Son poco interesantes,NEGATIVA
+52,29,Masculino,26,Es complicada pero valiosa,POSITIVA
+52,29,Masculino,27,Alguien muy amado,POSITIVA
+52,29,Masculino,28,Son felices a mi lado,POSITIVA
+52,29,Masculino,29,Nos parecemos mucho,AMBIGUA
+52,29,Masculino,30,No haber iniciado antes,NEUTRA
+52,29,Masculino,31,Me hubiese enseñado más cosas,AMBIGUA
+52,29,Masculino,32,Son sus ojos,POSITIVA
+52,29,Masculino,33,Poder vivir múltiples vidas,AMBIGUA
+52,29,Masculino,34,es feliz,POSITIVA
+52,29,Masculino,35,Seré libre,AMBIGUA
+52,29,Masculino,36,Me da estrés,NEGATIVA
+52,29,Masculino,37,Hacer el ridículo,POSITIVA
+52,29,Masculino,38,Es la que más sufre,AMBIGUA
+52,29,Masculino,39,Viviría con más valentía,POSITIVA
+52,29,Masculino,40,"Son blandos, sin carácter",NEGATIVA
+52,29,Masculino,41,Me cuidaría,POSITIVA
+52,29,Masculino,42,Están fragmentadas,NEGATIVA
+52,29,Masculino,43,Ama lo que hace y me pueda enseñar,POSITIVA
+52,29,Masculino,44,Son buenas,POSITIVA
+52,29,Masculino,45,Mis bajos instintos,NEGATIVA
+52,29,Masculino,46,Un gran hombre que ha sufrido mucho,POSITIVA
+52,29,Masculino,47,Siempre le doy la vuelta,POSITIVA
+52,29,Masculino,48,Dudo,NEGATIVA
+52,29,Masculino,49,Ser libre,AMBIGUA
+52,29,Masculino,50,Entenderé muchas cosas,POSITIVA
+52,29,Masculino,51,Son gente excepcional,POSITIVA
+52,29,Masculino,52,Postergar lo que quiero,NEGATIVA
+52,29,Masculino,53,Sienten mi ausencia,POSITIVA
+52,29,Masculino,54,Es ser feliz con mis padres y abuelos,POSITIVA
+52,29,Masculino,55,Es su simpleza,AMBIGUA
+52,29,Masculino,56,Es todo un tema,AMBIGUA
+52,29,Masculino,57,Quería ser astronauta,POSITIVA
+52,29,Masculino,58,Se siente bien a mi lado,POSITIVA
+52,29,Masculino,59,Intenta controlarme mucho,NEGATIVA
+52,29,Masculino,60,No debe ser contada,NEUTRA

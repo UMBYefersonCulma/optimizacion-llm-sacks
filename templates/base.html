@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% block titulo %}Frases de Sacks{% endblock %} · Frases de Sacks</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <script>
+    // Aplica las preferencias de accesibilidad guardadas antes del primer pintado (evita el salto de tamaño/contraste).
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('sacks_a11y') || '{}'), h = document.documentElement;
+        if (p.escala && p.escala > 1) { h.style.setProperty('--a11y-escala', p.escala); h.classList.add('a11y-grande'); }
+        var color = { contraste: 'a11y-contraste', oscuro: 'a11y-oscuro', invertido: 'a11y-invertido', gris: 'a11y-gris' }[p.color]; if (color) h.classList.add(color);
+        var fuente = { atkinson: 'a11y-fuente-atkinson', lexend: 'a11y-fuente-lexend', dislexia: 'a11y-fuente-dislexia' }[p.fuente]; if (fuente) h.classList.add(fuente);
+        ['espaciado', 'guia', 'enlaces', 'cursor', 'calma', 'voz'].forEach(function (k) { if (p[k]) h.classList.add('a11y-' + k); });
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ico-marca" viewBox="0 0 24 24"><path d="M5 4h11l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="12.5" cy="14" r="1.3" fill="currentColor"/><circle cx="16" cy="14" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="ico-I" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10z"/></symbol>
+    <symbol id="ico-II" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></symbol>
+    <symbol id="ico-III" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+    <symbol id="ico-IV" viewBox="0 0 24 24"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 21v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3"/><path d="M14 14h2a4 4 0 0 1 4 4v3"/></symbol>
+    <symbol id="ico-V" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></symbol>
+    <symbol id="ico-VI" viewBox="0 0 24 24"><path d="M7 12l3 3 7-7"/><circle cx="12" cy="12" r="9"/></symbol>
+    <symbol id="ico-VII" viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3 6.8 19l1-5.8L3.5 9.2l5.9-.9z"/></symbol>
+    <symbol id="ico-VIII" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="5" cy="14" r="2.5"/><circle cx="19" cy="14" r="2.5"/><path d="M12 9v4M12 13l-5 3M12 13l5 3M9 21h6"/></symbol>
+    <symbol id="ico-IX" viewBox="0 0 24 24"><path d="M4 9h4a2 2 0 1 0 4 0h4v4a2 2 0 1 1 0 4v3H4z"/><path d="M12 5v4"/></symbol>
+    <symbol id="ico-X" viewBox="0 0 24 24"><path d="M7 16a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 9a3.5 3.5 0 0 1 0 7z"/><path d="M12 12l-2 4h4l-2 4"/></symbol>
+    <symbol id="ico-XI" viewBox="0 0 24 24"><path d="M12 3v14"/><circle cx="12" cy="4" r="1.5"/><path d="M5 12h14"/><path d="M5 12l-2 6h4zM19 12l-2 6h4z"/></symbol>
+    <symbol id="ico-XII" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.3 1 2.1h5c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="ico-XIII" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M3 4l3 3M21 4l-3 3"/></symbol>
+    <symbol id="ico-XIV" viewBox="0 0 24 24"><path d="M3 17h18"/><path d="M6 17a6 6 0 0 1 12 0"/><path d="M12 3v3M4.5 7.5l2 2M19.5 7.5l-2 2"/></symbol>
+    <symbol id="ico-XV" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-3 4 3 4H5"/></symbol>
+  </defs>
+</svg>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+<header class="topbar" role="banner">
+  <a class="marca" href="{{ url_for('index') }}" aria-label="Frases de Sacks, inicio">
+    <span class="marca-logo"><svg aria-hidden="true"><use href="#ico-marca"/></svg></span>
+    <span class="marca-texto">Frases de Sacks <small>Análisis emocional local</small></span>
+  </a>
+  <nav aria-label="Secciones">
+    <ul>
+      <li><a href="{{ url_for('index') }}" class="{{ 'activo' if request.endpoint in ('index','iniciar_test','responder_test','finalizar_test','progreso','resultados') }}">Aplicar el test</a></li>
+      <li><a href="{{ url_for('procesar_csv') }}" class="{{ 'activo' if request.endpoint == 'procesar_csv' }}">Procesar CSV</a></li>
+      <li><a href="{{ url_for('comparar_resultados') }}" class="{{ 'activo' if request.endpoint in ('comparar_resultados','ver_comparacion') }}">Comparar con psicólogos</a></li>
+    </ul>
+  </nav>
+  <div class="topbar-derecha">
+    <div id="estado-modelo" class="estado" role="status" aria-live="polite" title="Estado del analizador">
+      <span class="punto" aria-hidden="true"></span><span class="estado-texto">Verificando…</span>
+    </div>
+    <div class="a11y-wrap">
+      <button type="button" id="btn-a11y" class="btn-a11y" aria-haspopup="dialog" aria-expanded="false" aria-controls="panel-a11y" title="Opciones de accesibilidad (Alt + A)">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="2.2" fill="currentColor"/><path d="M4 8.5c5.3 1.3 10.7 1.3 16 0M12 9.5v5m0 0-3.5 6.5M12 14.5l3.5 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+        <span>Accesibilidad</span>
+      </button>
+      <div id="panel-a11y" class="panel-a11y" role="dialog" aria-label="Opciones de accesibilidad" hidden></div>
+    </div>
+  </div>
+</header>
+
+<main class="contenido" id="contenido" tabindex="-1">
+  {% block contenido %}{% endblock %}
+</main>
+
+<footer class="pie" role="contentinfo">
+  Universidad Manuela Beltrán · Ingeniería de Software · Práctica Empresarial II ·
+  Yeferson Ferney Culma Montoya · Procesamiento 100 % local, sin envío de datos a terceros.
+</footer>
+
+<div id="overlay" class="overlay" role="alert" aria-live="assertive" hidden>
+  <div class="overlay-caja">
+    <div class="spinner" aria-hidden="true"></div>
+    <p id="overlay-texto">Analizando…</p>
+    <small id="overlay-sub">Todo se procesa en este computador; suele tardar unos segundos por frase.</small>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='a11y.js') }}"></script>
+<script>
+  // Mensajes de validación del navegador en español (por defecto salen en el idioma del navegador).
+  (function () {
+    function mensaje(el) {
+      var v = el.validity;
+      if (v.valueMissing) return el.tagName === 'SELECT' ? 'Selecciona una opción de la lista.' : 'Este campo es obligatorio.';
+      if (v.rangeUnderflow) return 'El valor mínimo es ' + el.min + '.';
+      if (v.rangeOverflow) return 'El valor máximo es ' + el.max + '.';
+      if (v.badInput || v.stepMismatch) return 'Escribe un número entero.';
+      if (v.typeMismatch) return 'Revisa el formato de este campo.';
+      return '';
+    }
+    document.addEventListener('invalid', function (e) { e.target.setCustomValidity(mensaje(e.target)); }, true);
+    document.addEventListener('input', function (e) { if (e.target.setCustomValidity) e.target.setCustomValidity(''); }, true);
+    document.addEventListener('change', function (e) { if (e.target.setCustomValidity) e.target.setCustomValidity(''); }, true);
+  })();
+  // Overlay de carga en formularios que llaman al modelo (evita doble clic y pantalla "congelada").
+  document.querySelectorAll('form[data-cargando]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      if (e.defaultPrevented) return;
+      var boton = form.querySelector('[type=submit]');
+      if (boton) { boton.disabled = true; boton.dataset.original = boton.value; boton.value = 'Procesando…'; }
+      document.getElementById('overlay-texto').textContent = form.dataset.cargando;
+      document.getElementById('overlay-sub').textContent = form.dataset.cargandoSub || '';
+      document.getElementById('overlay').hidden = false;
+    });
+  });
+  // Indicador de estado del analizador en la barra superior.
+  (function () {
+    var caja = document.getElementById('estado-modelo');
+    fetch('/api/estado').then(function (r) { return r.json(); }).then(function (s) {
+      var texto = caja.querySelector('.estado-texto');
+      if (!s.ok) { caja.classList.add('rojo'); texto.textContent = 'Analizador apagado · abre Ollama'; }
+      else if (!s.modelo_presente) { caja.classList.add('rojo'); texto.textContent = 'Falta instalar el modelo'; }
+      else { caja.classList.add('verde'); texto.textContent = 'Analizador listo'; caja.title = 'Modelo {{ MODELO }} en Ollama, en este equipo'; }
+    }).catch(function () { caja.classList.add('rojo'); caja.querySelector('.estado-texto').textContent = 'La aplicación no responde'; });
+  })();
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

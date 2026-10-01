@@ -1,34 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Procesar CSV con IA</title>
-  <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-<nav>
-  <ul>
-    <li><a href="/">Inicio</a></li>
-    <li><a href="/procesar_csv">Procesar CSV con IA</a></li>
-    <li><a href="/comparar_resultados">Comparar IA vs Humano</a></li>
+{% extends "base.html" %}
+{% block titulo %}Procesar CSV{% endblock %}
+{% block contenido %}
+<section class="hero">
+  <h1>Procesar un archivo CSV con IA</h1>
+  <p>Sube las respuestas del test y el modelo las clasifica una por una en segundo plano.
+     Verás el avance en tiempo real y al final podrás descargar los resultados y compararlos con la evaluación humana.</p>
+</section>
+
+<form method="POST" action="{{ url_for('procesar_csv') }}" enctype="multipart/form-data" class="tarjeta"
+      data-cargando="Leyendo el archivo…" data-cargando-sub="En un momento verás la barra de progreso.">
+  <h2>Archivo de respuestas</h2>
+  <div class="form-group">
+    <label for="archivo">Archivo CSV</label>
+    <input type="file" id="archivo" name="archivo" accept=".csv,text/csv" required>
+    <p class="ayuda">Formato recomendado: <code>Numero</code> (1 a 60, el enunciado de Sacks) y <code>Respuesta</code>
+       (lo que escribió la persona); la app une el enunciado con la respuesta. También se acepta una columna
+       <code>Frase</code> con la frase ya completa. <code>Edad</code> y <code>Genero</code> son opcionales.
+       Se aceptan separadores «,» o «;» y archivos guardados desde Excel.</p>
+  </div>
+  <input type="submit" value="Procesar con IA">
+</form>
+
+<section class="tarjeta suave">
+  <h3>Archivos de ejemplo para la demostración</h3>
+  <ul class="lista-descargas">
+    <li><a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a> · 12 respuestas al test (Numero + Respuesta) que cubren varias áreas, incluido el caso «no tengo padre» (≈ 3 min).</li>
+    <li><a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a> · las mismas 12 respuestas con la categoría asignada por el evaluador humano, para el flujo de comparación.</li>
+    <li><a href="{{ url_for('ejemplos', nombre='frases_demo.csv') }}">frases_demo.csv</a> · 8 frases sueltas ya completas (formato <code>Frase</code>).</li>
   </ul>
-</nav>
-  <form action="/procesar_csv" method="post" enctype="multipart/form-data" style="width: 100%; max-width: 500px;">
-    <div class="form-group">
-      <h2>Procesar CSV con IA</h2>
-      <label for="archivo">Archivo CSV Para analizar</label>
-      <input type="file" name="archivo" id="archivo" required>
-    </div>
-    <input type="submit" value="Procesar">
-  </form>
-  {% if tabla %}
-    <h3 class="result-header">Resultados del procesamiento</h3>
-    <div class="styled-table">
-      {{ tabla|safe }}
-    </div>
-    {% if archivo %}
-      <a href="/descargar?file={{ archivo }}" class="button-link">Descargar archivo con resultados</a>
-    {% endif %}
-  {% endif %}
-</body>
-</html>
+</section>
+{% endblock %}

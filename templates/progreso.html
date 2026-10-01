@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pasos %}
+{% block titulo %}Analizando respuestas{% endblock %}
+{% block contenido %}
+<section class="tarjeta progreso">
+  {% if job.tipo == 'test' %}{{ pasos(3) }}{% endif %}
+  <h2>{% if job.tipo == 'test' %}Gracias por responder{% else %}Analizando «{{ job.nombre_entrada }}»{% endif %}</h2>
+  <p class="meta">
+    {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
+    {{ job.total }} frases.
+    {% if job.tipo == 'test' %}Estamos terminando de analizar tus frases. Los resultados se abrirán solos en un momento; no cierres esta ventana.{% else %}El modelo las procesa una por una; al terminar se abrirán los resultados.{% endif %}
+  </p>
+
+  <div class="progreso-barra" role="progressbar" aria-label="Frases analizadas" aria-valuemin="0" aria-valuemax="{{ job.total }}" aria-valuenow="0" id="barra"><div id="pb" class="progreso-relleno" style="width:0%"></div></div>
+  <p class="progreso-texto" aria-live="polite"><strong id="hechas">0</strong> de <strong>{{ job.total }}</strong> frases ·
+     <span id="tiempo">calculando tiempo restante…</span></p>
+
+  <div id="error" class="alerta rojo" hidden></div>
+
+  <table class="tabla" id="tabla-vivo">
+    <thead><tr><th>#</th><th>Frase completada</th><th>Categoría</th>{% if job.tipo != 'test' %}<th>Razón</th>{% endif %}<th>Tiempo</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  var jobId = "{{ job.id }}", pintadas = 0, conRazon = {{ 'false' if job.tipo == 'test' else 'true' }};
+  var clases = {POSITIVA:'positiva', NEGATIVA:'negativa', AMBIGUA:'ambigua', ERROR:'error'};
+  function badge(c) { var k = clases[c] || 'vacio'; return '<span class="badge badge-' + k + '">' + (c || 'Sin resultado') + '</span>'; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (m) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]; }); }
+  function fmt(s) { if (s == null) return '…'; var m = Math.floor(s / 60), r = s % 60; return (m ? m + ' min ' : '') + r + ' s'; }
+  function frase(u) {
+    if (u.Enunciado) return '<span class="enunciado-inline">' + esc(u.Enunciado) + '</span> ' + esc(u.Respuesta);
+    return esc(u.Frase);
+  }
+  function tick() {
+    fetch('/api/progreso/' + jobId).then(function (r) { return r.json(); }).then(function (j) {
+      document.getElementById('pb').style.width = (100 * j.hechas / Math.max(j.total, 1)) + '%';
+      document.getElementById('hechas').textContent = j.hechas; document.getElementById('barra').setAttribute('aria-valuenow', j.hechas);
+      if (j.hechas > pintadas || document.getElementById('tiempo').textContent.indexOf('calculando') === 0) document.getElementById('tiempo').textContent = 'quedan aprox. ' + fmt(j.restante_s);
+      if (j.ultima && j.hechas > pintadas) {
+        var tb = document.querySelector('#tabla-vivo tbody');
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td>' + (j.ultima.Numero !== '' ? j.ultima.Numero : j.hechas) + '</td><td>' + frase(j.ultima) + '</td><td>' + badge(j.ultima.Categoria) + '</td>' + (conRazon ? '<td>' + esc(j.ultima.Razon) + '</td>' : '') + '<td>' + (j.ultima.Duracion_s != null ? j.ultima.Duracion_s + ' s' : '') + '</td>';
+        tb.appendChild(tr); pintadas = j.hechas;
+      }
+      if (j.estado === 'error') { var e = document.getElementById('error'); e.hidden = false; e.textContent = j.error; return; }
+      if (j.estado === 'listo') { window.location = j.url_resultados; return; }
+      setTimeout(tick, 1500);
+    }).catch(function () { setTimeout(tick, 3000); });
+  }
+  tick();
+</script>
+{% endblock %}

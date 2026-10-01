@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pasos %}
+{% block titulo %}Respuestas{% endblock %}
+{% block contenido %}
+<section class="tarjeta wizard">
+  {{ pasos(2) }}
+  <h1 class="centro">Respuestas del test de Sacks</h1>
+  <p class="intro">Termina cada frase con <strong>lo primero que se te ocurra</strong>, sin pensarlo mucho. No hay respuestas buenas ni malas.</p>
+  <ul class="intro instrucciones">
+    <li>Escribe cómo termina la frase y presiona <kbd>Enter</kbd> o «Siguiente».</li>
+    <li>Puedes volver a una frase anterior con «← Frase anterior» o desde la lista de frases.</li>
+    <li>Todas las frases deben tener respuesta. Si una no aplica a tu vida, escríbelo tal cual (por ejemplo: «no lo conocí»).</li>
+  </ul>
+
+  <div class="pregunta-pill-wrap">
+    <button type="button" class="pregunta-pill" id="btn-menu" aria-expanded="false" aria-controls="menu-preguntas"><span class="chevron" aria-hidden="true">›</span> Frase <strong id="num-actual">1</strong> de {{ preguntas|length }}<span class="visualmente-oculto">· abrir la lista de frases</span></button>
+    <div class="pregunta-menu" id="menu-preguntas" hidden><ul class="pregunta-lista" aria-label="Frases del test"></ul></div>
+  </div>
+  <div class="linea-avance" aria-hidden="true"><div id="linea-avance"></div></div>
+</section>
+
+<section class="tarjeta wizard-form pregunta-card" id="pregunta-card">
+  <div class="pregunta-inline" aria-live="polite" aria-atomic="true">
+    <label for="respuesta" class="pregunta-enunciado" id="enunciado"></label>
+    <textarea id="respuesta" class="respuesta-inline" rows="1" maxlength="300" placeholder="…" autocomplete="off" aria-describedby="ayuda-respuesta"></textarea>
+    <span id="ayuda-respuesta" class="visualmente-oculto">Termina la frase y pulsa Enter o el botón Siguiente.</span>
+  </div>
+  <button type="button" class="chip btn-escuchar" id="btn-escuchar" aria-label="Escuchar la frase en voz alta">🔊 Escuchar la frase</button>
+  <p class="ayuda" id="error-pregunta" role="alert" hidden></p>
+  <button type="button" class="boton principal" id="btn-siguiente">Siguiente →</button>
+  <div class="pregunta-nav">
+    <button type="button" class="boton secundario" id="btn-anterior">← Frase anterior</button>
+    <a class="boton secundario" id="btn-reiniciar" href="{{ url_for('index') }}">Empezar de nuevo</a>
+    <span class="meta analisis-estado" id="estado-analisis" aria-live="off"></span>
+  </div>
+</section>
+
+<form method="POST" action="{{ url_for('finalizar_test', job_id=job.id) }}" id="form-finalizar" hidden
+      data-cargando="Gracias. Terminando el análisis…" data-cargando-sub="En un momento verás los resultados."></form>
+{% endblock %}
+{% block scripts %}
+<script>
+  var JOB = "{{ job.id }}";
+  var PREGUNTAS = {{ preguntas|tojson }};
+  var idx = 0, guardando = false, analizadas = 0, respondidas = 0;
+  var $enun = document.getElementById('enunciado'), $resp = document.getElementById('respuesta');
+  var $num = document.getElementById('num-actual'), $sig = document.getElementById('btn-siguiente');
+  var $ant = document.getElementById('btn-anterior'), $menu = document.getElementById('menu-preguntas');
+  var $estado = document.getElementById('estado-analisis'), $err = document.getElementById('error-pregunta');
+
+  function primeraSinResponder() {
+    for (var i = 0; i < PREGUNTAS.length; i++) if (!PREGUNTAS[i].respuesta) return i;
+    return PREGUNTAS.length - 1;
+  }
+  function autoGrow() { $resp.style.height = 'auto'; $resp.style.height = ($resp.scrollHeight + 2) + 'px'; }
+  function mostrar(i) {
+    idx = Math.max(0, Math.min(i, PREGUNTAS.length - 1));
+    var p = PREGUNTAS[idx];
+    $enun.textContent = p.enunciado;
+    $resp.value = p.respuesta || '';
+    $num.textContent = idx + 1;
+    document.getElementById('linea-avance').style.width = Math.round(100 * PREGUNTAS.filter(function (q) { return q.respuesta; }).length / PREGUNTAS.length) + '%';
+    var card = document.getElementById('pregunta-card'); card.classList.remove('pasar'); void card.offsetWidth; card.classList.add('pasar');
+    $sig.textContent = (idx === PREGUNTAS.length - 1) ? 'Terminar el test' : 'Siguiente →';
+    $ant.disabled = idx === 0;
+    $err.hidden = true;
+    autoGrow(); $resp.focus();
+    pintarMenu();
+    if (window.sacksHablar) window.sacksHablar('Frase ' + (idx + 1) + ' de ' + PREGUNTAS.length + '. ' + p.enunciado + '…');
+  }
+  var $btnMenu = document.getElementById('btn-menu'), $lista = $menu.querySelector('.pregunta-lista');
+  function pintarMenu() {
+    $lista.innerHTML = '';
+    PREGUNTAS.forEach(function (p, i) {
+      var li = document.createElement('li'), b = document.createElement('button'); b.type = 'button';
+      b.className = 'pregunta-menu-item' + (i === idx ? ' activo' : '');
+      if (i === idx) b.setAttribute('aria-current', 'true');
+      b.disabled = !p.respuesta && i > primeraSinResponder();
+      b.textContent = (i + 1) + '. ' + p.enunciado;
+      if (p.respuesta) { var ok = document.createElement('span'); ok.setAttribute('aria-hidden', 'true'); ok.textContent = ' ✓'; b.appendChild(ok); var sr = document.createElement('span'); sr.className = 'visualmente-oculto'; sr.textContent = ' (respondida)'; b.appendChild(sr); }
+      b.addEventListener('click', function () { guardar().then(function () { cerrarMenu(false); mostrar(i); }); });
+      li.appendChild(b); $lista.appendChild(li);
+    });
+  }
+  function abrirMenu() {
+    pintarMenu(); $menu.hidden = false; $btnMenu.setAttribute('aria-expanded', 'true');
+    var actual = $lista.querySelector('[aria-current]') || $lista.querySelector('button:not(:disabled)');
+    if (actual) actual.focus();
+  }
+  function cerrarMenu(devolverFoco) {
+    if ($menu.hidden) return;
+    $menu.hidden = true; $btnMenu.setAttribute('aria-expanded', 'false');
+    if (devolverFoco) $btnMenu.focus();
+  }
+  function actualizarEstado() {
+    $estado.textContent = respondidas ? ('Frases ya analizadas: ' + analizadas + ' de ' + respondidas) : '';
+  }
+  function guardar() {
+    var p = PREGUNTAS[idx], texto = $resp.value.trim();
+    if (texto === (p.respuesta || '')) return Promise.resolve(true);
+    guardando = true;
+    return fetch('/api/test/' + JOB + '/respuesta', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({numero: p.numero, respuesta: texto})
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      guardando = false;
+      if (!j.ok) { $err.textContent = j.error || 'No se pudo guardar la respuesta.'; $err.hidden = false; return false; }
+      p.respuesta = texto; analizadas = j.analizadas; respondidas = j.respondidas; actualizarEstado(); return true;
+    }).catch(function () { guardando = false; $err.textContent = 'Sin conexión con el servidor local.'; $err.hidden = false; return false; });
+  }
+  function siguiente() {
+    if (guardando) return;
+    if (!$resp.value.trim()) { $err.textContent = 'Completa la frase antes de continuar.'; $err.hidden = false; $resp.focus(); return; }
+    guardar().then(function (ok) {
+      if (!ok) return;
+      if (idx === PREGUNTAS.length - 1) {
+        var faltan = PREGUNTAS.map(function (p, i) { return p.respuesta ? null : i + 1; }).filter(Boolean);
+        if (faltan.length) { $err.textContent = 'Faltan por responder: ' + faltan.join(', ') + '.'; $err.hidden = false; mostrar(faltan[0] - 1); return; }
+        document.getElementById('form-finalizar').requestSubmit();
+      } else { mostrar(idx + 1); }
+    });
+  }
+  $sig.addEventListener('click', siguiente);
+  $ant.addEventListener('click', function () { guardar().then(function () { mostrar(idx - 1); }); });
+  $resp.addEventListener('input', function () {
+    if ($resp.value.indexOf('\n') !== -1) $resp.value = $resp.value.replace(/\n/g, ' ');  // respuesta de una sola línea
+    autoGrow();
+  });
+  $resp.addEventListener('keydown', function (e) {
+    if (e.isComposing || e.keyCode === 229) return;   // dictado o composición: no interceptar
+    var esEnter = e.key === 'Enter' || e.key === 'Return' || e.keyCode === 13 || e.which === 13;
+    if (esEnter) { e.preventDefault(); if (!e.shiftKey) siguiente(); }
+  });
+  $btnMenu.addEventListener('click', function () { $menu.hidden ? abrirMenu() : cerrarMenu(true); });
+  $menu.addEventListener('keydown', function (e) {
+    var items = Array.prototype.slice.call($lista.querySelectorAll('button:not(:disabled)')), i = items.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); (items[i + 1] || items[0]).focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); (items[i - 1] || items[items.length - 1]).focus(); }
+    else if (e.key === 'Home') { e.preventDefault(); items[0].focus(); }
+    else if (e.key === 'End') { e.preventDefault(); items[items.length - 1].focus(); }
+    else if (e.key === 'Tab') { cerrarMenu(false); }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (!$menu.hidden) cerrarMenu(true); if (window.sacksCallar) window.sacksCallar(); } });
+  document.getElementById('btn-escuchar').addEventListener('click', function () { if (window.sacksHablar) window.sacksHablar(PREGUNTAS[idx].enunciado + '…', true); });
+  document.getElementById('btn-reiniciar').addEventListener('click', function (e) {
+    if (respondidas && !confirm('Si empiezas de nuevo se borran las ' + respondidas + ' respuestas que ya escribiste. ¿Quieres continuar?')) e.preventDefault();
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.pregunta-pill-wrap')) cerrarMenu(false); });
+  // sondeo ligero del análisis en segundo plano
+  setInterval(function () {
+    if (!respondidas) return;
+    fetch('/api/progreso/' + JOB).then(function (r) { return r.json(); }).then(function (j) { analizadas = j.hechas; actualizarEstado(); }).catch(function () {});
+  }, 4000);
+  respondidas = PREGUNTAS.filter(function (p) { return p.respuesta; }).length;
+  mostrar(primeraSinResponder());
+</script>
+{% endblock %}

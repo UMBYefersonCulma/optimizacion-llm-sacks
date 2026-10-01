@@ -1,4 +1,8 @@
 __pycache__/
+.venv/
 processed/
-*.csv
+logs/
+uploads/*.csv
 .DS_Store
+# Voces de Piper (~140 MB): se descargan con ./descargar_voces.sh
+data/voces/
