@@ -47,11 +47,13 @@
     <span class="marca-logo"><svg aria-hidden="true"><use href="#ico-marca"/></svg></span>
     <span class="marca-texto">Frases de Sacks <small>Análisis emocional local</small></span>
   </a>
-  <nav aria-label="Secciones">
-    <ul>
-      <li><a href="{{ url_for('nuevo_test') }}" class="{{ 'activo' if ROL == 'persona' }}"{% if ROL == 'persona' %} aria-current="page"{% endif %}>Responder el test</a></li>
-      <li><a href="{{ url_for('psicologo') }}" class="{{ 'activo' if ROL == 'psicologo' }}"{% if ROL == 'psicologo' %} aria-current="page"{% endif %}>Área del psicólogo</a></li>
-    </ul>
+  <nav class="vista" aria-label="Vista de la aplicación">
+    <a href="{{ url_for('index') }}" class="vista-opcion{{ ' activo' if ROL != 'psicologo' }}"{% if ROL != 'psicologo' %} aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span>Persona</span></a>
+    <a href="{{ url_for('psicologo') }}" class="vista-opcion{{ ' activo' if ROL == 'psicologo' }}"{% if ROL == 'psicologo' %} aria-current="page"{% endif %}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></svg>
+      <span>Psicólogo</span></a>
   </nav>
   <div class="topbar-derecha">
     <div class="a11y-wrap">

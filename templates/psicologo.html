@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block titulo %}Área del psicólogo{% endblock %}
 {% block contenido %}
-<div class="psicologo">
+{% set listos = informes|selectattr('estado', 'equalto', 'listo')|list|length %}
+<section class="tarjeta informe psico-espacio">
   <header class="psico-cabecera">
     <div>
-      <p class="sobretitulo">Área del psicólogo</p>
-      <h1>Herramientas para el profesional</h1>
-      <p>Prepara el test, revisa los informes y valida el sistema. Todo corre en este equipo, sin internet.</p>
+      <h1>Área del psicólogo</h1>
+      <p>Todas las herramientas del profesional en un solo lugar. Nada sale de este equipo.</p>
     </div>
     <div id="estado-modelo" class="estado-sistema" role="status" aria-live="polite">
       <span class="punto" aria-hidden="true"></span>
@@ -15,69 +15,116 @@
     </div>
   </header>
 
-  <div class="hub">
-    <div class="hub-col">
-      <section class="tarjeta hub-principal" aria-labelledby="h-aplicar">
-        <h2 id="h-aplicar"><span class="hub-num">1</span> Aplicar el test a una persona</h2>
-        <p>Elige la versión y entrega el equipo a la persona. Ella acepta la autorización de datos antes de responder.</p>
-        <form method="GET" action="{{ url_for('nuevo_test') }}">
-          <fieldset class="form-group modos-grupo">
-            <legend class="visualmente-oculto">Versión del test</legend>
-            <div class="modos">
-              {% for clave, m in MODOS.items()|reverse %}
-              <label class="modo">
-                <input type="radio" name="modo" value="{{ clave }}" class="visualmente-oculto" {{ 'checked' if clave == 'completo' }} aria-describedby="modo-sub-{{ clave }}">
-                <span class="modo-nombre">{{ m.nombre }}</span>
-                <span class="modo-frases">{{ m.total }} frases</span>
-                <span class="modo-sub" id="modo-sub-{{ clave }}">{{ m.descripcion }}</span>
-              </label>
-              {% endfor %}
-            </div>
-          </fieldset>
-          <input type="submit" value="Preparar el test para la persona →">
-        </form>
-      </section>
+  <div class="pestanas" role="tablist" aria-label="Herramientas del psicólogo">
+    <button type="button" role="tab" id="tab-aplicar" data-hash="aplicar" aria-controls="panel-aplicar">Aplicar test</button>
+    <button type="button" role="tab" id="tab-informes" data-hash="informes" aria-controls="panel-informes">Informes{% if informes %} ({{ informes|length }}){% endif %}</button>
+    <button type="button" role="tab" id="tab-csv" data-hash="csv" aria-controls="panel-csv">Procesar CSV</button>
+    <button type="button" role="tab" id="tab-comparar" data-hash="comparar" aria-controls="panel-comparar">Comparar con psicólogos</button>
+  </div>
 
-      <section class="tarjeta hub-informes" aria-labelledby="h-informes">
-        <h2 id="h-informes">Informes de esta sesión</h2>
-        {% if informes %}
-        <div class="paginable" data-paginar="Páginas de informes">
-          <table class="tabla compacta">
-            <thead><tr><th class="col-opc">Hora</th><th>Origen</th><th class="col-opc">Edad · Género</th><th>Estado</th><th><span class="visualmente-oculto">Acción</span></th></tr></thead>
-            <tbody>
-              {% for j in informes %}
-              <tr>
-                <td class="col-opc">{{ j.inicio.strftime('%H:%M') }}</td>
-                <td>{% if j.tipo == 'test' %}Test · {{ MODOS[j.modo].nombre }} ({{ j.total }}){% else %}CSV · {{ j.nombre_entrada }}{% endif %}</td>
-                <td class="col-opc">{{ j.edad or '—' }} · {{ j.genero or '—' }}</td>
-                <td>{% if j.estado == 'listo' %}<span class="badge badge-positiva">Listo</span>{% elif j.estado == 'error' %}<span class="badge badge-error">Error</span>{% elif j.estado == 'respondiendo' %}Respondiendo…{% else %}Analizando {{ j.hechas }}/{{ j.total }}{% endif %}</td>
-                <td>{% if j.estado == 'listo' %}<a href="{{ url_for('resultados', job_id=j.id) }}">Ver informe</a>{% elif j.estado != 'respondiendo' %}<a href="{{ url_for('progreso', job_id=j.id) }}">Ver avance</a>{% endif %}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+  <!-- Aplicar el test a una persona -->
+  <div class="panel-pestana" role="tabpanel" id="panel-aplicar" aria-labelledby="tab-aplicar" tabindex="0">
+    <form method="GET" action="{{ url_for('nuevo_test') }}" class="psico-form">
+      <p class="meta">Elige la versión y entrega el equipo a la persona: ella verá solo su vista, autorizará sus datos y responderá.</p>
+      <fieldset class="form-group modos-grupo">
+        <legend class="visualmente-oculto">Versión del test</legend>
+        <div class="modos">
+          {% for clave, m in MODOS.items()|reverse %}
+          <label class="modo">
+            <input type="radio" name="modo" value="{{ clave }}" class="visualmente-oculto" {{ 'checked' if clave == 'completo' }} aria-describedby="modo-sub-{{ clave }}">
+            <span class="modo-nombre">{{ m.nombre }}</span>
+            <span class="modo-frases">{{ m.total }} frases</span>
+            <span class="modo-sub" id="modo-sub-{{ clave }}">{{ m.descripcion }}</span>
+          </label>
+          {% endfor %}
         </div>
-        {% else %}
-        <p class="meta">Todavía no hay informes. Cuando una persona termine el test o proceses un CSV, aparecerá aquí.
-           También se guardan como CSV en la carpeta <code>processed/</code>.</p>
-        {% endif %}
-      </section>
-    </div>
+      </fieldset>
+      <input type="submit" value="Preparar el test para la persona →">
+    </form>
+  </div>
 
-    <div class="hub-col hub-col-derecha">
-      <section class="tarjeta" aria-labelledby="h-csv">
-        <h2 id="h-csv"><span class="hub-num">2</span> Procesar respuestas en lote</h2>
-        <p>Sube un CSV con el número de enunciado y la respuesta de cada frase; el modelo las clasifica en segundo plano.</p>
-        <a class="boton secundario" href="{{ url_for('procesar_csv') }}">Procesar CSV →</a>
-      </section>
-      <section class="tarjeta" aria-labelledby="h-comparar">
-        <h2 id="h-comparar"><span class="hub-num">3</span> Comparar con la evaluación de psicólogos</h2>
-        <p>Cruza la clasificación de la IA con la de un psicólogo: concordancia, matriz de confusión y discrepancias.</p>
-        <a class="boton secundario" href="{{ url_for('comparar_resultados') }}">Comparar →</a>
-      </section>
+  <!-- Informes de la sesión -->
+  <div class="panel-pestana" role="tabpanel" id="panel-informes" aria-labelledby="tab-informes" tabindex="0" hidden>
+    {% if informes %}
+    <p class="meta">{{ listos }} listo{{ 's' if listos != 1 }} de {{ informes|length }}. También se guardan como CSV en la carpeta <code>processed/</code>.</p>
+    <div class="paginable" data-paginar="Páginas de informes">
+      <table class="tabla compacta">
+        <thead><tr><th class="col-opc">Hora</th><th>Origen</th><th class="col-opc">Edad · Género</th><th>Estado</th><th><span class="visualmente-oculto">Acción</span></th></tr></thead>
+        <tbody>
+          {% for j in informes %}
+          <tr>
+            <td class="col-opc">{{ j.inicio.strftime('%H:%M') }}</td>
+            <td>{% if j.tipo == 'test' %}Test · {{ MODOS[j.modo].nombre }} ({{ j.total }}){% else %}CSV · {{ j.nombre_entrada }}{% endif %}</td>
+            <td class="col-opc">{{ j.edad or '—' }} · {{ j.genero or '—' }}</td>
+            <td>{% if j.estado == 'listo' %}<span class="badge badge-positiva">Listo</span>{% elif j.estado == 'error' %}<span class="badge badge-error">Error</span>{% elif j.estado == 'respondiendo' %}Respondiendo…{% else %}Analizando {{ j.hechas }}/{{ j.total }}{% endif %}</td>
+            <td>{% if j.estado == 'listo' %}<a href="{{ url_for('resultados', job_id=j.id) }}">Ver informe</a>{% elif j.estado != 'respondiendo' %}<a href="{{ url_for('progreso', job_id=j.id) }}">Ver avance</a>{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="meta">Todavía no hay informes. Cuando una persona termine el test o proceses un CSV, aparecerá aquí.</p>
+    {% endif %}
+  </div>
+
+  <!-- Procesar CSV -->
+  <div class="panel-pestana" role="tabpanel" id="panel-csv" aria-labelledby="tab-csv" tabindex="0" hidden>
+    <div class="dos-columnas">
+      <form method="POST" action="{{ url_for('procesar_csv') }}" enctype="multipart/form-data" class="psico-form"
+            data-cargando="Leyendo el archivo…" data-cargando-sub="En un momento verás la barra de progreso.">
+        <div class="form-group">
+          <label for="archivo">Archivo CSV con respuestas</label>
+          <input type="file" id="archivo" name="archivo" accept=".csv,text/csv" required>
+          <p class="ayuda">Columnas <code>Numero</code> (1 a 60) y <code>Respuesta</code>, o <code>Frase</code> con la frase completa.
+             <code>Edad</code> y <code>Genero</code> son opcionales; acepta «,» o «;».</p>
+        </div>
+        <input type="submit" value="Procesar con IA">
+      </form>
+      <div class="tarjeta suave">
+        <h2 class="etiqueta-seccion">Archivos de ejemplo</h2>
+        <ul class="lista-descargas">
+          <li><a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a> · 12 respuestas ya evaluadas por psicólogos (≈ 1 min).</li>
+          <li><a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a> · las mismas 12 con la categoría del psicólogo.</li>
+          <li><a href="{{ url_for('ejemplos', nombre='frases_demo.csv') }}">frases_demo.csv</a> · 8 frases ya completas.</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Comparar con la evaluación humana -->
+  <div class="panel-pestana" role="tabpanel" id="panel-comparar" aria-labelledby="tab-comparar" tabindex="0" hidden>
+    <div class="dos-columnas">
+      <form method="POST" action="{{ url_for('comparar_resultados') }}" enctype="multipart/form-data" class="psico-form"
+            data-cargando="Comparando archivos…" data-cargando-sub="">
+        <div class="form-group">
+          <label for="archivo_humano">Evaluación del psicólogo</label>
+          <input type="file" id="archivo_humano" name="archivo_humano" accept=".csv,text/csv" required>
+          <p class="ayuda">Columnas <code>Numero</code> y <code>Respuesta</code> (o <code>Frase</code>) más <code>Categoria</code>.</p>
+        </div>
+        <div class="form-group">
+          <label for="archivo_ia">Resultado de la IA</label>
+          {% if ia_servidor %}
+            <div class="alerta verde compacta">Se usará el informe recién generado: <strong>{{ ia_servidor }}</strong>.</div>
+            <input type="hidden" name="archivo_ia_servidor" value="{{ ia_servidor }}">
+            <input type="file" id="archivo_ia" name="archivo_ia" accept=".csv,text/csv">
+          {% else %}
+            <input type="file" id="archivo_ia" name="archivo_ia" accept=".csv,text/csv" required>
+          {% endif %}
+        </div>
+        <input type="submit" value="Comparar">
+      </form>
+      <div class="tarjeta suave">
+        <h2 class="etiqueta-seccion">Para la demostración</h2>
+        <ol class="lista-descargas">
+          <li>En «Procesar CSV» sube <a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a>.</li>
+          <li>En su informe presiona «Comparar con evaluación humana».</li>
+          <li>Sube <a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
 {% block scripts %}
 <script>
@@ -85,7 +132,7 @@
     var caja = document.getElementById('estado-modelo');
     var titulo = caja.querySelector('.estado-titulo'), detalle = caja.querySelector('.estado-detalle');
     fetch('/api/estado').then(function (r) { return r.json(); }).then(function (s) {
-      if (!s.ok) { caja.classList.add('rojo'); titulo.textContent = 'El modelo de IA no responde'; detalle.textContent = 'Abre la aplicación Ollama en este equipo y recarga la página.'; return; }
+      if (!s.ok) { caja.classList.add('rojo'); titulo.textContent = 'El modelo de IA no responde'; detalle.textContent = 'Abre la aplicación Ollama y recarga la página.'; return; }
       if (!s.modelo_presente) { caja.classList.add('rojo'); titulo.textContent = 'Falta instalar el modelo'; detalle.textContent = 'Ejecuta: ollama create {{ MODELO }} -f Modelfile'; return; }
       caja.classList.add('verde'); titulo.textContent = 'Modelo de IA listo';
       detalle.textContent = '{{ MODELO }} · DeepSeek-R1 7B en Ollama, en este equipo.';

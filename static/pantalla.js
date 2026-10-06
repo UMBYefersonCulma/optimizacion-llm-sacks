@@ -80,7 +80,14 @@
       var panel = document.getElementById(tab.getAttribute('aria-controls'));
       if (panel) lista(panel, '[data-paginar]').forEach(paginar);
       try { sessionStorage.setItem(clave, tab.id); } catch (e) { /* sin almacenamiento */ }
+      var h = tab.getAttribute('data-hash');
+      if (h && location.hash !== '#' + h && window.history && history.replaceState) history.replaceState(null, '', '#' + h);
     }
+    function porHash() {
+      var h = (location.hash || '').slice(1);
+      return h ? tabs.filter(function (t) { return t.getAttribute('data-hash') === h; })[0] : null;
+    }
+    window.addEventListener('hashchange', function () { var t = porHash(); if (t) activar(t); });
     tabs.forEach(function (t, i) {
       t.addEventListener('click', function () { activar(t); });
       t.addEventListener('keydown', function (e) {
@@ -94,7 +101,7 @@
     });
     var guardada = null;
     try { guardada = sessionStorage.getItem(clave); } catch (e) { /* sin almacenamiento */ }
-    var inicial = (guardada && document.getElementById(guardada)) || tabs[0];
+    var inicial = porHash() || (guardada && document.getElementById(guardada)) || tabs[0];
     if (inicial && tabs.indexOf(inicial) >= 0) activar(inicial); else if (tabs[0]) activar(tabs[0]);
   }
 

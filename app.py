@@ -308,7 +308,7 @@ def _nuevo_job(tipo: str, nombre_entrada: str, total: int, **extra) -> dict:
     return job
 
 
-_PASOS_PERSONA = {"nuevo_test", "autorizar_test", "datos_test", "iniciar_test", "responder_test", "finalizar_test"}
+_PASOS_PERSONA = {"index", "nuevo_test", "autorizar_test", "datos_test", "iniciar_test", "responder_test", "finalizar_test"}
 _PAGINAS_PSICOLOGO = {"psicologo", "procesar_csv", "comparar_resultados", "ver_comparacion", "resultados"}
 
 
@@ -363,8 +363,8 @@ def _worker_test(job_id: str) -> None:
 
 @app.route("/")
 def index():
-    """Inicio: dos puertas, una para la persona que responde y otra para el psicólogo."""
-    return render_template("inicio.html")
+    """Vista de la persona: bienvenida corta con los pasos y el botón para empezar."""
+    return render_template("inicio.html", modo=MODOS[session.get("modo", "completo")])
 
 
 @app.route("/psicologo")
@@ -372,7 +372,7 @@ def psicologo():
     """Área del psicólogo: estado del modelo, preparar un test, procesar CSV, comparar e informes."""
     informes = sorted((j for j in JOBS.values() if j["tipo"] in ("test", "csv", "csv_test")),
                       key=lambda j: j["inicio"], reverse=True)
-    return render_template("psicologo.html", informes=informes)
+    return render_template("psicologo.html", informes=informes, ia_servidor=request.args.get("ia", ""))
 
 
 @app.route("/test/nuevo")
@@ -503,7 +503,7 @@ def _procesar_lote(job_id: str, filas: list[dict]) -> None:
 @app.route("/procesar_csv", methods=["GET", "POST"])
 def procesar_csv():
     if request.method == "GET":
-        return render_template("procesar_csv.html")
+        return redirect(url_for("psicologo") + "#csv")  # el formulario vive en el área del psicólogo
 
     archivo = request.files.get("archivo")
     filas = preparar_filas(leer_csv(archivo), archivo.filename)
@@ -592,7 +592,7 @@ def _tabla_comparacion(df: pd.DataFrame, col_cat: str, col_razon: str | None) ->
 @app.route("/comparar_resultados", methods=["GET", "POST"])
 def comparar_resultados():
     if request.method == "GET":
-        return render_template("comparar_resultados.html", ia_servidor=request.args.get("ia", ""))
+        return redirect(url_for("psicologo", ia=request.args.get("ia") or None) + "#comparar")
 
     archivo_humano = request.files.get("archivo_humano")
     humano = leer_csv(archivo_humano)

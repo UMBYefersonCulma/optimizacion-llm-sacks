@@ -12,9 +12,9 @@ Cada frase se clasifica como **POSITIVA · NEGATIVA · AMBIGUA** y el modelo exp
 
 | Flujo | Qué hace |
 |---|---|
-| **Inicio** | Dos puertas claras según quién usa la app: «Voy a responder el test» (persona evaluada) y «Soy psicólogo o psicóloga». |
-| **Responder el test** (persona) | Cuatro pasos: (1) **autorización de datos**: qué se recoge, para qué, quién lo ve y sus derechos (Ley 1581 de 2012, Ley 1090 de 2006); sin marcar la casilla no se puede continuar y la fecha de aceptación queda en el informe; (2) edad y género; (3) los enunciados originales del SSCT **uno a uno**, con «Siguiente →», «Frase anterior», lista de frases y un botón **«?»** con preguntas frecuentes; (4) resultados: la persona ve un mensaje de cierre y el informe queda para el psicólogo. Cada respuesta se analiza en segundo plano mientras la persona escribe la siguiente. |
-| **Área del psicólogo** | Estado del modelo de IA local, preparación del test (versión Completo 60, Equilibrio 10 o Demo 4 frases), informes de la sesión, procesamiento de CSV (`Numero, Respuesta` o `Frase`) con barra de progreso, y comparación con la evaluación de un psicólogo emparejando la misma respuesta: % de concordancia global y por categoría, matriz de confusión y detalle. |
+| **Interruptor Persona · Psicólogo** | La barra superior separa las dos vistas de la misma app, sin mezclar información. |
+| **Vista de la persona** | Bienvenida corta y cuatro pasos: (1) **autorización de datos** resumida en cuatro líneas, con el detalle legal en un diálogo (Ley 1581 de 2012, Ley 1090 de 2006); sin marcar la casilla no se puede continuar y la fecha queda en el informe; (2) edad y género; (3) las frases **una a una**, con un botón **«?»** de preguntas frecuentes; (4) mensaje de cierre y acceso a los resultados para el psicólogo. Cada respuesta se analiza en segundo plano. |
+| **Vista del psicólogo** | Un solo espacio con pestañas: **Aplicar test** (versión Completo 60, Equilibrio 10 o Demo 4), **Informes** de la sesión, **Procesar CSV** (`Numero, Respuesta` o `Frase`) y **Comparar con psicólogos** (concordancia, matriz de confusión y detalle, emparejando la misma respuesta). |
 
 Los ítems 9, 10, 25, 40, 55 y 57 cambian de redacción según el género (niño/niña, sexo contrario); es el único
 dato, junto con la edad, que se le pide a la persona. Todas las frases del modo elegido deben completarse. Si un

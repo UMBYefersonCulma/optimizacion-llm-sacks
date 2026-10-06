@@ -3,7 +3,7 @@
 {% block titulo %}Analizando respuestas{% endblock %}
 {% block contenido %}
 <section class="tarjeta progreso informe">
-  <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Procesando</p>
+  <p class="miga"><a href="{{ url_for('psicologo') }}#informes">Área del psicólogo</a> › Procesando</p>
   <h2>{% if job.tipo == 'test' %}Gracias por responder{% else %}Analizando «{{ job.nombre_entrada }}»{% endif %}</h2>
   <p class="meta">
     {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}

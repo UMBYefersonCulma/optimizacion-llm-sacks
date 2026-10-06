@@ -4,7 +4,7 @@
 {% block contenido %}
 {% set n_casos = filas|selectattr('Fuente', 'equalto', 'casos')|list|length %}
 <section class="tarjeta informe">
-  <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Informe</p>
+  <p class="miga"><a href="{{ url_for('psicologo') }}#informes">Área del psicólogo</a> › Informe</p>
   <div class="encabezado-resultado">
     <div>
       <h2>{% if job.tipo == 'test' %}Informe del Test de Sacks{% else %}Informe de «{{ job.nombre_entrada }}»{% endif %}</h2>
@@ -18,7 +18,7 @@
       {% if job.autorizacion %}<p class="meta">Autorización de datos aceptada el {{ job.autorizacion.strftime('%d/%m/%Y a las %H:%M') }} (texto versión {{ job.autorizacion_version }}).</p>{% endif %}
     </div>
     <div class="acciones">
-      <a class="boton secundario" href="{{ url_for('psicologo') if job.tipo == 'test' else url_for('procesar_csv') }}">← {{ 'Área del psicólogo' if job.tipo == 'test' else 'Otro archivo' }}</a>
+      <a class="boton secundario" href="{{ url_for('psicologo') }}#{{ 'informes' if job.tipo == 'test' else 'csv' }}">← {{ 'Informes' if job.tipo == 'test' else 'Otro archivo' }}</a>
       <a class="boton secundario" href="{{ url_for('descargar', file=job.archivo) }}">Descargar CSV</a>
       <a class="boton" href="{{ url_for('comparar_resultados', ia=job.archivo) }}">Comparar con evaluación humana →</a>
     </div>

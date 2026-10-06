@@ -769,3 +769,47 @@ html.a11y-contraste input[type="submit"] { background: var(--acento); color: #ff
   .acuerdo-fila .boton { padding: 9px 12px; font-size: .9rem; }
   .acuerdo-form .ayuda { font-size: .72rem; margin-top: 4px; }
 }
+
+/* ═══ Dos vistas en un mismo lugar: Persona | Psicólogo ═══ */
+.topbar nav.vista { flex: 0 0 auto; margin: 0 auto; display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255, 255, 255, .12); }
+.vista-opcion { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 999px; color: var(--cabecera-texto); text-decoration: none; font-weight: 600; font-size: .92rem; opacity: .85; white-space: nowrap; }
+.vista-opcion svg { width: 18px; height: 18px; }
+.vista-opcion:hover { opacity: 1; background: rgba(255, 255, 255, .1); }
+.vista-opcion.activo { background: var(--cabecera-texto); color: var(--cabecera); opacity: 1; }
+.vista-opcion:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* vista de la persona: bienvenida corta */
+.bienvenida { margin: auto; grid-template-columns: 1.25fr .75fr; min-height: min(520px, 100%); }
+.bienvenida .portada-texto { display: flex; flex-direction: column; justify-content: center; }
+.bienvenida .pasos { margin: clamp(12px, 2vh, 18px) 0 clamp(14px, 2.4vh, 22px); align-self: flex-start; }
+.bienvenida .boton.principal { align-self: flex-start; width: auto; min-width: 240px; }
+.autorizacion { max-width: 980px; }
+.resumen-datos { list-style: none; padding: 0; margin: clamp(10px, 2vh, 18px) 0 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.resumen-datos li { display: flex; gap: 10px; align-items: flex-start; font-size: .98rem; line-height: 1.45; color: var(--tinta); padding: 12px 14px; background: var(--fondo-2); border: 1px solid var(--borde); border-radius: 12px; }
+.resumen-datos svg { width: 22px; height: 22px; flex: none; color: var(--acento); margin-top: 1px; }
+.autorizacion > .ayuda { margin: 6px 0 12px; }
+.enlace-boton { font: inherit; font-weight: 600; color: var(--acento-oscuro); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.fin-psicologo { margin: clamp(12px, 2.4vh, 22px) auto 0; max-width: 560px; padding-top: 14px; border-top: 1px dashed var(--borde-ui); }
+.fin-psicologo .progreso-barra { margin: 8px 0 12px; }
+.fin-psicologo .sobretitulo { margin-bottom: 4px; }
+
+/* vista del psicólogo: un solo espacio con pestañas */
+.psico-espacio .psico-cabecera { margin-bottom: 2px; }
+.psico-espacio .psico-cabecera p { margin: 2px 0 0; }
+.psico-espacio .panel-pestana { padding-top: 6px; }
+.psico-form { max-width: 760px; }
+.psico-form .meta { margin-bottom: 12px; }
+
+@media (max-width: 600px) {
+  .vista-opcion { padding: 6px 12px; font-size: .86rem; }
+  .bienvenida { grid-template-columns: 1fr; }
+  .bienvenida .portada-foto { display: none; }
+  .resumen-datos { grid-template-columns: 1fr; gap: 8px; }
+  .resumen-datos li { font-size: .88rem; padding: 8px 10px; }
+}
+.psico-espacio { flex: 0 1 auto; }
+.psico-espacio .paginable { flex: 0 1 auto; }
+@media (max-width: 600px) {
+  .psico-espacio .estado-detalle, .psico-form .meta { display: none; }
+  .pestanas [role="tab"] { padding: 6px 10px; font-size: .84rem; }
+}
