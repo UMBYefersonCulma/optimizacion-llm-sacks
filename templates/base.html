@@ -73,7 +73,7 @@
 </main>
 
 <footer class="pie" role="contentinfo">
-  Universidad Manuela Beltrán · Ingeniería de Software · Práctica Empresarial II ·
+  Universidad Manuela Beltrán · Ingeniería de Software · Proyecto de grado ·
   Yeferson Ferney Culma Montoya · Procesamiento 100 % local, sin envío de datos a terceros.
 </footer>
 
@@ -91,7 +91,7 @@
   (function () {
     function mensaje(el) {
       var v = el.validity;
-      if (v.valueMissing) return el.tagName === 'SELECT' ? 'Selecciona una opción de la lista.' : 'Este campo es obligatorio.';
+      if (v.valueMissing) return el.tagName === 'SELECT' ? 'Selecciona una opción de la lista.' : (el.type === 'file' ? 'Selecciona un archivo CSV.' : 'Este campo es obligatorio.');
       if (v.rangeUnderflow) return 'El valor mínimo es ' + el.min + '.';
       if (v.rangeOverflow) return 'El valor máximo es ' + el.max + '.';
       if (v.badInput || v.stepMismatch) return 'Escribe un número entero.';
@@ -102,6 +102,20 @@
     document.addEventListener('input', function (e) { if (e.target.setCustomValidity) e.target.setCustomValidity(''); }, true);
     document.addEventListener('change', function (e) { if (e.target.setCustomValidity) e.target.setCustomValidity(''); }, true);
   })();
+  // Selector de archivos en español: el botón nativo («Choose file») depende del idioma del navegador.
+  document.querySelectorAll('input[type=file]').forEach(function (inp) {
+    var caja = document.createElement('div'); caja.className = 'archivo-campo';
+    inp.parentNode.insertBefore(caja, inp); caja.appendChild(inp); inp.classList.add('archivo-nativo');
+    var boton = document.createElement('label'); boton.className = 'archivo-boton'; boton.htmlFor = inp.id; boton.textContent = 'Elegir archivo';
+    var nombre = document.createElement('span'); nombre.className = 'archivo-nombre'; nombre.setAttribute('aria-live', 'polite');
+    nombre.textContent = 'Ningún archivo seleccionado';
+    caja.appendChild(boton); caja.appendChild(nombre);
+    inp.addEventListener('change', function () {
+      var hay = inp.files && inp.files.length;
+      nombre.textContent = hay ? inp.files[0].name : 'Ningún archivo seleccionado';
+      caja.classList.toggle('con-archivo', !!hay);
+    });
+  });
   // Overlay de carga en formularios que llaman al modelo (evita doble clic y pantalla "congelada").
   document.querySelectorAll('form[data-cargando]').forEach(function (form) {
     form.addEventListener('submit', function (e) {

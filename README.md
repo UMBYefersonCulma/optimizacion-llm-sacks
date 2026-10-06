@@ -14,7 +14,7 @@ Cada frase se clasifica como **POSITIVA · NEGATIVA · AMBIGUA** y el modelo exp
 |---|---|
 | **Aplicar el test** | Tres pasos: (1) datos generales: edad, género y modo del test (Demo 4, Equilibrio 10 o Completo 60 frases); (2) los enunciados originales del SSCT **uno a uno**, en su orden, con «Siguiente →», «Pregunta anterior» y un menú para saltar entre las ya respondidas; (3) resultados agrupados por las 15 áreas de la hoja de corrección. Cada respuesta se analiza en segundo plano mientras la persona escribe la siguiente, así los resultados aparecen casi de inmediato al terminar. |
 | **Procesar CSV** | Sube un CSV (`Numero, Respuesta` o `Frase`; `Edad` y `Genero` opcionales) y clasifica todas las frases con barra de progreso y tabla en vivo. Al final: distribución emocional, tabla de detalle y CSV descargable. |
-| **Comparar IA vs Humano** | Cruza el CSV de la IA con la evaluación de un psicólogo (por número de enunciado o por frase): % de concordancia global y por categoría, matriz de confusión y detalle. |
+| **Comparar IA vs Humano** | Cruza el CSV de la IA con la evaluación de un psicólogo emparejando la misma respuesta (número de enunciado y texto, o la frase): % de concordancia global y por categoría, matriz de confusión y detalle. |
 
 Los ítems 9, 10, 25, 40, 55 y 57 cambian de redacción según el género (niño/niña, sexo contrario); es el único
 dato, junto con la edad, que se le pide a la persona. Todas las frases del modo elegido deben completarse. Si un

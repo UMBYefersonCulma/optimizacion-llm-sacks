@@ -29,7 +29,7 @@
   var clases = {POSITIVA:'positiva', NEGATIVA:'negativa', AMBIGUA:'ambigua', ERROR:'error'};
   function badge(c) { var k = clases[c] || 'vacio'; return '<span class="badge badge-' + k + '">' + (c || 'Sin resultado') + '</span>'; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (m) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]; }); }
-  function fmt(s) { if (s == null) return '…'; var m = Math.floor(s / 60), r = s % 60; return (m ? m + ' min ' : '') + r + ' s'; }
+  function fmt(s) { if (s == null) return '…'; var m = Math.floor(s / 60), r = s % 60; return m ? (m + ' min' + (r ? ' ' + r + ' s' : '')) : r + ' s'; }
   function frase(u) {
     if (u.Enunciado) return '<span class="enunciado-inline">' + esc(u.Enunciado) + '</span> ' + esc(u.Respuesta);
     return esc(u.Frase);

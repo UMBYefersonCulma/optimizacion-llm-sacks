@@ -49,7 +49,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 CATEGORIAS = list(sacks_llm.CATEGORIAS)
 PUERTO = int(os.environ.get("SACKS_PORT", "5050"))  # 5000 lo ocupa AirPlay en macOS
 COLUMNAS_SALIDA = ["Numero", "Enunciado", "Respuesta", "Frase", "Edad", "Genero", "Categoria", "Razon", "Fuente"]
-SEG_POR_FRASE = 13  # estimación inicial; se ajusta con las duraciones reales
+SEG_POR_FRASE = 5  # estimación inicial (mediana medida ≈ 3,5 s); se ajusta con las duraciones reales
 
 # Modos del test: cuántos enunciados se aplican (los primeros N, como en la referencia de la Práctica III)
 MODOS = {
@@ -511,6 +511,7 @@ def _tabla_comparacion(df: pd.DataFrame, col_cat: str, col_razon: str | None) ->
         "Genero": genero_col,
         "Categoria": df[col_cat].map(sacks_llm.normalizar_categoria),
         "Razon": df[col_razon].map(_texto) if col_razon and col_razon in df.columns else "",
+        "Respuesta": df["Respuesta"].map(_texto) if "Respuesta" in df.columns else "",
     })
     # Si viene Numero + Respuesta pero no Frase, construimos la frase completa.
     if "Respuesta" in df.columns and "Numero" in df.columns:
@@ -560,8 +561,18 @@ def comparar_resultados():
     avisos = []
     tiene_numero = (h["Numero"] != "").all() and (i["Numero"] != "").all()
     tiene_frase = (h["Frase"] != "").all() and (i["Frase"] != "").all()
+    tiene_respuesta = (h["Respuesta"] != "").all() and (i["Respuesta"] != "").all()
     if tiene_numero or tiene_frase:
-        if tiene_numero:
+        # Se empareja la MISMA respuesta: número de enunciado + texto, para no cruzar personas distintas.
+        if tiene_numero and tiene_respuesta:
+            modo = "por enunciado y respuesta"
+            h["_k"] = h["Numero"].astype(str) + "|" + h["Respuesta"].map(_clave)
+            i["_k"] = i["Numero"].astype(str) + "|" + i["Respuesta"].map(_clave)
+        elif tiene_numero and tiene_frase:
+            modo = "por enunciado y frase"
+            h["_k"] = h["Numero"].astype(str) + "|" + h["Frase"].map(_clave)
+            i["_k"] = i["Numero"].astype(str) + "|" + i["Frase"].map(_clave)
+        elif tiene_numero:
             modo = "por número de enunciado"
             h["_k"], i["_k"] = h["Numero"], i["Numero"]
         else:
@@ -574,8 +585,14 @@ def comparar_resultados():
             comparado["Frase"] = comparado["Frase_ia"]
             comparado = comparado.drop(columns=["Frase_ia"])
         sin_par = int(comparado["Categoria_IA"].isna().sum())
+        if sin_par == len(comparado):
+            raise DatosInvalidos("Ninguna respuesta del archivo humano aparece en el archivo de la IA. Verifica que "
+                                 "ambos archivos tengan las mismas respuestas (por ejemplo, respuestas_demo.csv procesado "
+                                 "con «Procesar CSV» y evaluacion_humana_demo.csv).")
         if sin_par:
-            avisos.append(f"{sin_par} respuesta(s) del archivo humano no aparecen en el archivo de la IA.")
+            avisos.append(f"{sin_par} respuesta(s) del archivo humano no aparecen con el mismo texto en el archivo "
+                          "de la IA; se excluyeron del cálculo.")
+            comparado = comparado[comparado["Categoria_IA"].notna()].reset_index(drop=True)
     else:
         modo = "por posición"
         if len(h) != len(i):

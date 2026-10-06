@@ -170,6 +170,25 @@ _INGLES_SUELTO = {"always": "siempre", "never": "nunca", "however": "sin embargo
 _INGLES_FUNCION = re.compile(r"\b(the|and|it|to|of|is|as|with|which|this|that|leading|uses|an)\b", re.IGNORECASE)
 
 
+# El modelo a veces justifica con «la polaridad se invierte por el marco negativo» en enunciados que no lo tienen
+# («Si yo estuviera a cargo…»). Solo afecta la explicación; la categoría no cambia.
+_MENCION_MARCO = re.compile(r"marco negativo|enunciado negativo|polaridad se invierte|invierte la polaridad|polaridad invertida", re.I)
+_ENUNCIADO_NEGATIVO = re.compile(r"raras veces|no me gusta|menos me gusta|olvidar|miedo|peor|error|mala suerte|en contra|culpa", re.I)
+
+
+def limpiar_marco(razon: str, enunciado: str, categoria: str = "") -> str:
+    if not razon or not _MENCION_MARCO.search(razon) or _ENUNCIADO_NEGATIVO.search(enunciado or ""):
+        return razon
+    partes = re.split(r",\s*pero\s+", razon, maxsplit=1)
+    if len(partes) == 2 and _MENCION_MARCO.search(partes[0]):
+        resto = partes[1].strip()
+    else:
+        resto = " ".join(x for x in re.split(r"(?<=[.;])\s+", razon) if not _MENCION_MARCO.search(x)).strip()
+    if len(resto) < 12:
+        return f"La respuesta expresa una carga emocional {categoria.lower()} frente al enunciado." if categoria else razon
+    return resto[0].upper() + resto[1:]
+
+
 def pulir_razon(razon: str, categoria: str = "") -> str:
     """Traduce palabras sueltas en inglés y, si la razón quedó mayormente en inglés, usa una explicación neutra."""
     if not razon:
@@ -301,6 +320,17 @@ def clasificar(frase: str, edad="", genero="", timeout: float | None = None,
     duracion = time.time() - inicio
 
     parsed = extraer_respuesta(contenido)
+    if numero not in (None, ""):
+        try:
+            import sacks_items
+            enunciado = sacks_items.enunciado(int(numero), genero)
+        except (TypeError, ValueError, KeyError, IndexError):
+            enunciado = frase
+    elif respuesta and frase.endswith(respuesta.strip()):
+        enunciado = frase[: len(frase) - len(respuesta.strip())]
+    else:
+        enunciado = frase
+    parsed["razon"] = limpiar_marco(parsed["razon"], enunciado, parsed["categoria"])
     if not parsed["categoria"]:
         raise LLMError("El modelo respondió en un formato inesperado: " + (limpiar_salida(contenido)[:200] or "(vacío)"))
 
