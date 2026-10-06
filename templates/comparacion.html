@@ -2,7 +2,8 @@
 {% from "_macros.html" import badge %}
 {% block titulo %}Comparación IA vs Humano{% endblock %}
 {% block contenido %}
-<section class="tarjeta">
+<section class="tarjeta informe">
+  <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Comparación</p>
   <div class="encabezado-resultado">
     <div>
       <h2>Concordancia con los psicólogos</h2>
@@ -15,57 +16,72 @@
     </div>
   </div>
 
-  {% for a in c.avisos %}<div class="alerta amarillo">{{ a }}</div>{% endfor %}
+  {% for a in c.avisos %}<div class="alerta amarillo compacta">{{ a }}</div>{% endfor %}
 
-  <div class="kpis">
-    <div class="kpi principal">
-      <span class="kpi-valor">{{ c.porcentaje }} %</span>
-      <span class="kpi-nombre">concordancia global</span>
-    </div>
-    <div class="kpi">
-      <span class="kpi-valor">{{ c.coincidencias }} / {{ c.total }}</span>
-      <span class="kpi-nombre">respuestas coincidentes</span>
-    </div>
-    {% for p in c.por_categoria %}
-    <div class="kpi">
-      <span class="kpi-valor">{% if p.pct is not none %}{{ p.pct }} %{% else %}—{% endif %}</span>
-      <span class="kpi-nombre">{{ badge(p.categoria) }} <small>{{ p.ok }}/{{ p.n }}</small></span>
-    </div>
-    {% endfor %}
+  <div class="pestanas" role="tablist" aria-label="Secciones de la comparación">
+    <button type="button" role="tab" id="tab-c-resumen" aria-controls="panel-c-resumen">Resumen</button>
+    <button type="button" role="tab" id="tab-c-detalle" aria-controls="panel-c-detalle">Detalle por respuesta ({{ c.filas|length }})</button>
   </div>
 
-  <h3>Matriz de confusión <small class="meta">(filas: humano · columnas: IA)</small></h3>
-  <div class="tabla-scroll">
-    <table class="tabla matriz">
-      <thead><tr><th>Humano \ IA</th>{% for cat in CATEGORIAS %}<th>{{ badge(cat) }}</th>{% endfor %}</tr></thead>
-      <tbody>
-        {% for fila in c.matriz %}
-        {% set fila_idx = loop.index0 %}
-        <tr><th>{{ badge(fila.humano) }}</th>
-          {% for n in fila.celdas %}<td class="{{ 'diag' if loop.index0 == fila_idx }}">{{ n }}</td>{% endfor %}
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <div class="panel-pestana" role="tabpanel" id="panel-c-resumen" aria-labelledby="tab-c-resumen" tabindex="0">
+    <div class="resumen-grid comparacion-resumen">
+      <div>
+        <h3>Concordancia</h3>
+        <div class="kpis">
+          <div class="kpi principal">
+            <span class="kpi-valor">{{ c.porcentaje }} %</span>
+            <span class="kpi-nombre">concordancia global</span>
+          </div>
+          <div class="kpi">
+            <span class="kpi-valor">{{ c.coincidencias }} / {{ c.total }}</span>
+            <span class="kpi-nombre">respuestas coincidentes</span>
+          </div>
+          {% for p in c.por_categoria %}
+          <div class="kpi">
+            <span class="kpi-valor">{% if p.pct is not none %}{{ p.pct }} %{% else %}—{% endif %}</span>
+            <span class="kpi-nombre">{{ badge(p.categoria) }} <small>{{ p.ok }}/{{ p.n }}</small></span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <h3>Matriz de confusión</h3>
+        <p class="meta">Filas: psicólogo · columnas: IA · la diagonal son los aciertos.</p>
+        <div class="tabla-scroll">
+        <table class="tabla matriz compacta">
+          <thead><tr><th>Humano \ IA</th>{% for cat in CATEGORIAS %}<th>{{ badge(cat) }}</th>{% endfor %}</tr></thead>
+          <tbody>
+            {% for fila in c.matriz %}
+            {% set fila_idx = loop.index0 %}
+            <tr><th>{{ badge(fila.humano) }}</th>
+              {% for n in fila.celdas %}<td class="{{ 'diag' if loop.index0 == fila_idx }}">{{ n }}</td>{% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h3>Detalle por respuesta</h3>
-  <div class="tabla-scroll">
-    <table class="tabla">
-      <thead><tr><th>#</th><th>Frase completada</th><th>Humano</th><th>IA</th><th>Coincide</th><th>Razón de la IA</th></tr></thead>
-      <tbody>
-        {% for f in c.filas %}
-        <tr class="{{ 'fila-ok' if f.Coincide else 'fila-diff' }}">
-          <td>{{ f.Numero if f.Numero != '' else loop.index }}</td>
-          <td class="celda-frase">{{ f.Frase }}</td>
-          <td>{{ badge(f.Categoria_Humano) }}</td>
-          <td>{{ badge(f.Categoria_IA) }}</td>
-          <td class="centro">{% if f.Coincide %}<span class="ok">✓</span>{% else %}<span class="diff">✗</span>{% endif %}</td>
-          <td class="celda-razon">{{ f.Razon_IA }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <div class="panel-pestana" role="tabpanel" id="panel-c-detalle" aria-labelledby="tab-c-detalle" tabindex="0" hidden>
+    <div class="paginable" data-paginar="Páginas del detalle por respuesta">
+      <table class="tabla compacta">
+        <thead><tr><th>#</th><th>Frase completada</th><th>Humano</th><th>IA</th><th>Coincide</th><th class="col-opc">Razón de la IA</th></tr></thead>
+        <tbody>
+          {% for f in c.filas %}
+          <tr class="{{ 'fila-ok' if f.Coincide else 'fila-diff' }}">
+            <td>{{ f.Numero if f.Numero != '' else loop.index }}</td>
+            <td class="celda-frase">{{ f.Frase }}</td>
+            <td>{{ badge(f.Categoria_Humano) }}</td>
+            <td>{{ badge(f.Categoria_IA) }}</td>
+            <td class="centro">{% if f.Coincide %}<span class="ok">✓</span>{% else %}<span class="diff">✗</span>{% endif %}</td>
+            <td class="celda-razon col-opc">{{ f.Razon_IA }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 {% endblock %}

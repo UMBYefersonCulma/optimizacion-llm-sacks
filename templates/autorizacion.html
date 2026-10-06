@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pasos %}
+{% block titulo %}Autorización de datos{% endblock %}
+{% block contenido %}
+<section class="tarjeta flujo autorizacion">
+  <h1>Antes de empezar: tus datos</h1>
+  <p class="intro"><span class="intro-contexto">Vas a responder el Test de Frases Incompletas de Sacks a solicitud de un psicólogo o una psicóloga.</span>
+     <strong>Lo que tienes que hacer ahora:</strong> leer esta información y, si estás de acuerdo, autorizar el uso de tus respuestas.</p>
+  {{ pasos(1) }}
+
+  <div class="paginable acuerdo-caja" data-paginar="Páginas de la información de datos">
+  <ul class="acuerdo" data-items>
+    <li>
+      <div class="acuerdo-cabeza"><span class="acuerdo-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+        <h2>Qué datos se recogen</h2></div>
+      <p>Tu edad, tu género y las frases que completes. No se pide tu nombre, tu documento ni tus datos de contacto.</p>
+    </li>
+    <li>
+      <div class="acuerdo-cabeza"><span class="acuerdo-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <h2>Para qué se usan</h2></div>
+      <p>Solo para que el psicólogo o la psicóloga lea e interprete tus respuestas. Una inteligencia artificial que corre en
+         este equipo las organiza como apoyo; no es un diagnóstico.</p>
+    </li>
+    <li>
+      <div class="acuerdo-cabeza"><span class="acuerdo-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <h2>Quién los ve y dónde quedan</h2></div>
+      <p>Todo se guarda en este equipo, sin internet, y solo el profesional ve el informe.
+         <strong>Tus datos no se venden, no se publican ni se comparten con terceros.</strong></p>
+    </li>
+    <li>
+      <div class="acuerdo-cabeza"><span class="acuerdo-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h2>Tus derechos</h2></div>
+      <p>Participar es voluntario y puedes parar cuando quieras, o pedir que se consulten, corrijan o eliminen tus respuestas
+         (Ley 1581 de 2012 y secreto profesional, Ley 1090 de 2006).</p>
+    </li>
+  </ul>
+  </div>
+
+  <p class="alerta amarillo nota-menores">¿Tienes menos de 18 años? Tu madre, tu padre o tu acudiente debe leer esta información y autorizar contigo.</p>
+
+  <form method="POST" action="{{ url_for('autorizar_test') }}" class="acuerdo-form">
+    <div class="acuerdo-fila">
+      <label class="casilla"><input type="checkbox" name="acepto" value="si" required>
+        <span>He leído esta información y autorizo el tratamiento de mis datos para este fin.</span></label>
+      <button type="submit" name="decision" value="acepto" class="boton">Autorizo y continúo →</button>
+      <button type="submit" name="decision" value="no" class="boton secundario" formnovalidate>No autorizo</button>
+    </div>
+    <p class="ayuda">Vas a completar {{ modo.total }} frases ({% if modo.total >= 60 %}unos 20 a 30 minutos{% elif modo.total >= 10 %}unos 5 minutos{% else %}unos 2 minutos{% endif %}).
+       Texto de autorización, versión {{ AUTORIZACION_VERSION }}.</p>
+  </form>
+</section>
+{% endblock %}

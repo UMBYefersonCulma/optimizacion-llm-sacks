@@ -1,32 +1,34 @@
 {% extends "base.html" %}
 {% block titulo %}Procesar CSV{% endblock %}
 {% block contenido %}
-<section class="hero">
-  <h1>Procesar un archivo CSV con IA</h1>
-  <p>Sube las respuestas del test y el modelo las clasifica una por una en segundo plano.
-     Verás el avance en tiempo real y al final podrás descargar los resultados y compararlos con la evaluación humana.</p>
-</section>
+<div class="pagina-psico">
+  <header class="encabezado-pagina">
+    <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Procesar CSV</p>
+    <h1>Procesar un archivo CSV con IA</h1>
+    <p>El modelo clasifica cada respuesta en segundo plano; verás el avance y al final podrás descargar el resultado y compararlo con la evaluación humana.</p>
+  </header>
 
-<form method="POST" action="{{ url_for('procesar_csv') }}" enctype="multipart/form-data" class="tarjeta"
-      data-cargando="Leyendo el archivo…" data-cargando-sub="En un momento verás la barra de progreso.">
-  <h2>Archivo de respuestas</h2>
-  <div class="form-group">
-    <label for="archivo">Archivo CSV</label>
-    <input type="file" id="archivo" name="archivo" accept=".csv,text/csv" required>
-    <p class="ayuda">Formato recomendado: <code>Numero</code> (1 a 60, el enunciado de Sacks) y <code>Respuesta</code>
-       (lo que escribió la persona); la app une el enunciado con la respuesta. También se acepta una columna
-       <code>Frase</code> con la frase ya completa. <code>Edad</code> y <code>Genero</code> son opcionales.
-       Se aceptan separadores «,» o «;» y archivos guardados desde Excel.</p>
+  <div class="dos-columnas">
+    <form method="POST" action="{{ url_for('procesar_csv') }}" enctype="multipart/form-data" class="tarjeta"
+          data-cargando="Leyendo el archivo…" data-cargando-sub="En un momento verás la barra de progreso.">
+      <h2>Archivo de respuestas</h2>
+      <div class="form-group">
+        <label for="archivo">Archivo CSV</label>
+        <input type="file" id="archivo" name="archivo" accept=".csv,text/csv" required>
+        <p class="ayuda">Columnas: <code>Numero</code> (1 a 60) y <code>Respuesta</code>, o una columna <code>Frase</code> con la frase
+           completa. <code>Edad</code> y <code>Genero</code> son opcionales. Acepta «,» o «;» y archivos guardados desde Excel.</p>
+      </div>
+      <input type="submit" value="Procesar con IA">
+    </form>
+
+    <section class="tarjeta suave" aria-labelledby="h-ejemplos">
+      <h2 id="h-ejemplos">Archivos de ejemplo</h2>
+      <ul class="lista-descargas">
+        <li><a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a> · 12 respuestas de una persona ya evaluada por psicólogos (≈ 1 min).</li>
+        <li><a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a> · las mismas 12 respuestas con la categoría del psicólogo, para comparar.</li>
+        <li><a href="{{ url_for('ejemplos', nombre='frases_demo.csv') }}">frases_demo.csv</a> · 8 frases ya completas (formato <code>Frase</code>).</li>
+      </ul>
+    </section>
   </div>
-  <input type="submit" value="Procesar con IA">
-</form>
-
-<section class="tarjeta suave">
-  <h3>Archivos de ejemplo para la demostración</h3>
-  <ul class="lista-descargas">
-    <li><a href="{{ url_for('ejemplos', nombre='respuestas_demo.csv') }}">respuestas_demo.csv</a> · 12 respuestas al test (Numero + Respuesta) que cubren varias áreas, incluido el caso «no tengo padre» (≈ 1 min).</li>
-    <li><a href="{{ url_for('ejemplos', nombre='evaluacion_humana_demo.csv') }}">evaluacion_humana_demo.csv</a> · las mismas 12 respuestas con la categoría asignada por el evaluador humano, para el flujo de comparación.</li>
-    <li><a href="{{ url_for('ejemplos', nombre='frases_demo.csv') }}">frases_demo.csv</a> · 8 frases sueltas ya completas (formato <code>Frase</code>).</li>
-  </ul>
-</section>
+</div>
 {% endblock %}

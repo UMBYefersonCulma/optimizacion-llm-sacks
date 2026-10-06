@@ -193,6 +193,83 @@ input[type="submit"]:disabled, .boton:disabled { background: var(--boton-espera)
 .progreso-relleno { height: 100%; background: linear-gradient(90deg, var(--acento), var(--acento-claro)); transition: width .8s ease; }
 .progreso-texto { color: var(--tinta-suave); margin: 0 0 16px; }
 
+/* ── inicio por roles, autorización y área del psicólogo ── */
+.topbar nav a { white-space: nowrap; }
+.sobretitulo { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-oscuro); font-weight: 700; margin: 0 0 8px; }
+.intro.izquierda { margin-left: 0; }
+.titulo-seccion { text-align: center; margin: 34px 0 16px; }
+.roles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1120px; margin: 0 auto 24px; }
+.rol { display: flex; flex-direction: column; gap: 8px; padding: 28px 30px; border-radius: var(--radio); background: var(--blanco); box-shadow: var(--sombra); text-decoration: none; color: var(--tinta); border: 2px solid transparent; transition: transform .15s ease, border-color .15s ease; }
+.rol:hover { border-color: var(--acento); transform: translateY(-2px); }
+.rol-icono { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--acento); color: #fff; }
+.rol-psicologo .rol-icono { background: var(--cabecera); }
+.rol-icono svg { width: 28px; height: 28px; }
+.rol-para { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 700; margin-top: 6px; }
+.rol-titulo { font-family: var(--display); font-variation-settings: 'opsz' 48; font-weight: 600; font-size: 1.55rem; line-height: 1.2; }
+.rol-texto { color: var(--tinta-suave); }
+.rol-accion { margin-top: auto; padding-top: 10px; font-weight: 700; color: var(--acento-oscuro); }
+.flujo { max-width: 880px; }
+.flujo > .pasos { margin-bottom: 22px; }
+.flujo:not(.fin) .intro { margin: 8px 0; max-width: none; }
+.acuerdo { list-style: none; padding: 0; margin: 22px 0 6px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.acuerdo li { display: flex; gap: 14px; padding: 18px; border-radius: 14px; background: var(--fondo-2); border: 1px solid var(--borde); }
+.acuerdo h2 { font-family: var(--ui); font-size: 1.02rem; font-weight: 700; margin: 0 0 6px; }
+.acuerdo p { margin: 0; color: var(--tinta-suave); font-size: .93rem; }
+.acuerdo-icono { flex: none; width: 38px; height: 38px; border-radius: 10px; background: var(--acento); color: #fff; display: grid; place-items: center; }
+.acuerdo-icono svg { width: 20px; height: 20px; }
+.casilla { display: flex; gap: 12px; align-items: flex-start; font-weight: 600; color: var(--tinta); font-size: 1rem; padding: 16px 18px; border: 2px solid var(--borde-ui); border-radius: 12px; background: var(--blanco); cursor: pointer; margin: 0 0 16px; }
+.casilla input { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--acento); flex: none; }
+.casilla:has(input:checked) { border-color: var(--positiva-borde); background: var(--positiva-bg); }
+.casilla:has(input:focus-visible) { outline: 3px solid var(--acento-oscuro); outline-offset: 2px; }
+.acciones-flujo { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.acciones-flujo.centro { justify-content: center; margin-top: 18px; }
+.acciones-flujo .boton.principal { width: auto; flex: 1 1 280px; max-width: none; }
+.nota-flujo { background: var(--fondo-2); border: 1px solid var(--borde); border-radius: 12px; padding: 12px 16px; margin: 4px 0 18px; }
+.fin { text-align: center; }
+.fin .intro { margin-left: auto; margin-right: auto; }
+.fin-icono { width: 76px; height: 76px; border-radius: 50%; background: var(--positiva); color: #fff; display: grid; place-items: center; margin: 10px auto 16px; }
+.fin-icono svg { width: 40px; height: 40px; }
+.para-psicologo .progreso-barra { margin: 12px 0 16px; }
+.boton.deshabilitado { opacity: .45; pointer-events: none; box-shadow: none; }
+.estado-sistema { display: flex; gap: 14px; align-items: center; padding: 14px 18px; border-radius: 12px; background: var(--fondo-2); border: 1px solid var(--borde); margin-top: 18px; }
+.estado-sistema .punto { width: 14px; height: 14px; border-radius: 50%; background: var(--inactivo); flex: none; }
+.estado-sistema.verde .punto { background: #3fa766; box-shadow: 0 0 0 4px rgba(63, 167, 102, .2); }
+.estado-sistema.rojo .punto { background: #d9534f; box-shadow: 0 0 0 4px rgba(217, 83, 79, .2); }
+.estado-sistema strong { display: block; color: var(--tinta); }
+.estado-detalle { font-size: .88rem; color: var(--tinta-suave); }
+.hub { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; max-width: 1120px; margin: 0 auto 24px; }
+.hub .tarjeta { margin: 0; padding: 28px 30px; }
+.hub-principal { grid-row: span 2; }
+.hub h2 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+.hub-num { width: 30px; height: 30px; border-radius: 50%; background: var(--acento); color: #fff; font-family: var(--ui); font-size: .95rem; font-weight: 700; display: inline-grid; place-items: center; flex: none; }
+.hub p { color: var(--tinta-suave); }
+.miga { font-size: .88rem; margin: 0 0 12px; color: var(--tinta-suave); }
+.miga a { color: var(--acento-oscuro); font-weight: 600; }
+@media (max-width: 860px) {
+  .roles, .hub, .acuerdo { grid-template-columns: 1fr; }
+  .hub-principal { grid-row: auto; }
+}
+
+/* proceso (inicio) y ayuda «?» del test */
+.proceso-titulo { font-family: var(--ui); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-oscuro); font-weight: 700; margin: 22px 0 10px; }
+.proceso { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.proceso li { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: start; background: var(--fondo-2); border: 1px solid var(--borde); border-radius: 12px; padding: 10px 12px; }
+.proceso-num { grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; background: var(--acento); color: #fff; font-weight: 700; font-size: .85rem; display: grid; place-items: center; }
+.proceso strong { font-size: .95rem; color: var(--tinta); }
+.proceso li > span:last-child { font-size: .82rem; color: var(--tinta-suave); line-height: 1.35; }
+.flujo .pasos { margin: 14px 0 6px; }
+.btn-ayuda { position: fixed; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 56px; height: 56px; border-radius: 50%; border: 0; background: var(--cabecera); color: #fff; font: 700 1.6rem/1 var(--ui); cursor: pointer; box-shadow: 0 10px 24px rgba(0, 0, 0, .25); }
+.btn-ayuda:hover { background: var(--acento); }
+.dialogo-ayuda { width: min(620px, calc(100vw - 32px)); max-height: calc(100vh - 48px); border: 0; border-radius: var(--radio); padding: 26px 28px; background: var(--blanco); color: var(--tinta); box-shadow: var(--sombra); }
+.dialogo-ayuda::backdrop { background: rgba(30, 22, 16, .45); }
+.dialogo-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.dialogo-cabecera h2 { margin: 0; }
+.dialogo-cerrar { font: inherit; font-size: 1.1rem; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--borde-ui); background: var(--fondo-2); color: var(--tinta); cursor: pointer; }
+.faq { margin: 16px 0 20px; }
+.faq dt { font-weight: 700; margin-top: 14px; }
+.faq dd { margin: 4px 0 0; color: var(--tinta-suave); }
+@media (max-width: 720px) { .proceso { grid-template-columns: 1fr; } .btn-ayuda { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); } }
+
 /* ── asistente del test ── */
 .wizard { max-width: 900px; text-align: center; }
 .wizard h1 { margin-top: 14px; }
@@ -399,4 +476,296 @@ html.a11y-grande .portada-foto { min-height: 220px; }
   .barra-fila { grid-template-columns: 1fr; gap: 4px; }
   .fila-2 { grid-template-columns: 1fr; }
   .pregunta-enunciado { font-size: 1.5rem; } .respuesta-inline { font-size: 1.35rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Pantalla única: cada página cabe en la ventana sin desplazamiento.
+   La barra superior y el pie quedan fijos; el contenido se adapta al alto con clamp()
+   y las secciones largas usan pestañas y paginación (static/pantalla.js).
+   Si no hay espacio (texto al 200 % o pantallas muy pequeñas), el contenido puede
+   desplazarse dentro del área central como último recurso (WCAG 1.4.10).
+   ═══════════════════════════════════════════════════════════════════════════ */
+html, body { height: 100%; }
+body { height: 100dvh; min-height: 0; overflow: hidden; background-attachment: scroll; }
+.topbar { flex: none; position: relative; padding: 8px clamp(14px, 2.4vw, 28px); gap: 18px; flex-wrap: nowrap; }
+.marca-logo { width: 36px; height: 36px; }
+.topbar nav ul { gap: clamp(14px, 2.4vw, 30px); }
+.contenido { flex: 1 1 auto; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 18px);
+  width: 100%; max-width: 1200px; margin: 0 auto; padding: clamp(10px, 2.2vh, 24px) clamp(14px, 2.4vw, 28px); }
+.contenido > * { flex: none; }
+.tarjeta, form.tarjeta { margin: 0 auto; width: 100%; padding: clamp(14px, 2.6vh, 30px) clamp(16px, 2.6vw, 34px); }
+.pie { flex: none; padding: 5px 20px 7px; font-size: .7rem; }
+h1 { font-size: clamp(1.35rem, .7rem + 2.3vh, 2.15rem); margin-bottom: clamp(4px, .9vh, 10px); }
+h2 { font-size: clamp(1.1rem, .7rem + 1.5vh, 1.5rem); margin-bottom: clamp(6px, 1.2vh, 14px); }
+h3 { margin: clamp(8px, 1.6vh, 20px) 0 clamp(6px, 1.2vh, 12px); }
+.intro { margin: 4px auto; }
+.pasos { padding: 4px; } .paso { padding: 5px 12px; font-size: .86rem; }
+.form-group { margin-bottom: clamp(8px, 1.6vh, 16px); }
+.ayuda { margin-top: 4px; font-size: .8rem; }
+input[type="text"], input[type="number"], textarea, select { padding: clamp(8px, 1.3vh, 12px) 14px; }
+input[type="submit"], .boton { padding: clamp(9px, 1.4vh, 13px) 22px; }
+.alerta { margin: 0; padding: 10px 14px; }
+.alerta.compacta { font-size: .88rem; padding: 8px 12px; }
+.miga { margin: 0; }
+.etiqueta-seccion { font-family: var(--ui); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-oscuro); font-weight: 700; margin: 0 0 8px; }
+
+/* inicio */
+.inicio { display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 18px); flex: 1 1 auto; min-height: 0; }
+.inicio .portada { flex: 0 1 auto; grid-template-columns: 1.3fr .7fr; margin: 0; }
+.portada-texto { padding: clamp(14px, 2.8vh, 32px) clamp(18px, 3vw, 38px); }
+.portada-texto h1 { font-size: clamp(1.5rem, .8rem + 2.6vh, 2.4rem); }
+.portada-texto .intro { font-size: .95rem; line-height: 1.5; }
+.portada-foto { min-height: 0; }
+.inicio-abajo { display: grid; grid-template-columns: 2fr 1fr; gap: clamp(10px, 1.8vh, 18px); flex: 1 1 auto; min-height: 0; }
+.inicio-roles { display: flex; flex-direction: column; min-height: 0; }
+.roles { flex: 1 1 auto; margin: 0; gap: clamp(10px, 1.8vh, 18px); }
+.rol { padding: clamp(12px, 2.2vh, 24px) clamp(16px, 2vw, 26px); gap: 4px; }
+.rol-icono { width: 42px; height: 42px; border-radius: 12px; }
+.rol-icono svg { width: 24px; height: 24px; }
+.rol-titulo { font-size: clamp(1.15rem, .8rem + 1.2vh, 1.45rem); }
+.rol-texto { font-size: .9rem; line-height: 1.45; }
+.inicio-proceso { margin: 0; padding: clamp(12px, 2.2vh, 22px) clamp(14px, 1.6vw, 22px); display: flex; flex-direction: column; }
+.inicio-proceso .proceso { grid-template-columns: 1fr; gap: 6px; }
+.proceso li { padding: 6px 10px; }
+
+/* autorización */
+.autorizacion { max-width: 1180px; }
+.acuerdo { grid-template-columns: repeat(4, 1fr); gap: 10px; margin: clamp(8px, 1.6vh, 16px) 0 10px; }
+.acuerdo li { flex-direction: column; gap: 6px; padding: 12px 14px; }
+.acuerdo-cabeza { display: flex; align-items: center; gap: 10px; }
+.acuerdo-icono { width: 32px; height: 32px; border-radius: 9px; }
+.acuerdo-icono svg { width: 18px; height: 18px; }
+.acuerdo h2 { margin: 0; font-size: .95rem; line-height: 1.25; }
+.acuerdo p { font-size: .85rem; line-height: 1.45; }
+.nota-menores { font-size: .86rem; padding: 8px 12px; margin: 0 0 10px; }
+.acuerdo-fila { display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap; }
+.acuerdo-fila .casilla { flex: 1 1 420px; margin: 0; align-items: center; padding: 10px 14px; }
+.acuerdo-fila .boton { flex: none; width: auto; }
+.acuerdo-form .ayuda { margin-top: 8px; }
+
+/* datos y test */
+.formulario-flujo .fila-2 { gap: 16px; }
+.wizard { padding-top: clamp(12px, 2vh, 24px); padding-bottom: clamp(12px, 2vh, 22px); }
+.wizard-cabecera { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.wizard-cabecera .pregunta-pill-wrap { margin-top: 0; }
+.linea-avance { margin: 10px auto 0; }
+.pregunta-card { padding-top: clamp(16px, 3vh, 34px); gap: clamp(10px, 1.8vh, 16px); }
+.pregunta-enunciado { font-size: clamp(1.35rem, .8rem + 1.9vh, 1.9rem); }
+.respuesta-inline { font-size: clamp(1.25rem, .8rem + 1.6vh, 1.7rem); padding: 10px 14px; }
+
+/* fin */
+.fin-icono { width: clamp(48px, 7vh, 72px); height: clamp(48px, 7vh, 72px); margin: 2px auto 10px; }
+.fin-icono svg { width: 55%; height: 55%; }
+
+/* área del psicólogo */
+.psicologo, .pagina-psico { display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 18px); flex: 1 1 auto; min-height: 0; }
+.psico-cabecera { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.psico-cabecera h1 { margin: 0; }
+.psico-cabecera p { margin: 2px 0 0; color: var(--tinta-suave); font-size: .92rem; }
+.psico-cabecera .estado-sistema { margin: 0; padding: 10px 14px; max-width: 520px; }
+.hub { flex: 1 1 auto; min-height: 0; margin: 0; grid-template-columns: 1.35fr 1fr; align-items: stretch; }
+.hub-col { display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 18px); min-height: 0; }
+.hub .tarjeta { padding: clamp(12px, 2.2vh, 24px) clamp(16px, 2vw, 26px); }
+.hub .hub-principal { grid-row: auto; }
+.hub h2 { margin-bottom: 6px; }
+.hub p { margin: 0 0 10px; font-size: .92rem; }
+.hub .modos-grupo { margin-bottom: 10px; }
+.modo { padding: 8px 12px; } .modo-frases { font-size: 1.15rem; }
+.hub-informes { flex: 1 1 auto; min-height: 120px; display: flex; flex-direction: column; }
+.hub-informes h2 { flex: none; }
+.hub-col-derecha .tarjeta { flex: 1 1 auto; display: flex; flex-direction: column; }
+.hub-col-derecha .tarjeta .boton { margin-top: auto; align-self: flex-start; }
+.encabezado-pagina h1 { margin: 0 0 4px; }
+.encabezado-pagina p { margin: 0; color: var(--tinta-suave); max-width: 920px; }
+.dos-columnas { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(10px, 1.8vh, 18px); align-items: start; }
+.dos-columnas > .tarjeta, .dos-columnas > form.tarjeta { margin: 0; max-width: none; }
+.dos-columnas h2 { margin-bottom: 8px; }
+.dos-columnas .tarjeta.suave h2 { font-size: 1.05rem; }
+.lista-descargas li { margin: 4px 0; font-size: .9rem; }
+
+/* paginación ajustada al alto */
+.paginable { flex: 1 1 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+.paginable > table, .paginable > [data-items] { flex: none; }
+[data-items] { position: relative; }
+.paginador { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: auto; padding-top: 8px; font-size: .86rem; flex: none; }
+.paginador .chip:disabled { opacity: .45; cursor: default; }
+.tabla.compacta td, .tabla.compacta th { padding: 7px 10px; }
+
+/* avance en vivo: las filas nuevas entran arriba y las antiguas quedan ocultas abajo */
+.vivo { flex: 1 1 0; min-height: 60px; overflow: hidden; }
+.progreso .progreso-barra { margin: 10px 0 6px; }
+
+/* informe y comparación: pestañas */
+.informe { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px); }
+.informe > * { flex: none; }
+.informe .encabezado-resultado { align-items: flex-end; }
+.informe .encabezado-resultado h2 { margin-bottom: 4px; }
+.pestanas { display: flex; gap: 6px; border-bottom: 2px solid var(--borde); flex-wrap: wrap; }
+.pestanas [role="tab"] { font: inherit; font-weight: 600; font-size: .92rem; color: var(--tinta-suave); background: transparent; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; padding: 8px 14px; cursor: pointer; border-radius: 8px 8px 0 0; }
+.pestanas [role="tab"][aria-selected="true"] { color: var(--acento-oscuro); border-bottom-color: var(--acento); background: var(--fondo-2); }
+.pestanas [role="tab"]:hover { color: var(--tinta); }
+.informe > .panel-pestana { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.resumen-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(12px, 2vw, 24px); align-items: start; }
+.resumen-grid h3:first-child { margin-top: 4px; }
+.leyenda-cat { display: grid; gap: 8px; }
+.leyenda-cat p { margin: 0; font-size: .88rem; color: var(--tinta-suave); }
+.informe .areas { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.informe .area { padding: 10px 12px; }
+.informe .area-items { margin-top: 6px; font-size: .86rem; }
+.informe .area-items li { padding: 4px 0; }
+.informe .kpis { margin: 4px 0; }
+.informe .kpi { padding: 12px 14px; }
+.informe .kpi-valor { font-size: clamp(1.4rem, .9rem + 1.4vh, 2rem); }
+
+/* panel de accesibilidad y ayuda en dos columnas */
+.panel-a11y { width: min(700px, calc(100vw - 24px)); max-height: calc(100dvh - 76px); }
+.a11y-columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.a11y-col .a11y-seccion { padding: 8px 0; }
+.a11y-opcion { padding: 5px 6px; }
+.dialogo-ayuda { width: min(860px, calc(100vw - 32px)); padding: 20px 24px; }
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin: 10px 0 14px; }
+.faq > div { padding: 8px 0; border-top: 1px solid var(--borde); }
+.faq dt { margin: 0; }
+
+@media (max-width: 1100px) {
+  .acuerdo { grid-template-columns: repeat(2, 1fr); }
+  .informe .areas { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .topbar { flex-wrap: wrap; gap: 8px 16px; }
+  .inicio-abajo, .hub, .dos-columnas, .resumen-grid, .roles { grid-template-columns: 1fr; }
+  .inicio .portada { grid-template-columns: 1fr; }
+  .inicio .portada-foto { display: none; }
+  .acuerdo, .informe .areas, .a11y-columnas, .faq { grid-template-columns: 1fr; }
+}
+
+/* proceso dentro de la portada (inicio): título → qué hacer → qué va a pasar */
+.portada-texto .proceso-titulo { margin: clamp(10px, 1.8vh, 18px) 0 8px; }
+.portada-texto .proceso { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.portada-texto .proceso li { padding: 8px 10px; }
+.portada-texto .proceso strong { font-size: .86rem; }
+.portada-texto .proceso li > span:last-child { font-size: .76rem; }
+.inicio-roles { flex: 1 1 auto; min-height: 0; }
+.inicio-roles .roles { grid-template-columns: repeat(2, 1fr); }
+.encabezado-resultado > div:first-child { flex: 1 1 460px; min-width: 0; }
+.encabezado-resultado .acciones .boton { padding: 9px 16px; font-size: .92rem; }
+
+/* pantallas bajas (portátiles de 720–800 px de alto) */
+@media (max-height: 820px) and (min-width: 861px) {
+  .portada-texto .intro { font-size: .9rem; }
+  .rol-texto { font-size: .86rem; }
+  .informe .tabla.compacta { font-size: .86rem; }
+  .informe .tabla.compacta td, .informe .tabla.compacta th { padding: 6px 8px; }
+  .a11y-opcion small { display: none; }
+  .a11y-col .a11y-seccion { padding: 6px 0; }
+  .a11y-radio { padding: 5px 8px; }
+  .panel-a11y { padding: 10px 14px 12px; }
+}
+
+/* teléfonos: barra compacta, sin pie, pasos abreviados y columnas secundarias ocultas */
+@media (max-width: 600px) {
+  .topbar { padding: 6px 12px; gap: 6px 10px; }
+  .marca-texto small { display: none; }
+  .marca-logo { width: 30px; height: 30px; }
+  .topbar nav ul { gap: 14px; }
+  .topbar nav a { font-size: .86rem; }
+  .btn-a11y { padding: 8px 10px; }
+  .btn-a11y span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .pie { display: none; }
+  .paso:not(.activo) .paso-nombre { display: none; }
+  .paso-flecha { display: none; }
+  .pasos { flex-wrap: nowrap; }
+  .col-opc { display: none; }
+  .inicio .portada-texto .intro + .intro { display: none; }
+  .portada-texto .proceso { grid-template-columns: repeat(2, 1fr); }
+  .portada-texto .proceso li > span:last-child { display: none; }
+  .rol-texto { display: none; }
+  .wizard .intro { display: none; }
+  .fin .intro { font-size: .9rem; }
+  .acuerdo p { font-size: .82rem; }
+}
+
+.inicio-abajo { grid-template-columns: 1fr; }
+.tarjeta.portada { padding: 0; }
+.inicio .portada { grid-template-columns: 1.5fr .5fr; }
+.inicio .portada-cita { font-size: 1.05rem; left: 18px; right: 18px; bottom: 18px; }
+.portada-texto .proceso { grid-template-columns: repeat(2, 1fr); }
+.portada-texto .proceso li > span:last-child { font-size: .78rem; }
+.rol { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; row-gap: 2px; align-content: start; }
+.rol > .rol-icono { grid-row: 1 / span 4; }
+.rol > :not(.rol-icono) { grid-column: 2; }
+.rol-para { margin-top: 0; }
+.rol-accion { padding-top: 4px; }
+.psico-cabecera { display: grid; grid-template-columns: 1fr minmax(260px, 400px); align-items: end; }
+.psico-cabecera .estado-sistema { max-width: none; }
+@media (max-width: 860px) { .psico-cabecera { grid-template-columns: 1fr; } }
+/* ayuda: en pantallas grandes cabe entera; en teléfonos se pagina */
+.dialogo-ayuda .faq-caja { flex: none; overflow: visible; }
+@media (max-width: 600px) {
+  .inicio .portada { flex: none; }
+  .inicio .portada-texto .intro:first-of-type { display: none; }
+  .inicio .portada-texto .intro + .intro { display: block; }
+  .inicio-roles .roles { grid-template-columns: 1fr; }
+  .rol-para { display: none; }
+  .rol { padding: 12px 14px; }
+  .rol-icono { width: 36px; height: 36px; }
+  .acuerdo { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .acuerdo li { padding: 8px 10px; }
+  .acuerdo-icono { display: none; }
+  .acuerdo h2 { font-size: .84rem; }
+  .acuerdo p { font-size: .74rem; line-height: 1.38; }
+  .autorizacion .intro { font-size: .86rem; }
+  .nota-menores { font-size: .76rem; }
+  .acuerdo-fila .casilla { flex-basis: 100%; font-size: .86rem; }
+  .acuerdo-fila .boton { flex: 1 1 auto; }
+  .dialogo-ayuda[open] { display: flex; flex-direction: column; height: calc(100dvh - 32px); max-height: none; padding: 16px 18px; }
+  .dialogo-ayuda .faq-caja { flex: 1 1 0; min-height: 0; overflow: hidden; }
+  .hub p, .psico-cabecera p { display: none; }
+  .modos { grid-template-columns: repeat(3, 1fr); }
+  .modo-sub { display: none; }
+}
+/* autorización: los cuatro puntos se paginan solo si no caben (teléfonos) */
+.autorizacion { flex: 0 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.autorizacion > * { flex: none; }
+.autorizacion > .acuerdo-caja { flex: 0 1 auto; min-height: 0; }
+.acuerdo-caja .acuerdo { margin-bottom: 4px; }
+@media (max-width: 600px) {
+  .inicio .intro-larga { display: none; }
+  .acuerdo { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .meta, .alerta, .celda-frase { overflow-wrap: anywhere; }
+  .encabezado-resultado .acciones { width: 100%; }
+  .encabezado-resultado .acciones .boton { flex: 1 1 auto; white-space: normal; }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .psico-cabecera .sobretitulo { display: none; }
+}
+.resumen-grid > *, .dos-columnas > *, .hub > *, .roles > * { min-width: 0; }
+@media (max-width: 860px) { .resumen-grid, .dos-columnas, .hub { grid-template-columns: minmax(0, 1fr); } }
+.comparacion-resumen { grid-template-columns: 1fr 1fr; }
+.comparacion-resumen .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.comparacion-resumen .matriz { margin-top: 6px; }
+.comparacion-resumen .matriz .badge { font-size: .68rem; }
+@media (max-width: 860px) { .comparacion-resumen { grid-template-columns: minmax(0, 1fr); } .comparacion-resumen .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* alto contraste: los botones de envío conservan su color (antes quedaban blancos sobre blanco) */
+html.a11y-contraste input[type="submit"] { background: var(--acento); color: #fff; border: 2px solid #000; }
+/* si algo no cabe ni paginado (texto ampliado), se muestra completo y el área central se desplaza: nunca se recorta texto */
+.inicio .portada { flex: none; }
+
+@media (max-height: 760px) and (min-width: 861px) {
+  .portada-texto { padding-top: 12px; padding-bottom: 12px; }
+  .portada-texto .proceso li { padding: 5px 8px; }
+  .rol { padding: 12px 18px; }
+  .modo-sub { display: none; }
+  .hub p { font-size: .88rem; margin-bottom: 8px; }
+}
+@media (max-width: 600px) {
+  .autorizacion h1 { font-size: 1.3rem; }
+  .autorizacion .intro-contexto { display: none; }
+  .autorizacion .pasos { margin: 8px 0 4px; }
+  .nota-menores { font-size: .72rem; padding: 6px 10px; margin-bottom: 8px; }
+  .acuerdo-fila { gap: 8px; }
+  .acuerdo-fila .casilla { padding: 8px 10px; font-size: .8rem; }
+  .acuerdo-fila .boton { padding: 9px 12px; font-size: .9rem; }
+  .acuerdo-form .ayuda { font-size: .72rem; margin-top: 4px; }
 }

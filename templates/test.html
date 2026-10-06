@@ -3,18 +3,15 @@
 {% block titulo %}Respuestas{% endblock %}
 {% block contenido %}
 <section class="tarjeta wizard">
-  {{ pasos(2) }}
-  <h1 class="centro">Respuestas del test de Sacks</h1>
-  <p class="intro">Termina cada frase con <strong>lo primero que se te ocurra</strong>, sin pensarlo mucho. No hay respuestas buenas ni malas.</p>
-  <ul class="intro instrucciones">
-    <li>Escribe cómo termina la frase y presiona <kbd>Enter</kbd> o «Siguiente».</li>
-    <li>Puedes volver a una frase anterior con «← Frase anterior» o desde la lista de frases.</li>
-    <li>Todas las frases deben tener respuesta. Si una no aplica a tu vida, escríbelo tal cual (por ejemplo: «no lo conocí»).</li>
-  </ul>
-
+  <h1 class="centro">Completa las frases</h1>
+  <p class="intro">Termina cada frase con <strong>lo primero que se te ocurra</strong> y presiona <kbd>Enter</kbd> o «Siguiente».
+     No hay respuestas buenas ni malas.</p>
+  <div class="wizard-cabecera">
+  {{ pasos(3) }}
   <div class="pregunta-pill-wrap">
     <button type="button" class="pregunta-pill" id="btn-menu" aria-expanded="false" aria-controls="menu-preguntas"><span class="chevron" aria-hidden="true">›</span> Frase <strong id="num-actual">1</strong> de {{ preguntas|length }}<span class="visualmente-oculto">· abrir la lista de frases</span></button>
     <div class="pregunta-menu" id="menu-preguntas" hidden><ul class="pregunta-lista" aria-label="Frases del test"></ul></div>
+  </div>
   </div>
   <div class="linea-avance" aria-hidden="true"><div id="linea-avance"></div></div>
 </section>
@@ -30,10 +27,39 @@
   <button type="button" class="boton principal" id="btn-siguiente">Siguiente →</button>
   <div class="pregunta-nav">
     <button type="button" class="boton secundario" id="btn-anterior">← Frase anterior</button>
-    <a class="boton secundario" id="btn-reiniciar" href="{{ url_for('index') }}">Empezar de nuevo</a>
+    <a class="boton secundario" id="btn-reiniciar" href="{{ url_for('nuevo_test', modo=job.modo) }}">Empezar de nuevo</a>
     <span class="meta analisis-estado" id="estado-analisis" aria-live="off"></span>
   </div>
 </section>
+
+<button type="button" class="btn-ayuda" id="btn-ayuda" aria-haspopup="dialog" aria-controls="dialogo-ayuda" title="Preguntas frecuentes">
+  <span aria-hidden="true">?</span><span class="visualmente-oculto">Ayuda: preguntas frecuentes sobre el test</span>
+</button>
+<dialog class="dialogo-ayuda" id="dialogo-ayuda" aria-labelledby="t-ayuda">
+  <div class="dialogo-cabecera">
+    <h2 id="t-ayuda">Preguntas frecuentes</h2>
+    <button type="button" class="dialogo-cerrar" id="cerrar-ayuda" aria-label="Cerrar la ayuda">✕</button>
+  </div>
+  <div class="paginable faq-caja" data-paginar="Páginas de preguntas frecuentes">
+  <dl class="faq" data-items>
+    <div><dt>¿Cómo respondo?</dt>
+      <dd>Escribe cómo termina la frase, con lo primero que se te ocurra, y presiona <kbd>Enter</kbd> o «Siguiente». Unas pocas palabras bastan.</dd></div>
+    <div><dt>¿Hay respuestas correctas?</dt>
+      <dd>No. No hay respuestas buenas ni malas; lo importante es que sea lo que de verdad piensas o sientes.</dd></div>
+    <div><dt>¿Qué hago si una frase no aplica a mi vida?</dt>
+      <dd>Escríbelo tal cual, por ejemplo «no lo conocí» o «no tengo hermanos». Todas las frases deben tener respuesta.</dd></div>
+    <div><dt>¿Puedo cambiar una respuesta?</dt>
+      <dd>Sí. Vuelve con «← Frase anterior» o abre la lista de frases desde «Frase N de {{ preguntas|length }}».</dd></div>
+    <div><dt>¿Qué pasa con lo que escribo?</dt>
+      <dd>Se guarda solo en este equipo y únicamente lo verá el psicólogo o la psicóloga, como autorizaste al inicio.</dd></div>
+    <div><dt>¿Puedo detenerme?</dt>
+      <dd>Sí. Participar es voluntario; si quieres parar, avísale al psicólogo o a la psicóloga.</dd></div>
+    <div><dt>Tengo otra duda</dt>
+      <dd>Pregúntale al psicólogo o a la psicóloga que te está acompañando.</dd></div>
+  </dl>
+  </div>
+  <button type="button" class="boton" id="cerrar-ayuda-2">Entendido, seguir con el test</button>
+</dialog>
 
 <form method="POST" action="{{ url_for('finalizar_test', job_id=job.id) }}" id="form-finalizar" hidden
       data-cargando="Gracias. Terminando el análisis…" data-cargando-sub="En un momento verás los resultados."></form>
@@ -153,5 +179,15 @@
   }, 4000);
   respondidas = PREGUNTAS.filter(function (p) { return p.respuesta; }).length;
   mostrar(primeraSinResponder());
+  // Ayuda «?»: preguntas frecuentes en un diálogo nativo (Esc cierra y el foco vuelve al botón).
+  (function () {
+    var d = document.getElementById('dialogo-ayuda'), b = document.getElementById('btn-ayuda');
+    function cerrar() { d.close(); }
+    b.addEventListener('click', function () { if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', ''); if (window.sacksPaginar) window.sacksPaginar(); });
+    document.getElementById('cerrar-ayuda').addEventListener('click', cerrar);
+    document.getElementById('cerrar-ayuda-2').addEventListener('click', cerrar);
+    d.addEventListener('close', function () { var r = document.getElementById('respuesta'); (r || b).focus(); });
+    d.addEventListener('click', function (e) { if (e.target === d) cerrar(); });
+  })();
 </script>
 {% endblock %}

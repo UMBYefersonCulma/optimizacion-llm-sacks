@@ -2,8 +2,8 @@
 {% from "_macros.html" import pasos %}
 {% block titulo %}Analizando respuestas{% endblock %}
 {% block contenido %}
-<section class="tarjeta progreso">
-  {% if job.tipo == 'test' %}{{ pasos(3) }}{% endif %}
+<section class="tarjeta progreso informe">
+  <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Procesando</p>
   <h2>{% if job.tipo == 'test' %}Gracias por responder{% else %}Analizando «{{ job.nombre_entrada }}»{% endif %}</h2>
   <p class="meta">
     {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
@@ -17,10 +17,13 @@
 
   <div id="error" class="alerta rojo" hidden></div>
 
-  <table class="tabla" id="tabla-vivo">
+  <h3>Últimas frases analizadas</h3>
+  <div class="vivo">
+  <table class="tabla compacta" id="tabla-vivo">
     <thead><tr><th>#</th><th>Frase completada</th><th>Categoría</th>{% if job.tipo != 'test' %}<th>Razón</th>{% endif %}<th>Tiempo</th></tr></thead>
     <tbody></tbody>
   </table>
+  </div>
 </section>
 {% endblock %}
 {% block scripts %}
@@ -43,7 +46,7 @@
         var tb = document.querySelector('#tabla-vivo tbody');
         var tr = document.createElement('tr');
         tr.innerHTML = '<td>' + (j.ultima.Numero !== '' ? j.ultima.Numero : j.hechas) + '</td><td>' + frase(j.ultima) + '</td><td>' + badge(j.ultima.Categoria) + '</td>' + (conRazon ? '<td>' + esc(j.ultima.Razon) + '</td>' : '') + '<td>' + (j.ultima.Duracion_s != null ? j.ultima.Duracion_s + ' s' : '') + '</td>';
-        tb.appendChild(tr); pintadas = j.hechas;
+        tb.insertBefore(tr, tb.firstChild); pintadas = j.hechas;
       }
       if (j.estado === 'error') { var e = document.getElementById('error'); e.hidden = false; e.textContent = j.error; return; }
       if (j.estado === 'listo') { window.location = j.url_resultados; return; }

@@ -12,9 +12,9 @@ Cada frase se clasifica como **POSITIVA · NEGATIVA · AMBIGUA** y el modelo exp
 
 | Flujo | Qué hace |
 |---|---|
-| **Aplicar el test** | Tres pasos: (1) datos generales: edad, género y modo del test (Demo 4, Equilibrio 10 o Completo 60 frases); (2) los enunciados originales del SSCT **uno a uno**, en su orden, con «Siguiente →», «Pregunta anterior» y un menú para saltar entre las ya respondidas; (3) resultados agrupados por las 15 áreas de la hoja de corrección. Cada respuesta se analiza en segundo plano mientras la persona escribe la siguiente, así los resultados aparecen casi de inmediato al terminar. |
-| **Procesar CSV** | Sube un CSV (`Numero, Respuesta` o `Frase`; `Edad` y `Genero` opcionales) y clasifica todas las frases con barra de progreso y tabla en vivo. Al final: distribución emocional, tabla de detalle y CSV descargable. |
-| **Comparar IA vs Humano** | Cruza el CSV de la IA con la evaluación de un psicólogo emparejando la misma respuesta (número de enunciado y texto, o la frase): % de concordancia global y por categoría, matriz de confusión y detalle. |
+| **Inicio** | Dos puertas claras según quién usa la app: «Voy a responder el test» (persona evaluada) y «Soy psicólogo o psicóloga». |
+| **Responder el test** (persona) | Cuatro pasos: (1) **autorización de datos**: qué se recoge, para qué, quién lo ve y sus derechos (Ley 1581 de 2012, Ley 1090 de 2006); sin marcar la casilla no se puede continuar y la fecha de aceptación queda en el informe; (2) edad y género; (3) los enunciados originales del SSCT **uno a uno**, con «Siguiente →», «Frase anterior», lista de frases y un botón **«?»** con preguntas frecuentes; (4) resultados: la persona ve un mensaje de cierre y el informe queda para el psicólogo. Cada respuesta se analiza en segundo plano mientras la persona escribe la siguiente. |
+| **Área del psicólogo** | Estado del modelo de IA local, preparación del test (versión Completo 60, Equilibrio 10 o Demo 4 frases), informes de la sesión, procesamiento de CSV (`Numero, Respuesta` o `Frase`) con barra de progreso, y comparación con la evaluación de un psicólogo emparejando la misma respuesta: % de concordancia global y por categoría, matriz de confusión y detalle. |
 
 Los ítems 9, 10, 25, 40, 55 y 57 cambian de redacción según el género (niño/niña, sexo contrario); es el único
 dato, junto con la edad, que se le pide a la persona. Todas las frases del modo elegido deben completarse. Si un
@@ -58,8 +58,8 @@ entre AMBIGUA y NEGATIVA. Para reproducirlo: `.venv/bin/python evaluar.py 150 20
 - **`sacks_items.py`**: los 60 enunciados (con variantes por género) y las 15 áreas de la hoja de corrección.
 - **`sacks_ejemplos.py`**: memoria de casos y selección de ejemplos few-shot por enunciado.
 - **`sacks_llm.py`**: cliente de Ollama (modo rápido con prompt crudo o modo think), parseo tolerante, precalentado y `keep_alive`.
-- **`app.py`**: rutas Flask, asistente del test en 3 pasos con análisis en segundo plano, lectura tolerante de CSV,
-  comparación por número de enunciado y páginas de error amigables.
+- **`app.py`**: rutas Flask, inicio por roles, autorización de datos, asistente del test en 4 pasos con análisis en
+  segundo plano, área del psicólogo, lectura tolerante de CSV, comparación por enunciado y respuesta, y páginas de error amigables.
 
 ## Accesibilidad
 
@@ -89,6 +89,12 @@ Identidad propia y offline: tipografía display **Fraunces** para enunciados y t
 marca propia (SVG), fotos de Unsplash empaquetadas en `static/img/` (créditos en `CREDITOS.txt`), iconos y tonos por
 área del test, badges de categoría con símbolo además de color (+ − ~), barra apilada de distribución y transición
 de «pasar página» entre frases.
+
+**Pantalla única:** cada página cabe en la ventana sin desplazarse, de 1024 × 768 a pantallas grandes (verificado
+también en 1280 × 720, 1366 × 768, 1440 × 900, 1512 × 860 y 1920 × 1080). Las secciones largas usan pestañas y las
+tablas y áreas se paginan según el alto disponible (`static/pantalla.js`). En teléfonos el flujo de la persona también
+cabe; las herramientas del psicólogo se desplazan dentro del área central, y con texto ampliado al 150–200 % el contenido
+puede desplazarse para no recortar nada (WCAG 1.4.10).
 
 ## Requisitos
 ## Requisitos

@@ -23,7 +23,7 @@ import webbrowser
 from datetime import datetime
 
 import pandas as pd
-from flask import (Flask, abort, jsonify, redirect, render_template, request,
+from flask import (Flask, abort, jsonify, redirect, render_template, request, session,
                    send_from_directory, url_for)
 from werkzeug.datastructures import FileStorage
 from werkzeug.exceptions import HTTPException, RequestEntityTooLarge
@@ -45,6 +45,10 @@ app = Flask(
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB por archivo
 app.config["JSON_AS_ASCII"] = False
 app.config["TEMPLATES_AUTO_RELOAD"] = True
+# Clave de sesión solo para recordar la autorización de datos entre los pasos del test (se renueva al reiniciar).
+app.secret_key = os.environ.get("SACKS_SECRET") or os.urandom(32)
+# Versión del texto de autorización que acepta la persona (queda registrada en el informe).
+AUTORIZACION_VERSION = "1.0 · octubre de 2026"
 
 CATEGORIAS = list(sacks_llm.CATEGORIAS)
 PUERTO = int(os.environ.get("SACKS_PORT", "5050"))  # 5000 lo ocupa AirPlay en macOS
@@ -304,9 +308,27 @@ def _nuevo_job(tipo: str, nombre_entrada: str, total: int, **extra) -> dict:
     return job
 
 
+_PASOS_PERSONA = {"nuevo_test", "autorizar_test", "datos_test", "iniciar_test", "responder_test", "finalizar_test"}
+_PAGINAS_PSICOLOGO = {"psicologo", "procesar_csv", "comparar_resultados", "ver_comparacion", "resultados"}
+
+
+def _rol_actual() -> str:
+    """Qué parte de la app se está viendo: la de la persona que responde o la del psicólogo."""
+    ep = request.endpoint or ""
+    if ep in _PASOS_PERSONA:
+        return "persona"
+    if ep in _PAGINAS_PSICOLOGO:
+        return "psicologo"
+    if ep == "progreso":
+        job = JOBS.get((request.view_args or {}).get("job_id", ""))
+        return "persona" if job and job["tipo"] == "test" else "psicologo"
+    return ""
+
+
 @app.context_processor
 def _globales():
-    return {"CATEGORIAS": CATEGORIAS, "MODELO": sacks_llm.MODELO, "MODOS": MODOS}
+    return {"CATEGORIAS": CATEGORIAS, "MODELO": sacks_llm.MODELO, "MODOS": MODOS, "ROL": _rol_actual(),
+            "AUTORIZACION_VERSION": AUTORIZACION_VERSION}
 
 
 # ───────────────────────── 1. aplicar el test (3 pasos) ───────────────────────── #
@@ -341,14 +363,52 @@ def _worker_test(job_id: str) -> None:
 
 @app.route("/")
 def index():
-    return render_template("test_inicio.html")
+    """Inicio: dos puertas, una para la persona que responde y otra para el psicólogo."""
+    return render_template("inicio.html")
+
+
+@app.route("/psicologo")
+def psicologo():
+    """Área del psicólogo: estado del modelo, preparar un test, procesar CSV, comparar e informes."""
+    informes = sorted((j for j in JOBS.values() if j["tipo"] in ("test", "csv", "csv_test")),
+                      key=lambda j: j["inicio"], reverse=True)
+    return render_template("psicologo.html", informes=informes)
+
+
+@app.route("/test/nuevo")
+def nuevo_test():
+    """Paso 1 · Autorización de datos. El psicólogo puede elegir la versión del test con ?modo=."""
+    modo = request.args.get("modo", session.get("modo", "completo"))
+    session["modo"] = modo if modo in MODOS else "completo"
+    session.pop("autorizacion", None)
+    return render_template("autorizacion.html", modo=MODOS[session["modo"]])
+
+
+@app.route("/test/autorizacion", methods=["POST"])
+def autorizar_test():
+    if request.form.get("decision") != "acepto" or request.form.get("acepto") != "si":
+        session.pop("autorizacion", None)
+        return render_template("no_autoriza.html")
+    session["autorizacion"] = datetime.now().isoformat(timespec="minutes")
+    return redirect(url_for("datos_test"))
+
+
+@app.route("/test/datos")
+def datos_test():
+    """Paso 2 · Datos generales (solo edad y género)."""
+    if not session.get("autorizacion"):
+        return redirect(url_for("nuevo_test"))
+    return render_template("datos.html", modo=MODOS[session.get("modo", "completo")])
 
 
 @app.route("/test/iniciar", methods=["POST"])
 def iniciar_test():
+    autorizacion = session.get("autorizacion")
+    if not autorizacion:
+        return redirect(url_for("nuevo_test"))
     edad = _limpiar_edad(request.form.get("edad", "").strip() or None)
     genero = _limpiar_genero(request.form.get("genero", "").strip() or None)
-    modo = request.form.get("modo", "completo")
+    modo = session.get("modo", "completo")
     if not edad or not edad.isdigit() or not (5 <= int(edad) <= 110):
         raise DatosInvalidos("Indica una edad válida (entre 5 y 110 años).")
     if genero not in ("Femenino", "Masculino", "Otro"):
@@ -358,7 +418,9 @@ def iniciar_test():
 
     numeros = sacks_items.NUMEROS[:MODOS[modo]["total"]]
     job = _nuevo_job("test", "Test de Sacks", len(numeros), edad=edad, genero=genero, modo=modo,
-                     numeros=numeros, respuestas={}, resultados={}, cola=queue.Queue(), finalizado=False)
+                     numeros=numeros, respuestas={}, resultados={}, cola=queue.Queue(), finalizado=False,
+                     autorizacion=datetime.fromisoformat(autorizacion), autorizacion_version=AUTORIZACION_VERSION)
+    session.pop("autorizacion", None)  # una autorización por test
     job["estado"] = "respondiendo"
     threading.Thread(target=_worker_test, args=(job["id"],), daemon=True, name=f"test-{job['id']}").start()
     return redirect(url_for("responder_test", job_id=job["id"]))
@@ -454,10 +516,13 @@ def procesar_csv():
 @app.route("/progreso/<job_id>")
 def progreso(job_id):
     job = JOBS.get(job_id) or abort(404)
-    if job["estado"] == "listo":
-        return redirect(url_for("resultados", job_id=job_id))
     if job["estado"] == "respondiendo":
         return redirect(url_for("responder_test", job_id=job_id))
+    if job["tipo"] == "test":
+        # Paso 4 · Fin: la persona no ve la clasificación; el informe es para el psicólogo.
+        return render_template("fin.html", job=job)
+    if job["estado"] == "listo":
+        return redirect(url_for("resultados", job_id=job_id))
     return render_template("progreso.html", job=job)
 
 

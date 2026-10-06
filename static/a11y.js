@@ -41,6 +41,7 @@
     TOGGLES.forEach(function (t) { raiz.classList.toggle(t.clase, !!prefs[t.id]); });
     try { localStorage.setItem(CLAVE, JSON.stringify(prefs)); } catch (e) {}
     guiaLectura(!!prefs.guia);
+    try { window.dispatchEvent(new Event('sacks:diseno')); } catch (e) {}  // re-ajusta la paginación
   }
 
   // ── guía de lectura ──
@@ -165,6 +166,8 @@
     panel.innerHTML = '';
     var cabecera = el('div', { class: 'a11y-cabecera' }, [el('strong', { text: 'Accesibilidad' }), el('button', { type: 'button', class: 'a11y-cerrar', 'aria-label': 'Cerrar panel', text: '✕' })]);
     panel.appendChild(cabecera);
+    var col1 = el('div', { class: 'a11y-col' }), col2 = el('div', { class: 'a11y-col' });
+    panel.appendChild(el('div', { class: 'a11y-columnas' }, [col1, col2]));
 
     var etiquetaEscala = el('span', { class: 'a11y-valor', 'aria-live': 'polite' });
     function pintarEscala() { etiquetaEscala.textContent = Math.round((ESCALAS.indexOf(prefs.escala) >= 0 ? prefs.escala : 1) * 100) + ' %'; }
@@ -174,9 +177,9 @@
     menos.addEventListener('click', function () { cambiarEscala(-1); });
     mas.addEventListener('click', function () { cambiarEscala(1); });
     pintarEscala();
-    panel.appendChild(seccion('Tamaño del texto', [el('div', { class: 'a11y-fila' }, [menos, etiquetaEscala, mas])]));
-    panel.appendChild(seccion('Colores', [grupoRadios('color', COLORES, prefs.color, function (v) { prefs.color = v; aplicar(); })]));
-    panel.appendChild(seccion('Tipo de letra', [grupoRadios('fuente', FUENTES, prefs.fuente, function (v) { prefs.fuente = v; aplicar(); })]));
+    col1.appendChild(seccion('Tamaño del texto', [el('div', { class: 'a11y-fila' }, [menos, etiquetaEscala, mas])]));
+    col1.appendChild(seccion('Colores', [grupoRadios('color', COLORES, prefs.color, function (v) { prefs.color = v; aplicar(); })]));
+    col1.appendChild(seccion('Tipo de letra', [grupoRadios('fuente', FUENTES, prefs.fuente, function (v) { prefs.fuente = v; aplicar(); })]));
 
     var lista = el('div', { class: 'a11y-lista' });
     TOGGLES.forEach(function (t) {
@@ -187,7 +190,7 @@
       });
       lista.appendChild(el('label', { class: 'a11y-opcion', for: chk.id }, [chk, el('span', { html: '<strong>' + t.nombre + '</strong><small>' + t.ayuda + '</small>' })]));
     });
-    panel.appendChild(seccion('Lectura y navegación', [lista]));
+    col2.appendChild(seccion('Lectura y navegación', [lista]));
 
     selectMotor = el('select', { id: 'a11y-motor', 'aria-label': 'Motor de voz' });
     selectVoz = el('select', { id: 'a11y-vozid', 'aria-label': 'Voz' });
@@ -200,7 +203,7 @@
     probar.addEventListener('click', function () { window.sacksHablar('Hola. Así se escucha la lectura en voz alta.', true); });
     var detener = el('button', { type: 'button', class: 'chip', text: '■ Detener' });
     detener.addEventListener('click', function () { window.sacksCallar(); });
-    panel.appendChild(seccion('Voz', [
+    col2.appendChild(seccion('Voz', [
       el('div', { class: 'a11y-campo' }, [el('label', { for: 'a11y-motor', text: 'Motor' }), selectMotor]),
       el('div', { class: 'a11y-campo' }, [el('label', { for: 'a11y-vozid', text: 'Voz' }), selectVoz]),
       el('div', { class: 'a11y-campo' }, [el('label', { for: 'a11y-vel', text: 'Velocidad' }), el('div', { class: 'a11y-fila' }, [rango, valVel])]),

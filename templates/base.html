@@ -49,15 +49,11 @@
   </a>
   <nav aria-label="Secciones">
     <ul>
-      <li><a href="{{ url_for('index') }}" class="{{ 'activo' if request.endpoint in ('index','iniciar_test','responder_test','finalizar_test','progreso','resultados') }}">Aplicar el test</a></li>
-      <li><a href="{{ url_for('procesar_csv') }}" class="{{ 'activo' if request.endpoint == 'procesar_csv' }}">Procesar CSV</a></li>
-      <li><a href="{{ url_for('comparar_resultados') }}" class="{{ 'activo' if request.endpoint in ('comparar_resultados','ver_comparacion') }}">Comparar con psicólogos</a></li>
+      <li><a href="{{ url_for('nuevo_test') }}" class="{{ 'activo' if ROL == 'persona' }}"{% if ROL == 'persona' %} aria-current="page"{% endif %}>Responder el test</a></li>
+      <li><a href="{{ url_for('psicologo') }}" class="{{ 'activo' if ROL == 'psicologo' }}"{% if ROL == 'psicologo' %} aria-current="page"{% endif %}>Área del psicólogo</a></li>
     </ul>
   </nav>
   <div class="topbar-derecha">
-    <div id="estado-modelo" class="estado" role="status" aria-live="polite" title="Estado del analizador">
-      <span class="punto" aria-hidden="true"></span><span class="estado-texto">Verificando…</span>
-    </div>
     <div class="a11y-wrap">
       <button type="button" id="btn-a11y" class="btn-a11y" aria-haspopup="dialog" aria-expanded="false" aria-controls="panel-a11y" title="Opciones de accesibilidad (Alt + A)">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="2.2" fill="currentColor"/><path d="M4 8.5c5.3 1.3 10.7 1.3 16 0M12 9.5v5m0 0-3.5 6.5M12 14.5l3.5 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
@@ -86,12 +82,13 @@
 </div>
 
 <script src="{{ url_for('static', filename='a11y.js') }}"></script>
+<script src="{{ url_for('static', filename='pantalla.js') }}"></script>
 <script>
   // Mensajes de validación del navegador en español (por defecto salen en el idioma del navegador).
   (function () {
     function mensaje(el) {
       var v = el.validity;
-      if (v.valueMissing) return el.tagName === 'SELECT' ? 'Selecciona una opción de la lista.' : (el.type === 'file' ? 'Selecciona un archivo CSV.' : 'Este campo es obligatorio.');
+      if (v.valueMissing) return el.tagName === 'SELECT' ? 'Selecciona una opción de la lista.' : (el.type === 'file' ? 'Selecciona un archivo CSV.' : (el.type === 'checkbox' ? 'Marca esta casilla para autorizar y continuar.' : 'Este campo es obligatorio.'));
       if (v.rangeUnderflow) return 'El valor mínimo es ' + el.min + '.';
       if (v.rangeOverflow) return 'El valor máximo es ' + el.max + '.';
       if (v.badInput || v.stepMismatch) return 'Escribe un número entero.';
@@ -127,16 +124,6 @@
       document.getElementById('overlay').hidden = false;
     });
   });
-  // Indicador de estado del analizador en la barra superior.
-  (function () {
-    var caja = document.getElementById('estado-modelo');
-    fetch('/api/estado').then(function (r) { return r.json(); }).then(function (s) {
-      var texto = caja.querySelector('.estado-texto');
-      if (!s.ok) { caja.classList.add('rojo'); texto.textContent = 'Analizador apagado · abre Ollama'; }
-      else if (!s.modelo_presente) { caja.classList.add('rojo'); texto.textContent = 'Falta instalar el modelo'; }
-      else { caja.classList.add('verde'); texto.textContent = 'Analizador listo'; caja.title = 'Modelo {{ MODELO }} en Ollama, en este equipo'; }
-    }).catch(function () { caja.classList.add('rojo'); caja.querySelector('.estado-texto').textContent = 'La aplicación no responde'; });
-  })();
 </script>
 {% block scripts %}{% endblock %}
 </body>

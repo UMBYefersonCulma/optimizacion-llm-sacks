@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pasos %}
+{% block titulo %}Test terminado{% endblock %}
+{% block contenido %}
+<section class="tarjeta flujo fin">
+  <div class="fin-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+  <h1>¡Terminaste! Gracias por tu tiempo.</h1>
+  <p class="intro">Tus respuestas quedaron guardadas en este equipo y solo las verá el psicólogo o la psicóloga que te aplicó
+     el test. <strong>Lo que tienes que hacer ahora:</strong> avisarle que terminaste.</p>
+  {{ pasos(4) }}
+</section>
+
+<section class="tarjeta suave flujo para-psicologo" aria-labelledby="t-resultados">
+  <p class="sobretitulo">Paso 4 · Resultados</p>
+  <h2 id="t-resultados">Resultados del test</h2>
+  <p class="meta" aria-live="polite"><span id="estado-texto">Preparando los resultados…</span>
+     <strong id="hechas">{{ job.hechas }}</strong> de {{ job.total }} frases analizadas.</p>
+  <div class="progreso-barra" role="progressbar" aria-label="Frases analizadas" aria-valuemin="0" aria-valuemax="{{ job.total }}" aria-valuenow="{{ job.hechas }}" id="barra"><div id="pb" class="progreso-relleno" style="width:{{ (100 * job.hechas / (job.total or 1))|round(0) }}%"></div></div>
+  <div id="error" class="alerta rojo" hidden></div>
+  <a id="btn-informe" class="boton{{ '' if job.estado == 'listo' else ' deshabilitado' }}" href="{{ url_for('resultados', job_id=job.id) }}"
+     {% if job.estado != 'listo' %}aria-disabled="true" tabindex="-1"{% endif %}>Ver los resultados →</a>
+  <p class="ayuda">Los resultados son un apoyo para el psicólogo o la psicóloga; no son un diagnóstico.</p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  (function () {
+    var jobId = "{{ job.id }}", boton = document.getElementById('btn-informe');
+    function tick() {
+      fetch('/api/progreso/' + jobId).then(function (r) { return r.json(); }).then(function (j) {
+        document.getElementById('pb').style.width = (100 * j.hechas / Math.max(j.total, 1)) + '%';
+        document.getElementById('hechas').textContent = j.hechas;
+        document.getElementById('barra').setAttribute('aria-valuenow', j.hechas);
+        if (j.estado === 'error') { var e = document.getElementById('error'); e.hidden = false; e.textContent = j.error; return; }
+        if (j.estado === 'listo') {
+          document.getElementById('estado-texto').textContent = 'Resultados listos:';
+          boton.classList.remove('deshabilitado'); boton.removeAttribute('aria-disabled'); boton.removeAttribute('tabindex');
+          return;
+        }
+        setTimeout(tick, 1500);
+      }).catch(function () { setTimeout(tick, 3000); });
+    }
+    tick();
+  })();
+</script>
+{% endblock %}

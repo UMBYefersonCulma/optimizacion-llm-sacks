@@ -1,84 +1,102 @@
 {% extends "base.html" %}
-{% from "_macros.html" import badge, barras, pasos, icono_area %}
-{% block titulo %}Resultados{% endblock %}
+{% from "_macros.html" import badge, barras, icono_area %}
+{% block titulo %}Informe{% endblock %}
 {% block contenido %}
-<section class="tarjeta">
-  {% if job.tipo == 'test' %}{{ pasos(3) }}{% endif %}
+{% set n_casos = filas|selectattr('Fuente', 'equalto', 'casos')|list|length %}
+<section class="tarjeta informe">
+  <p class="miga"><a href="{{ url_for('psicologo') }}">Área del psicólogo</a> › Informe</p>
   <div class="encabezado-resultado">
     <div>
-      <h2>{% if job.tipo == 'test' %}Resultados del Test de Sacks{% else %}Resultados de «{{ job.nombre_entrada }}»{% endif %}</h2>
+      <h2>{% if job.tipo == 'test' %}Informe del Test de Sacks{% else %}Informe de «{{ job.nombre_entrada }}»{% endif %}</h2>
       <p class="meta">
         {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
-        {% if job.tipo == 'test' %}Modo {{ MODOS[job.modo].nombre }} · {% endif %}
-        {{ job.hechas }} frases analizadas · {{ tiempo_modelo }} s de análisis del modelo ({{ promedio }} s por frase)
+        {% if job.tipo == 'test' %}Versión {{ MODOS[job.modo].nombre }} · {% endif %}
+        {{ job.hechas }} frases analizadas · {{ tiempo_modelo }} s de análisis ({{ promedio }} s por frase)
         {% if job.errores %}· <span class="texto-rojo">{{ job.errores }} con error</span>{% endif %}
         · {{ MODELO }}
       </p>
+      {% if job.autorizacion %}<p class="meta">Autorización de datos aceptada el {{ job.autorizacion.strftime('%d/%m/%Y a las %H:%M') }} (texto versión {{ job.autorizacion_version }}).</p>{% endif %}
     </div>
     <div class="acciones">
-      <a class="boton secundario" href="{{ url_for('index') if job.tipo == 'test' else url_for('procesar_csv') }}">← {{ 'Nuevo test' if job.tipo == 'test' else 'Otro archivo' }}</a>
+      <a class="boton secundario" href="{{ url_for('psicologo') if job.tipo == 'test' else url_for('procesar_csv') }}">← {{ 'Área del psicólogo' if job.tipo == 'test' else 'Otro archivo' }}</a>
       <a class="boton secundario" href="{{ url_for('descargar', file=job.archivo) }}">Descargar CSV</a>
       <a class="boton" href="{{ url_for('comparar_resultados', ia=job.archivo) }}">Comparar con evaluación humana →</a>
     </div>
   </div>
 
-  <div class="alerta amarillo" role="note">
-    <strong>Gracias por responder.</strong> Lo que ves aquí es un apoyo para la lectura que hará el psicólogo o la psicóloga; <strong>no es un diagnóstico</strong>.
-    Cada frase se marca como <span class="badge badge-positiva">POSITIVA</span> (expresa bienestar o una actitud favorable),
-    <span class="badge badge-negativa">NEGATIVA</span> (expresa malestar, conflicto o rechazo) o
-    <span class="badge badge-ambigua">AMBIGUA</span> (no se puede decidir con la frase sola).
+  <div class="alerta amarillo compacta" role="note"><strong>Uso profesional.</strong> Este informe es un apoyo para la lectura del
+    psicólogo o la psicóloga; <strong>no es un diagnóstico</strong>.</div>
+
+  <div class="pestanas" role="tablist" aria-label="Secciones del informe">
+    <button type="button" role="tab" id="tab-resumen" aria-controls="panel-resumen">Resumen</button>
+    <button type="button" role="tab" id="tab-detalle" aria-controls="panel-detalle">Detalle por frase ({{ filas|length }})</button>
+    {% if areas %}<button type="button" role="tab" id="tab-areas" aria-controls="panel-areas">Por área del test</button>{% endif %}
   </div>
 
-  <h3>Distribución emocional general <button type="button" class="chip btn-escuchar" id="btn-escuchar-resumen" aria-label="Escuchar el resumen en voz alta">🔊 Escuchar resumen</button></h3>
-  {{ barras(dist) }}
+  <div class="panel-pestana" role="tabpanel" id="panel-resumen" aria-labelledby="tab-resumen" tabindex="0">
+    <div class="resumen-grid">
+      <div>
+        <h3>Distribución emocional <button type="button" class="chip btn-escuchar" id="btn-escuchar-resumen" aria-label="Escuchar el resumen en voz alta">🔊 Escuchar resumen</button></h3>
+        {{ barras(dist) }}
+      </div>
+      <div class="leyenda-cat">
+        <h3>Cómo leer las categorías</h3>
+        <p><span class="badge badge-positiva">POSITIVA</span> expresa bienestar o una actitud favorable.</p>
+        <p><span class="badge badge-negativa">NEGATIVA</span> expresa malestar, conflicto o rechazo.</p>
+        <p><span class="badge badge-ambigua">AMBIGUA</span> no se puede decidir con la frase sola.</p>
+        <p><span class="fuente">psicólogos</span> {{ n_casos }} de {{ filas|length }} respuestas coinciden con casos ya clasificados por los psicólogos del proyecto; el resto las clasificó el modelo.</p>
+      </div>
+    </div>
+  </div>
 
-  <h3>Detalle por frase</h3>
-  <div class="tabla-scroll">
-    <table class="tabla">
-      <thead><tr><th>#</th><th>Frase completada</th><th>Área</th><th>Categoría</th><th>Razón</th><th>Tiempo</th></tr></thead>
-      <tbody>
-        {% for f in filas %}
-        <tr>
-          <td>{{ f.Numero if f.Numero != '' else loop.index }}</td>
-          <td class="celda-frase">{% if f.Enunciado %}<span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}{% else %}{{ f.Frase }}{% endif %}</td>
-          <td class="celda-area">{{ f.Area }}</td>
-          <td>{{ badge(f.Categoria) }}</td>
-          <td class="celda-razon">{{ f.Razon }}{% if f.Fuente == 'casos' %} <span class="fuente" title="Respuesta ya clasificada por los psicólogos del proyecto">psicólogos</span>{% endif %}</td>
-          <td>{% if f.Fuente == 'casos' %}—{% elif f.Duracion_s is not none %}{{ f.Duracion_s }} s{% endif %}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <div class="panel-pestana" role="tabpanel" id="panel-detalle" aria-labelledby="tab-detalle" tabindex="0" hidden>
+    <div class="paginable" data-paginar="Páginas del detalle por frase">
+      <table class="tabla compacta">
+        <thead><tr><th>#</th><th>Frase completada</th><th class="col-opc">Área</th><th>Categoría</th><th class="col-opc">Razón</th><th class="col-opc">Tiempo</th></tr></thead>
+        <tbody>
+          {% for f in filas %}
+          <tr>
+            <td>{{ f.Numero if f.Numero != '' else loop.index }}</td>
+            <td class="celda-frase">{% if f.Enunciado %}<span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}{% else %}{{ f.Frase }}{% endif %}</td>
+            <td class="celda-area col-opc">{{ f.Area }}</td>
+            <td>{{ badge(f.Categoria) }}</td>
+            <td class="celda-razon col-opc">{{ f.Razon }}{% if f.Fuente == 'casos' %} <span class="fuente" title="Respuesta ya clasificada por los psicólogos del proyecto">psicólogos</span>{% endif %}</td>
+            <td class="col-opc">{% if f.Fuente == 'casos' %}—{% elif f.Duracion_s is not none %}{{ f.Duracion_s }} s{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 
   {% if areas %}
-  <h3>Resultados por área del test <small class="meta">(15 áreas de la hoja de corrección SSCT, 4 enunciados cada una)</small></h3>
-  <div class="areas">
-    {% for a in areas if a.n %}
-    <div class="area" data-area="{{ a.romano }}">
-      <div class="area-cabecera">
-        {{ icono_area(a.romano) }}
-        <span class="area-romano">{{ a.romano }}</span>
-        <span class="area-nombre">{{ a.nombre }}</span>
-        <span class="area-resumen">
-          {% for d in a.dist if d.n %}<span class="badge badge-{{ d.categoria|lower }}">{{ d.n }}</span>{% endfor %}
-        </span>
-      </div>
-      <ul class="area-items">
-        {% for f in a.respuestas %}
-        <li><span class="item-num">{{ f.Numero }}.</span>
-            <span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}
-            {{ badge(f.Categoria) }}</li>
+  <div class="panel-pestana" role="tabpanel" id="panel-areas" aria-labelledby="tab-areas" tabindex="0" hidden>
+    {% set vacias = areas|rejectattr('n')|list %}
+    <p class="meta">15 áreas de la hoja de corrección SSCT, 4 enunciados cada una.{% if vacias %} Sin respuestas en esta versión del test: {{ vacias|length }}.{% endif %}</p>
+    <div class="paginable" data-paginar="Páginas de áreas">
+      <div class="areas" data-items>
+        {% for a in areas if a.n %}
+        <div class="area" data-area="{{ a.romano }}">
+          <div class="area-cabecera">
+            {{ icono_area(a.romano) }}
+            <span class="area-romano">{{ a.romano }}</span>
+            <span class="area-nombre">{{ a.nombre }}</span>
+            <span class="area-resumen">
+              {% for d in a.dist if d.n %}<span class="badge badge-{{ d.categoria|lower }}">{{ d.n }}</span>{% endfor %}
+            </span>
+          </div>
+          <ul class="area-items">
+            {% for f in a.respuestas %}
+            <li><span class="item-num">{{ f.Numero }}.</span>
+                <span class="enunciado-inline">{{ f.Enunciado }}</span> {{ f.Respuesta }}
+                {{ badge(f.Categoria) }}</li>
+            {% endfor %}
+          </ul>
+        </div>
         {% endfor %}
-      </ul>
+      </div>
     </div>
-    {% endfor %}
   </div>
-  {% set vacias = areas|rejectattr('n')|list %}
-  {% if vacias %}
-  <p class="meta areas-vacias">Sin respuestas en este modo:
-    {% for a in vacias %}{{ a.romano }} {{ a.nombre }}{{ ' · ' if not loop.last }}{% endfor %}.</p>
-  {% endif %}
   {% endif %}
 </section>
 {% endblock %}
