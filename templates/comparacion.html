@@ -6,8 +6,8 @@
   <p class="miga"><a href="{{ url_for('psicologo') }}#comparar">Área del psicólogo</a> › Comparación</p>
   <div class="encabezado-resultado">
     <div>
-      <h2>Concordancia con los psicólogos</h2>
-      <p class="meta">Humano: <strong>{{ c.nombre_humano }}</strong> · IA: <strong>{{ c.nombre_ia }}</strong> ·
+      <h2 data-leer>Concordancia con los psicólogos</h2>
+      <p class="meta" data-leer>Psicólogo <strong>{{ c.nombre_humano }}</strong> · IA <strong>{{ c.nombre_ia }}</strong> ·
          emparejamiento {{ c.modo }} · {{ c.fecha.strftime('%d/%m/%Y %H:%M') }}</p>
     </div>
     <div class="acciones">
@@ -16,9 +16,9 @@
     </div>
   </div>
 
-  {% for a in c.avisos %}<div class="alerta amarillo compacta">{{ a }}</div>{% endfor %}
+  {% for a in c.avisos %}<div class="alerta amarillo compacta" data-leer>{{ a }}</div>{% endfor %}
 
-  <div class="pestanas" role="tablist" aria-label="Secciones de la comparación">
+  <div class="pestanas" role="tablist" aria-label="Secciones de la comparación" data-leer>
     <button type="button" role="tab" id="tab-c-resumen" aria-controls="panel-c-resumen">Resumen</button>
     <button type="button" role="tab" id="tab-c-detalle" aria-controls="panel-c-detalle">Detalle por respuesta ({{ c.filas|length }})</button>
   </div>
@@ -27,7 +27,8 @@
     <div class="resumen-grid comparacion-resumen">
       <div>
         <h3>Concordancia</h3>
-        <div class="kpis">
+        <div class="kpis" data-leer
+             data-leer-texto="Concordancia global: {{ c.porcentaje }} por ciento; {{ c.coincidencias }} de {{ c.total }} respuestas coinciden con el psicólogo. Por categoría: {% for p in c.por_categoria %}{{ p.categoria|lower }}, {% if p.pct is not none %}{{ p.pct }} por ciento{% else %}sin casos{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %} En la matriz, haz clic en una fila para escucharla.">
           <div class="kpi principal">
             <span class="kpi-valor">{{ c.porcentaje }} %</span>
             <span class="kpi-nombre">concordancia global</span>
@@ -46,7 +47,7 @@
       </div>
       <div>
         <h3>Matriz de confusión</h3>
-        <p class="meta">Filas: psicólogo · columnas: IA · la diagonal son los aciertos.</p>
+        <p class="meta">Las filas son el psicólogo y las columnas la IA. La diagonal son los aciertos.</p>
         <div class="tabla-scroll">
         <table class="tabla matriz compacta">
           <thead><tr><th>Humano \ IA</th>{% for cat in CATEGORIAS %}<th>{{ badge(cat) }}</th>{% endfor %}</tr></thead>
@@ -65,7 +66,7 @@
   </div>
 
   <div class="panel-pestana" role="tabpanel" id="panel-c-detalle" aria-labelledby="tab-c-detalle" tabindex="0" hidden>
-    <div class="paginable" data-paginar="Páginas del detalle por respuesta">
+    <div class="paginable" data-paginar="Páginas del detalle por respuesta" data-leer data-leer-texto="Haz clic en una fila para escuchar la respuesta, las dos categorías y si coinciden.">
       <table class="tabla compacta">
         <thead><tr><th>#</th><th>Frase completada</th><th>Humano</th><th>IA</th><th>Coincide</th><th class="col-opc">Razón de la IA</th></tr></thead>
         <tbody>

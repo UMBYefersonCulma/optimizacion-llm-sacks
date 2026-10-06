@@ -1,7 +1,8 @@
 /* Panel de accesibilidad · Frases de Sacks
    Preferencias persistentes (localStorage «sacks_a11y») aplicadas como clases/atributos en <html>.
    Pensado para baja visión, daltonismo, dislexia, motricidad reducida y uso con teclado o lector de pantalla.
-   Voz: motor neuronal local Piper vía /api/voz (calidad natural) con respaldo en speechSynthesis del sistema. */
+   Voz: motor neuronal local Piper vía /api/voz (calidad natural) con respaldo en speechSynthesis del sistema.
+   Qué se lee en cada pantalla lo decide lectura.js. */
 (function () {
   var CLAVE = 'sacks_a11y';
   var raiz = document.documentElement;
@@ -29,7 +30,7 @@
     { id: 'enlaces',   clase: 'a11y-enlaces',   nombre: 'Resaltar botones y enlaces', ayuda: 'Subraya y enmarca todo lo que se puede pulsar.' },
     { id: 'cursor',    clase: 'a11y-cursor',    nombre: 'Cursor grande',       ayuda: 'Puntero del mouse más grande y visible.' },
     { id: 'calma',     clase: 'a11y-calma',     nombre: 'Menos animaciones',   ayuda: 'Quita transiciones y movimientos.' },
-    { id: 'voz',       clase: 'a11y-voz',       nombre: 'Leer en voz alta',    ayuda: 'Lee cada frase del test cuando aparece, con voz natural.' }
+    { id: 'voz',       clase: 'a11y-voz',       nombre: 'Leer en voz alta',    ayuda: 'Lee cada pantalla al abrirla, lo que eliges con el teclado y el texto al que le haces clic.' }
   ];
 
   function aplicar() {
@@ -58,8 +59,9 @@
   function moverGuia(e) { if (guia) guia.style.top = (e.clientY - 22) + 'px'; }
 
   // ── voz ──
-  var VOZ_SERVIDOR = null;   // {disponible, voces:[{id,nombre}], por_defecto}
+  var VOZ_SERVIDOR = window.SACKS_VOZ || null;   // {disponible, voces:[{id,nombre}], por_defecto}; llega con la página
   var audio = null, pendiente = null, vozSistema = null;
+  var turno = 0, cola = [], precarga = null, hablando = false, reciente = 0, enSistema = 0;
   var NOVEDAD = /^(eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|bells|bubbles|cellos|jester|organ|trinoids|whisper|wobble|zarvox|bad news|good news|junior|ralph|kathy|fred|albert)/i;
   var BUENAS = /^(paulina|m[oó]nica|jorge|diego|marisol|ang[eé]lica|carlos|francisca|soledad|helena|elvira|pablo|alvaro|laura|dalia|jimena|lorenzo|renata|isabela|mia|sofia|ximena)/i;
   function puntuar(v) {
@@ -89,43 +91,122 @@
     if (prefs.motor === 'sistema') return 'sistema';
     return (VOZ_SERVIDOR && VOZ_SERVIDOR.disponible) ? 'servidor' : 'sistema';
   }
-  function hablarSistema(texto) {
-    if (!('speechSynthesis' in window)) return false;
-    speechSynthesis.cancel();
-    var u = new SpeechSynthesisUtterance(texto);
-    if (vozSistema) { u.voice = vozSistema; u.lang = vozSistema.lang; } else { u.lang = 'es-CO'; }
-    u.rate = velocidad() * 0.95;
-    u.onerror = function (ev) { if (ev.error === 'not-allowed') pendiente = texto; };
-    speechSynthesis.speak(u);
-    return true;
+  function marcarHablando(v) {
+    if (hablando === v) return;
+    hablando = v;
+    try { window.dispatchEvent(new CustomEvent('sacks:voz', { detail: { hablando: v } })); } catch (e) {}
   }
-  function hablarServidor(texto) {
-    if (!audio) { audio = new Audio(); audio.preload = 'auto'; }
-    try { audio.pause(); } catch (e) {}
-    var voz = prefs.vozId || (VOZ_SERVIDOR && VOZ_SERVIDOR.por_defecto) || 'mx';
-    audio.src = '/api/voz?voz=' + encodeURIComponent(voz) + '&velocidad=' + velocidad().toFixed(2) + '&texto=' + encodeURIComponent(texto);
-    var p = audio.play();
-    if (p && p.catch) p.catch(function (err) {
-      if (err && err.name === 'NotAllowedError') pendiente = texto;   // autoplay bloqueado: se reintenta con el próximo gesto
-      else hablarSistema(texto);                                        // servidor caído: respaldo del sistema
+  function terminar(mi) { if (mi === turno) marcarHablando(false); }
+  // Textos largos (una pantalla completa) se leen por oraciones de hasta ~220 caracteres: la primera suena enseguida,
+  // la siguiente se prepara mientras tanto y la voz del sistema no corta las frases largas.
+  function trocear(texto) {
+    var limpio = String(texto || '').replace(/\s+/g, ' ').trim();
+    if (!limpio) return [];
+    var partes = [], actual = '';
+    limpio.split(/(?<=[.!?…:;])\s+/).forEach(function (o) {
+      while (o.length > 220) {
+        var corte = o.lastIndexOf(', ', 220);
+        if (corte < 80) corte = o.lastIndexOf(' ', 220);
+        if (corte < 40) corte = 220;
+        if (actual) { partes.push(actual); actual = ''; }
+        partes.push(o.slice(0, corte + 1).trim()); o = o.slice(corte + 1).trim();
+      }
+      if (actual && (actual + ' ' + o).length > 220) { partes.push(actual); actual = o; }
+      else actual = actual ? actual + ' ' + o : o;
     });
-    return true;
+    if (actual) partes.push(actual);
+    return partes;
   }
-  window.sacksHablar = function (texto, forzar) {
+  function hablarSistema(partes, mi) {
+    if (!('speechSynthesis' in window)) { terminar(mi); return; }
+    var bloqueado = false;
+    partes.forEach(function (t, k) {
+      var u = new SpeechSynthesisUtterance(t);
+      if (vozSistema) { u.voice = vozSistema; u.lang = vozSistema.lang; } else { u.lang = 'es-CO'; }
+      u.rate = velocidad() * 0.95;
+      u.onend = function () { if (mi === turno && --enSistema <= 0) terminar(mi); };
+      u.onerror = function (ev) {
+        if (mi !== turno) return;
+        if (ev.error === 'not-allowed' && !bloqueado) { bloqueado = true; pendiente = partes.slice(k).join(' '); }
+        if (--enSistema <= 0) terminar(mi);
+      };
+      enSistema++;
+      speechSynthesis.speak(u);
+    });
+  }
+  function urlVoz(texto) {
+    var voz = prefs.vozId || (VOZ_SERVIDOR && VOZ_SERVIDOR.por_defecto) || 'mx';
+    return '/api/voz?voz=' + encodeURIComponent(voz) + '&velocidad=' + velocidad().toFixed(2) + '&texto=' + encodeURIComponent(texto);
+  }
+  function preparar(texto) {
+    return fetch(urlVoz(texto)).then(function (r) {
+      if (!r.ok) throw new Error('voz ' + r.status);
+      return r.blob();
+    }).then(function (b) { return URL.createObjectURL(b); });
+  }
+  function siguienteServidor(mi) {
+    if (mi !== turno) return;
+    var t = cola.shift();
+    if (t === undefined) { terminar(mi); return; }
+    var lista = (precarga && precarga.texto === t) ? precarga.promesa : preparar(t);
+    precarga = cola.length ? { texto: cola[0], promesa: preparar(cola[0]) } : null;
+    lista.then(function (url) {
+      if (mi !== turno) { URL.revokeObjectURL(url); return; }
+      audio.onended = function () { URL.revokeObjectURL(url); siguienteServidor(mi); };
+      audio.src = url;
+      var p = audio.play();
+      if (p && p.catch) p.catch(function (err) {
+        if (mi !== turno || (err && err.name === 'AbortError')) return;
+        var resto = [t].concat(cola); cola = []; precarga = null;
+        if (err && err.name === 'NotAllowedError') { pendiente = resto.join(' '); terminar(mi); }   // sin gesto previo: se lee con el próximo clic o tecla
+        else hablarSistema(resto, mi);
+      });
+    }).catch(function () {                                                                      // servidor de voz caído: voz del sistema
+      if (mi !== turno) return;
+      var resto = [t].concat(cola); cola = []; precarga = null; hablarSistema(resto, mi);
+    });
+  }
+  // sacksHablar(texto, forzar, encolar): forzar lee aunque la opción esté apagada (botones «Escuchar»);
+  // encolar agrega el texto al final de lo que ya se está leyendo en vez de interrumpirlo.
+  window.sacksHablar = function (texto, forzar, encolar) {
     if (!texto) return false;
     if (!forzar && !prefs.voz) return false;
+    var partes = trocear(texto);
+    if (!partes.length) return false;
+    if (encolar && hablando) {
+      if (motor() === 'servidor' && !enSistema) cola = cola.concat(partes);
+      else hablarSistema(partes, turno);
+      return true;
+    }
     window.sacksCallar();
-    return motor() === 'servidor' ? hablarServidor(texto) : hablarSistema(texto);
+    var mi = turno;
+    marcarHablando(true);
+    if (motor() === 'servidor') {
+      if (!audio) { audio = new Audio(); audio.preload = 'auto'; }
+      cola = partes; siguienteServidor(mi);
+    } else hablarSistema(partes, mi);
+    return true;
   };
   window.sacksCallar = function () {
+    turno++; cola = []; precarga = null; enSistema = 0; pendiente = null;
     if ('speechSynthesis' in window) speechSynthesis.cancel();
-    if (audio) { try { audio.pause(); audio.currentTime = 0; } catch (e) {} }
+    if (audio) { try { audio.onended = null; audio.pause(); audio.removeAttribute('src'); audio.load(); } catch (e) {} }
+    marcarHablando(false);
   };
   window.sacksVozActiva = function () { return !!prefs.voz; };
+  window.sacksVozHablando = function () { return hablando; };
+  window.sacksVozReciente = function () { return Date.now() - reciente < 700; };
+  // Lectura bloqueada por el navegador (aún no hubo clic ni tecla en la página): se lee con el primer gesto,
+  // salvo que ese gesto sea Esc o el propio botón «Escuchar».
   ['pointerdown', 'keydown'].forEach(function (t) {
-    document.addEventListener(t, function () { if (pendiente) { var s = pendiente; pendiente = null; window.sacksHablar(s, true); } }, true);
+    document.addEventListener(t, function (e) {
+      if (!pendiente) return;
+      var s = pendiente; pendiente = null;
+      if (e.key === 'Escape' || (e.target && e.target.closest && e.target.closest('[data-voz-control]'))) return;
+      reciente = Date.now(); window.sacksHablar(s, true);
+    }, true);
   });
-  fetch('/api/estado').then(function (r) { return r.json(); }).then(function (s) { VOZ_SERVIDOR = s.voz || null; pintarVoces(); }).catch(function () {});
+  if (!VOZ_SERVIDOR) fetch('/api/estado').then(function (r) { return r.json(); }).then(function (s) { VOZ_SERVIDOR = s.voz || null; pintarVoces(); }).catch(function () {});
 
   // ── panel ──
   var panel, boton, selectVoz, selectMotor;
@@ -186,7 +267,11 @@
       var chk = el('input', { type: 'checkbox', id: 'a11y-' + t.id, role: 'switch' }); chk.checked = !!prefs[t.id]; chk.setAttribute('aria-checked', chk.checked);
       chk.addEventListener('change', function () {
         prefs[t.id] = chk.checked; chk.setAttribute('aria-checked', chk.checked); aplicar();
-        if (t.id === 'voz') { if (chk.checked) window.sacksHablar('Lectura en voz alta activada.', true); else window.sacksCallar(); }
+        if (t.id === 'voz') {
+          if (!chk.checked) { window.sacksCallar(); return; }
+          window.sacksHablar('Lectura en voz alta activada. Pulsa Escape para detenerla.', true);
+          if (window.sacksLeerPagina) window.sacksHablar(window.sacksLeerPagina(), true, true);
+        }
       });
       lista.appendChild(el('label', { class: 'a11y-opcion', for: chk.id }, [chk, el('span', { html: '<strong>' + t.nombre + '</strong><small>' + t.ayuda + '</small>' })]));
     });
@@ -213,7 +298,7 @@
 
     var reset = el('button', { type: 'button', class: 'chip a11y-reset', text: 'Restablecer todo' });
     reset.addEventListener('click', function () { prefs = {}; aplicar(); window.sacksCallar(); construir(); abrir(true); });
-    panel.appendChild(el('div', { class: 'a11y-pie' }, [reset, el('small', { text: 'Atajo: Alt + A' })]));
+    panel.appendChild(el('div', { class: 'a11y-pie' }, [reset, el('small', { text: 'Alt + A abre este panel · Alt + L escucha la pantalla · Esc detiene la voz' })]));
     cabecera.querySelector('.a11y-cerrar').addEventListener('click', function () { abrir(false); boton.focus(); });
   }
   function abrir(v) {
@@ -226,7 +311,7 @@
     if (!boton) return;
     boton.addEventListener('click', function () { abrir(panel.hidden); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !panel.hidden) { abrir(false); boton.focus(); }
+      if (e.key === 'Escape') { window.sacksCallar(); if (!panel.hidden) { abrir(false); boton.focus(); } }
       if (e.altKey && e.code === 'KeyA' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); abrir(panel.hidden); }
     });
     document.addEventListener('click', function (e) { if (!panel.hidden && !e.target.closest('#panel-a11y') && !e.target.closest('#btn-a11y')) abrir(false); });

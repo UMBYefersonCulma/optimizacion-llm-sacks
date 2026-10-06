@@ -117,7 +117,7 @@ def leer_csv(archivo) -> pd.DataFrame:
         except UnicodeDecodeError:
             continue
     if texto is None:
-        raise DatosInvalidos("No se pudo leer el archivo: codificación desconocida.")
+        raise DatosInvalidos("No se pudo leer el archivo porque su codificación es desconocida. Guárdalo como CSV UTF-8.")
 
     try:
         df = pd.read_csv(io.StringIO(texto), sep=None, engine="python")
@@ -125,7 +125,7 @@ def leer_csv(archivo) -> pd.DataFrame:
         try:
             df = pd.read_csv(io.StringIO(texto))
         except Exception as e:  # noqa: BLE001
-            raise DatosInvalidos(f"No se pudo interpretar «{archivo.filename}» como CSV: {e}") from e
+            raise DatosInvalidos(f"No se pudo interpretar «{archivo.filename}» como CSV. Revisa que sea texto separado por comas.") from e
 
     if df.empty or len(df.columns) == 0:
         raise DatosInvalidos(f"El archivo «{archivo.filename}» no contiene filas de datos.")
@@ -198,7 +198,7 @@ def preparar_filas(df: pd.DataFrame, nombre_archivo: str) -> list[dict]:
     if not tiene_numero and "Frase" not in df.columns:
         raise DatosInvalidos(
             f"El archivo «{nombre_archivo}» no tiene las columnas esperadas. "
-            f"Columnas encontradas: {', '.join(map(str, df.columns))}. "
+            f"Las columnas encontradas son {', '.join(map(str, df.columns))}. "
             "Se espera «Numero, Respuesta» (número del enunciado de Sacks y lo que escribió la persona) "
             "o «Frase» con la frase completa. Edad y Genero son opcionales."
         )
@@ -328,7 +328,13 @@ def _rol_actual() -> str:
 @app.context_processor
 def _globales():
     return {"CATEGORIAS": CATEGORIAS, "MODELO": sacks_llm.MODELO, "MODOS": MODOS, "ROL": _rol_actual(),
-            "AUTORIZACION_VERSION": AUTORIZACION_VERSION}
+            "AUTORIZACION_VERSION": AUTORIZACION_VERSION, "VOZ": _estado_voz()}
+
+
+def _estado_voz() -> dict:
+    """Voces locales disponibles; va en cada página para que la lectura en voz alta empiece sin esperar a /api/estado."""
+    return {"disponible": sacks_tts.disponible(), "voces": sacks_tts.voces_disponibles(),
+            "por_defecto": sacks_tts.VOZ_POR_DEFECTO}
 
 
 # ───────────────────────── 1. aplicar el test (3 pasos) ───────────────────────── #
@@ -478,7 +484,7 @@ def finalizar_test(job_id):
     if job["estado"] == "respondiendo":
         faltan = [n for n in job["numeros"] if not job["respuestas"].get(n)]
         if faltan:
-            raise DatosInvalidos("Faltan por responder las frases: " + ", ".join(map(str, faltan)) +
+            raise DatosInvalidos("Faltan por responder las frases " + ", ".join(map(str, faltan)) +
                                  ". Todas las frases del test deben completarse.")
         job["finalizado"] = True
         job["estado"] = "procesando"
@@ -614,10 +620,10 @@ def comparar_resultados():
     col_ia = columna_categoria(ia, "Categoria_IA")
     if col_h is None:
         raise DatosInvalidos(f"El archivo humano «{nombre_humano}» no tiene una columna de categorías "
-                             f"(Categoria / Categoria_Humano). Columnas: {', '.join(map(str, humano.columns))}.")
+                             f"(Categoria o Categoria_Humano). Sus columnas son {', '.join(map(str, humano.columns))}.")
     if col_ia is None:
         raise DatosInvalidos(f"El archivo de la IA «{nombre_ia}» no tiene una columna de categorías "
-                             f"(Categoria / Categoria_IA). Columnas: {', '.join(map(str, ia.columns))}.")
+                             f"(Categoria o Categoria_IA). Sus columnas son {', '.join(map(str, ia.columns))}.")
 
     h = _tabla_comparacion(humano, col_h, None).rename(columns={"Categoria": "Categoria_Humano"})
     i = _tabla_comparacion(ia, col_ia, "Razon" if "Razon" in ia.columns else None) \
@@ -656,13 +662,13 @@ def comparar_resultados():
                                  "con «Procesar CSV» y evaluacion_humana_demo.csv).")
         if sin_par:
             avisos.append(f"{sin_par} respuesta(s) del archivo humano no aparecen con el mismo texto en el archivo "
-                          "de la IA; se excluyeron del cálculo.")
+                          "de la IA, así que se excluyeron del cálculo.")
             comparado = comparado[comparado["Categoria_IA"].notna()].reset_index(drop=True)
     else:
         modo = "por posición"
         if len(h) != len(i):
-            avisos.append(f"Los archivos tienen distinto número de filas ({len(h)} humano vs {len(i)} IA); "
-                          "se compararon por posición hasta donde coinciden.")
+            avisos.append(f"Los archivos tienen distinto número de filas ({len(h)} del psicólogo y {len(i)} de la IA), "
+                          "así que se compararon por posición hasta donde coinciden.")
         n = min(len(h), len(i))
         comparado = pd.concat([h.iloc[:n].reset_index(drop=True),
                                i.iloc[:n].reset_index(drop=True)[["Categoria_IA", "Razon_IA"]]], axis=1)
@@ -739,8 +745,7 @@ def ejemplos(nombre):
 @app.route("/api/estado")
 def api_estado():
     estado = sacks_llm.estado_ollama()
-    estado["voz"] = {"disponible": sacks_tts.disponible(), "voces": sacks_tts.voces_disponibles(),
-                     "por_defecto": sacks_tts.VOZ_POR_DEFECTO}
+    estado["voz"] = _estado_voz()
     return jsonify(estado)
 
 
@@ -795,7 +800,7 @@ def _error_general(e):
         return e
     traceback.print_exc()
     return render_template("error.html", titulo="Ocurrió un error inesperado",
-                           mensaje=f"{e.__class__.__name__}: {e}", codigo=500), 500
+                           mensaje=f"{e} ({e.__class__.__name__}).", codigo=500), 500
 
 
 # ───────────────────────── arranque ───────────────────────── #

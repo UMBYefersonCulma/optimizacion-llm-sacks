@@ -3,8 +3,8 @@
 {% block titulo %}Respuestas{% endblock %}
 {% block contenido %}
 <section class="tarjeta wizard">
-  <h1 class="centro">Completa las frases</h1>
-  <p class="intro">Termina cada frase con <strong>lo primero que se te ocurra</strong> y presiona <kbd>Enter</kbd> o «Siguiente».
+  <h1 class="centro" data-leer>Completa las frases</h1>
+  <p class="intro" data-leer data-leer-texto="Termina cada frase con lo primero que se te ocurra y pulsa Enter o el botón Siguiente. No hay respuestas buenas ni malas. Si tienes una duda, usa el botón de ayuda, el del signo de interrogación.">Termina cada frase con <strong>lo primero que se te ocurra</strong> y presiona <kbd>Enter</kbd> o «Siguiente».
      No hay respuestas buenas ni malas.</p>
   <div class="wizard-cabecera">
   {{ pasos(3) }}
@@ -18,7 +18,7 @@
 
 <section class="tarjeta wizard-form pregunta-card" id="pregunta-card">
   <div class="pregunta-inline" aria-live="polite" aria-atomic="true">
-    <label for="respuesta" class="pregunta-enunciado" id="enunciado"></label>
+    <label for="respuesta" class="pregunta-enunciado" id="enunciado" data-leer></label>
     <textarea id="respuesta" class="respuesta-inline" rows="1" maxlength="300" placeholder="…" autocomplete="off" aria-describedby="ayuda-respuesta"></textarea>
     <span id="ayuda-respuesta" class="visualmente-oculto">Termina la frase y pulsa Enter o el botón Siguiente.</span>
   </div>
@@ -33,7 +33,7 @@
 </section>
 
 <button type="button" class="btn-ayuda" id="btn-ayuda" aria-haspopup="dialog" aria-controls="dialogo-ayuda" title="Preguntas frecuentes">
-  <span aria-hidden="true">?</span><span class="visualmente-oculto">Ayuda: preguntas frecuentes sobre el test</span>
+  <span aria-hidden="true">?</span><span class="visualmente-oculto">Ayuda, preguntas frecuentes sobre el test</span>
 </button>
 <dialog class="dialogo-ayuda" id="dialogo-ayuda" aria-labelledby="t-ayuda">
   <div class="dialogo-cabecera">
@@ -45,7 +45,7 @@
     <div><dt>¿Cómo respondo?</dt>
       <dd>Escribe cómo termina la frase, con lo primero que se te ocurra, y presiona <kbd>Enter</kbd> o «Siguiente». Unas pocas palabras bastan.</dd></div>
     <div><dt>¿Hay respuestas correctas?</dt>
-      <dd>No. No hay respuestas buenas ni malas; lo importante es que sea lo que de verdad piensas o sientes.</dd></div>
+      <dd>No. No hay respuestas buenas ni malas, lo importante es que sea lo que de verdad piensas o sientes.</dd></div>
     <div><dt>¿Qué hago si una frase no aplica a mi vida?</dt>
       <dd>Escríbelo tal cual, por ejemplo «no lo conocí» o «no tengo hermanos». Todas las frases deben tener respuesta.</dd></div>
     <div><dt>¿Puedo cambiar una respuesta?</dt>
@@ -53,7 +53,7 @@
     <div><dt>¿Qué pasa con lo que escribo?</dt>
       <dd>Se guarda solo en este equipo y únicamente lo verá el psicólogo o la psicóloga, como autorizaste al inicio.</dd></div>
     <div><dt>¿Puedo detenerme?</dt>
-      <dd>Sí. Participar es voluntario; si quieres parar, avísale al psicólogo o a la psicóloga.</dd></div>
+      <dd>Sí. Participar es voluntario. Si quieres parar, avísale al psicólogo o a la psicóloga.</dd></div>
     <div><dt>Tengo otra duda</dt>
       <dd>Pregúntale al psicólogo o a la psicóloga que te está acompañando.</dd></div>
   </dl>
@@ -68,7 +68,7 @@
 <script>
   var JOB = "{{ job.id }}";
   var PREGUNTAS = {{ preguntas|tojson }};
-  var idx = 0, guardando = false, analizadas = 0, respondidas = 0;
+  var idx = 0, guardando = false, analizadas = 0, respondidas = 0, primeraVez = true;
   var $enun = document.getElementById('enunciado'), $resp = document.getElementById('respuesta');
   var $num = document.getElementById('num-actual'), $sig = document.getElementById('btn-siguiente');
   var $ant = document.getElementById('btn-anterior'), $menu = document.getElementById('menu-preguntas');
@@ -77,6 +77,12 @@
   function primeraSinResponder() {
     for (var i = 0; i < PREGUNTAS.length; i++) if (!PREGUNTAS[i].respuesta) return i;
     return PREGUNTAS.length - 1;
+  }
+  // Lo que se escucha de cada frase; la primera la lee la lectura de la pantalla (lectura.js) junto con las instrucciones.
+  function textoFrase() {
+    var p = PREGUNTAS[idx], ultima = idx === PREGUNTAS.length - 1 && PREGUNTAS.length > 1;
+    return 'Frase ' + (idx + 1) + ' de ' + PREGUNTAS.length + (ultima ? ', la última' : '') + ': ' + p.enunciado + '…' +
+      (p.respuesta ? ' Tu respuesta: ' + p.respuesta + '.' : '');
   }
   function autoGrow() { $resp.style.height = 'auto'; $resp.style.height = ($resp.scrollHeight + 2) + 'px'; }
   function mostrar(i) {
@@ -92,7 +98,9 @@
     $err.hidden = true;
     autoGrow(); $resp.focus();
     pintarMenu();
-    if (window.sacksHablar) window.sacksHablar('Frase ' + (idx + 1) + ' de ' + PREGUNTAS.length + '. ' + p.enunciado + '…');
+    $enun.setAttribute('data-leer-texto', textoFrase());
+    if (!primeraVez && window.sacksHablar) window.sacksHablar(textoFrase());
+    primeraVez = false;
   }
   var $btnMenu = document.getElementById('btn-menu'), $lista = $menu.querySelector('.pregunta-lista');
   function pintarMenu() {
@@ -119,7 +127,7 @@
     if (devolverFoco) $btnMenu.focus();
   }
   function actualizarEstado() {
-    $estado.textContent = respondidas ? ('Frases ya analizadas: ' + analizadas + ' de ' + respondidas) : '';
+    $estado.textContent = respondidas ? (analizadas + ' de ' + respondidas + ' frases ya analizadas') : '';
   }
   function guardar() {
     var p = PREGUNTAS[idx], texto = $resp.value.trim();
@@ -141,7 +149,7 @@
       if (!ok) return;
       if (idx === PREGUNTAS.length - 1) {
         var faltan = PREGUNTAS.map(function (p, i) { return p.respuesta ? null : i + 1; }).filter(Boolean);
-        if (faltan.length) { $err.textContent = 'Faltan por responder: ' + faltan.join(', ') + '.'; $err.hidden = false; mostrar(faltan[0] - 1); return; }
+        if (faltan.length) { $err.textContent = (faltan.length === 1 ? 'Falta por responder la frase ' + faltan[0] : 'Faltan por responder las frases ' + faltan.slice(0, -1).join(', ') + ' y ' + faltan[faltan.length - 1]) + '.'; $err.hidden = false; mostrar(faltan[0] - 1); return; }
         document.getElementById('form-finalizar').requestSubmit();
       } else { mostrar(idx + 1); }
     });
@@ -166,8 +174,8 @@
     else if (e.key === 'End') { e.preventDefault(); items[items.length - 1].focus(); }
     else if (e.key === 'Tab') { cerrarMenu(false); }
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (!$menu.hidden) cerrarMenu(true); if (window.sacksCallar) window.sacksCallar(); } });
-  document.getElementById('btn-escuchar').addEventListener('click', function () { if (window.sacksHablar) window.sacksHablar(PREGUNTAS[idx].enunciado + '…', true); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$menu.hidden) cerrarMenu(true); });
+  document.getElementById('btn-escuchar').addEventListener('click', function () { if (window.sacksHablar) window.sacksHablar(textoFrase(), true); });
   document.getElementById('btn-reiniciar').addEventListener('click', function (e) {
     if (respondidas && !confirm('Si empiezas de nuevo se borran las ' + respondidas + ' respuestas que ya escribiste. ¿Quieres continuar?')) e.preventDefault();
   });
@@ -186,7 +194,10 @@
     b.addEventListener('click', function () { if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', ''); if (window.sacksPaginar) window.sacksPaginar(); });
     document.getElementById('cerrar-ayuda').addEventListener('click', cerrar);
     document.getElementById('cerrar-ayuda-2').addEventListener('click', cerrar);
-    d.addEventListener('close', function () { var r = document.getElementById('respuesta'); (r || b).focus(); });
+    d.addEventListener('close', function () {
+      var r = document.getElementById('respuesta'); (r || b).focus();
+      if (window.sacksHablar) window.sacksHablar('Seguimos. ' + textoFrase());   // al volver de la ayuda se repite la frase
+    });
     d.addEventListener('click', function (e) { if (e.target === d) cerrar(); });
   })();
 </script>

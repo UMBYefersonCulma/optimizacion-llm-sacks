@@ -197,7 +197,8 @@ def pulir_razon(razon: str, categoria: str = "") -> str:
         razon = re.sub(rf"\b{en}\b", es, razon, flags=re.IGNORECASE)
     if len(_INGLES_FUNCION.findall(razon)) >= 3 and categoria:
         return f"La respuesta expresa una carga emocional {categoria.lower()} frente al enunciado."
-    return razon
+    # En la app no se usan «;» ni «:» en el texto; si el modelo los pone, quedan como coma.
+    return re.sub(r"\s*[;:]\s+", ", ", razon)
 
 
 # ───────────────────────── acceso a Ollama ───────────────────────── #
@@ -258,9 +259,9 @@ def _peticion_modelo(mensaje: str, timeout: float) -> tuple[str, str]:
 def _verificar_respuesta(r) -> None:
     if r.status_code == 404:
         raise LLMError(f"El modelo '{MODELO}' no está instalado en Ollama. "
-                       f"Ejecuta: ollama create {MODELO} -f Modelfile")
+                       f"Para instalarlo, en la Terminal ejecuta ollama create {MODELO} -f Modelfile")
     if r.status_code != 200:
-        raise LLMError(f"Ollama respondió {r.status_code}: {r.text[:300]}")
+        raise LLMError(f"Ollama respondió con el código {r.status_code}. {r.text[:300]}")
 
 
 def _registrar_log(registro: dict) -> None:
@@ -313,8 +314,8 @@ def clasificar(frase: str, edad="", genero="", timeout: float | None = None,
         try:
             contenido, thinking = _peticion_modelo(mensaje, timeout or TIMEOUT_SEGUNDOS)
         except requests.exceptions.ConnectionError as e:
-            raise LLMError("No se pudo conectar con Ollama en "
-                           f"{OLLAMA_BASE_URL}. ¿Está abierta la aplicación Ollama? ({e.__class__.__name__})") from e
+            raise LLMError("No se pudo conectar con Ollama en este equipo. "
+                           f"¿Está abierta la aplicación Ollama? ({e.__class__.__name__})") from e
         except requests.exceptions.Timeout as e:
             raise LLMError(f"El modelo tardó más de {timeout or TIMEOUT_SEGUNDOS:.0f} s en responder.") from e
     duracion = time.time() - inicio
@@ -332,7 +333,7 @@ def clasificar(frase: str, edad="", genero="", timeout: float | None = None,
         enunciado = frase
     parsed["razon"] = limpiar_marco(parsed["razon"], enunciado, parsed["categoria"])
     if not parsed["categoria"]:
-        raise LLMError("El modelo respondió en un formato inesperado: " + (limpiar_salida(contenido)[:200] or "(vacío)"))
+        raise LLMError("El modelo respondió en un formato inesperado («" + (limpiar_salida(contenido)[:200] or "vacío") + "»).")
 
     resultado = Clasificacion(
         frase=frase,

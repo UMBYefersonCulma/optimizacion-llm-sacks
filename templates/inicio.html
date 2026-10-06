@@ -4,11 +4,11 @@
 {% block contenido %}
 <section class="tarjeta portada bienvenida">
   <div class="portada-texto">
-    <p class="sobretitulo">Test de Frases Incompletas de Sacks</p>
-    <h1>Termina la frase.<br>Lo primero que se te ocurra.</h1>
-    <p class="intro">Vas a completar {{ modo.total }} frases cortas. No hay respuestas buenas ni malas y no se pide tu nombre.</p>
+    <p class="sobretitulo" data-leer>Test de Frases Incompletas de Sacks</p>
+    <h1 data-leer>Termina la frase.<br>Lo primero que se te ocurra.</h1>
+    <p class="intro" data-leer>Vas a completar {{ modo.total }} frases cortas. No hay respuestas buenas ni malas y no se pide tu nombre.</p>
     {{ pasos(0) }}
-    <a class="boton principal" href="{{ url_for('nuevo_test') }}">Empezar →</a>
+    <a class="boton principal" href="{{ url_for('nuevo_test') }}" data-leer data-leer-texto="Cuando quieras, pulsa el botón Empezar.">Empezar →</a>
   </div>
   <div class="portada-foto" role="img" aria-label="Un cuaderno abierto con un bolígrafo naranja bajo la luz cálida de una ventana">
     <p class="portada-cita">«Siento que mi padre raras veces me…»<small>Frase 1 de 60</small></p>

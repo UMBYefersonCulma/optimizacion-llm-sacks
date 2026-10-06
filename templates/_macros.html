@@ -28,7 +28,9 @@
 {%- endmacro %}
 
 {% macro pasos(activo) -%}
-  <ol class="pasos" aria-label="Pasos para responder el test">
+  {%- set nombres = ['Autorización', 'Datos', 'Test', 'Resultados'] -%}
+  <ol class="pasos" aria-label="Pasos para responder el test" data-leer
+      data-leer-texto="{% if activo %}Paso {{ activo }} de 4: {{ nombres[activo - 1]|lower }}.{% else %}Son cuatro pasos: autorización, datos, test y resultados.{% endif %}">
     {% for n, nombre in [(1, 'Autorización'), (2, 'Datos'), (3, 'Test'), (4, 'Resultados')] %}
     <li class="paso {{ 'activo' if activo == n }}{{ ' hecho' if activo > n }}" {% if activo == n %}aria-current="step"{% endif %}>
       <span class="paso-num"><span>{{ n }}</span></span> <span class="paso-nombre">{{ nombre }}</span>{% if activo > n %}<span class="visualmente-oculto"> (completado)</span>{% endif %}
@@ -45,7 +47,7 @@
 {% macro proceso() -%}
   <ol class="proceso" aria-label="Así será el proceso">
     <li><span class="proceso-num">1</span><strong>Autoriza tus datos</strong><span>Lees qué se hace con tus respuestas y das tu autorización.</span></li>
-    <li><span class="proceso-num">2</span><strong>Tus datos</strong><span>Solo tu edad y tu género; nunca tu nombre.</span></li>
+    <li><span class="proceso-num">2</span><strong>Tus datos</strong><span>Solo tu edad y tu género, nunca tu nombre.</span></li>
     <li><span class="proceso-num">3</span><strong>El test</strong><span>Completas las frases una por una, con lo primero que se te ocurra.</span></li>
     <li><span class="proceso-num">4</span><strong>Resultados</strong><span>Al terminar se genera el informe para el psicólogo o la psicóloga.</span></li>
   </ol>

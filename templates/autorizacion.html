@@ -3,24 +3,25 @@
 {% block titulo %}Autorización de datos{% endblock %}
 {% block contenido %}
 <section class="tarjeta flujo autorizacion">
-  <h1>Tus datos</h1>
-  <p class="intro"><strong>Lo que tienes que hacer:</strong> leer este resumen y, si estás de acuerdo, autorizar el uso de tus respuestas.</p>
+  <h1 data-leer>Tus datos</h1>
+  <p class="intro" data-leer><strong>Lo que tienes que hacer</strong> es leer este resumen y, si estás de acuerdo, autorizar el uso de tus respuestas.</p>
   {{ pasos(1) }}
 
-  <ul class="resumen-datos">
+  <ul class="resumen-datos" data-leer>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
-        Solo se guardan tu edad, tu género y tus respuestas; nunca tu nombre.</li>
+        Solo se guardan tu edad, tu género y tus respuestas, nunca tu nombre.</li>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        Únicamente las lee el psicólogo o la psicóloga; no es un diagnóstico.</li>
+        Únicamente las lee el psicólogo o la psicóloga. No es un diagnóstico.</li>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        Todo queda en este equipo: no se publica ni se comparte con nadie.</li>
+        Todo queda en este equipo. No se publica ni se comparte con nadie.</li>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-        Es voluntario: puedes parar cuando quieras o pedir que se borren tus respuestas.</li>
+        Es voluntario. Puedes parar cuando quieras o pedir que se borren tus respuestas.</li>
   </ul>
-  <p class="ayuda">Si tienes menos de 18 años, tu acudiente debe autorizar contigo.
+  <p class="ayuda" data-leer data-leer-texto="Si tienes menos de 18 años, tu acudiente debe autorizar contigo. Para escuchar el texto completo, pulsa Leer el detalle completo.">Si tienes menos de 18 años, tu acudiente debe autorizar contigo.
     <button type="button" class="enlace-boton" id="btn-detalle">Leer el detalle completo</button></p>
 
-  <form method="POST" action="{{ url_for('autorizar_test') }}" class="acuerdo-form">
+  <form method="POST" action="{{ url_for('autorizar_test') }}" class="acuerdo-form" data-leer
+        data-leer-texto="Para continuar, marca la casilla Leí la información y autorizo el uso de mis datos para este fin. Luego pulsa Autorizo y continúo. Si no estás de acuerdo, pulsa No autorizo.">
     <div class="acuerdo-fila">
       <label class="casilla"><input type="checkbox" name="acepto" value="si" required>
         <span>Leí la información y autorizo el uso de mis datos para este fin.</span></label>
@@ -40,7 +41,7 @@
       <dd>Tu edad, tu género y las frases que completes. No se pide tu nombre, tu documento ni tus datos de contacto.</dd></div>
     <div><dt>Para qué se usan</dt>
       <dd>Solo para que el psicólogo o la psicóloga que te aplica el test lea e interprete tus respuestas. Una inteligencia
-          artificial que corre en este equipo las organiza como apoyo; no es un diagnóstico.</dd></div>
+          artificial que corre en este equipo las organiza como apoyo, pero no es un diagnóstico.</dd></div>
     <div><dt>Quién los ve y dónde quedan</dt>
       <dd>Todo se procesa y se guarda en este equipo, sin internet. Solo el profesional ve el informe. Tus datos no se venden,
           no se publican ni se comparten con terceros.</dd></div>

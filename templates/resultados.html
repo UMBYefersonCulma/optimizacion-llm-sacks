@@ -3,13 +3,17 @@
 {% block titulo %}Informe{% endblock %}
 {% block contenido %}
 {% set n_casos = filas|selectattr('Fuente', 'equalto', 'casos')|list|length %}
+{% set nombres_voz = {'POSITIVA': 'positiva', 'NEGATIVA': 'negativa', 'AMBIGUA': 'ambigua'} %}
+{% set partes_voz = [] %}
+{% for d in dist if d.n %}{% set _ = partes_voz.append(d.n ~ ' ' ~ (nombres_voz[d.categoria] ~ ('s' if d.n != 1 else '') if d.categoria in nombres_voz else 'con error')) %}{% endfor %}
+{% set resumen_voz = 'Distribución emocional de las ' ~ job.hechas ~ ' frases analizadas, ' ~ partes_voz|join(', ') ~ '.' %}
 <section class="tarjeta informe">
   <p class="miga"><a href="{{ url_for('psicologo') }}#informes">Área del psicólogo</a> › Informe</p>
   <div class="encabezado-resultado">
     <div>
-      <h2>{% if job.tipo == 'test' %}Informe del Test de Sacks{% else %}Informe de «{{ job.nombre_entrada }}»{% endif %}</h2>
-      <p class="meta">
-        {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
+      <h2 data-leer>{% if job.tipo == 'test' %}Informe del Test de Sacks{% else %}Informe de «{{ job.nombre_entrada }}»{% endif %}</h2>
+      <p class="meta" data-leer>
+        {% if job.edad or job.genero %}Edad <strong>{{ job.edad or '—' }}</strong> · Género <strong>{{ job.genero or '—' }}</strong> · {% endif %}
         {% if job.tipo == 'test' %}Versión {{ MODOS[job.modo].nombre }} · {% endif %}
         {{ job.hechas }} frases analizadas · {{ tiempo_modelo }} s de análisis ({{ promedio }} s por frase)
         {% if job.errores %}· <span class="texto-rojo">{{ job.errores }} con error</span>{% endif %}
@@ -24,10 +28,10 @@
     </div>
   </div>
 
-  <div class="alerta amarillo compacta" role="note"><strong>Uso profesional.</strong> Este informe es un apoyo para la lectura del
-    psicólogo o la psicóloga; <strong>no es un diagnóstico</strong>.</div>
+  <div class="alerta amarillo compacta" role="note" data-leer><strong>Uso profesional.</strong> Este informe es un apoyo para la lectura del
+    psicólogo o la psicóloga. <strong>No es un diagnóstico</strong>.</div>
 
-  <div class="pestanas" role="tablist" aria-label="Secciones del informe">
+  <div class="pestanas" role="tablist" aria-label="Secciones del informe" data-leer>
     <button type="button" role="tab" id="tab-resumen" aria-controls="panel-resumen">Resumen</button>
     <button type="button" role="tab" id="tab-detalle" aria-controls="panel-detalle">Detalle por frase ({{ filas|length }})</button>
     {% if areas %}<button type="button" role="tab" id="tab-areas" aria-controls="panel-areas">Por área del test</button>{% endif %}
@@ -36,7 +40,7 @@
   <div class="panel-pestana" role="tabpanel" id="panel-resumen" aria-labelledby="tab-resumen" tabindex="0">
     <div class="resumen-grid">
       <div>
-        <h3>Distribución emocional <button type="button" class="chip btn-escuchar" id="btn-escuchar-resumen" aria-label="Escuchar el resumen en voz alta">🔊 Escuchar resumen</button></h3>
+        <h3 id="resumen-voz" data-leer data-leer-texto="{{ resumen_voz }}">Distribución emocional <button type="button" class="chip btn-escuchar" id="btn-escuchar-resumen" aria-label="Escuchar el resumen en voz alta">🔊 Escuchar resumen</button></h3>
         {{ barras(dist) }}
       </div>
       <div class="leyenda-cat">
@@ -44,13 +48,13 @@
         <p><span class="badge badge-positiva">POSITIVA</span> expresa bienestar o una actitud favorable.</p>
         <p><span class="badge badge-negativa">NEGATIVA</span> expresa malestar, conflicto o rechazo.</p>
         <p><span class="badge badge-ambigua">AMBIGUA</span> no se puede decidir con la frase sola.</p>
-        <p><span class="fuente">psicólogos</span> {{ n_casos }} de {{ filas|length }} respuestas coinciden con casos ya clasificados por los psicólogos del proyecto; el resto las clasificó el modelo.</p>
+        <p><span class="fuente">psicólogos</span> {{ n_casos }} de {{ filas|length }} respuestas coinciden con casos ya clasificados por los psicólogos del proyecto y el resto las clasificó el modelo.</p>
       </div>
     </div>
   </div>
 
   <div class="panel-pestana" role="tabpanel" id="panel-detalle" aria-labelledby="tab-detalle" tabindex="0" hidden>
-    <div class="paginable" data-paginar="Páginas del detalle por frase">
+    <div class="paginable" data-paginar="Páginas del detalle por frase" data-leer data-leer-texto="Haz clic en una fila para escuchar la frase, su categoría y la razón.">
       <table class="tabla compacta">
         <thead><tr><th>#</th><th>Frase completada</th><th class="col-opc">Área</th><th>Categoría</th><th class="col-opc">Razón</th><th class="col-opc">Tiempo</th></tr></thead>
         <tbody>
@@ -72,7 +76,7 @@
   {% if areas %}
   <div class="panel-pestana" role="tabpanel" id="panel-areas" aria-labelledby="tab-areas" tabindex="0" hidden>
     {% set vacias = areas|rejectattr('n')|list %}
-    <p class="meta">15 áreas de la hoja de corrección SSCT, 4 enunciados cada una.{% if vacias %} Sin respuestas en esta versión del test: {{ vacias|length }}.{% endif %}</p>
+    <p class="meta" data-leer>15 áreas de la hoja de corrección SSCT, 4 enunciados cada una.{% if vacias %} En esta versión del test hay {{ vacias|length }} áreas sin respuestas.{% endif %}</p>
     <div class="paginable" data-paginar="Páginas de áreas">
       <div class="areas" data-items>
         {% for a in areas if a.n %}
@@ -103,11 +107,11 @@
 {% block scripts %}
 <script>
   (function () {
-    var partes = [{% for d in dist %}{% if d.n %}'{{ d.n }} {{ 'positiva' if d.categoria == 'POSITIVA' else 'negativa' if d.categoria == 'NEGATIVA' else 'ambigua' }}{{ 's' if d.n != 1 }}'{{ ',' if not loop.last }}{% endif %}{% endfor %}];
-    var resumen = 'Resultados: {{ job.hechas }} frases analizadas. ' + partes.join(', ') + '.';
+    // El resumen ya forma parte de la lectura de la pantalla (lectura.js); este botón lo repite solo.
     var b = document.getElementById('btn-escuchar-resumen');
-    if (b) b.addEventListener('click', function () { if (window.sacksHablar) window.sacksHablar(resumen, true); });
-    if (window.sacksVozActiva && window.sacksVozActiva()) setTimeout(function () { window.sacksHablar(resumen); }, 600);
+    if (b) b.addEventListener('click', function () {
+      if (window.sacksHablar) window.sacksHablar(document.getElementById('resumen-voz').getAttribute('data-leer-texto'), true);
+    });
   })();
 </script>
 {% endblock %}

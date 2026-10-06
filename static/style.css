@@ -813,3 +813,27 @@ html.a11y-contraste input[type="submit"] { background: var(--acento); color: #ff
   .psico-espacio .estado-detalle, .psico-form .meta { display: none; }
   .pestanas [role="tab"] { padding: 6px 10px; font-size: .84rem; }
 }
+
+/* ═══ Interruptor Persona | Psicólogo: opciones con aire ═══
+   La regla general «.topbar nav a» (padding 8px 2px y subrayado del activo) pisaba el relleno de cada opción. */
+.topbar nav.vista { gap: 8px; padding: 5px; }
+.topbar nav.vista .vista-opcion { padding: 8px 20px; }
+.topbar nav.vista .vista-opcion::after { content: none; }
+@media (max-width: 600px) {
+  .topbar nav.vista { gap: 4px; padding: 4px; }
+  .topbar nav.vista .vista-opcion { padding: 6px 12px; }
+}
+
+/* ═══ Lectura en voz alta ═══ */
+/* El botón «Escuchar» solo aparece si la persona activa «Leer en voz alta» en el panel de accesibilidad. */
+.btn-voz { display: none; }
+html.a11y-voz .btn-voz { display: inline-flex; }
+.btn-voz.hablando, .btn-voz.hablando:hover { background: var(--acento); color: #fff; }
+@keyframes ondaVoz { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+.btn-voz.hablando .onda { animation: ondaVoz 1.1s ease-in-out infinite; }
+.btn-voz.hablando .onda-2 { animation-delay: .25s; }
+html.a11y-calma .btn-voz.hablando .onda { animation: none; }
+/* Con la voz activa, todo texto se puede escuchar con un clic: se marca al pasar el puntero. */
+html.a11y-voz #contenido :is(h1, h2, h3, p, li:not(.paso, .paso-flecha), dt, dd, legend, .kpi, .alerta):hover,
+html.a11y-voz dialog :is(dt, dd):hover { outline: 2px dashed rgba(175, 78, 30, .45); outline-offset: 3px; border-radius: 4px; }
+html.a11y-voz #contenido tbody tr:hover > * { box-shadow: inset 0 0 0 999px rgba(175, 78, 30, .08); }

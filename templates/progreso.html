@@ -4,18 +4,18 @@
 {% block contenido %}
 <section class="tarjeta progreso informe">
   <p class="miga"><a href="{{ url_for('psicologo') }}#informes">Área del psicólogo</a> › Procesando</p>
-  <h2>{% if job.tipo == 'test' %}Gracias por responder{% else %}Analizando «{{ job.nombre_entrada }}»{% endif %}</h2>
-  <p class="meta">
-    {% if job.edad or job.genero %}Edad: <strong>{{ job.edad or '—' }}</strong> · Género: <strong>{{ job.genero or '—' }}</strong> · {% endif %}
+  <h2 data-leer>{% if job.tipo == 'test' %}Gracias por responder{% else %}Analizando «{{ job.nombre_entrada }}»{% endif %}</h2>
+  <p class="meta" data-leer>
+    {% if job.edad or job.genero %}Edad <strong>{{ job.edad or '—' }}</strong> · Género <strong>{{ job.genero or '—' }}</strong> · {% endif %}
     {{ job.total }} frases.
-    {% if job.tipo == 'test' %}Estamos terminando de analizar tus frases. Los resultados se abrirán solos en un momento; no cierres esta ventana.{% else %}El modelo las procesa una por una; al terminar se abrirán los resultados.{% endif %}
+    {% if job.tipo == 'test' %}Estamos terminando de analizar tus frases. Los resultados se abrirán solos en un momento. No cierres esta ventana.{% else %}El modelo las procesa una por una y al terminar se abrirán los resultados.{% endif %}
   </p>
 
   <div class="progreso-barra" role="progressbar" aria-label="Frases analizadas" aria-valuemin="0" aria-valuemax="{{ job.total }}" aria-valuenow="0" id="barra"><div id="pb" class="progreso-relleno" style="width:0%"></div></div>
   <p class="progreso-texto" aria-live="polite"><strong id="hechas">0</strong> de <strong>{{ job.total }}</strong> frases ·
      <span id="tiempo">calculando tiempo restante…</span></p>
 
-  <div id="error" class="alerta rojo" hidden></div>
+  <div id="error" class="alerta rojo" role="alert" hidden></div>
 
   <h3>Últimas frases analizadas</h3>
   <div class="vivo">

@@ -56,6 +56,10 @@
       <span>Psicólogo</span></a>
   </nav>
   <div class="topbar-derecha">
+    <button type="button" id="btn-escuchar-pagina" class="btn-a11y btn-voz" data-voz-control aria-label="Escuchar esta pantalla en voz alta" title="Escuchar esta pantalla (Alt + L)">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="onda" d="M16.5 8.5a5 5 0 0 1 0 7"/><path class="onda onda-2" d="M19.5 5.5a9 9 0 0 1 0 13"/></svg>
+      <span class="btn-voz-texto">Escuchar</span>
+    </button>
     <div class="a11y-wrap">
       <button type="button" id="btn-a11y" class="btn-a11y" aria-haspopup="dialog" aria-expanded="false" aria-controls="panel-a11y" title="Opciones de accesibilidad (Alt + A)">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="2.2" fill="currentColor"/><path d="M4 8.5c5.3 1.3 10.7 1.3 16 0M12 9.5v5m0 0-3.5 6.5M12 14.5l3.5 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
@@ -79,12 +83,14 @@
   <div class="overlay-caja">
     <div class="spinner" aria-hidden="true"></div>
     <p id="overlay-texto">Analizando…</p>
-    <small id="overlay-sub">Todo se procesa en este computador; suele tardar unos segundos por frase.</small>
+    <small id="overlay-sub">Todo se procesa en este computador y suele tardar unos segundos por frase.</small>
   </div>
 </div>
 
+<script>window.SACKS_VOZ = {{ VOZ|tojson }};</script>
 <script src="{{ url_for('static', filename='a11y.js') }}"></script>
 <script src="{{ url_for('static', filename='pantalla.js') }}"></script>
+<script src="{{ url_for('static', filename='lectura.js') }}"></script>
 <script>
   // Mensajes de validación del navegador en español (por defecto salen en el idioma del navegador).
   (function () {

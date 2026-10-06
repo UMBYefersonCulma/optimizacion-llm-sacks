@@ -5,6 +5,8 @@
   'use strict';
 
   function lista(raiz, sel) { return Array.prototype.slice.call(raiz.querySelectorAll(sel)); }
+  // Cambios hechos por la persona (página o pestaña); lectura.js los anuncia en voz alta.
+  function avisar(nombre, detalle) { try { window.dispatchEvent(new CustomEvent(nombre, { detail: detalle })); } catch (e) { /* navegador antiguo */ } }
 
   // ── Paginación ajustada al alto ──
   function crearNav(caja) {
@@ -15,8 +17,8 @@
       '<span class="pag-estado" aria-live="polite"></span>' +
       '<button type="button" class="chip pag-sig">Siguiente ›</button>';
     caja.appendChild(nav);
-    nav.querySelector('.pag-ant').addEventListener('click', function () { mostrar(caja, (caja._pagina || 0) - 1); });
-    nav.querySelector('.pag-sig').addEventListener('click', function () { mostrar(caja, (caja._pagina || 0) + 1); });
+    nav.querySelector('.pag-ant').addEventListener('click', function () { mostrar(caja, (caja._pagina || 0) - 1); avisar('sacks:pagina', { caja: caja }); });
+    nav.querySelector('.pag-sig').addEventListener('click', function () { mostrar(caja, (caja._pagina || 0) + 1); avisar('sacks:pagina', { caja: caja }); });
     return nav;
   }
 
@@ -68,7 +70,7 @@
   function iniciarPestanas(grupo) {
     var tabs = lista(grupo, '[role="tab"]');
     var clave = 'pestana:' + location.pathname;
-    function activar(tab, enfocar) {
+    function activar(tab, enfocar, usuario) {
       tabs.forEach(function (t) {
         var sel = t === tab;
         t.setAttribute('aria-selected', sel ? 'true' : 'false');
@@ -82,6 +84,7 @@
       try { sessionStorage.setItem(clave, tab.id); } catch (e) { /* sin almacenamiento */ }
       var h = tab.getAttribute('data-hash');
       if (h && location.hash !== '#' + h && window.history && history.replaceState) history.replaceState(null, '', '#' + h);
+      if (usuario) avisar('sacks:pestana', { tab: tab, panel: panel });
     }
     function porHash() {
       var h = (location.hash || '').slice(1);
@@ -89,14 +92,14 @@
     }
     window.addEventListener('hashchange', function () { var t = porHash(); if (t) activar(t); });
     tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { activar(t); });
+      t.addEventListener('click', function () { activar(t, false, true); });
       t.addEventListener('keydown', function (e) {
         var j = null;
         if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
         else if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
         else if (e.key === 'Home') j = 0;
         else if (e.key === 'End') j = tabs.length - 1;
-        if (j !== null) { e.preventDefault(); activar(tabs[j], true); }
+        if (j !== null) { e.preventDefault(); activar(tabs[j], true, true); }
       });
     });
     var guardada = null;

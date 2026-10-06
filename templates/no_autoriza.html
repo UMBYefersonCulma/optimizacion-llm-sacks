@@ -2,9 +2,9 @@
 {% block titulo %}Sin autorización{% endblock %}
 {% block contenido %}
 <section class="tarjeta flujo fin">
-  <h1>Entendido</h1>
-  <p class="intro">Sin tu autorización no aplicamos el test y no se guardó ningún dato. Si cambias de opinión, puedes volver a leer la información.</p>
-  <div class="acciones-flujo centro">
+  <h1 data-leer>Entendido</h1>
+  <p class="intro" data-leer>Sin tu autorización no aplicamos el test y no se guardó ningún dato. Si cambias de opinión, puedes volver a leer la información.</p>
+  <div class="acciones-flujo centro" data-leer data-leer-texto="Puedes pulsar Volver a leer la autorización, o Ir al inicio.">
     <a class="boton" href="{{ url_for('nuevo_test') }}">Volver a leer la autorización</a>
     <a class="boton secundario" href="{{ url_for('index') }}">Ir al inicio</a>
   </div>

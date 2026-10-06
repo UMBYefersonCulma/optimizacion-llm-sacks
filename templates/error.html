@@ -3,13 +3,13 @@
 {% block contenido %}
 <section class="tarjeta error-caja">
   <p class="etiqueta">Error {{ codigo }}</p>
-  <h2>{{ titulo }}</h2>
-  <p class="mensaje-error">{{ mensaje }}</p>
+  <h2 data-leer>{{ titulo }}</h2>
+  <p class="mensaje-error" data-leer>{{ mensaje }}</p>
   {% if estado is defined and estado %}
-    <div class="alerta {{ 'verde' if estado.ok and estado.modelo_presente else 'rojo' }}">
-      Ollama: {{ 'activo' if estado.ok else 'no responde (' ~ estado.error ~ ')' }} ·
-      Modelo {{ MODELO }}: {{ 'instalado' if estado.modelo_presente else 'NO instalado' }}
-      {% if estado.modelos %}· disponibles: {{ estado.modelos|join(', ') }}{% endif %}
+    <div data-leer class="alerta {{ 'verde' if estado.ok and estado.modelo_presente else 'rojo' }}">
+      Ollama {{ 'activo' if estado.ok else 'no responde' }} ·
+      modelo {{ MODELO }} {{ 'instalado' if estado.modelo_presente else 'NO instalado' }}
+      {% if estado.modelos %}· modelos disponibles {{ estado.modelos|join(', ') }}{% endif %}
     </div>
   {% endif %}
   <div class="acciones">

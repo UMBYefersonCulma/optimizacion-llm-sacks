@@ -76,9 +76,16 @@ pintar cada página:
 - **Leer en voz alta** con voz natural: motor neuronal **Piper** corriendo en este equipo (`sacks_tts.py`, voces
   `es_MX` «Claudia» y `es_ES` «Sara» en `data/voces/`, que `descargar_voces.sh` baja de rhasspy/piper-voices la primera vez) con selector de voz,
   velocidad, «Probar voz» y «Detener». Si Piper no está disponible, usa la voz del sistema prefiriendo Paulina/Mónica
-  sobre las voces «de novedad» de macOS (Eddy, Flo…) que suenan robóticas. Cada enunciado se lee al aparecer si la
-  opción está activa. Los botones «Escuchar la frase» y «Escuchar resumen» solo aparecen cuando la persona activa
-  esta opción, para no recargar la interfaz de quien no la necesita.
+  sobre las voces «de novedad» de macOS (Eddy, Flo…) que suenan robóticas. Con la opción activa se escucha **todo el
+  proceso** (`static/lectura.js`): cada pantalla se lee al abrirse (título, qué hacer, paso actual e instrucciones,
+  marcadas con `data-leer`), se lee lo que se enfoca con Tab o flechas, el estado de casillas, opciones y listas al
+  cambiarlas, los errores y avisos (`role="alert"` y validación del formulario), las ventanas de ayuda y del detalle de
+  la autorización, los cambios de pestaña o de página y cualquier texto al que se le hace clic (en las tablas, la fila
+  completa con sus encabezados). Los textos largos se leen por oraciones y la siguiente se prepara mientras suena la
+  actual. El botón «Escuchar» de la barra (o Alt + L) repite la pantalla o detiene la voz, y Esc la detiene en
+  cualquier momento. Ese botón y los de «Escuchar la frase» y «Escuchar resumen» solo aparecen cuando la persona
+  activa esta opción, para no recargar la interfaz de quien no la necesita. Como los navegadores no reproducen audio
+  antes del primer clic o tecla, la pantalla que abre el lanzador se lee con el primer gesto; las demás, al abrirse.
 - Además: enlace «Ir al contenido», foco visible en todos los controles, regiones `aria-live`, roles y nombres
   accesibles, menú de frases navegable con flechas, Esc cierra menús y detiene la voz, y mensajes de validación del
   navegador en español.
